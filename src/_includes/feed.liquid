@@ -3,7 +3,7 @@
 {%- assign card_template = "card-" | append: type | downcase | append: ".liquid" %}
 <div class="columns is-multiline">
   {%- for item in sliced_feed %}
-  <div class="column is-one-third">
+  <div class="column is-one-third" data-type="{{ item.type | downcase }}" data-platform="{{ item.platform | downcase }}">
     {% render card_template, card: item %}
   </div>
   {%- endfor %}

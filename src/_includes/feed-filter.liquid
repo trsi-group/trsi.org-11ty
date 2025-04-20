@@ -1,0 +1,24 @@
+{%- assign values = "" | split: "" %}
+
+{%- assign key = type | downcase %}
+{%- for item in feed %}
+  {%- if key == "type" %}
+    {%- assign values = values | push: item.type %}
+  {%- elsif key == "platform" %}
+    {%- assign values = values | push: item.platform %}
+  {%- endif %}
+{%- endfor %}
+
+{%- assign keys = "" | split: "" %}
+{%- for val in values %}
+  {%- unless keys contains val %}
+    {%- assign keys = keys | push: val %}
+  {%- endunless %}
+{%- endfor %}
+
+<select id="{{ type }}Filter">
+  <option value="">All {{ type }}s</option>
+  {%- for key in keys %}
+  <option value="{{ key | downcase }}">{{ key }}</option>
+  {%- endfor %}
+</select>

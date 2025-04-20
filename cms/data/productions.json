@@ -603,13 +603,13 @@
       "tags": []
     },
     {
-      "title": "Beams of Light",
+      "title": "Beams of Light by Tristar & Red Sector Inc.",
       "type": "Wild",
-      "description": "Released 14 June 2014 ranked 1st in the @Party 2014 Wild Competition on Custom Hardware",
+      "description": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME            : ........................................... Beams of Light\n    PLATFORM                    : ........................................... Oscilloscope\n    ORGA                              : ........................................... iRATA\n    MUSIC BY                       : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................ Walkman \n    CODE BY                         : ........................................... Luis \n    MUSIC BY                       : ........................................... hArDy \n    RELEASE DATE              : ........................................... june 2014\n    RELEASE PARTY            : ........................................... Party 2014\n    COMPETITION               : .......................................... Wild Demo ",
       "release_date": "2014-06-14",
       "image": "/img/Beams.webp",
-      "platform": "Gameboy",
-      "youtube_url": "https://www.youtube.com/watch?v=lVdWxKZVYC0",
+      "platform": "Other Systems",
+      "youtube_url": "https://www.youtube.com/watch?v=OtybxdL6hVY",
       "pouet_url": "https://www.pouet.net/prod.php?which=63587",
       "demozoo_url": "https://demozoo.org/productions/113602/",
       "credits": [
@@ -633,12 +633,12 @@
       "tags": []
     },
     {
-      "title": "OHP Mega Demo 9000",
+      "title": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.",
       "type": "Wild",
-      "description": "Another First",
+      "description": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.\n1st place in OHP Demo competition @ Party 2012\n\n    RELEASE NAME : ........................................... OHP MEGA DEMO 9000\n    PLATFORM         : ........................................... Overhead Projector\n    MUSIC BY            : ........................................... CONS\n    OTHER BY            : ........................................... Luis \n    RELEASE DATE   : ........................................... june 2012\n    RELEASE PARTY : ........................................... Party 2012\n    COMPETITION    : ........................................... OHP Demo ",
       "release_date": "2012-06-16",
       "image": "/img/Ohp2bQ.webp",
-      "platform": "Gameboy",
+      "platform": "Other Systems",
       "youtube_url": "https://www.youtube.com/watch?v=8pX_K7Cnje8",
       "pouet_url": "https://www.pouet.net/prod.php?which=59384",
       "demozoo_url": "https://demozoo.org/productions/36687/",
@@ -727,13 +727,13 @@
       "tags": []
     },
     {
-      "title": "aTaRSi",
+      "title": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest",
       "type": "Demo",
-      "description": "aTaRSI by Tristar & Red Sector Inc. & Digital Sounds System & Crest",
+      "description": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest\n1st place in the oldskool demo competition @ Nordlicht 2013\n\n    RELEASE NAME : ..................... aTaRSI (2013)\n    PLATFORM         : ..................... Atari VCS\n    CODE BY              : ..................... entusi\n    GRAPHICS BY     : ..................... DeeKay/Cst\n    MUSIC BY            : ..................... Tjopen\n    RELEASE DATE   : ..................... july 2013\n    RELEASE PARTY : .................... Nordlicht 2013 ",
       "release_date": "2013-07-05",
       "image": "/img/aTaRSiDemo.webp",
-      "platform": "Gameboy",
-      "youtube_url": "https://www.youtube.com/watch?v=oXWyUUQ2EtI",
+      "platform": "Other Systems",
+      "youtube_url": "https://www.youtube.com/watch?v=MujS-DJxPqU",
       "pouet_url": "https://www.pouet.net/prod.php?which=61610",
       "demozoo_url": "https://demozoo.org/productions/80733/",
       "credits": [
@@ -748,6 +748,48 @@
         {
           "name": "DeeKay/CSS",
           "contribution": "GFX"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge",
+      "type": "Wild",
+      "description": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge\n2nd place in the wild demo competition @ Revision 2012\n\n    RELEASE NAME  : .................... Funky Fresh\n    PLATFORM          : ..................... wild demo / Java\n    CODE BY              : ..................... spotter^TRSi \n    CODE BY              : ..................... Luids^TRSi \n    GRAPHICS BY     : ..................... alien^PDX\n    GRAPHICS BY     : ..................... Forcer\n    GRAPHICS BY      : ..................... WoDK\n    OTHER (IDEA)      : ..................... bodo^rab\n    SUPPORT BY        : ..................... Ramon B5 \n    RELEASE DATE    : ..................... april 2012\n    RELEASE PARTY : .....................  Revision 2012\n    COMPETITION    : ..............,....... wild demo ",
+      "release_date": "2012-04-01",
+      "image": "/img/Poster.webp",
+      "platform": "Other Systems",
+      "youtube_url": "https://www.youtube.com/watch?v=-xus6bcCF-M",
+      "pouet_url": "https://www.pouet.net/prod.php?which=59098",
+      "demozoo_url": "https://demozoo.org/productions/31438/",
+      "credits": [
+        {
+          "name": "spotter^TRSi",
+          "contribution": "Code"
+        },
+        {
+          "name": "Luis^TRSi",
+          "contribution": "Code"
+        },
+        {
+          "name": "alien^PDX",
+          "contribution": "GFX"
+        },
+        {
+          "name": "Forcer",
+          "contribution": "GFX"
+        },
+        {
+          "name": "WoDK",
+          "contribution": "GFX"
+        },
+        {
+          "name": "bodo^rab",
+          "contribution": "Idea"
+        },
+        {
+          "name": "Ramon B5",
+          "contribution": "Support"
         }
       ],
       "tags": []

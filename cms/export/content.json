@@ -6038,7 +6038,7 @@
         "id": "Ro5XPxs9o1YQDfCDrPul3",
         "type": "Entry",
         "createdAt": "2025-01-24T17:45:20.569Z",
-        "updatedAt": "2025-01-31T20:38:01.792Z",
+        "updatedAt": "2025-04-20T18:11:59.947Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6046,8 +6046,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 24,
-        "revision": 2,
+        "publishedVersion": 32,
+        "revision": 4,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6058,33 +6058,36 @@
       },
       "fields": {
         "title": {
-          "en-US": "Beams of Light"
+          "en-US": "Beams of Light by Tristar & Red Sector Inc."
         },
         "type": {
           "en-US": "Wild"
         },
+        "platform": {
+          "en-US": "Other Systems"
+        },
         "description": {
           "en-US": {
+            "nodeType": "document",
             "data": {
             },
             "content": [
               {
+                "nodeType": "paragraph",
                 "data": {
                 },
                 "content": [
                   {
-                    "data": {
-                    },
+                    "nodeType": "text",
+                    "value": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME            : ........................................... Beams of Light\n    PLATFORM                    : ........................................... Oscilloscope\n    ORGA                              : ........................................... iRATA\n    MUSIC BY                       : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................ Walkman \n    CODE BY                         : ........................................... Luis \n    MUSIC BY                       : ........................................... hArDy \n    RELEASE DATE              : ........................................... june 2014\n    RELEASE PARTY            : ........................................... Party 2014\n    COMPETITION               : .......................................... Wild Demo ",
                     "marks": [
                     ],
-                    "value": "Released 14 June 2014 ranked 1st in the @Party 2014 Wild Competition on Custom Hardware",
-                    "nodeType": "text"
+                    "data": {
+                    }
                   }
-                ],
-                "nodeType": "paragraph"
+                ]
               }
-            ],
-            "nodeType": "document"
+            ]
           }
         },
         "releaseDate": {
@@ -6098,18 +6101,6 @@
               "id": "5eOuheVHk02SBh0dBz6iKc"
             }
           }
-        },
-        "platform": {
-          "en-US": "Gameboy"
-        },
-        "youTubeUrl": {
-          "en-US": "https://www.youtube.com/watch?v=lVdWxKZVYC0"
-        },
-        "pouetUrl": {
-          "en-US": "https://www.pouet.net/prod.php?which=63587"
-        },
-        "demozooUrl": {
-          "en-US": "https://demozoo.org/productions/113602/"
         },
         "credits": {
           "en-US": [
@@ -6130,6 +6121,15 @@
               "contribution": "Music"
             }
           ]
+        },
+        "youTubeUrl": {
+          "en-US": "https://www.youtube.com/watch?v=OtybxdL6hVY"
+        },
+        "pouetUrl": {
+          "en-US": "https://www.pouet.net/prod.php?which=63587"
+        },
+        "demozooUrl": {
+          "en-US": "https://demozoo.org/productions/113602/"
         }
       }
     },
@@ -6151,7 +6151,7 @@
         "id": "3sMboNwulQw2v4ZfhkYUqQ",
         "type": "Entry",
         "createdAt": "2025-01-24T18:28:01.787Z",
-        "updatedAt": "2025-02-04T18:21:35.815Z",
+        "updatedAt": "2025-04-20T18:19:15.166Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6159,8 +6159,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 31,
-        "revision": 3,
+        "publishedVersion": 35,
+        "revision": 4,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6171,10 +6171,13 @@
       },
       "fields": {
         "title": {
-          "en-US": "OHP Mega Demo 9000"
+          "en-US": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc."
         },
         "type": {
           "en-US": "Wild"
+        },
+        "platform": {
+          "en-US": "Other Systems"
         },
         "description": {
           "en-US": {
@@ -6190,37 +6193,7 @@
                     },
                     "marks": [
                     ],
-                    "value": "Another First",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              },
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "Mega Demo on an Overhead Projector !",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              },
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "Released 16 June 20121st on the @Party 2012 - Overhead Projector competition on Custom Hardware",
+                    "value": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.\n1st place in OHP Demo competition @ Party 2012\n\n    RELEASE NAME : ........................................... OHP MEGA DEMO 9000\n    PLATFORM         : ........................................... Overhead Projector\n    MUSIC BY            : ........................................... CONS\n    OTHER BY            : ........................................... Luis \n    RELEASE DATE   : ........................................... june 2012\n    RELEASE PARTY : ........................................... Party 2012\n    COMPETITION    : ........................................... OHP Demo ",
                     "nodeType": "text"
                   }
                 ],
@@ -6241,9 +6214,6 @@
               "id": "1i65zia3M6bGriEkijpsrJ"
             }
           }
-        },
-        "platform": {
-          "en-US": "Gameboy"
         },
         "credits": {
           "en-US": [
@@ -6533,7 +6503,7 @@
         "id": "gPiIXcWPFjp2vniyif5uK",
         "type": "Entry",
         "createdAt": "2025-01-31T20:05:49.854Z",
-        "updatedAt": "2025-01-31T20:05:49.854Z",
+        "updatedAt": "2025-04-20T18:25:52.246Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6541,8 +6511,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 26,
-        "revision": 1,
+        "publishedVersion": 31,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6553,10 +6523,13 @@
       },
       "fields": {
         "title": {
-          "en-US": "aTaRSi"
+          "en-US": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest"
         },
         "type": {
           "en-US": "Demo"
+        },
+        "platform": {
+          "en-US": "Other Systems"
         },
         "description": {
           "en-US": {
@@ -6571,29 +6544,8 @@
                     "data": {
                     },
                     "marks": [
-                      {
-                        "type": "bold"
-                      }
                     ],
-                    "value": "aTaRSI by Tristar & Red Sector Inc. & Digital Sounds System & Crest",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              },
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                      {
-                        "type": "bold"
-                      }
-                    ],
-                    "value": "Atari VCS Demo, 1st at Nordlicht 2013",
+                    "value": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest\n1st place in the oldskool demo competition @ Nordlicht 2013\n\n    RELEASE NAME : ..................... aTaRSI (2013)\n    PLATFORM         : ..................... Atari VCS\n    CODE BY              : ..................... entusi\n    GRAPHICS BY     : ..................... DeeKay/Cst\n    MUSIC BY            : ..................... Tjopen\n    RELEASE DATE   : ..................... july 2013\n    RELEASE PARTY : .................... Nordlicht 2013 ",
                     "nodeType": "text"
                   }
                 ],
@@ -6615,18 +6567,6 @@
             }
           }
         },
-        "platform": {
-          "en-US": "Gameboy"
-        },
-        "youTubeUrl": {
-          "en-US": "https://www.youtube.com/watch?v=oXWyUUQ2EtI"
-        },
-        "pouetUrl": {
-          "en-US": "https://www.pouet.net/prod.php?which=61610"
-        },
-        "demozooUrl": {
-          "en-US": "https://demozoo.org/productions/80733/"
-        },
         "credits": {
           "en-US": [
             {
@@ -6642,6 +6582,15 @@
               "contribution": "GFX"
             }
           ]
+        },
+        "youTubeUrl": {
+          "en-US": "https://www.youtube.com/watch?v=MujS-DJxPqU"
+        },
+        "pouetUrl": {
+          "en-US": "https://www.pouet.net/prod.php?which=61610"
+        },
+        "demozooUrl": {
+          "en-US": "https://demozoo.org/productions/80733/"
         }
       }
     },
@@ -6961,6 +6910,194 @@
         },
         "memberStatus": {
           "en-US": "active"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "7kpwVhoPepwu704dWDyoMG",
+        "type": "Entry",
+        "createdAt": "2025-04-20T15:27:46.116Z",
+        "updatedAt": "2025-04-20T15:27:46.116Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "handle": {
+          "en-US": "W.O.T.W."
+        },
+        "avatar": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "dcDde2DJC9ICAkrmFSsZL"
+            }
+          }
+        },
+        "realName": {
+          "en-US": "Elef"
+        },
+        "memberSince": {
+          "en-US": "1993-04-01"
+        },
+        "memberStatus": {
+          "en-US": "active"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "7r5uxMk1YLqciC7qJU33ef",
+        "type": "Entry",
+        "createdAt": "2025-04-20T18:46:46.259Z",
+        "updatedAt": "2025-04-20T18:56:08.233Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 15,
+        "revision": 2,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "productions"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge"
+        },
+        "type": {
+          "en-US": "Wild"
+        },
+        "platform": {
+          "en-US": "Other Systems"
+        },
+        "releaseDate": {
+          "en-US": "2012-04-01"
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge\n2nd place in the wild demo competition @ Revision 2012\n\n    RELEASE NAME  : .................... Funky Fresh\n    PLATFORM          : ..................... wild demo / Java\n    CODE BY              : ..................... spotter^TRSi \n    CODE BY              : ..................... Luids^TRSi \n    GRAPHICS BY     : ..................... alien^PDX\n    GRAPHICS BY     : ..................... Forcer\n    GRAPHICS BY      : ..................... WoDK\n    OTHER (IDEA)      : ..................... bodo^rab\n    SUPPORT BY        : ..................... Ramon B5 \n    RELEASE DATE    : ..................... april 2012\n    RELEASE PARTY : .....................  Revision 2012\n    COMPETITION    : ..............,....... wild demo ",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "infoText": {
+          "en-US": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge\n2nd place in the wild demo competition @ Revision 2012\n\n    RELEASE NAME  : ..................... Funky Fresh\n    PLATFORM      : ..................... wild demo / Java\n    CODE BY       : ..................... spotter^TRSi \n    CODE BY       : ..................... Luids^TRSi \n    GRAPHICS BY   : ..................... alien^PDX\n    GRAPHICS BY   : ..................... Forcer\n    GRAPHICS BY   : ..................... WoDK\n    OTHER (IDEA)  : ..................... bodo^rab\n    SUPPORT BY    : ..................... Ramon B5 \n    RELEASE DATE  : ..................... april 2012\n    RELEASE PARTY : .....................  Revision 2012\n    COMPETITION   : ..............,...... wild demo "
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4QLrTDAsNlmSqagwPuHUaa"
+            }
+          }
+        },
+        "credits": {
+          "en-US": [
+            {
+              "name": "spotter^TRSi",
+              "contribution": "Code"
+            },
+            {
+              "name": "Luis^TRSi",
+              "contribution": "Code"
+            },
+            {
+              "name": "alien^PDX",
+              "contribution": "GFX"
+            },
+            {
+              "name": "Forcer",
+              "contribution": "GFX"
+            },
+            {
+              "name": "WoDK",
+              "contribution": "GFX"
+            },
+            {
+              "name": "bodo^rab",
+              "contribution": "Idea"
+            },
+            {
+              "name": "Ramon B5",
+              "contribution": "Support"
+            }
+          ]
+        },
+        "youTubeUrl": {
+          "en-US": "https://www.youtube.com/watch?v=-xus6bcCF-M"
+        },
+        "pouetUrl": {
+          "en-US": "https://www.pouet.net/prod.php?which=59098"
+        },
+        "demozooUrl": {
+          "en-US": "https://demozoo.org/productions/31438/"
         }
       }
     }
@@ -12002,6 +12139,110 @@
               }
             },
             "fileName": "Sachy.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "4QLrTDAsNlmSqagwPuHUaa",
+        "type": "Asset",
+        "createdAt": "2025-04-20T18:46:24.787Z",
+        "updatedAt": "2025-04-20T18:46:24.787Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Funky Fresh"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/l8kv2ckiiqjb/4QLrTDAsNlmSqagwPuHUaa/ca9bf80566d115a9d02ed6ca21a0cf0c/Poster.jpg",
+            "details": {
+              "size": 62370,
+              "image": {
+                "width": 400,
+                "height": 300
+              }
+            },
+            "fileName": "Poster.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "6gnlcJ2ZlMPn9ydpMxYyFt",
+        "type": "Asset",
+        "createdAt": "2025-04-20T19:31:08.695Z",
+        "updatedAt": "2025-04-20T19:31:08.695Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jupiter & Beyond"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/l8kv2ckiiqjb/6gnlcJ2ZlMPn9ydpMxYyFt/e752a3cf4f8c7d347e3afd026747d371/Poster.jpg",
+            "details": {
+              "size": 61166,
+              "image": {
+                "width": 400,
+                "height": 250
+              }
+            },
+            "fileName": "Poster.jpg",
             "contentType": "image/jpeg"
           }
         }

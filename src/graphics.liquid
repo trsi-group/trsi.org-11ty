@@ -14,5 +14,11 @@ title: TRSI - Graphics
     </section>
 
     <section class="section">
-      {% render "feed.liquid", feed: cms.graphics, type: "graphics" %}
+      <div class="filter-wrapper">
+      {% render "feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
+      {% render "feed-filter.liquid", feed: cms.graphics, type: "Type" %}
+      </div>
+      <div id="feed-wrapper">
+        {% render "feed.liquid", feed: cms.graphics, type: "graphics" %}
+      </div>
     </section>
