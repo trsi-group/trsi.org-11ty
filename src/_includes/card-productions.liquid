@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="{{ card.image | replace: '/img/', '/img/card/' }}" alt="...">
+    </figure>
+  </div>
+  <div class="card-content">
+    <p class="subtitle is-6">{{ card.type }}</p>
+    <p class="title is-4">{{ card.title }}</p>
+    {%- if card.description %}<p class="">{{ card.description }}</p>{%- endif %}
+    {%- if card.download_url %}<a class="" href="{{ card.download_url }}">Download</a>{%- endif %}
+    {%- if card.youtube_url %}<a class="" href="{{ card.youtube_url }}">YouTube</a>{%- endif %}
+  </div>
+</div>

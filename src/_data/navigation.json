@@ -1,0 +1,24 @@
+{
+  "nav_items": [
+    {
+      "title": "Roots",
+      "url": "/"
+    },
+    {
+      "title": "Productions",
+      "url": "/productions"
+    },
+    {
+      "title": "Music",
+      "url": "/music"
+    },
+    {
+      "title": "Graphics",
+      "url": "/graphics"
+    },
+    {
+      "title": "Members",
+      "url": "/members"
+    }
+  ]
+}

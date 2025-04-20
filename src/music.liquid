@@ -1,0 +1,18 @@
+---
+pagination:
+  data: cms
+  size: 100
+
+layout: base.liquid
+title: TRSI - Music
+---
+    <!-- Top section -->
+    <section class="content is-size-5">
+      <div class="container">
+        <h1>Music</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      {% render "feed.liquid", feed: cms.music, type: "music" %}
+    </section>

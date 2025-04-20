@@ -1,0 +1,25 @@
+    <header>
+      <nav class="navbar is-black pb-5" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{{ site.domain }}">
+            <p class="is-2 is-size-3-touch has-text-weight-bold is-uppercase">Back to the...</p>
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div class="navbar-menu" id="navMenu">
+          <div class="navbar-start has-text-centered">
+          {%- for item in navigation.nav_items %}
+            {% assign item_slug = item.title | downcase %}
+            <a href="{{ item.url }}" class="navbar-item is-2 is-size-3-touch has-text-weight-bold is-uppercase{% if page.fileSlug == item_slug %} active{% endif %}">>{{ item.title }}</a>
+          {%- endfor %}
+          </div>
+        </div>
+      </nav>
+    </header>

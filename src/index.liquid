@@ -1,0 +1,41 @@
+---
+pagination:
+  data: cms
+  size: 100
+
+layout: base.liquid
+title: TRSI
+---
+    <!-- Top section -->
+    <section class="content md-image is-size-5">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <img src="trsi-logo.svg" height="100" alt="">
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-6 c64-purple">Founded in 1990, TRSI is one of the most iconic and longest-standing groups in the global demoscene. Known for pushing the boundaries of creativity and technology, TRSI has been at the forefront of crafting mesmerizing demos, intros, and music for platforms ranging from the Amiga and Commodore 64 to modern PCs.</div>
+          <div class="col-md-6 c64-purple">As pioneers of digital art and innovation, TRSI thrives on the intersection of code, design, and sound, continuously inspiring the scene with groundbreaking productions. Join us in celebrating over three decades of passion, creativity, and camaraderie in the demoscene community!</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content">
+        <h1>Latest Productions</h1>
+        {% render "feed.liquid", feed: cms.productions, type: "productions", max: 3 %}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content">
+        <h1>Latest Graphics</h1>
+        {% render "feed.liquid", feed: cms.graphics, type: "graphics", max: 3 %}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content">
+        <h1>Latest Music</h1>
+        {% render "feed.liquid", feed: cms.music, type: "music", max: 3 %}
+      </div>
+    </section>

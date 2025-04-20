@@ -1,0 +1,138 @@
+{
+  "graphics": [
+    {
+      "title": "Ich mach mir die Welt, wie sie mir gefällt!",
+      "type": "ASCII",
+      "image": "/img/01-Revision_2020_-_Elko_TRSi_-_Ich_mach_mir_die_Welt__wie_sie_mir_gefaellt.webp",
+      "platform": "Amiga",
+      "download": null,
+      "credits": [
+        {
+          "name": "Elko",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Hardtstylers Sticker",
+      "type": "Sticker",
+      "image": "/img/7bac.330105.webp",
+      "platform": "Amiga",
+      "download": null,
+      "credits": [
+        {
+          "name": "Elko",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "TRSI 2024 Sticker",
+      "type": "Sticker",
+      "image": "/img/placeholder.webp",
+      "platform": null,
+      "download": null,
+      "credits": [
+        {
+          "name": "Elko",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Gut zu Voegeln",
+      "type": "ANSI",
+      "image": "/img/GutzuVoegeln-final.webp",
+      "platform": "PC",
+      "download": null,
+      "credits": [
+        {
+          "name": "Elko",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Acid Times",
+      "type": "Sticker",
+      "image": "/img/AcidTimes.webp",
+      "platform": "PC",
+      "download": null,
+      "credits": [
+        {
+          "name": "Elko",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Henrys Maske",
+      "type": "Sticker",
+      "image": "/img/HenrysMaskeEvoke2024.webp",
+      "platform": "PC",
+      "download": null,
+      "credits": [
+        {
+          "name": "Elko",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Dinky Dock 64 by movax / TRSi",
+      "type": "Sticker",
+      "image": "/img/15.dinkydock64.webp",
+      "platform": "PC",
+      "download": null,
+      "credits": [
+        {
+          "name": "Movax",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Go copy that floppy by DocD",
+      "type": "Sticker",
+      "image": "/img/swapdisc-preview.webp",
+      "platform": "Amiga",
+      "download": null,
+      "credits": [
+        {
+          "name": "DocD",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "Decker 9 by Spotter & H9",
+      "type": "ANSI",
+      "image": "/img/Decker9.webp",
+      "platform": "PC",
+      "download": null,
+      "credits": [
+        {
+          "name": "Spotter",
+          "contribution": "Graphics"
+        },
+        {
+          "name": "h9",
+          "contribution": "Graphics"
+        }
+      ]
+    },
+    {
+      "title": "EXODUS infofile for TRSI",
+      "type": "ASCII",
+      "image": "/img/exodus.webp",
+      "platform": "Amiga",
+      "download": null,
+      "credits": [
+        {
+          "name": "H7",
+          "contribution": "Graphics"
+        }
+      ]
+    }
+  ]
+}
