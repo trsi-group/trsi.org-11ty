@@ -19,6 +19,5 @@ const cms = {
   members: members.members
 };
 
-console.log("cms:prods: " + JSON.stringify(cms.productions, null, 2));
-
+// console.log("cms:prods: " + JSON.stringify(cms.productions, null, 2));
 export default cms;
