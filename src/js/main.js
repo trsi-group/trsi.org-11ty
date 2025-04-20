@@ -30,9 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // register filter components
-  const typeFilter = document.getElementById("TypeFilter");
-  typeFilter.addEventListener("change", handleFilterChange);
-  
-  const platformFilter = document.getElementById("PlatformFilter");
-  platformFilter.addEventListener("change", handleFilterChange);  
+  ["TypeFilter", "PlatformFilter"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("change", handleFilterChange);
+    }
+  });
 });

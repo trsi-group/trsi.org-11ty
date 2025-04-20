@@ -33,6 +33,10 @@ body {
   background-repeat: no-repeat;
 }
 
+.filter-wrapper {
+  margin-bottom: 15px;
+}
+
 .c64-black {
   color: rgb(0, 0, 0);
 }
