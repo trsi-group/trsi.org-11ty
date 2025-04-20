@@ -2,7 +2,16 @@ body {
   font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Ubuntu,Fira Sans,Roboto,Avenir Next,Helvetica Neue,Helvetica,Arial,sans-serif;
   /* font-size: xx-large; */
   background-color: #000;
-  color: #fff;
+  color: white;
+}
+
+.section.headline {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.content h1, .title  {
+  color: white;
 }
 
 .footer-content.ul {

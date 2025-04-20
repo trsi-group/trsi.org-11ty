@@ -18,6 +18,7 @@ import { transformProductions } from './transformProductions.js';
 import { transformMembers } from './transformMembers.js';
 import { transformGraphics } from './transformGraphics.js';
 import { transformMusic } from './transformMusic.js';
+import { transformPosts } from './transformPosts.js';
 import { transformImages } from './transformImages.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -31,6 +32,7 @@ const transforms = [
   { name: 'members', fn: transformMembers },
   { name: 'graphics', fn: transformGraphics },
   { name: 'music', fn: transformMusic },
+  { name: 'posts', fn: transformPosts },
 ];
 
 // CLI Execution

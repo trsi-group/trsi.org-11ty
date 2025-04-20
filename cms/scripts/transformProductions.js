@@ -46,7 +46,7 @@ export function transformProductions(contentfulData) {
         tags: tags,
       };
     });
-  console.log("productions: " + JSON.stringify(productions, null, 2));
+  // console.log("productions: " + JSON.stringify(productions, null, 2));
 
   return { productions };
 }

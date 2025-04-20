@@ -4,15 +4,17 @@ pagination:
   size: 100
 
 layout: base.liquid
-title: TRSI - Members
+title: TRSI - News
 ---
     <!-- Top section -->
     <section class="section headline">
       <div class="content">
-        <h1 class="is-size-2">Members</h1>
+        <h1 class="is-size-2">Latest News</h1>
       </div>
     </section>
 
     <section class="section">
-      {% render "feed.liquid", feed: cms.members, type: "members" %}
+      <div id="list-wrapper">
+        {% render "list.liquid", feed: cms.posts, type: "posts" %}
+      </div>
     </section>

@@ -793,6 +793,88 @@
         }
       ],
       "tags": []
+    },
+    {
+      "title": "Jupiter & Beyond by St. Vincent And The Grenadines & Tristar and Red Sector Inc.",
+      "type": "Wild",
+      "description": "Jupiter & Beyond by St. Vincent And The Grenadines & Tristar and Red Sector Inc.\n3rd place in the wild demo competition @ Revision 2013\n\n    RELEASE NAME       : .................... Jupiter & Beyond\n    PLATFORM               : .......,.............. wild demo\n    CODE BY                    : ..................... WAHa_06x36 \n    CODE BY                    : ..................... halcy \n    CODE & MUSIC BY   : ..................... coda\n    GRAPHICS BY           : ..................... Forcer\n    RELEASE DATE         : ..................... march 2013\n    RELEASE PARTY       : ....................  Revision 2013\n    COMPETITION          : .............,....... wild demo ",
+      "release_date": "2013-03-01",
+      "image": "/img/Poster.webp",
+      "platform": "Other Systems",
+      "youtube_url": "https://www.youtube.com/watch?v=tLVIS7jXKs8",
+      "pouet_url": "https://www.pouet.net/prod.php?which=61197",
+      "demozoo_url": "https://demozoo.org/productions/60135/",
+      "credits": [
+        {
+          "name": "spotter^TRSi",
+          "contribution": "Code"
+        },
+        {
+          "name": "WAHa_06x36",
+          "contribution": "Code"
+        },
+        {
+          "name": "halcy",
+          "contribution": "Code"
+        },
+        {
+          "name": "coda",
+          "contribution": "Code"
+        },
+        {
+          "name": "coda",
+          "contribution": "Music"
+        },
+        {
+          "name": "Forcer",
+          "contribution": "GFX"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "ShaderShowdownRemix-Evoke2018 by Tristar and Red Sector Inc.",
+      "type": "Demo",
+      "description": "ShaderShowdownRemix-Evoke2018 by Tristar and Red Sector Inc. \n2nd place in the pc 4k competition @ Evoke 2018\n\n    RELEASE NAME : ..................... ShaderShowdownRemix\n    PLATFORM          : ..................... PC Windows\n    CODE BY              : ..................... hArDy\n    MUSIC BY            : ..................... hArDy\n    RELEASE DATE   : ..................... august 2018\n    RELEASE PARTY : ..................... Evoke 2018\n    COMPETITION    : ..................... PC 4k ",
+      "release_date": "2008-08-01",
+      "image": "/img/ShaderShowdownRemix.webp",
+      "platform": "PC",
+      "youtube_url": "https://www.youtube.com/watch?v=XluLS2kyBe8",
+      "pouet_url": "https://www.pouet.net/prod.php?which=77689",
+      "demozoo_url": "https://demozoo.org/productions/192012/",
+      "credits": [
+        {
+          "name": "hArDy",
+          "contribution": "Code"
+        },
+        {
+          "name": "hArDy",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "l4Kuna by Tristar & Red Sector Inc.",
+      "type": "Demo",
+      "description": "l4Kuna by Tristar & Red Sector Inc.\n1st place in the pc 4k competition @ the Ultimate Meeting 2009\n\n    RELEASE NAME : ..................... l4Kuna\n    PLATFORM          : ..................... PC Windows\n    CODE BY              : ..................... hArDy\n    MUSIC BY            : ..................... tEiS\n    RELEASE DATE   : ..................... december 2009\n    RELEASE PARTY : ..................... the Ultimate Meeting 2009\n    COMPETITION    : ..................... PC 4k ",
+      "release_date": "2009-12-01",
+      "image": "/img/Poster.webp",
+      "platform": "PC",
+      "youtube_url": "https://www.youtube.com/watch?v=6WlVnZ7H7nQ",
+      "pouet_url": "https://www.pouet.net/prod.php?which=54208",
+      "demozoo_url": "https://demozoo.org/productions/70385/",
+      "credits": [
+        {
+          "name": "hArDy",
+          "contribution": "Code"
+        },
+        {
+          "name": "hArDy",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
     }
   ]
 }

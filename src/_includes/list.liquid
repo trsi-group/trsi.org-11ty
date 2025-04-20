@@ -1,0 +1,11 @@
+{%- assign items = max | default: feed.size %}
+{%- assign sliced_feed = feed | slice: 0, items %}
+<div class="posts">
+  {%- for item in sliced_feed %}
+  <div class="post" data-type="{{ item.type | downcase }}" data-platform="{{ item.platform | downcase }}">
+    <h2 class="title">{{ item.title }}</h2>
+    <p>{{ item.body }}</p>
+    <p>{{ item.publishDate }}</p>
+  </div>
+  {%- endfor %}
+</div>

@@ -12,11 +12,14 @@ const mPath = resolve(__dirname, '../../cms/data/music.json');
 const music = JSON.parse(readFileSync(mPath, 'utf-8'));
 const mePath = resolve(__dirname, '../../cms/data/members.json');
 const members = JSON.parse(readFileSync(mePath, 'utf-8'));
+const poPath = resolve(__dirname, '../../cms/data/posts.json');
+const posts = JSON.parse(readFileSync(poPath, 'utf-8'));
 const cms = {
   productions: productions.productions,
   graphics: graphics.graphics,
   music: music.music,
-  members: members.members
+  members: members.members,
+  posts: posts.posts
 };
 
 // console.log("cms:prods: " + JSON.stringify(cms.productions, null, 2));

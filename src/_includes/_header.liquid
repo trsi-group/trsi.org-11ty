@@ -17,7 +17,7 @@
           <div class="navbar-start has-text-centered">
           {%- for item in navigation.nav_items %}
             {% assign item_slug = item.title | downcase %}
-            <a href="{{ item.url }}" class="navbar-item is-2 is-size-3-touch has-text-weight-bold is-uppercase{% if page.fileSlug == item_slug %} active{% endif %}">>{{ item.title }}</a>
+            <a href="{{ item.url }}" class="navbar-item is-2 is-size-3-touch has-text-weight-bold is-uppercase{% if page.fileSlug == item_slug %} active{% endif %}">:{{ item.title }}</a>
           {%- endfor %}
           </div>
         </div>
