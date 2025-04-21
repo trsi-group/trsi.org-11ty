@@ -1,5 +1,15 @@
 {%- assign items = max | default: feed.size %}
-{%- assign sorted_feed = feed | sort: "release_date" | reverse %}
+{%- assign sort_key = sort_key | default: "release_date" %}
+{%- assign sort_order = sort_order | default: "" %}
+{%- assign sorted_feed = feed | sort: sort_key %}
+{%- if sort_order == "desc" %}
+  {%- assign sorted_feed = sorted_feed | sort: sort_key | reverse %}
+{%- endif %}
+
+{{ sort_key }}
+{{ sort_order }}
+{{ sorted_feed | json }}
+
 {%- assign sliced_feed = sorted_feed | slice: 0, items %}
 {%- assign card_template = "card-" | append: type | downcase | append: ".liquid" %}
 <div class="columns is-multiline">
