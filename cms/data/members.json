@@ -342,6 +342,12 @@
       "image": "/img/HenrysMaskeEvoke2024.webp",
       "member_since": "1993-04-01",
       "member_status": "active"
+    },
+    {
+      "handle": "WoDK",
+      "image": "/img/Wodk Amiga.webp",
+      "member_since": null,
+      "member_status": "inactive"
     }
   ]
 }

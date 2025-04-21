@@ -40,7 +40,7 @@ export function transformImages(contentfulData, exportDir, assetDir) {
   assets.forEach((asset) => {
     if (asset.fields.file && asset.fields.file['en-US']) {
       const fileName = asset.fields.file['en-US'].fileName;
-      const sourcePath = findFileRecursively(assetDir, fileName); // Find file recursively
+      const sourcePath = findFileRecursively(assetDir, fileName.replace(/ /g, '_')); // Find file recursively
       if (!sourcePath) {
         console.log('Source images not available!');
         console.log(`asset dir: ${assetDir}, filename: ${fileName}`);

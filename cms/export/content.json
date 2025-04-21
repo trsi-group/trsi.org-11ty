@@ -270,7 +270,7 @@
         "id": "1QrGzpFIBrJPrIxjLhgxXh",
         "type": "Entry",
         "createdAt": "2024-02-12T20:42:11.858Z",
-        "updatedAt": "2025-01-15T16:03:17.236Z",
+        "updatedAt": "2025-04-21T20:24:24.799Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -278,8 +278,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 23,
-        "revision": 7,
+        "publishedVersion": 27,
+        "revision": 8,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -290,13 +290,40 @@
       },
       "fields": {
         "title": {
-          "en-US": "Belgium Easter Party 92 Invitation"
+          "en-US": "Easter Conference 92 by Tristar & Red Sector Inc. "
         },
         "type": {
           "en-US": "Intro"
         },
+        "platform": {
+          "en-US": "Amiga OCS"
+        },
         "releaseDate": {
           "en-US": "1992-03-12"
+        },
+        "description": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Easter Conference 92 by Tristar & Red Sector Inc. \nInvitation for : \tEaster Conference 92\n\n    RELEASE NAME : ..................... Easter Conference 92\n    PLATFORM         : ..................... Amiga OCS/ECS\n    CODE BY              : ..................... Madison\n    GRAPHICS BY     : ..................... elkmoose\n    MUSIC BY            : ..................... Double Trouble\n    RELEASE DATE   : ..................... april 1992\n    TYPE                     : ..................... invitation",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
         },
         "image": {
           "en-US": {
@@ -306,18 +333,6 @@
               "id": "6rCBndBXhPqan3PmyNeQVS"
             }
           }
-        },
-        "platform": {
-          "en-US": "Amiga OCS"
-        },
-        "youTubeUrl": {
-          "en-US": "https://youtu.be/e9AUuEjd2os"
-        },
-        "pouetUrl": {
-          "en-US": "https://www.pouet.net/prod.php?which=14488"
-        },
-        "demozooUrl": {
-          "en-US": "https://demozoo.org/productions/263568/"
         },
         "credits": {
           "en-US": [
@@ -338,6 +353,15 @@
               "contribution": "Graphics"
             }
           ]
+        },
+        "youTubeUrl": {
+          "en-US": "https://www.youtube.com/watch?v=1GbLAOc9pZ4"
+        },
+        "pouetUrl": {
+          "en-US": "https://www.pouet.net/prod.php?which=14488"
+        },
+        "demozooUrl": {
+          "en-US": "https://demozoo.org/productions/263568/"
         }
       }
     },
@@ -6038,7 +6062,7 @@
         "id": "Ro5XPxs9o1YQDfCDrPul3",
         "type": "Entry",
         "createdAt": "2025-01-24T17:45:20.569Z",
-        "updatedAt": "2025-04-21T20:08:43.880Z",
+        "updatedAt": "2025-04-21T21:16:58.660Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6046,8 +6070,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 37,
-        "revision": 5,
+        "publishedVersion": 40,
+        "revision": 6,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6069,8 +6093,32 @@
         "releaseDate": {
           "en-US": "2014-06-14"
         },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME            : ........................................... Beams of Light\n    PLATFORM                    : ........................................... Oscilloscope\n    ORGA                              : ........................................... iRATA\n    MUSIC BY                       : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................... Walkman \n    CODE BY                         : ........................................... Luis \n    MUSIC BY                       : ........................................... hArDy \n    RELEASE DATE              : ........................................... june 2014\n    RELEASE PARTY            : ........................................... Party 2014\n    COMPETITION               : ........................................... Wild Demo",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
         "infoText": {
-          "en-US": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME      : ........................................... Beams of Light\n    PLATFORM          : ........................................... Oscilloscope\n    ORGA              : ........................................... iRATA\n    MUSIC BY          : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................... Walkman \n    CODE BY           : ........................................... Luis \n    MUSIC BY          : ........................................... hArDy \n    RELEASE DATE      : ........................................... june 2014\n    RELEASE PARTY     : ........................................... Party 2014\n    COMPETITION       : ........................................... Wild Demo "
+          "en-US": "                               ▄                       ▄▄▄\n                       ▐▄▄▄▄████      ▄▄▄▄█        ▄▄▄▄█▓█▄▄▄▄     ▄▄▄▄▄▄▄▄\n                       █████████▄▄▄████▓▓██   ▄▄██▓▓▓███░█████     ██  ░▒▓█\n ▀███████░▄▄▄▄▄▄▄▄▄▄▄▄▄█████████▀▀▀█▓▓▓▒▒██ ▄██▓▓▓▓█▀  █▄████▄▄  ▄▄ ▀█▄ ░▒█ ▄▄▄\n ████████▓████████████▌▀████████   █▒▒▒░░█▌▐██▓▒▒░░▌   ▀▀▀▀▀▀▀▀  ██████▀▀▀▀ ███\n █▄█▀▀▀▀████████▀▀▀▀▀▀▀ ▄▀▀█████   █ ░░░▄█  ▀██▓░░ ▀▄            ▀▀▀████████▀▀▀\n        ████████        ████▓▓▓█▄▄██  ▄█▀      ▀▀█▄▄ ▀█▄▄▄▄▄▄▄▄▄▄▄  ████████\n        ████████        █▓▓▓▓▒▒███████▀            ▀▀██▄█████▄▄█▄█  █▓▓▓▓▓▓█\n        █▓▓▓▓▓▓█        █▒▒▒▒▒░█▀▀ ████████             ▄████████   █░░░▒▒▒█\n        █░░░▓▒▒█        █░░░░░░█   █▓▓▓▓▓▓█▐▄▄▄▄▄▄▄     █████████   ████████\n        █   ▒▒░█        █ ░░░░ █   █░░░▒▒▒█▄▄█▒▒▓▓█     █▓▓██▓▓██   █▓▓▓▓▓▓█\n        █   ░░░█        █      █   █   ░░░██░░░░▒▒█     █▒▒▓▓▒▒██   █░░░▒▒▒█\n        █   ░░ █        █     ░█   █      ██    ░░█     █░░▒▒░░ █   █   ░░░█\n        █      █       █▀██▄▄▓▓█▄ █████▄▄▄██▄▄▄▄▄▄███████  ░░   █▀█ █      █\n        █░    ░█▄      ███▀▀▀▀███     ▀▀▀███    █▄█▀▀▀▀▀██████▄▄█▀█ █      █\n       ▄█▓▓▄▄▓▓▀▀                                ▄            ▀▀▀▀█ █▄▄▄▄ ░█\n      █▀██▀▀       ▄ ▄▄▄▄▄▄▄▄▓██████████████████▓▄▄▄▄▄▄▄▄             ▀██▓▓█▄\n      ▀▀▀    ▄▄▄▓█████▓▌▀▀▀▀▀█▀▀▀              ▀▀▀█▀▀▀▀▀▐▓█████▓▄▄▄       ███\n   ░░░   ▄▄▓██▀▀▀▀ ▄    ▄▄▓▀▀▀                    ▀▀▀▓▄▄    ▄ ▀▀▀▀██▓▄▄\n   ▄▄▄  █▀▀ ▄▄▄▓▀▀   ▄▓▀▀                              ▀▀▓▄   ▀▀▓▄▄▄ ▀▀█  ▄▄▄\n ▄▄█░█▄▄▄▄▄▄██▄     █▀      TRISTAR & RED SECTOR INC      ▀█     ▄██▄▄▄▄▄▄█░█▄▄\n ▀██▓█▓▓█ ▀  ▀██ ▄▄▄█                                      █▄▄▄ ██▀  ▀ █▓▓█▓██▀\n  █ ▀█▄ █ ▓▄▄▄█                 PROUDLY PRESENTS                 █▄▄▄▓ █ ▄█▀ █\n  ▐▌  ▀██  █▀▀                                                    ▀▀█  ██▀  ▐▐\n   █▄▄▀ ██▄█                    \"Beams of Light\"                    █▄██ ▀▄▄█\n   ▓ ▄▄█████                                                        █████▄▄ ▓\n   ░  ▓██▀▀ ▄ ▄                                                  ▄ ▄ ▀▀██▓  ░\n      ▓█ ▄█▀         Orga ............................ iRATA        ▀█▄ █▓\n      ▓▌▐█▌          Music ............................ tEiS         ▐█▌▐▓\n      ██ ██▄         Original Composer ............. Walkman        ▄██ ██\n     ▄ ▀  ██▓▄       Code ............................. Luis      ▄▓██  ▀ ▄\n       ▀▄  █ ▀▓▄     Platform ................. Oscilloscope    ▄▓▀ █  ▄▀\n      ░░█▌ ▐▌  █▌    Released .................. @Party 2014   ▐█  ▐▌ ▐█░░\n      ▓▓██ █  ▄█                                                █▄  █ ██▓▓\n      ███ ▄█▄▓▀                                                  ▀▓▄█▄ ███\n   ▄█▀██  ▀▀   █                   Instructions                 █   ▀▀  ██▀█▄\n  ▐█  ▀█▄  █ ▄█▌                                                ▐█▄ █  ▄█▀  █▌\n   ▀█▄▄▄██▄██▓▀       Connect sound to scope set in XY mode     ▀▓██▄██▄▄▄█▀\n      ▄███▓▀▀ ▄█▄                                              ▄█▄ ▀▀▓███▄\n   ▄▓█▀▀ ▄▄▄ ▀▓█▀▓▄▄  ▄▄▄ ▄                          ▄ ▄▄▄  ▄▄▓▀█▓▀ ▄▄▄ ▀▀█▓▄\n  ▐██ ▄▓▀▀ █      ▐██▀▓▄█▄▄▄▄                      ▄▄▄▄█▄▓▀██▌      █ ▀▀▓▄ ██▌\n   ▓█▄   ▄█▌    ▄▄█▓▀▀▀       ▀▀▀  ▀        ▀  ▀▀▀       ▀▀▀▓█▄▄    ▐█▄   ▄█▓\n    ▀██ ▐█▓░▄ ▀▀▀▀                  Greetings                 ▀▀▀▀ ▄░▓█▌ ██▀\n   ░  █  ▀▀▀▀▀ ▀                                                ▀ ▀▀▀▀▀  █  ░\n   ▓  █ ▄  █▌       Accession - ACiD - attention whore - axis      ▐█  ▄ █  ▓\n   █  █ ▄▌ ▐▌    Bitfellas - Blerx - bodo - booze^empire - CMUCC   ▐▌ ▐▄ █  █\n  ▀▄▀ ██▀ ▄█    DC5 - Defense Force - devilock - digital dynamite   █▄ ▀██ ▀▄▀\n     ▐█▌ █▓░ ▌    DSS - Dr. Vector - Drifters - dub mood - elko   ▐ ░▓█ ▐█▌\n   ░ ▐█▀▄ ▀█ █     Fairlight - forcer - gary^2600 - ghost^2600    █ █▀ ▄▀█▌ ░\n   ▀  ▀█▀█▄█ █▄    ghoticman - Hornet - Kewlers - Krue - noice   ▄█ █▄█▀█▀  ▀\n       ▀█  █ ▐▓█▄     nascent - MadBrain - Northern Dragons    ▄█▓▌ █  █▀\n      ░ ▐▌ ▐▌ █ ▀▀█▄ Nuance - pdx - peiseulli - Planet Earth  ▀▀ █ ▐▌ ▐▌ ░\n      ▓ █▄█▀ ▄▌   ▄█ poo-brain - Rabenauge - Quebarium - rez     ▐▄ ▀█▄█ ▓\n     ▄█▀█▀ ░ █ ▄▓▀▀   POPSy Team - RBBS -satori - SceneSat    ▀▓▄ █ ░ ▀█▀█▄\n    █▌ ▐▌  ▓ ██▀    Scoopex - sink - Space Pigs - speckdrumm    ▀██ ▓  ▐▌ ▐█\n    ▀▓▄ ▀▄█▀▀█▌     Still - sure - SVatG - Syntax Party Crew     ▐█▀▀█▄▀ ▄▓▀\n      █▀▓█▄▄ ▀█▄    tcb - tdk - TBL - TheMM - titus - TPOLM     ▄█▀ ▄▄█▓▀█\n      █▄▄▄ ▀▀▀█▓█▄▄      twka - united force - Up Rough      ▄█▓█▀▀▀ ▄▄▄█\n      █▓██▀ ▄█▀▓█▀       Vision Factory - Tomoya - X-Men      ▀█▓▀█▄ ▀██▓█\n      █▒█▌ ▐█▄ █          vrtx - yazoo - Youth Uprising         █ ▄█▌ ▐█▒█\n      █░██▄█ ▀▀██▄▄▄       ▄▄▄▄                  ▄▄▄▄       ▄▄▄██▀▀ █▄██░█\n      ▀▀▀███▄     ▀▀██▀█▄ ▀▀▀▀▀▀██▌▄▄       ▄▄▄█▀▀▀▀▀▀ ▄█▀██▀▀     ▄███▀▀▀\n          ▀███      █     ██▀▀▀█▄▄▀▀███  ███▀▀▄▄█▀▀▀██     █      ███▀\n           ▀▀▀▀▀▀▀▀ ▓ ▀▀▀▀▀▀▀  █▓▀▀█▄▄████▄▄▓▀▀█  ▀▀▀▀▀▀▀▀ ▓ ▀▀▀▀▀▀▀▀\n                    ░          ██▄▄█ ▓ █▀█  ▓▄▄█           ░ infofile by H7\n                                     ░ ▀█▀█▀▀\n          ▄     ▄  ▄   ▄   ▄       ▄    ▀▀▀     ▄   ▄          ▄\n         ▀█▀ █▀ ▄ ▀▀█ ▀█▀ ██ █▀   ▀█▀█   █▀ █▀ █▀  ▀▀█ ██▀ █▀ ▀█▀ ██ █▀\n          ▀  ▀  ▀  ▀▀  ▀  ▀▀ ▀     ▀▀▀   ▀  ▀▀ ▀▀   ▀▀ ▀▀  ▀▀  ▀  ▀▀ ▀\n                       ▄                       ▄  ▄      ▄\n                       ▄ █▄ █▀ ██ █▀ ██ ██ █▀ ██ ▀█▀ █▀ █▀\n                       ▀ ▀▀ ▀▀ ▀▀ ▀  █▀ ▀▀ ▀  ▀▀  ▀  ▀▀ ▀▀"
         },
         "image": {
           "en-US": {
@@ -7396,7 +7444,7 @@
         "id": "5bo7ELc1AMUwGCN6IN5q7C",
         "type": "Entry",
         "createdAt": "2025-04-21T00:25:29.587Z",
-        "updatedAt": "2025-04-21T00:25:29.587Z",
+        "updatedAt": "2025-04-21T22:33:03.567Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -7404,8 +7452,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 10,
-        "revision": 1,
+        "publishedVersion": 17,
+        "revision": 3,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7416,7 +7464,7 @@
       },
       "fields": {
         "title": {
-          "en-US": "Amiga demo (party version). Released at Revision 2025"
+          "en-US": " Lupus Reditus"
         },
         "type": {
           "en-US": "Demo"
@@ -7441,7 +7489,7 @@
                     },
                     "marks": [
                     ],
-                    "value": "Amiga demo (party version). Released at Revision 2025\n\nCredits: \nCode ..................... Tedy\nGraphics by .......... Biter, Sir James, Szudi, Vasyl, Witja\nMusic .................... AceMan\nSupport (Mystic) .. Easy Rider\nSupport (TRSI) ..... Norby\n\nRequirements ....... 60060, 2MB Chip/16MB Fast",
+                    "value": "First place in the Amiga demo competition at Revision 2025",
                     "nodeType": "text"
                   }
                 ],
@@ -7452,7 +7500,7 @@
           }
         },
         "infoText": {
-          "en-US": " logo\n\nlogo done by Timbral :: pouët.net is hosted on the huge scene.org servers\n\n    Log in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit \n\nLupus Reditus by Tristar & Red Sector Inc. [web] & Mystic [web]\n\n                                      ,x\n                                    ,dXXk,\n                                  ,dX'  `Xk,_     ,xXX\n                                ,dX'      `' _,xxX7**44\n                              ,dX'  _,xixiiXXX7+\"   _ X:\n                            ,dX'  ,XXXX7' )X'     .XXX7'\n                           \"'  _xX7'XX' \"\"\"     ,xXXXX\n                         _,,xy7+ ,xXX',y' .    x7' \" \"9.\n                       \"4XX   -+**XXXX7  ,     _,xxiXX'\n                    ,dX+  \"\"44XiiXXX7',x'   ,xXX7'XX\"  4k,\n                  xXX'       mxxX',7 X7   .X7'\"  X7'    'X:. .\n                   'X:,   _,dX7',xXXX7    \"     iX     ,d;' .\n                   . '::, \" X  ,XXXX7 ,'        XX   ,d:' .\n                    .. ': XXX iXXXXX,x7      i, XX ,;;' . .\n                 ..:.::.  XXX XXXXXXXXXXu+    X XX :' .:::...\n              ____  : ___. \"\"\"\"\"7'__________ ___.       ______\n            ./    \\._/   |----|__/   _     //   |----| _\\   _//_   .\n          . |.     |     |   .|      /   ./|    |.   |/  \\___   \\. .\n        : : |!     |__   |   ||         // |    |!   |      /   !| : :\n          | |        /       :|    _____/  |     .   |    _     .| |\n        - ------\\___/---\\_____|---\\\\    __-----\\_____|-----\\_____|--- -\n       __________  _____      _________/   \\  ___.    ___.       ______\n   .___\\        /_/  __/__   _\\___     \\___/./   |___/   |----| _\\   _//_\n   |    \\_    .//   _7    \\./   |/    ./   \\|        /   |.   |/  \\___ . \\.\n   |   __/   //.    :      |    |     |     |      _//   |!   |      //   |\n H7|   \\    .  |           |        //|     |      ||         |    _      |dS!\n- ------\\______|----\\______|----\\___/ |_____|---\\__|----\\_____|-----\\_____|- -\n             .  :  .  . ... .                          .  .     .\n             | :: ::: | :'                       ''':: | ::: :: |\n            _: !|:X:X | .       LUPUS REDITUS        : | X:X::. |\n            \\| !X:XI| |                                | |IX:|! |_ _ _\n            \\\\ IXIXIX |               by               | XIXIXI  | T\n             : XXIXXX |                                | |XXIXX _|\n             : XXXXXX |  .      MYSTIC & TRSI        : | XX|XXX :\n              ____.____    .              . .____ ..:: ! XXXXXX |\n        ______\\_  |   /____  ..           . |   |__  _______ `X :\n     ___\\  _   /_ : __/  _/__  :::...    .: |    _/ _\\_    /____   ____\n    _\\  \\\\//  /_|___|\\___   /.____  ::::::: |____|_/ _/   //  _/__.\\__/.\n    \\____\\/____/  _  /_______|   |______  :       \\__\\____\\___   /|    |_\n   - ------- -- _x!__ . ---- |    _/\\__/. ____  - ---- . -/_______|_____/- -\n             : XXXXXX :      |____||    |/  _/____     : ,__\n             | XXXXXX |  - -- -----|____/   \\|   /_- - | XXXXXX :\n             . XXXXXX :                 \\_________/    | XXXXXX |\n             : XX7*\"\"                                  . \"\"*4XX |\n             | !7                                            /! |\n             % !    AMIGA AGA DEMO (party version)            ! |\n             : :                                              . |\n               .    RELEASED AT REVISION MMXXV                : :_\n             |                                                  |/\n             |      Credits:                                    |\n             |                                                  |\n            _|_     Code .............. Tedy                    // /\n           \\\\_/     Graphics by ....... Biter, Sir James,      /|\n             |                          Szudi, Vasyl, Witja   /_|\n             |      Music ............. AceMan                  |\n             |      Support (MYSTiC) .. Easy Rider              |\n             |      Support (TRSi) .... Norby                   .\n             |                                                  :\n       .  _ _| .    Requirements ...... 68060                 d |\n       :  | | _k                        2MB CHIP/16MB FAST  :dX %\n            |_\"Xk                                        _:,dXX :\n             | XXIk__                                  : XXXXXX\n             | XXXXXX :     We send greetings to   . : | XXXXXX |\n             | XX7*\"\"                                  . \"\"*4XX |\n             | !7                                            4! |_\n             | !                                              ! |__\n             | :    ABYSS-CONNECTION, ACCESSION, ALCATRAZ     : | /\n            _|      ALPHA FIGHT,   AMNESTY,   ANDROMEDA,        |//\n            (_)   APPENDIX, BATMAN GROUP, BOOM!, BRAINSTORM   . /\n             | .    BRAINWAVE,  CASYOPEA,  CENSOR DESIGN,     : |\n             |      COMPLEX, COSMIC OBRS, DAMAGE, DARKAGE,    | |\n             |     DEKADENCE,  DESIRE,  DEZIGN,  DLG CREW,    % |\n             | .    DREAMWEB, ELUDE, EPHIDRENA, FAIRLIGHT,    : :\n             | :    FLOPPY, FLYING COWS INC, FOCUS DESIGN,      .\n             | !   FUTURIS, GHOSTOWN, HAUJOBB, HEMOROIDS,       :\n             : .    HOODLUM, IMPACT, INSANE, IRIS, JOKER,       |\n             .     LAMERS, LEMON, MADWIZARDS, MELON DEZIGN,   . |\n             :    MANIACS OF NOISE, MOODS PLATEAU, NAH-KOLOR, ! |\n             | . NEW GENERATION CREW, NOICE, NORFERIN, NUANCE,  |\n             | :   NUKLEUS, ODBYT DESIGN, OFFENCE, ONSLAUGHT, . |\n             | |     OXYGENE, OXYRON, POO-BRAIN, RABENAUGE,   | |\n             | %   RADWAR ENTREPRISES, RAM JAM, RAZOR 1911,   . |\n            _: :     REBELS, RESISTANCE, SCOOPEX, SKULLS,       |\n            \\|     SOFTWARE FAILURE, SPACEBALLS, SPECCY.PL,     |\n          \\ \\\\      SPREADPOINT, TALENT, THE BLACK LOTUS,      _|_\n             |\\   THE ELECTRONIC KNIGHTS, THE SOLARIS AGENCY,  \\_//\n             |_\\     THREE TIMES NO, TITAN, TPOLM, UNIQUE,    : |\n             | .       VANITY, VISION FACTORY, VOID           | |\n             | !                                              X |\n             | Xk          ...and all we forgot.            :dX |\n             | XXIk__                                    _:,dXX |\n             | XXXXXX :                                : XXXXXX |\n         ________  |,           .            .           ,|  ________\n             .  /  XIk_        .              .        _kIX  \\  .\n               // ,XXXXix,, . /                \\ . ,,xiXXXX, \\\\ !\n               /_____________//   __________   \\\\_____________\\ .\n             :         - ----/   \\\\        //   \\---- -         .\n                            / /_______ _  /____\\ \\\n             LUPUS REDITUS               /            ASCii by H7\n             MYSTIC + TRSI 2o25      \\  /          REViSION 2o25"
+          "en-US": "Amiga demo (party version). Released at Revision 2025\n\nCredits: \nCode ............... Tedy\nGraphics by ........ Biter, Sir James, Szudi, Vasyl, Witja\nMusic .............. AceMan\nSupport (Mystic) ... Easy Rider\nSupport (TRSI) ..... Norby\n\nRequirements ....... 60060, 2MB Chip/16MB Fast\n\nlogo\n\nlogo done by Timbral :: pouët.net is hosted on the huge scene.org servers\n\n    Log in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit \n\nLupus Reditus by Tristar & Red Sector Inc. [web] & Mystic [web]\n\n                                      ,x\n                                    ,dXXk,\n                                  ,dX'  `Xk,_     ,xXX\n                                ,dX'      `' _,xxX7**44\n                              ,dX'  _,xixiiXXX7+\"   _ X:\n                            ,dX'  ,XXXX7' )X'     .XXX7'\n                           \"'  _xX7'XX' \"\"\"     ,xXXXX\n                         _,,xy7+ ,xXX',y' .    x7' \" \"9.\n                       \"4XX   -+**XXXX7  ,     _,xxiXX'\n                    ,dX+  \"\"44XiiXXX7',x'   ,xXX7'XX\"  4k,\n                  xXX'       mxxX',7 X7   .X7'\"  X7'    'X:. .\n                   'X:,   _,dX7',xXXX7    \"     iX     ,d;' .\n                   . '::, \" X  ,XXXX7 ,'        XX   ,d:' .\n                    .. ': XXX iXXXXX,x7      i, XX ,;;' . .\n                 ..:.::.  XXX XXXXXXXXXXu+    X XX :' .:::...\n              ____  : ___. \"\"\"\"\"7'__________ ___.       ______\n            ./    \\._/   |----|__/   _     //   |----| _\\   _//_   .\n          . |.     |     |   .|      /   ./|    |.   |/  \\___   \\. .\n        : : |!     |__   |   ||         // |    |!   |      /   !| : :\n          | |        /       :|    _____/  |     .   |    _     .| |\n        - ------\\___/---\\_____|---\\\\    __-----\\_____|-----\\_____|--- -\n       __________  _____      _________/   \\  ___.    ___.       ______\n   .___\\        /_/  __/__   _\\___     \\___/./   |___/   |----| _\\   _//_\n   |    \\_    .//   _7    \\./   |/    ./   \\|        /   |.   |/  \\___ . \\.\n   |   __/   //.    :      |    |     |     |      _//   |!   |      //   |\n H7|   \\    .  |           |        //|     |      ||         |    _      |dS!\n- ------\\______|----\\______|----\\___/ |_____|---\\__|----\\_____|-----\\_____|- -\n             .  :  .  . ... .                          .  .     .\n             | :: ::: | :'                       ''':: | ::: :: |\n            _: !|:X:X | .       LUPUS REDITUS        : | X:X::. |\n            \\| !X:XI| |                                | |IX:|! |_ _ _\n            \\\\ IXIXIX |               by               | XIXIXI  | T\n             : XXIXXX |                                | |XXIXX _|\n             : XXXXXX |  .      MYSTIC & TRSI        : | XX|XXX :\n              ____.____    .              . .____ ..:: ! XXXXXX |\n        ______\\_  |   /____  ..           . |   |__  _______ `X :\n     ___\\  _   /_ : __/  _/__  :::...    .: |    _/ _\\_    /____   ____\n    _\\  \\\\//  /_|___|\\___   /.____  ::::::: |____|_/ _/   //  _/__.\\__/.\n    \\____\\/____/  _  /_______|   |______  :       \\__\\____\\___   /|    |_\n   - ------- -- _x!__ . ---- |    _/\\__/. ____  - ---- . -/_______|_____/- -\n             : XXXXXX :      |____||    |/  _/____     : ,__\n             | XXXXXX |  - -- -----|____/   \\|   /_- - | XXXXXX :\n             . XXXXXX :                 \\_________/    | XXXXXX |\n             : XX7*\"\"                                  . \"\"*4XX |\n             | !7                                            /! |\n             % !    AMIGA AGA DEMO (party version)            ! |\n             : :                                              . |\n               .    RELEASED AT REVISION MMXXV                : :_\n             |                                                  |/\n             |      Credits:                                    |\n             |                                                  |\n            _|_     Code .............. Tedy                    // /\n           \\\\_/     Graphics by ....... Biter, Sir James,      /|\n             |                          Szudi, Vasyl, Witja   /_|\n             |      Music ............. AceMan                  |\n             |      Support (MYSTiC) .. Easy Rider              |\n             |      Support (TRSi) .... Norby                   .\n             |                                                  :\n       .  _ _| .    Requirements ...... 68060                 d |\n       :  | | _k                        2MB CHIP/16MB FAST  :dX %\n            |_\"Xk                                        _:,dXX :\n             | XXIk__                                  : XXXXXX\n             | XXXXXX :     We send greetings to   . : | XXXXXX |\n             | XX7*\"\"                                  . \"\"*4XX |\n             | !7                                            4! |_\n             | !                                              ! |__\n             | :    ABYSS-CONNECTION, ACCESSION, ALCATRAZ     : | /\n            _|      ALPHA FIGHT,   AMNESTY,   ANDROMEDA,        |//\n            (_)   APPENDIX, BATMAN GROUP, BOOM!, BRAINSTORM   . /\n             | .    BRAINWAVE,  CASYOPEA,  CENSOR DESIGN,     : |\n             |      COMPLEX, COSMIC OBRS, DAMAGE, DARKAGE,    | |\n             |     DEKADENCE,  DESIRE,  DEZIGN,  DLG CREW,    % |\n             | .    DREAMWEB, ELUDE, EPHIDRENA, FAIRLIGHT,    : :\n             | :    FLOPPY, FLYING COWS INC, FOCUS DESIGN,      .\n             | !   FUTURIS, GHOSTOWN, HAUJOBB, HEMOROIDS,       :\n             : .    HOODLUM, IMPACT, INSANE, IRIS, JOKER,       |\n             .     LAMERS, LEMON, MADWIZARDS, MELON DEZIGN,   . |\n             :    MANIACS OF NOISE, MOODS PLATEAU, NAH-KOLOR, ! |\n             | . NEW GENERATION CREW, NOICE, NORFERIN, NUANCE,  |\n             | :   NUKLEUS, ODBYT DESIGN, OFFENCE, ONSLAUGHT, . |\n             | |     OXYGENE, OXYRON, POO-BRAIN, RABENAUGE,   | |\n             | %   RADWAR ENTREPRISES, RAM JAM, RAZOR 1911,   . |\n            _: :     REBELS, RESISTANCE, SCOOPEX, SKULLS,       |\n            \\|     SOFTWARE FAILURE, SPACEBALLS, SPECCY.PL,     |\n          \\ \\\\      SPREADPOINT, TALENT, THE BLACK LOTUS,      _|_\n             |\\   THE ELECTRONIC KNIGHTS, THE SOLARIS AGENCY,  \\_//\n             |_\\     THREE TIMES NO, TITAN, TPOLM, UNIQUE,    : |\n             | .       VANITY, VISION FACTORY, VOID           | |\n             | !                                              X |\n             | Xk          ...and all we forgot.            :dX |\n             | XXIk__                                    _:,dXX |\n             | XXXXXX :                                : XXXXXX |\n         ________  |,           .            .           ,|  ________\n             .  /  XIk_        .              .        _kIX  \\  .\n               // ,XXXXix,, . /                \\ . ,,xiXXXX, \\\\ !\n               /_____________//   __________   \\\\_____________\\ .\n             :         - ----/   \\\\        //   \\---- -         .\n                            / /_______ _  /____\\ \\\n             LUPUS REDITUS               /            ASCii by H7\n             MYSTIC + TRSI 2o25      \\  /          REViSION 2o25"
         },
         "image": {
           "en-US": {
@@ -7508,6 +7556,60 @@
         },
         "pouetUrl": {
           "en-US": "https://www.pouet.net/prod.php?which=103978"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "2XPQd5yjppo7ytq33OSyTa",
+        "type": "Entry",
+        "createdAt": "2025-04-21T20:11:13.256Z",
+        "updatedAt": "2025-04-21T20:11:13.256Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "handle": {
+          "en-US": "WoDK"
+        },
+        "avatar": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "34ixz5Iu6Wg0dD4c38Voox"
+            }
+          }
+        },
+        "memberStatus": {
+          "en-US": "inactive"
         }
       }
     }
@@ -12780,7 +12882,7 @@
         "id": "1FACcSLodpBr6G9ez4Owq0",
         "type": "Asset",
         "createdAt": "2025-04-21T00:15:24.103Z",
-        "updatedAt": "2025-04-21T00:15:24.103Z",
+        "updatedAt": "2025-04-21T22:32:21.799Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -12788,15 +12890,12 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 4,
-        "revision": 1
+        "publishedVersion": 10,
+        "revision": 2
       },
       "fields": {
         "title": {
           "en-US": " Lupus Reditus"
-        },
-        "description": {
-          "en-US": ""
         },
         "file": {
           "en-US": {
@@ -12809,6 +12908,58 @@
               }
             },
             "fileName": "Lupus Reditus.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "34ixz5Iu6Wg0dD4c38Voox",
+        "type": "Asset",
+        "createdAt": "2025-04-21T20:10:55.541Z",
+        "updatedAt": "2025-04-21T20:10:55.541Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Wodk Amiga"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/l8kv2ckiiqjb/34ixz5Iu6Wg0dD4c38Voox/db4206c1bd4aaccf3d3b8eb1d0c771d1/Wodk_Amiga.jpg",
+            "details": {
+              "size": 392888,
+              "image": {
+                "width": 2013,
+                "height": 2015
+              }
+            },
+            "fileName": "Wodk Amiga.jpg",
             "contentType": "image/jpeg"
           }
         }
