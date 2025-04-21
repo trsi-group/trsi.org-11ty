@@ -4,7 +4,7 @@
       <img src="{{ card.image | replace: '/img/', '/img/card/' }}" alt="...">
     </figure>
   </div>
-  <div class="card-content">
+  <div class="card-content bounce-hover">
     <p class="subtitle is-6">{{ card.type }}</p>
     <p class="title is-4">{{ card.title }}</p>
     {%- if card.description %}<p class="">{{ card.description }}</p>{%- endif %}

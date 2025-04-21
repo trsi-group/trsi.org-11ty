@@ -1,10 +1,6 @@
 {
   "nav_items": [
     {
-      "title": "Roots",
-      "url": "/"
-    },
-    {
       "title": "Productions",
       "url": "/productions"
     },

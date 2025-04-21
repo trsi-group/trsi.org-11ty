@@ -6038,7 +6038,7 @@
         "id": "Ro5XPxs9o1YQDfCDrPul3",
         "type": "Entry",
         "createdAt": "2025-01-24T17:45:20.569Z",
-        "updatedAt": "2025-04-20T18:11:59.947Z",
+        "updatedAt": "2025-04-21T20:08:43.880Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6046,8 +6046,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 32,
-        "revision": 4,
+        "publishedVersion": 37,
+        "revision": 5,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6066,32 +6066,11 @@
         "platform": {
           "en-US": "Other Systems"
         },
-        "description": {
-          "en-US": {
-            "nodeType": "document",
-            "data": {
-            },
-            "content": [
-              {
-                "nodeType": "paragraph",
-                "data": {
-                },
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME            : ........................................... Beams of Light\n    PLATFORM                    : ........................................... Oscilloscope\n    ORGA                              : ........................................... iRATA\n    MUSIC BY                       : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................ Walkman \n    CODE BY                         : ........................................... Luis \n    MUSIC BY                       : ........................................... hArDy \n    RELEASE DATE              : ........................................... june 2014\n    RELEASE PARTY            : ........................................... Party 2014\n    COMPETITION               : .......................................... Wild Demo ",
-                    "marks": [
-                    ],
-                    "data": {
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        },
         "releaseDate": {
           "en-US": "2014-06-14"
+        },
+        "infoText": {
+          "en-US": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME      : ........................................... Beams of Light\n    PLATFORM          : ........................................... Oscilloscope\n    ORGA              : ........................................... iRATA\n    MUSIC BY          : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................... Walkman \n    CODE BY           : ........................................... Luis \n    MUSIC BY          : ........................................... hArDy \n    RELEASE DATE      : ........................................... june 2014\n    RELEASE PARTY     : ........................................... Party 2014\n    COMPETITION       : ........................................... Wild Demo "
         },
         "image": {
           "en-US": {
@@ -6151,7 +6130,7 @@
         "id": "3sMboNwulQw2v4ZfhkYUqQ",
         "type": "Entry",
         "createdAt": "2025-01-24T18:28:01.787Z",
-        "updatedAt": "2025-04-20T18:19:15.166Z",
+        "updatedAt": "2025-04-21T20:08:43.844Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6159,8 +6138,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 35,
-        "revision": 4,
+        "publishedVersion": 39,
+        "revision": 5,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6179,32 +6158,11 @@
         "platform": {
           "en-US": "Other Systems"
         },
-        "description": {
-          "en-US": {
-            "data": {
-            },
-            "content": [
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.\n1st place in OHP Demo competition @ Party 2012\n\n    RELEASE NAME : ........................................... OHP MEGA DEMO 9000\n    PLATFORM         : ........................................... Overhead Projector\n    MUSIC BY            : ........................................... CONS\n    OTHER BY            : ........................................... Luis \n    RELEASE DATE   : ........................................... june 2012\n    RELEASE PARTY : ........................................... Party 2012\n    COMPETITION    : ........................................... OHP Demo ",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
         "releaseDate": {
           "en-US": "2012-06-16"
+        },
+        "infoText": {
+          "en-US": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.\n1st place in OHP Demo competition @ Party 2012\n\n    RELEASE NAME  : ........................................... OHP MEGA DEMO 9000\n    PLATFORM      : ........................................... Overhead Projector\n    MUSIC BY      : ........................................... CONS\n    OTHER BY      : ........................................... Luis \n    RELEASE DATE  : ........................................... june 2012\n    RELEASE PARTY : ........................................... Party 2012\n    COMPETITION   : ........................................... OHP Demo "
         },
         "image": {
           "en-US": {
@@ -6503,7 +6461,7 @@
         "id": "gPiIXcWPFjp2vniyif5uK",
         "type": "Entry",
         "createdAt": "2025-01-31T20:05:49.854Z",
-        "updatedAt": "2025-04-20T18:25:52.246Z",
+        "updatedAt": "2025-04-21T20:08:43.814Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6511,8 +6469,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 31,
-        "revision": 2,
+        "publishedVersion": 35,
+        "revision": 3,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6531,32 +6489,11 @@
         "platform": {
           "en-US": "Other Systems"
         },
-        "description": {
-          "en-US": {
-            "data": {
-            },
-            "content": [
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest\n1st place in the oldskool demo competition @ Nordlicht 2013\n\n    RELEASE NAME : ..................... aTaRSI (2013)\n    PLATFORM         : ..................... Atari VCS\n    CODE BY              : ..................... entusi\n    GRAPHICS BY     : ..................... DeeKay/Cst\n    MUSIC BY            : ..................... Tjopen\n    RELEASE DATE   : ..................... july 2013\n    RELEASE PARTY : .................... Nordlicht 2013 ",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
         "releaseDate": {
           "en-US": "2013-07-05"
+        },
+        "infoText": {
+          "en-US": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest\n1st place in the oldskool demo competition @ Nordlicht 2013\n\n    RELEASE NAME  : ..................... aTaRSI (2013)\n    PLATFORM      : ..................... Atari VCS\n    CODE BY       : ..................... entusi\n    GRAPHICS BY   : ..................... DeeKay/Cst\n    MUSIC BY      : ..................... Tjopen\n    RELEASE DATE  : ..................... july 2013\n    RELEASE PARTY : ..................... Nordlicht 2013 "
         },
         "image": {
           "en-US": {
@@ -6991,7 +6928,7 @@
         "id": "7r5uxMk1YLqciC7qJU33ef",
         "type": "Entry",
         "createdAt": "2025-04-20T18:46:46.259Z",
-        "updatedAt": "2025-04-20T20:56:51.951Z",
+        "updatedAt": "2025-04-21T20:08:43.778Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -6999,8 +6936,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "revision": 3,
+        "publishedVersion": 22,
+        "revision": 4,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7022,32 +6959,8 @@
         "releaseDate": {
           "en-US": "2012-04-01"
         },
-        "description": {
-          "en-US": {
-            "data": {
-            },
-            "content": [
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge\n2nd place in the wild demo competition @ Revision 2012\n\n    RELEASE NAME  : .................... Funky Fresh\n    PLATFORM          : ..................... wild demo / Java\n    CODE BY              : ..................... spotter^TRSi \n    CODE BY              : ..................... Luids^TRSi \n    GRAPHICS BY     : ..................... alien^PDX\n    GRAPHICS BY     : ..................... Forcer\n    GRAPHICS BY      : ..................... WoDK\n    OTHER (IDEA)      : ..................... bodo^rab\n    SUPPORT BY        : ..................... Ramon B5 \n    RELEASE DATE    : ..................... april 2012\n    RELEASE PARTY : .....................  Revision 2012\n    COMPETITION    : ..............,....... wild demo ",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
         "infoText": {
-          "en-US": "logo\nlogo done by TSA_CoRe :: vote for the logos you like and be a lamah !\n\nLog in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit\nFunky Fresh by Tristar & Red Sector Inc. [web] & Desire [web] & Rabenauge [web]\n\n                 _____________________________________________________\n                 \\__    _    / _   \\_  /  _______  _    / _  ___  _   \\\n                    |    \\__/ _/  _/   \\____   \\    \\__/  |___\\  _/  _/\n                    |     \\   \\    \\_  |   \\    \\    \\   ____/ \\ \\    \\_\n            DZG/G^S |_____/____\\    /__|________/____/____|____/__\\    /\n                                \\  /                               \\  /\n                                 \\/        AND                      \\/\n       _______________________    \\  _______________________________/____________\n       \\__  _   \\_  ________  \\    \\/  ______  _____  _    /  _    / .  ___  _   \\ \n        |  _/  _/   ._)__  |   \\  ._\\____   \\  ._)__   \\__/_   \\__/  |   \\  _/  _/\n        |  \\    \\_  |    \\ |    \\ |     \\    \\ |    \\  |    \\   \\    |    \\ \\    \\_\n        |___\\    /_______/______/ |__________/______/_______/___/_________/__\\    /\n             \\  /\\                                                           /\\  /\n              \\/  \\         INCORPORATED          THE SLEEPING GODS         /  \\/      \n              /\\ O \\_______________________________________________________/ O /\\\n             /  \\  /                                                       \\  /  \\\n            /    \\/         L  U  I  S       G  O  N  Z  A  L  E  Z         \\/    \\\n         ..O      \\         *     LOBSTER [AT] LUIS [DOT] NET     *         /      O..\n           :       \\        *   W W W  .  L  U   I  S  .  N E T   *        /       :\n                    \\_____________________________________________________/ \n                    /                                                     \\\n                   /\\       F  O  R  C  E  R       D  E  S  I  R  E       /\\\n           .  /\\  /  \\      *  MICHAELRYTEL [AT] GMAIL [DOT] COM  *      /  \\  /\\  .\n        ...:_/  \\/ o  \\_________________________________________________/  o \\/  \\_:...\n           : \\  /\\  O /                                                 \\ O  /\\  / :\n              \\/  \\  /      T R S   N   R E D   S E C T O R   I N C      \\  /  \\/\n                   \\/       *     SPOTTER [AT] TRSI [DOT] DE      *       \\/\n                    \\       *     W W W  .   T R S I  .  D E      *       /      \n              .      \\___________________________________________________/      .\n           ...o      /                                                   \\      o...\n               \\    /       S E B A S T I A N   I   H A R T M A N N       \\    /\n                \\  /        *      WWW . BATTLECOMMAND . ORG      *        \\  /\n                 \\/_________________________________________________________\\/\n                 /\\                                                         /\\\n                /  \\        B  O  G  D  A  N             R  A  D  U        /  \\ \n            ..:O:.  \\       * W W W  .  LOWPOLYWORKSHOP  .  C O M *       /  .:O:..\n               :     \\___________________________________________________/     :\n               .     /\\                                                 /\\     .\n                    /  \\    USE YOUR CONTROLLER OR REMOTE TO TOGGLE    /  \\\n                   /    \\   T H E   INTERACTIVE   D E M O   EFFECTS   /    \\\n                  /      \\___________________________________________/      \\\n                 /  BOS  /                                           \\  NYC  \\\n                 \\      /   1  9  8  5                   2  0  1  2   \\      /\n                  \\    /    R  E  D    S  E  C  T  O  R     I  N  C    \\    /\n                  /\\  /     1  9  9  0                   2  0  1  2     \\  /\\\n                 /  \\/      TRISTAR  AND  RED  SECTOR  INCORPORATED      \\/  \\\n         .      /    \\      1  9  9  0                   2  0  1  2      /    \\      .\n         :     /  /\\  \\     *        D   E   S   I   R   E        *     /  /\\  \\     :            \n       ..o.___/  /  \\  \\_______________________________________________/  /  \\  \\___.o..\n         :    \\  \\  /  /                                               \\  \\  /  /    :\n               \\  \\/  /     RELEASE COMPO : R E V I S I O N    WILD     \\  \\/  /\n                \\    /      RELEASE NAME  : F U N K Y     F R E S H      \\    /\n                 \\  /       RELEASE DATE  : APRIL TWOTHOUSANDTWELVE       \\  /\n                 /\\/        DEV PLATFORM  : BLU  RAY  ON  PS  THREE        \\/\\\n            .   /  \\        ADD PLATFORMS : B L U   R A Y   PLAYERS        /  \\   .\n        ...::__/    \\       PRG LANGUAGE  : JAVA MICRO EDITION  TWO       /    \\__::...\n            :  \\    /       CODE N MANFAC : LUIS   ^    D E S I R E       \\    /  :\n            .   \\  /        OPTIC ORG NFO : SPOTTER ^ T R S I ^ V F        \\  /   .\n                 \\/         STILL PAINTS  : F O R C E R  ^   DESIRE         \\/  \n                 /\\         SOUNDTRACK    : BATTLE    C O M M A N D         /\\   \n                /  \\        THR D MODELS  : W O D K  ^   T  R  S  I        /  \\       \n         .     /    \\       ADD GRAPHICS  : ALIEN   ^   D E S I R E       /    \\     .\n         :    /  BR  \\      ORIGINAL IDEA : B O D O   ^   RABENAUGE      /  BR  \\    :\n       .:O:._/   OO   \\_________________________________________________/   OO   \\_.:O:.\n         :   \\  KLI   /                                                 \\   KL   /   :\n              \\  NE  /      FOR THOSE ABOUT TO ROCK  WE SALUTE  YOU      \\  YN  /\n               \\    /       ACS * BENSON * CROME * CHROMAG * CONMAN       \\    /\n                \\  /        DARKLITE  * DIGIMAN * DOC  D  * DUBMOOD        \\  /\n            .    \\/         DHS * DOUBLE TROUBLE   *  EL TONMEISTER         \\/    .\n          ..o    /\\         FAIRLIGHT  * GLXBLT * ITALIAN BAD  BOYS         /\\    o..\n             \\  /  \\        IRATA * JESPER KYD * JESTER * MAD HI AS        /  \\  /\n              \\/    \\       MAKTONE * PANTALOON * PEISELULLI * REBB       /    \\/\n              /\\    /       IROKOS * RAZOR  NINETEEN ELEVEN   * REZ       \\    /\\\n             /  \\  /        ROMEO KNIGHT  *  RAVE  NETWORK OVERSCAN        \\  /  \\\n            /    \\/         RESPONSE * SAL ONE * TEIS * TEAM POKEME         \\/    \\\n           /   .  \\         STREET TUFF * THE SOUND WAVERS  * TITAN         /  .   \\\n          /  .OO   \\        SMASH *  TIM * VISION FACTORY  * WILLBE        /   OO.  \\\n         /\\    :   /\\       ADDITIONAL     GREETINGS     TO     THE       /\\   :    /\\\n        /  \\   .  /  \\      NORTH      AMERICAN      DEMO     SCENE      /  \\  .   /  \\\n       /    \\    /    \\_________________________________________________/    \\    /    \\\n       \\     \\  /      \\                                               /      \\  /     /\n        \\     \\/     .  \\        .          .          .     .        / .      \\/     /\n         \\        __/l___\\    __/l____   __/l____   __/|  __/l____   /_/l____        /  \n          \\      /  ____  \\  /        \\_/  __    \\_/   | /  __    \\_/        \\_     /   \n           \\    /      |   \\/    l_____/    l_____/    ¦/    |     /    l_____/    /\n            \\  /       ¦    \\    ___/  \\______    \\    :     ¦    /     ___/  \\   /     \n             \\/        :     \\_  ¦      \\_  ¦      \\_  ¦     ____/      ¦      \\ /     \n              \\               /  :       /  :       /  |     ¦   \\      :       /     \n               \\________     /_____     /_____     /___|_____|    \\_______     /       \n                      \\_____/    \\_____/    \\_____/          l_____/ inf\\_____/        \n"
+          "en-US": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge\n2nd place in the wild demo competition @ Revision 2012\n\n    RELEASE NAME  : ..................... Funky Fresh\n    PLATFORM      : ..................... wild demo / Java\n    CODE BY       : ..................... spotter^TRSi \n    CODE BY       : ..................... Luids^TRSi \n    GRAPHICS BY   : ..................... alien^PDX\n    GRAPHICS BY   : ..................... Forcer\n    GRAPHICS BY   : ..................... WoDK\n    OTHER (IDEA)  : ..................... bodo^rab\n    SUPPORT BY    : ..................... Ramon B5 \n    RELEASE DATE  : ..................... april 2012\n    RELEASE PARTY : ..................... Revision 2012\n    COMPETITION   : .............,....... wild demo \n\nlogo\nlogo done by TSA_CoRe :: vote for the logos you like and be a lamah !\n\nLog in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit\nFunky Fresh by Tristar & Red Sector Inc. [web] & Desire [web] & Rabenauge [web]\n\n                 _____________________________________________________\n                 \\__    _    / _   \\_  /  _______  _    / _  ___  _   \\\n                    |    \\__/ _/  _/   \\____   \\    \\__/  |___\\  _/  _/\n                    |     \\   \\    \\_  |   \\    \\    \\   ____/ \\ \\    \\_\n            DZG/G^S |_____/____\\    /__|________/____/____|____/__\\    /\n                                \\  /                               \\  /\n                                 \\/        AND                      \\/\n       _______________________    \\  _______________________________/____________\n       \\__  _   \\_  ________  \\    \\/  ______  _____  _    /  _    / .  ___  _   \\ \n        |  _/  _/   ._)__  |   \\  ._\\____   \\  ._)__   \\__/_   \\__/  |   \\  _/  _/\n        |  \\    \\_  |    \\ |    \\ |     \\    \\ |    \\  |    \\   \\    |    \\ \\    \\_\n        |___\\    /_______/______/ |__________/______/_______/___/_________/__\\    /\n             \\  /\\                                                           /\\  /\n              \\/  \\         INCORPORATED          THE SLEEPING GODS         /  \\/      \n              /\\ O \\_______________________________________________________/ O /\\\n             /  \\  /                                                       \\  /  \\\n            /    \\/         L  U  I  S       G  O  N  Z  A  L  E  Z         \\/    \\\n         ..O      \\         *     LOBSTER [AT] LUIS [DOT] NET     *         /      O..\n           :       \\        *   W W W  .  L  U   I  S  .  N E T   *        /       :\n                    \\_____________________________________________________/ \n                    /                                                     \\\n                   /\\       F  O  R  C  E  R       D  E  S  I  R  E       /\\\n           .  /\\  /  \\      *  MICHAELRYTEL [AT] GMAIL [DOT] COM  *      /  \\  /\\  .\n        ...:_/  \\/ o  \\_________________________________________________/  o \\/  \\_:...\n           : \\  /\\  O /                                                 \\ O  /\\  / :\n              \\/  \\  /      T R S   N   R E D   S E C T O R   I N C      \\  /  \\/\n                   \\/       *     SPOTTER [AT] TRSI [DOT] DE      *       \\/\n                    \\       *     W W W  .   T R S I  .  D E      *       /      \n              .      \\___________________________________________________/      .\n           ...o      /                                                   \\      o...\n               \\    /       S E B A S T I A N   I   H A R T M A N N       \\    /\n                \\  /        *      WWW . BATTLECOMMAND . ORG      *        \\  /\n                 \\/_________________________________________________________\\/\n                 /\\                                                         /\\\n                /  \\        B  O  G  D  A  N             R  A  D  U        /  \\ \n            ..:O:.  \\       * W W W  .  LOWPOLYWORKSHOP  .  C O M *       /  .:O:..\n               :     \\___________________________________________________/     :\n               .     /\\                                                 /\\     .\n                    /  \\    USE YOUR CONTROLLER OR REMOTE TO TOGGLE    /  \\\n                   /    \\   T H E   INTERACTIVE   D E M O   EFFECTS   /    \\\n                  /      \\___________________________________________/      \\\n                 /  BOS  /                                           \\  NYC  \\\n                 \\      /   1  9  8  5                   2  0  1  2   \\      /\n                  \\    /    R  E  D    S  E  C  T  O  R     I  N  C    \\    /\n                  /\\  /     1  9  9  0                   2  0  1  2     \\  /\\\n                 /  \\/      TRISTAR  AND  RED  SECTOR  INCORPORATED      \\/  \\\n         .      /    \\      1  9  9  0                   2  0  1  2      /    \\      .\n         :     /  /\\  \\     *        D   E   S   I   R   E        *     /  /\\  \\     :            \n       ..o.___/  /  \\  \\_______________________________________________/  /  \\  \\___.o..\n         :    \\  \\  /  /                                               \\  \\  /  /    :\n               \\  \\/  /     RELEASE COMPO : R E V I S I O N    WILD     \\  \\/  /\n                \\    /      RELEASE NAME  : F U N K Y     F R E S H      \\    /\n                 \\  /       RELEASE DATE  : APRIL TWOTHOUSANDTWELVE       \\  /\n                 /\\/        DEV PLATFORM  : BLU  RAY  ON  PS  THREE        \\/\\\n            .   /  \\        ADD PLATFORMS : B L U   R A Y   PLAYERS        /  \\   .\n        ...::__/    \\       PRG LANGUAGE  : JAVA MICRO EDITION  TWO       /    \\__::...\n            :  \\    /       CODE N MANFAC : LUIS   ^    D E S I R E       \\    /  :\n            .   \\  /        OPTIC ORG NFO : SPOTTER ^ T R S I ^ V F        \\  /   .\n                 \\/         STILL PAINTS  : F O R C E R  ^   DESIRE         \\/  \n                 /\\         SOUNDTRACK    : BATTLE    C O M M A N D         /\\   \n                /  \\        THR D MODELS  : W O D K  ^   T  R  S  I        /  \\       \n         .     /    \\       ADD GRAPHICS  : ALIEN   ^   D E S I R E       /    \\     .\n         :    /  BR  \\      ORIGINAL IDEA : B O D O   ^   RABENAUGE      /  BR  \\    :\n       .:O:._/   OO   \\_________________________________________________/   OO   \\_.:O:.\n         :   \\  KLI   /                                                 \\   KL   /   :\n              \\  NE  /      FOR THOSE ABOUT TO ROCK  WE SALUTE  YOU      \\  YN  /\n               \\    /       ACS * BENSON * CROME * CHROMAG * CONMAN       \\    /\n                \\  /        DARKLITE  * DIGIMAN * DOC  D  * DUBMOOD        \\  /\n            .    \\/         DHS * DOUBLE TROUBLE   *  EL TONMEISTER         \\/    .\n          ..o    /\\         FAIRLIGHT  * GLXBLT * ITALIAN BAD  BOYS         /\\    o..\n             \\  /  \\        IRATA * JESPER KYD * JESTER * MAD HI AS        /  \\  /\n              \\/    \\       MAKTONE * PANTALOON * PEISELULLI * REBB       /    \\/\n              /\\    /       IROKOS * RAZOR  NINETEEN ELEVEN   * REZ       \\    /\\\n             /  \\  /        ROMEO KNIGHT  *  RAVE  NETWORK OVERSCAN        \\  /  \\\n            /    \\/         RESPONSE * SAL ONE * TEIS * TEAM POKEME         \\/    \\\n           /   .  \\         STREET TUFF * THE SOUND WAVERS  * TITAN         /  .   \\\n          /  .OO   \\        SMASH *  TIM * VISION FACTORY  * WILLBE        /   OO.  \\\n         /\\    :   /\\       ADDITIONAL     GREETINGS     TO     THE       /\\   :    /\\\n        /  \\   .  /  \\      NORTH      AMERICAN      DEMO     SCENE      /  \\  .   /  \\\n       /    \\    /    \\_________________________________________________/    \\    /    \\\n       \\     \\  /      \\                                               /      \\  /     /\n        \\     \\/     .  \\        .          .          .     .        / .      \\/     /\n         \\        __/l___\\    __/l____   __/l____   __/|  __/l____   /_/l____        /  \n          \\      /  ____  \\  /        \\_/  __    \\_/   | /  __    \\_/        \\_     /   \n           \\    /      |   \\/    l_____/    l_____/    ¦/    |     /    l_____/    /\n            \\  /       ¦    \\    ___/  \\______    \\    :     ¦    /     ___/  \\   /     \n             \\/        :     \\_  ¦      \\_  ¦      \\_  ¦     ____/      ¦      \\ /     \n              \\               /  :       /  :       /  |     ¦   \\      :       /     \n               \\________     /_____     /_____     /___|_____|    \\_______     /       \n                      \\_____/    \\_____/    \\_____/          l_____/ inf\\_____/        \n"
         },
         "image": {
           "en-US": {
@@ -7119,7 +7032,7 @@
         "id": "keVdVMd4RvczQmovaReo9",
         "type": "Entry",
         "createdAt": "2025-04-20T20:36:22.795Z",
-        "updatedAt": "2025-04-20T20:55:22.487Z",
+        "updatedAt": "2025-04-21T20:08:43.740Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -7127,8 +7040,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 16,
-        "revision": 2,
+        "publishedVersion": 21,
+        "revision": 3,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7150,32 +7063,8 @@
         "releaseDate": {
           "en-US": "2013-03-01"
         },
-        "description": {
-          "en-US": {
-            "data": {
-            },
-            "content": [
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "Jupiter & Beyond by St. Vincent And The Grenadines & Tristar and Red Sector Inc.\n3rd place in the wild demo competition @ Revision 2013\n\n    RELEASE NAME       : .................... Jupiter & Beyond\n    PLATFORM               : .......,.............. wild demo\n    CODE BY                    : ..................... WAHa_06x36 \n    CODE BY                    : ..................... halcy \n    CODE & MUSIC BY   : ..................... coda\n    GRAPHICS BY           : ..................... Forcer\n    RELEASE DATE         : ..................... march 2013\n    RELEASE PARTY       : ....................  Revision 2013\n    COMPETITION          : .............,....... wild demo ",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
         "infoText": {
-          "en-US": "logo\nlogo done by _H2o_ :: vote for the logos you like and be a lamah !\n\nLog in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit\nJupiter & Beyond by St. Vincent And The Grenadines [web] & Tristar & Red Sector Inc. [web]\n SVatG presents                 █████████████               at Revision 2013\n *~-~-~--~-~-~*         █████████████████████████████       *~-~-~-~--~-~-~*\n                    ██████████████████▓▓▓▓▓▓▓███████████                    \n                  █████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████               \n               ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓             \n             ███████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           \n           █   █████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓         \n          ██   ████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒  ▒▒▒▓▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓       \n        ████   ██   ▓▒▒  ▒▒▒        ▒▒▒   ▒▒▒      ▒▒▒      ▒▒▒▒▓▓          \n        ████   ▓▓   ▓▓▒  ▒▒▒  ▒▒▒▒  ▒▒▒   ▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒  ▒▒▒▒  ▓▓▓▓     \n       █  ██   ▓▓   ▓▓▒  ▒▒▒        ▒▒▒   ▒▒▒▒▒  ▒▒▒▒▒       ▒▒▒▒  ▓▓▓▓▓▓   \n      ██      ▓▓▓        ▒▒▒  ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒  ▓▓▓▓▓▓▓  \n    ██████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒  ▒▒▒▒▒█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒      ▒▒▒▒▒▒▒▒▒▒▓▓▓  \n   █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒███▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒▒▓▓▓▓▓▓ \n   █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▒▒▒▒█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n   █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n  ███████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▓▓▓▓▓▓▓\n  ██████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒███████▒▒░▒▒███░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓\n  ██████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒███▒███████░░░██░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓\n  █████▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒████▒▒▒▒██████▒██░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓\n  ███████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒██████▒▒▒▒▒▒░░▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓\n   ████████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒█████▒▒▒▒▒▒▒██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓\n   ███████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒███████▒▒▒▒██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓\n    ████         ▓▓▓▓▓▓▓▓▓▓▓▒▒▒█████████▒▒▒▒███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░  ▓▓▓▓\n    ████   ▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░  ▓▓▓\n     ███   █▓▓▓  ▓▓▓      ▒▒▒▒   ▒▒▒▒   ▒▒▒      ▒▒▒▒       ▒▒▒▒▒      ▓▓\n      ██         ▓▓▓  ▓▓▓  ▓▓▓   ▒▒▒▒   ▒▒   ▒▒   ▒▒   ▒▒▒  ▒▒▒  ▒▒▓   ▓▓\n       █   ████  ▓▓▓       ▓▓▓          ▒▒   ▒▒   ▒▒   ▒▒▒  ▒▒▒  ▒▓▓\n                 ▓▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒▒▒      ▓▓▓   ▓▓▓  ▓▓▓▓        \n          ████████▓▓▓      ▓▓▓▓         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██  \n            █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███      \n              ████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███\n                ████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███\n                   ██████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████\n                       ██████████████▓▓▓▓▓▓▓▓▓▓▓████████\n                            ███████████████████████\n\nAnother breathtaking SVatG production, this time with significantly less broken\nVGA signal, significantly improved music player and better ANSI in the nfo.\n\nRunning on the stm32f4 discovery ARM-based microcontroller board, with 168 MHz\nof raw power, yet less ram than an A1000 (192 kilobytes, 64 kilobytes after\nreserving some memory for framebuffers).\n\nTo run, just flash it to your device, connect a VGA adapter made according to\nour included schematic (It's just a bunch of resistors, the VGA is bitbanged),\nturn on the power and watch it go.\n\nAlso brand-new from SVatG: A version of Peridiummmmm with fixed VGA! One hundred\npercent less noise in the video signal! Greatly improved visuals! No recording,\nthough - run it yourself, or ask us at a party! Get it at:\n\n  http://aka-san.halcy.de/revision2013/peridiummmm-new.zip\n  http://aka-san.halcy.de/revision2013/peridiummmm-src-new.zip\n\nLook forward to a possible source code release and more fantastic SVatG releases\nin the future.\n\n SVatG are:\n  code - halcy, ryx, WAHa_06x36, coda\n  sound - coda\n\n TRSi provided:\n  gfx & mad style - Forcer\n                                                    ▓████\n                          http://demogroup.vc/      █████\n                                                    █████\n      ██████████▓▓████       █████  ▒██████████████▓█████████▓  █████████████▒\n      ████████████████       █████ ███████████████████████████░███████████████▓\n      █████▒▒▒▒▒ █████       █████ █████▒▒▒▒▒▒▓██████████▒▒▒▒ █████▓▒▒▒▒▒▒█████\n███████████      █████████████████ ██████████████████████     ░████████████████\n███████████      ████████████████   █████████████████████      ░███████████████\n░▒▒▒▒▒▒▒▒▒        ▒▒▒▒▒▒▒▒▒▒▒▒░       ░▒▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒░        ░░▒▒▒▒▒▒▒█████\n                                                              ▓████████████████\n      \"Besser als herkoemmliche Produkte.\"                    ████████████████\n"
+          "en-US": "Jupiter & Beyond by St. Vincent And The Grenadines & Tristar and Red Sector Inc.\n3rd place in the wild demo competition @ Revision 2013\n\n    RELEASE NAME    : ..................... Jupiter & Beyond\n    PLATFORM        : ......,.............. wild demo\n    CODE BY         : ..................... WAHa_06x36 \n    CODE BY         : ..................... halcy \n    CODE & MUSIC BY : ..................... coda\n    GRAPHICS BY     : ..................... Forcer\n    RELEASE DATE    : ..................... march 2013\n    RELEASE PARTY   : ....................  Revision 2013\n    COMPETITION     : .............,....... wild demo \n\nlogo\nlogo done by _H2o_ :: vote for the logos you like and be a lamah !\n\nLog in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit\nJupiter & Beyond by St. Vincent And The Grenadines [web] & Tristar & Red Sector Inc. [web]\n SVatG presents                 █████████████               at Revision 2013\n *~-~-~--~-~-~*         █████████████████████████████       *~-~-~-~--~-~-~*\n                    ██████████████████▓▓▓▓▓▓▓███████████                    \n                  █████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████               \n               ████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓             \n             ███████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           \n           █   █████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓         \n          ██   ████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒  ▒▒▒▓▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓       \n        ████   ██   ▓▒▒  ▒▒▒        ▒▒▒   ▒▒▒      ▒▒▒      ▒▒▒▒▓▓          \n        ████   ▓▓   ▓▓▒  ▒▒▒  ▒▒▒▒  ▒▒▒   ▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒  ▒▒▒▒  ▓▓▓▓     \n       █  ██   ▓▓   ▓▓▒  ▒▒▒        ▒▒▒   ▒▒▒▒▒  ▒▒▒▒▒       ▒▒▒▒  ▓▓▓▓▓▓   \n      ██      ▓▓▓        ▒▒▒  ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒  ▓▓▓▓▓▓▓  \n    ██████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒  ▒▒▒▒▒█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒      ▒▒▒▒▒▒▒▒▒▒▓▓▓  \n   █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒███▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒▒▓▓▓▓▓▓ \n   █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▒▒▒▒█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n   █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n  ███████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▓▓▓▓▓▓▓\n  ██████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒███████▒▒░▒▒███░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓\n  ██████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒███▒███████░░░██░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓\n  █████▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒████▒▒▒▒██████▒██░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▓▓\n  ███████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒██████▒▒▒▒▒▒░░▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓\n   ████████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒█████▒▒▒▒▒▒▒██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓\n   ███████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒███████▒▒▒▒██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓\n    ████         ▓▓▓▓▓▓▓▓▓▓▓▒▒▒█████████▒▒▒▒███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░  ▓▓▓▓\n    ████   ▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░  ▓▓▓\n     ███   █▓▓▓  ▓▓▓      ▒▒▒▒   ▒▒▒▒   ▒▒▒      ▒▒▒▒       ▒▒▒▒▒      ▓▓\n      ██         ▓▓▓  ▓▓▓  ▓▓▓   ▒▒▒▒   ▒▒   ▒▒   ▒▒   ▒▒▒  ▒▒▒  ▒▒▓   ▓▓\n       █   ████  ▓▓▓       ▓▓▓          ▒▒   ▒▒   ▒▒   ▒▒▒  ▒▒▒  ▒▓▓\n                 ▓▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒▒▒      ▓▓▓   ▓▓▓  ▓▓▓▓        \n          ████████▓▓▓      ▓▓▓▓         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██  \n            █████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███      \n              ████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███\n                ████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███\n                   ██████████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████\n                       ██████████████▓▓▓▓▓▓▓▓▓▓▓████████\n                            ███████████████████████\n\nAnother breathtaking SVatG production, this time with significantly less broken\nVGA signal, significantly improved music player and better ANSI in the nfo.\n\nRunning on the stm32f4 discovery ARM-based microcontroller board, with 168 MHz\nof raw power, yet less ram than an A1000 (192 kilobytes, 64 kilobytes after\nreserving some memory for framebuffers).\n\nTo run, just flash it to your device, connect a VGA adapter made according to\nour included schematic (It's just a bunch of resistors, the VGA is bitbanged),\nturn on the power and watch it go.\n\nAlso brand-new from SVatG: A version of Peridiummmmm with fixed VGA! One hundred\npercent less noise in the video signal! Greatly improved visuals! No recording,\nthough - run it yourself, or ask us at a party! Get it at:\n\n  http://aka-san.halcy.de/revision2013/peridiummmm-new.zip\n  http://aka-san.halcy.de/revision2013/peridiummmm-src-new.zip\n\nLook forward to a possible source code release and more fantastic SVatG releases\nin the future.\n\n SVatG are:\n  code - halcy, ryx, WAHa_06x36, coda\n  sound - coda\n\n TRSi provided:\n  gfx & mad style - Forcer\n                                                    ▓████\n                          http://demogroup.vc/      █████\n                                                    █████\n      ██████████▓▓████       █████  ▒██████████████▓█████████▓  █████████████▒\n      ████████████████       █████ ███████████████████████████░███████████████▓\n      █████▒▒▒▒▒ █████       █████ █████▒▒▒▒▒▒▓██████████▒▒▒▒ █████▓▒▒▒▒▒▒█████\n███████████      █████████████████ ██████████████████████     ░████████████████\n███████████      ████████████████   █████████████████████      ░███████████████\n░▒▒▒▒▒▒▒▒▒        ▒▒▒▒▒▒▒▒▒▒▒▒░       ░▒▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒░        ░░▒▒▒▒▒▒▒█████\n                                                              ▓████████████████\n      \"Besser als herkoemmliche Produkte.\"                    ████████████████\n"
         },
         "image": {
           "en-US": {
@@ -7243,7 +7132,7 @@
         "id": "7ssSvO5FGkLTZNTU7zFunm",
         "type": "Entry",
         "createdAt": "2025-04-20T20:51:23.983Z",
-        "updatedAt": "2025-04-20T20:51:23.983Z",
+        "updatedAt": "2025-04-21T20:08:43.626Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -7251,8 +7140,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 14,
-        "revision": 1,
+        "publishedVersion": 17,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7274,32 +7163,8 @@
         "releaseDate": {
           "en-US": "2008-08-01"
         },
-        "description": {
-          "en-US": {
-            "data": {
-            },
-            "content": [
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "ShaderShowdownRemix-Evoke2018 by Tristar and Red Sector Inc. \n2nd place in the pc 4k competition @ Evoke 2018\n\n    RELEASE NAME : ..................... ShaderShowdownRemix\n    PLATFORM          : ..................... PC Windows\n    CODE BY              : ..................... hArDy\n    MUSIC BY            : ..................... hArDy\n    RELEASE DATE   : ..................... august 2018\n    RELEASE PARTY : ..................... Evoke 2018\n    COMPETITION    : ..................... PC 4k ",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
         "infoText": {
-          "en-US": "\n                               ▄                       ▄▄▄\n                       ▐▄▄▄▄████      ▄▄▄▄█        ▄▄▄▄█▓█▄▄▄▄     ▄▄▄▄▄▄▄▄\n                       █████████▄▄▄████▓▓██   ▄▄██▓▓▓███░█████     ██  ░▒▓█\n ▀███████░▄▄▄▄▄▄▄▄▄▄▄▄▄█████████▀▀▀█▓▓▓▒▒██ ▄██▓▓▓▓█▀  █▄████▄▄  ▄▄ ▀█▄ ░▒█ ▄▄▄\n ████████▓████████████▌▀████████   █▒▒▒░░█▌▐██▓▒▒░░▌   ▀▀▀▀▀▀▀▀  ██████▀▀▀▀ ███\n █▄█▀▀▀▀████████▀▀▀▀▀▀▀ ▄▀▀█████   █ ░░░▄█  ▀██▓░░ ▀▄            ▀▀▀████████▀▀▀\n        ████████        ████▓▓▓█▄▄██  ▄█▀      ▀▀█▄▄ ▀█▄▄▄▄▄▄▄▄▄▄▄  ████████\n        ████████        █▓▓▓▓▒▒███████▀            ▀▀██▄█████▄▄█▄█  █▓▓▓▓▓▓█\n        █▓▓▓▓▓▓█        █▒▒▒▒▒░█▀▀ ████████             ▄████████   █░░░▒▒▒█\n        █░░░▓▒▒█        █░░░░░░█   █▓▓▓▓▓▓█▐▄▄▄▄▄▄▄     █████████   ████████\n        █   ▒▒░█        █ ░░░░ █   █░░░▒▒▒█▄▄█▒▒▓▓█     █▓▓██▓▓██   █▓▓▓▓▓▓█\n        █   ░░░█        █      █   █   ░░░██░░░░▒▒█     █▒▒▓▓▒▒██   █░░░▒▒▒█\n        █   ░░ █        █     ░█   █      ██    ░░█     █░░▒▒░░ █   █   ░░░█\n        █      █       █▀██▄▄▓▓█▄ █████▄▄▄██▄▄▄▄▄▄███████  ░░   █▀█ █      █\n        █░    ░█▄      ███▀▀▀▀███     ▀▀▀███    █▄█▀▀▀▀▀██████▄▄█▀█ █      █\n       ▄█▓▓▄▄▓▓▀▀                                ▄            ▀▀▀▀█ █▄▄▄▄ ░█\n      █▀██▀▀       ▄ ▄▄▄▄▄▄▄▄▓██████████████████▓▄▄▄▄▄▄▄▄             ▀██▓▓█▄\n      ▀▀▀    ▄▄▄▓█████▓▌▀▀▀▀▀█▀▀▀              ▀▀▀█▀▀▀▀▀▐▓█████▓▄▄▄       ███\n   ░░░   ▄▄▓██▀▀▀▀ ▄    ▄▄▓▀▀▀                    ▀▀▀▓▄▄    ▄ ▀▀▀▀██▓▄▄\n   ▄▄▄  █▀▀ ▄▄▄▓▀▀   ▄▓▀▀                              ▀▀▓▄   ▀▀▓▄▄▄ ▀▀█  ▄▄▄\n ▄▄█░█▄▄▄▄▄▄██▄     █▀      TRISTAR & RED SECTOR INC      ▀█     ▄██▄▄▄▄▄▄█░█▄▄\n ▀██▓█▓▓█ ▀  ▀██ ▄▄▄█                                      █▄▄▄ ██▀  ▀ █▓▓█▓██▀\n  █ ▀█▄ █ ▓▄▄▄█                 proudly presents                 █▄▄▄▓ █ ▄█▀ █\n  ▐▌  ▀██  █▀▀                                                    ▀▀█  ██▀  ▐▐\n   █▄▄▀ ██▄█       -+* Shader Showdown Remix - Evoke 2018 *+-       █▄██ ▀▄▄█\n   ▓ ▄▄█████                                                        █████▄▄ ▓\n   ░  ▓██▀▀ ▄ ▄             released at Evoke 2018               ▄ ▄ ▀▀██▓  ░\n      ▓█ ▄█▀                                                        ▀█▄ █▓\n      ▓▌▐█▌                 PC 4K Intro Competition                  ▐█▌▐▓\n      ██ ██▄                                                        ▄██ ██\n     ▄ ▀  ██▓▄                   Music: hArDy                     ▄▓██  ▀ ▄\n       ▀▄  █ ▀▓▄                                                ▄▓▀ █  ▄▀\n      ░░█▌ ▐▌  █▌                 Code: hArDy                  ▐█  ▐▌ ▐█░░\n      ▓▓██ █  ▄█                                                █▄  █ ██▓▓\n      ███ ▄█▄▓▀    SoftSynth '4Klang' by gopher&pOwL/Alcatraz    ▀▓▄█▄ ███\n   ▄█▀██  ▀▀   █                                                █   ▀▀  ██▀█▄\n  ▐█  ▀█▄  █ ▄█▌    Cruncher 'Crinkler' by mentor&blueberry     ▐█▄ █  ▄█▀  █▌\n   ▀█▄▄▄██▄██▓▀                                                  ▀▓██▄██▄▄▄█▀\n      ▄███▓▀▀ ▄█▄                                              ▄█▄ ▀▀▓███▄\n   ▄▓█▀▀ ▄▄▄ ▀▓█▀▓▄▄  ▄▄▄ ▄                          ▄ ▄▄▄  ▄▄▓▀█▓▀ ▄▄▄ ▀▀█▓▄\n  ▐██ ▄▓▀▀ █      ▐██▀▓▄█▄▄▄▄                      ▄▄▄▄█▄▓▀██▌      █ ▀▀▓▄ ██▌\n   ▓█▄   ▄█▌    ▄▄█▓▀▀▀       ▀▀▀  ▀        ▀  ▀▀▀       ▀▀▀▓█▄▄    ▐█▄   ▄█▓\n    ▀██ ▐█▓░▄ ▀▀▀▀                                            ▀▀▀▀ ▄░▓█▌ ██▀\n   ░  █  ▀▀▀▀▀ ▀                 Greetings to:                  ▀ ▀▀▀▀▀  █  ░\n   ▓  █ ▄  █▌                                                      ▐█  ▄ █  ▓\n   █  █ ▄▌ ▐▌      5711 - Abyss-Connection - Accession - ACiD      ▐▌ ▐▄ █  █\n  ▀▄▀ ██▀ ▄█    Akronyme Analogiker - Alcatraz - Attention Whore    █▄ ▀██ ▀▄▀\n     ▐█▌ █▓░ ▌ Axis - Bitfellas - booze^empire - CMUSS - Cascade  ▐ ░▓█ ▐█▌\n     ██  █▓░ ▌ Checkpoint - Crest - DC5 - Defence Force - Desire  ▐ ░▓█  █\n   ░ ▐█▀▄ ▀█ █      Digital Dynamite - Dr. Vector - Drifters      █ █▀ ▄▀█▌ ░\n   ▀  ▀█▀█▄█ █▄   DSS - Dr. Vector - Drifters - EOS - Fairlight  ▄█ █▄█▀█▀  ▀\n       ▀█  █ ▐▓█▄      Genesis*Project - Haujobb - Hitmen      ▄█▓▌ █  █▀\n      ░ ▐▌ ▐▌ █ ▀▀█▄    Hoodlum - Hornet - Kewlers - Krue   ▄█▀▀ █ ▐▌ ▐▌ ░\n      ▓ █▄█▀ ▄▌   ▄█     LJ - Loonies - Noice - Mad Brain   █▄   ▐▄ ▀█▄█ ▓\n     ▄█▀█▀ ░ █ ▄▓▀▀    Mercury - Northern Dragons - Nuance   ▀▀▓▄ █ ░ ▀█▀█▄\n    █▌ ▐▌  ▓ ██▀  Onslaught - Oxyron - Planet Earth - Poo Brain ▀██ ▓  ▐▌ ▐█\n    ▀▓▄ ▀▄█▀▀█▌   Popsy Team - Quadlite - Quebarium - Rabenauge  ▐█▀▀█▄▀ ▄▓▀\n     ░█  █   █  Radwar Enterprises - Razor 1911 - Rebels - Rift   █▌  █  █░\n     ░█  ▐▌  █  SceneSat - Scoopex - Smash Designs - Space Pigs   █▌  ▌  █░\n      █▄  ▐  █   Speckdrumm - Sure - Syntax Party Crew - The MM   █  ▐  ▄█\n      █▓     █   TBC - tcb - TBL - The Obsessed Maniacs - Titan   █     ▓█\n      █▀▓█▄▄ ▀█▄     TPOLM - TSA - United Force - Up Rough      ▄█▀ ▄▄█▓▀█\n      █▄▄▄ ▀▀▀█▓█▄▄ Tomoya - X-Men - Vision - Vision Factory ▄▄█▓█▀▀▀ ▄▄▄█\n      █▓██▀ ▄█▀▓█▀       vrtx - Yazoo - Youth Uprising        ▀█▓▀█▄ ▀██▓█\n      █▒█▌ ▐█▄ █                                                █ ▄█▌ ▐█▒█\n      █░██▄█ ▀▀██▄▄▄       ▄▄▄▄                  ▄▄▄▄       ▄▄▄██▀▀ █▄██░█\n      ▀▀▀███▄     ▀▀██▀█▄ ▀▀▀▀▀▀██▌▄▄       ▄▄▄█▀▀▀▀▀▀ ▄█▀██▀▀     ▄███▀▀▀\n          ▀███      █     ██▀▀▀█▄▄▀▀███  ███▀▀▄▄█▀▀▀██     █      ███▀\n           ▀▀▀▀▀▀▀▀ ▓ ▀▀▀▀▀▀▀  █▓▀▀█▄▄████▄▄▓▀▀█  ▀▀▀▀▀▀▀▀ ▓ ▀▀▀▀▀▀▀▀\n                    ░          ██▄▄█ ▓ █▀█  ▓▄▄█           ░ infofile by H7\n                                     ░ ▀█▀█▀▀\n          ▄     ▄  ▄   ▄   ▄       ▄    ▀▀▀     ▄   ▄          ▄\n         ▀█▀ █▀ ▄ ▀▀█ ▀█▀ ██ █▀   ▀█▀█   █▀ █▀ █▀  ▀▀█ ██▀ █▀ ▀█▀ ██ █▀\n          ▀  ▀  ▀  ▀▀  ▀  ▀▀ ▀     ▀▀▀   ▀  ▀▀ ▀▀   ▀▀ ▀▀  ▀▀  ▀  ▀▀ ▀\n                       ▄                       ▄  ▄      ▄\n                       ▄ █▄ █▀ ██ █▀ ██ ██ █▀ ██ ▀█▀ █▀ █▀\n                       ▀ ▀▀ ▀▀ ▀▀ ▀  █▀ ▀▀ ▀  ▀▀  ▀  ▀▀ ▀▀"
+          "en-US": "ShaderShowdownRemix-Evoke2018 by Tristar and Red Sector Inc. \n2nd place in the pc 4k competition @ Evoke 2018\n\n    RELEASE NAME  : ..................... ShaderShowdownRemix\n    PLATFORM      : ..................... PC Windows\n    CODE BY       : ..................... hArDy\n    MUSIC BY      : ..................... hArDy\n    RELEASE DATE  : ..................... august 2018\n    RELEASE PARTY : ..................... Evoke 2018\n    COMPETITION   : ..................... PC 4k \n\n                               ▄                       ▄▄▄\n                       ▐▄▄▄▄████      ▄▄▄▄█        ▄▄▄▄█▓█▄▄▄▄     ▄▄▄▄▄▄▄▄\n                       █████████▄▄▄████▓▓██   ▄▄██▓▓▓███░█████     ██  ░▒▓█\n ▀███████░▄▄▄▄▄▄▄▄▄▄▄▄▄█████████▀▀▀█▓▓▓▒▒██ ▄██▓▓▓▓█▀  █▄████▄▄  ▄▄ ▀█▄ ░▒█ ▄▄▄\n ████████▓████████████▌▀████████   █▒▒▒░░█▌▐██▓▒▒░░▌   ▀▀▀▀▀▀▀▀  ██████▀▀▀▀ ███\n █▄█▀▀▀▀████████▀▀▀▀▀▀▀ ▄▀▀█████   █ ░░░▄█  ▀██▓░░ ▀▄            ▀▀▀████████▀▀▀\n        ████████        ████▓▓▓█▄▄██  ▄█▀      ▀▀█▄▄ ▀█▄▄▄▄▄▄▄▄▄▄▄  ████████\n        ████████        █▓▓▓▓▒▒███████▀            ▀▀██▄█████▄▄█▄█  █▓▓▓▓▓▓█\n        █▓▓▓▓▓▓█        █▒▒▒▒▒░█▀▀ ████████             ▄████████   █░░░▒▒▒█\n        █░░░▓▒▒█        █░░░░░░█   █▓▓▓▓▓▓█▐▄▄▄▄▄▄▄     █████████   ████████\n        █   ▒▒░█        █ ░░░░ █   █░░░▒▒▒█▄▄█▒▒▓▓█     █▓▓██▓▓██   █▓▓▓▓▓▓█\n        █   ░░░█        █      █   █   ░░░██░░░░▒▒█     █▒▒▓▓▒▒██   █░░░▒▒▒█\n        █   ░░ █        █     ░█   █      ██    ░░█     █░░▒▒░░ █   █   ░░░█\n        █      █       █▀██▄▄▓▓█▄ █████▄▄▄██▄▄▄▄▄▄███████  ░░   █▀█ █      █\n        █░    ░█▄      ███▀▀▀▀███     ▀▀▀███    █▄█▀▀▀▀▀██████▄▄█▀█ █      █\n       ▄█▓▓▄▄▓▓▀▀                                ▄            ▀▀▀▀█ █▄▄▄▄ ░█\n      █▀██▀▀       ▄ ▄▄▄▄▄▄▄▄▓██████████████████▓▄▄▄▄▄▄▄▄             ▀██▓▓█▄\n      ▀▀▀    ▄▄▄▓█████▓▌▀▀▀▀▀█▀▀▀              ▀▀▀█▀▀▀▀▀▐▓█████▓▄▄▄       ███\n   ░░░   ▄▄▓██▀▀▀▀ ▄    ▄▄▓▀▀▀                    ▀▀▀▓▄▄    ▄ ▀▀▀▀██▓▄▄\n   ▄▄▄  █▀▀ ▄▄▄▓▀▀   ▄▓▀▀                              ▀▀▓▄   ▀▀▓▄▄▄ ▀▀█  ▄▄▄\n ▄▄█░█▄▄▄▄▄▄██▄     █▀      TRISTAR & RED SECTOR INC      ▀█     ▄██▄▄▄▄▄▄█░█▄▄\n ▀██▓█▓▓█ ▀  ▀██ ▄▄▄█                                      █▄▄▄ ██▀  ▀ █▓▓█▓██▀\n  █ ▀█▄ █ ▓▄▄▄█                 proudly presents                 █▄▄▄▓ █ ▄█▀ █\n  ▐▌  ▀██  █▀▀                                                    ▀▀█  ██▀  ▐▐\n   █▄▄▀ ██▄█       -+* Shader Showdown Remix - Evoke 2018 *+-       █▄██ ▀▄▄█\n   ▓ ▄▄█████                                                        █████▄▄ ▓\n   ░  ▓██▀▀ ▄ ▄             released at Evoke 2018               ▄ ▄ ▀▀██▓  ░\n      ▓█ ▄█▀                                                        ▀█▄ █▓\n      ▓▌▐█▌                 PC 4K Intro Competition                  ▐█▌▐▓\n      ██ ██▄                                                        ▄██ ██\n     ▄ ▀  ██▓▄                   Music: hArDy                     ▄▓██  ▀ ▄\n       ▀▄  █ ▀▓▄                                                ▄▓▀ █  ▄▀\n      ░░█▌ ▐▌  █▌                 Code: hArDy                  ▐█  ▐▌ ▐█░░\n      ▓▓██ █  ▄█                                                █▄  █ ██▓▓\n      ███ ▄█▄▓▀    SoftSynth '4Klang' by gopher&pOwL/Alcatraz    ▀▓▄█▄ ███\n   ▄█▀██  ▀▀   █                                                █   ▀▀  ██▀█▄\n  ▐█  ▀█▄  █ ▄█▌    Cruncher 'Crinkler' by mentor&blueberry     ▐█▄ █  ▄█▀  █▌\n   ▀█▄▄▄██▄██▓▀                                                  ▀▓██▄██▄▄▄█▀\n      ▄███▓▀▀ ▄█▄                                              ▄█▄ ▀▀▓███▄\n   ▄▓█▀▀ ▄▄▄ ▀▓█▀▓▄▄  ▄▄▄ ▄                          ▄ ▄▄▄  ▄▄▓▀█▓▀ ▄▄▄ ▀▀█▓▄\n  ▐██ ▄▓▀▀ █      ▐██▀▓▄█▄▄▄▄                      ▄▄▄▄█▄▓▀██▌      █ ▀▀▓▄ ██▌\n   ▓█▄   ▄█▌    ▄▄█▓▀▀▀       ▀▀▀  ▀        ▀  ▀▀▀       ▀▀▀▓█▄▄    ▐█▄   ▄█▓\n    ▀██ ▐█▓░▄ ▀▀▀▀                                            ▀▀▀▀ ▄░▓█▌ ██▀\n   ░  █  ▀▀▀▀▀ ▀                 Greetings to:                  ▀ ▀▀▀▀▀  █  ░\n   ▓  █ ▄  █▌                                                      ▐█  ▄ █  ▓\n   █  █ ▄▌ ▐▌      5711 - Abyss-Connection - Accession - ACiD      ▐▌ ▐▄ █  █\n  ▀▄▀ ██▀ ▄█    Akronyme Analogiker - Alcatraz - Attention Whore    █▄ ▀██ ▀▄▀\n     ▐█▌ █▓░ ▌ Axis - Bitfellas - booze^empire - CMUSS - Cascade  ▐ ░▓█ ▐█▌\n     ██  █▓░ ▌ Checkpoint - Crest - DC5 - Defence Force - Desire  ▐ ░▓█  █\n   ░ ▐█▀▄ ▀█ █      Digital Dynamite - Dr. Vector - Drifters      █ █▀ ▄▀█▌ ░\n   ▀  ▀█▀█▄█ █▄   DSS - Dr. Vector - Drifters - EOS - Fairlight  ▄█ █▄█▀█▀  ▀\n       ▀█  █ ▐▓█▄      Genesis*Project - Haujobb - Hitmen      ▄█▓▌ █  █▀\n      ░ ▐▌ ▐▌ █ ▀▀█▄    Hoodlum - Hornet - Kewlers - Krue   ▄█▀▀ █ ▐▌ ▐▌ ░\n      ▓ █▄█▀ ▄▌   ▄█     LJ - Loonies - Noice - Mad Brain   █▄   ▐▄ ▀█▄█ ▓\n     ▄█▀█▀ ░ █ ▄▓▀▀    Mercury - Northern Dragons - Nuance   ▀▀▓▄ █ ░ ▀█▀█▄\n    █▌ ▐▌  ▓ ██▀  Onslaught - Oxyron - Planet Earth - Poo Brain ▀██ ▓  ▐▌ ▐█\n    ▀▓▄ ▀▄█▀▀█▌   Popsy Team - Quadlite - Quebarium - Rabenauge  ▐█▀▀█▄▀ ▄▓▀\n     ░█  █   █  Radwar Enterprises - Razor 1911 - Rebels - Rift   █▌  █  █░\n     ░█  ▐▌  █  SceneSat - Scoopex - Smash Designs - Space Pigs   █▌  ▌  █░\n      █▄  ▐  █   Speckdrumm - Sure - Syntax Party Crew - The MM   █  ▐  ▄█\n      █▓     █   TBC - tcb - TBL - The Obsessed Maniacs - Titan   █     ▓█\n      █▀▓█▄▄ ▀█▄     TPOLM - TSA - United Force - Up Rough      ▄█▀ ▄▄█▓▀█\n      █▄▄▄ ▀▀▀█▓█▄▄ Tomoya - X-Men - Vision - Vision Factory ▄▄█▓█▀▀▀ ▄▄▄█\n      █▓██▀ ▄█▀▓█▀       vrtx - Yazoo - Youth Uprising        ▀█▓▀█▄ ▀██▓█\n      █▒█▌ ▐█▄ █                                                █ ▄█▌ ▐█▒█\n      █░██▄█ ▀▀██▄▄▄       ▄▄▄▄                  ▄▄▄▄       ▄▄▄██▀▀ █▄██░█\n      ▀▀▀███▄     ▀▀██▀█▄ ▀▀▀▀▀▀██▌▄▄       ▄▄▄█▀▀▀▀▀▀ ▄█▀██▀▀     ▄███▀▀▀\n          ▀███      █     ██▀▀▀█▄▄▀▀███  ███▀▀▄▄█▀▀▀██     █      ███▀\n           ▀▀▀▀▀▀▀▀ ▓ ▀▀▀▀▀▀▀  █▓▀▀█▄▄████▄▄▓▀▀█  ▀▀▀▀▀▀▀▀ ▓ ▀▀▀▀▀▀▀▀\n                    ░          ██▄▄█ ▓ █▀█  ▓▄▄█           ░ infofile by H7\n                                     ░ ▀█▀█▀▀\n          ▄     ▄  ▄   ▄   ▄       ▄    ▀▀▀     ▄   ▄          ▄\n         ▀█▀ █▀ ▄ ▀▀█ ▀█▀ ██ █▀   ▀█▀█   █▀ █▀ █▀  ▀▀█ ██▀ █▀ ▀█▀ ██ █▀\n          ▀  ▀  ▀  ▀▀  ▀  ▀▀ ▀     ▀▀▀   ▀  ▀▀ ▀▀   ▀▀ ▀▀  ▀▀  ▀  ▀▀ ▀\n                       ▄                       ▄  ▄      ▄\n                       ▄ █▄ █▀ ██ █▀ ██ ██ █▀ ██ ▀█▀ █▀ █▀\n                       ▀ ▀▀ ▀▀ ▀▀ ▀  █▀ ▀▀ ▀  ▀▀  ▀  ▀▀ ▀▀"
         },
         "image": {
           "en-US": {
@@ -7351,7 +7216,7 @@
         "id": "7LGSynj7dY45MzNeVvmVWX",
         "type": "Entry",
         "createdAt": "2025-04-20T21:28:13.401Z",
-        "updatedAt": "2025-04-20T21:28:13.401Z",
+        "updatedAt": "2025-04-21T20:08:43.708Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -7359,8 +7224,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 11,
-        "revision": 1,
+        "publishedVersion": 15,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7382,32 +7247,8 @@
         "releaseDate": {
           "en-US": "2009-12-01"
         },
-        "description": {
-          "en-US": {
-            "data": {
-            },
-            "content": [
-              {
-                "data": {
-                },
-                "content": [
-                  {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
-                    "value": "l4Kuna by Tristar & Red Sector Inc.\n1st place in the pc 4k competition @ the Ultimate Meeting 2009\n\n    RELEASE NAME : ..................... l4Kuna\n    PLATFORM          : ..................... PC Windows\n    CODE BY              : ..................... hArDy\n    MUSIC BY            : ..................... tEiS\n    RELEASE DATE   : ..................... december 2009\n    RELEASE PARTY : ..................... the Ultimate Meeting 2009\n    COMPETITION    : ..................... PC 4k ",
-                    "nodeType": "text"
-                  }
-                ],
-                "nodeType": "paragraph"
-              }
-            ],
-            "nodeType": "document"
-          }
-        },
         "infoText": {
-          "en-US": "l4Kuna by Tristar & Red Sector Inc. [web]\n                                                        ______    __\n               __ _                  _            _   __)_  _(___ \\/\n              /\\_\\\\\\__ _    _________/       __ __/_  ____  ____ \\_ __\n    __________\\/_/      _ __\\_ _____/_____  /\\_\\\\///  \\_@_)(_@_/ _//_/\\\n_ __\\_ ____   \\_ ________     _______    / _\\/_/__  _____ oo ____( \\_\\/\n       /  \\    /_\\_ ___  \\_         /    \\_\\_____/__. _/.    .\\_\n      /    \\__/     _/   _/_ __    /      \\        _| _ |_||_|_| H2o!     :\n            \\_      \\         /_ __________\\      .\\/// | || | | _________:_\n  .  _ __ __ /       \\       /   /__ _ _       _ _| |   | || | :          |\n  |        \\/ _ ______\\       __//_/\\\\  _ __ _______|_ _  :: :       .    |\n  |                    \\__ __ _  \\_\\/               :                    _|\n  | T R i S T A R                                               _|_      \\/\n  |             A N D                                  +         |        |\n  |                 R E D   S E C T O R   I N C .                         |\n  |-----------------------------------------------------------------------|\n  |  1 9 9 0   -   2 0 1 0   /  T R S I   2 0 t h   a n n i v e r s a r y |\n  |-----------------------------------------------------------------------|\n  :                                                                       :\n    RELEASE NAME : ............................................... l4Kuna\n    PLATFORM     : ........................................... PC Windows\n\n    CODE BY      : ................................................ Hardy \n    MUSIC BY     : ................................................. tEiS\n\n    RELEASE DATE : ........................................... 28/12/2009\n  :                                                                       :\n  |-----------------------------------------------------------------------|\n  |                                                                      _|\n  | VISIT OUR WEBSITE : HTTP://WWW.TRSI.DE                               \\/\n  |                                                                       |\n  |-----------------------------------------------------------------------|\n  :                                                                       :\n\n    needs ps3_0 capable grafixx-card \n    d3dx9_36.dll installed \n    10 seconds precalc + additional 30-40 for music-precalc\n    if you have a SingleCore-CPU only ! \n\n    thanx to gopher/ATZ for 4klang-softsynth \n    thanx to mentor&blueberry for crinkler ( www.crinkler.net ) \n\n    REGARDS TO THE FOLLOWING PEOPLE .....................................   \n    ---------------------------------------------------------------------\n    ALCATRAZ . BITFELLAS . CONSPIRACY . DRIFTERS . EQUINOX . FARBRAUSCH\n    RAVEBUSTERS . SCOOPEX . S!P . TITAN . PARADOX . MUPS . SCARAB . ACS \n    REMEDY . KEFRENS . BRAINSTORM . ZINE TEAM . ASD . HUGI TEAM . STILL\n    UK ALLSTARS . WAMMA . SPECKDRUMM . METALVOTZE . HAUJOBB . SILENTS\n    BAUKNECHT . REBELS . POLKA BROTHERS . THE BLACK LOTUS . COOCOON\n    JCP . TPOLM . RABENAUGE . DANISH GOLD . SPACEBALLS . ATE BIT\n    PARADISE\n\n    THE BREAKPOINT TEAM . THE EVOKE TEAM . THE BUENZLI TEAM .\n    THE MAIN TEAM . THE SUNDOWN TEAM . DIGITALE KULTUR EV\n\n    AND FINALLY TO OUR SUPPORTERS .......................................\n    ---------------------------------------------------------------------\n    AHOI BRAUSE GERMANY , CHATEAU VIRANT FRANCE , SMIRNOFF VODKA ,\n    RICARD MARSEILLE  and SUPER MARiO FROM THE KEBEAB STAND !\n\n  :                                                                       :\n  |-----------------------------------------------------------------------|\n  |                                                                      _|\n  | TWICE THE FUN - DOUBLE THE TROUBLE ...                               \\/\n  |                                                                       |\n  |-----------------------------------------------------------------------|\n  :                                                                       :\n    ACTUAL ACTIVE TRSI MEMBERS ..........................................\n    ---------------------------------------------------------------------\n    71M - Astaroth - Ayatollah - Benson - Chromag - CONS - Digiman - H2o\n    Hardy - HiLite - Linus - Peiselulli - Rebb - Shazz - Spotter\n    Streettuff - tEiS - Warhead - WoDK\n    ---------------------------------------------------------------------\n  :                                                                       :\n  |-----------------------------------------------------------------------|\n  |                                                                      _|\n  | CALL OUR BBS : ACIDSLAM.ATH.CX - ONLINE TILL BUST ...                \\/\n  |                                                                       |\n  |-----------------------------------------------------------------------|\n  :                                                                       :"
+          "en-US": "l4Kuna by Tristar & Red Sector Inc.\n1st place in the pc 4k competition @ the Ultimate Meeting 2009\n\n    RELEASE NAME  : ..................... l4Kuna\n    PLATFORM      : ..................... PC Windows\n    CODE BY       : ..................... hArDy\n    MUSIC BY      : ..................... tEiS\n    RELEASE DATE  : ..................... december 2009\n    RELEASE PARTY : ..................... the Ultimate Meeting 2009\n    COMPETITION   : ..................... PC 4k\n\nl4Kuna by Tristar & Red Sector Inc. [web]\n                                                        ______    __\n               __ _                  _            _   __)_  _(___ \\/\n              /\\_\\\\\\__ _    _________/       __ __/_  ____  ____ \\_ __\n    __________\\/_/      _ __\\_ _____/_____  /\\_\\\\///  \\_@_)(_@_/ _//_/\\\n_ __\\_ ____   \\_ ________     _______    / _\\/_/__  _____ oo ____( \\_\\/\n       /  \\    /_\\_ ___  \\_         /    \\_\\_____/__. _/.    .\\_\n      /    \\__/     _/   _/_ __    /      \\        _| _ |_||_|_| H2o!     :\n            \\_      \\         /_ __________\\      .\\/// | || | | _________:_\n  .  _ __ __ /       \\       /   /__ _ _       _ _| |   | || | :          |\n  |        \\/ _ ______\\       __//_/\\\\  _ __ _______|_ _  :: :       .    |\n  |                    \\__ __ _  \\_\\/               :                    _|\n  | T R i S T A R                                               _|_      \\/\n  |             A N D                                  +         |        |\n  |                 R E D   S E C T O R   I N C .                         |\n  |-----------------------------------------------------------------------|\n  |  1 9 9 0   -   2 0 1 0   /  T R S I   2 0 t h   a n n i v e r s a r y |\n  |-----------------------------------------------------------------------|\n  :                                                                       :\n    RELEASE NAME : ............................................... l4Kuna\n    PLATFORM     : ........................................... PC Windows\n\n    CODE BY      : ................................................ Hardy \n    MUSIC BY     : ................................................. tEiS\n\n    RELEASE DATE : ........................................... 28/12/2009\n  :                                                                       :\n  |-----------------------------------------------------------------------|\n  |                                                                      _|\n  | VISIT OUR WEBSITE : HTTP://WWW.TRSI.DE                               \\/\n  |                                                                       |\n  |-----------------------------------------------------------------------|\n  :                                                                       :\n\n    needs ps3_0 capable grafixx-card \n    d3dx9_36.dll installed \n    10 seconds precalc + additional 30-40 for music-precalc\n    if you have a SingleCore-CPU only ! \n\n    thanx to gopher/ATZ for 4klang-softsynth \n    thanx to mentor&blueberry for crinkler ( www.crinkler.net ) \n\n    REGARDS TO THE FOLLOWING PEOPLE .....................................   \n    ---------------------------------------------------------------------\n    ALCATRAZ . BITFELLAS . CONSPIRACY . DRIFTERS . EQUINOX . FARBRAUSCH\n    RAVEBUSTERS . SCOOPEX . S!P . TITAN . PARADOX . MUPS . SCARAB . ACS \n    REMEDY . KEFRENS . BRAINSTORM . ZINE TEAM . ASD . HUGI TEAM . STILL\n    UK ALLSTARS . WAMMA . SPECKDRUMM . METALVOTZE . HAUJOBB . SILENTS\n    BAUKNECHT . REBELS . POLKA BROTHERS . THE BLACK LOTUS . COOCOON\n    JCP . TPOLM . RABENAUGE . DANISH GOLD . SPACEBALLS . ATE BIT\n    PARADISE\n\n    THE BREAKPOINT TEAM . THE EVOKE TEAM . THE BUENZLI TEAM .\n    THE MAIN TEAM . THE SUNDOWN TEAM . DIGITALE KULTUR EV\n\n    AND FINALLY TO OUR SUPPORTERS .......................................\n    ---------------------------------------------------------------------\n    AHOI BRAUSE GERMANY , CHATEAU VIRANT FRANCE , SMIRNOFF VODKA ,\n    RICARD MARSEILLE  and SUPER MARiO FROM THE KEBEAB STAND !\n\n  :                                                                       :\n  |-----------------------------------------------------------------------|\n  |                                                                      _|\n  | TWICE THE FUN - DOUBLE THE TROUBLE ...                               \\/\n  |                                                                       |\n  |-----------------------------------------------------------------------|\n  :                                                                       :\n    ACTUAL ACTIVE TRSI MEMBERS ..........................................\n    ---------------------------------------------------------------------\n    71M - Astaroth - Ayatollah - Benson - Chromag - CONS - Digiman - H2o\n    Hardy - HiLite - Linus - Peiselulli - Rebb - Shazz - Spotter\n    Streettuff - tEiS - Warhead - WoDK\n    ---------------------------------------------------------------------\n  :                                                                       :\n  |-----------------------------------------------------------------------|\n  |                                                                      _|\n  | CALL OUR BBS : ACIDSLAM.ATH.CX - ONLINE TILL BUST ...                \\/\n  |                                                                       |\n  |-----------------------------------------------------------------------|\n  :                                                                       :"
         },
         "image": {
           "en-US": {
@@ -7536,6 +7377,139 @@
           "en-US": "2025-04-20"
         }
       }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "5bo7ELc1AMUwGCN6IN5q7C",
+        "type": "Entry",
+        "createdAt": "2025-04-21T00:25:29.587Z",
+        "updatedAt": "2025-04-21T00:25:29.587Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "productions"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Amiga demo (party version). Released at Revision 2025"
+        },
+        "type": {
+          "en-US": "Demo"
+        },
+        "platform": {
+          "en-US": "Amiga AGA"
+        },
+        "releaseDate": {
+          "en-US": "2025-04-21"
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Amiga demo (party version). Released at Revision 2025\n\nCredits: \nCode ..................... Tedy\nGraphics by .......... Biter, Sir James, Szudi, Vasyl, Witja\nMusic .................... AceMan\nSupport (Mystic) .. Easy Rider\nSupport (TRSI) ..... Norby\n\nRequirements ....... 60060, 2MB Chip/16MB Fast",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "infoText": {
+          "en-US": " logo\n\nlogo done by Timbral :: pouët.net is hosted on the huge scene.org servers\n\n    Log in Prods Groups Parties Users Boards Lists Search BBS FAQ Submit \n\nLupus Reditus by Tristar & Red Sector Inc. [web] & Mystic [web]\n\n                                      ,x\n                                    ,dXXk,\n                                  ,dX'  `Xk,_     ,xXX\n                                ,dX'      `' _,xxX7**44\n                              ,dX'  _,xixiiXXX7+\"   _ X:\n                            ,dX'  ,XXXX7' )X'     .XXX7'\n                           \"'  _xX7'XX' \"\"\"     ,xXXXX\n                         _,,xy7+ ,xXX',y' .    x7' \" \"9.\n                       \"4XX   -+**XXXX7  ,     _,xxiXX'\n                    ,dX+  \"\"44XiiXXX7',x'   ,xXX7'XX\"  4k,\n                  xXX'       mxxX',7 X7   .X7'\"  X7'    'X:. .\n                   'X:,   _,dX7',xXXX7    \"     iX     ,d;' .\n                   . '::, \" X  ,XXXX7 ,'        XX   ,d:' .\n                    .. ': XXX iXXXXX,x7      i, XX ,;;' . .\n                 ..:.::.  XXX XXXXXXXXXXu+    X XX :' .:::...\n              ____  : ___. \"\"\"\"\"7'__________ ___.       ______\n            ./    \\._/   |----|__/   _     //   |----| _\\   _//_   .\n          . |.     |     |   .|      /   ./|    |.   |/  \\___   \\. .\n        : : |!     |__   |   ||         // |    |!   |      /   !| : :\n          | |        /       :|    _____/  |     .   |    _     .| |\n        - ------\\___/---\\_____|---\\\\    __-----\\_____|-----\\_____|--- -\n       __________  _____      _________/   \\  ___.    ___.       ______\n   .___\\        /_/  __/__   _\\___     \\___/./   |___/   |----| _\\   _//_\n   |    \\_    .//   _7    \\./   |/    ./   \\|        /   |.   |/  \\___ . \\.\n   |   __/   //.    :      |    |     |     |      _//   |!   |      //   |\n H7|   \\    .  |           |        //|     |      ||         |    _      |dS!\n- ------\\______|----\\______|----\\___/ |_____|---\\__|----\\_____|-----\\_____|- -\n             .  :  .  . ... .                          .  .     .\n             | :: ::: | :'                       ''':: | ::: :: |\n            _: !|:X:X | .       LUPUS REDITUS        : | X:X::. |\n            \\| !X:XI| |                                | |IX:|! |_ _ _\n            \\\\ IXIXIX |               by               | XIXIXI  | T\n             : XXIXXX |                                | |XXIXX _|\n             : XXXXXX |  .      MYSTIC & TRSI        : | XX|XXX :\n              ____.____    .              . .____ ..:: ! XXXXXX |\n        ______\\_  |   /____  ..           . |   |__  _______ `X :\n     ___\\  _   /_ : __/  _/__  :::...    .: |    _/ _\\_    /____   ____\n    _\\  \\\\//  /_|___|\\___   /.____  ::::::: |____|_/ _/   //  _/__.\\__/.\n    \\____\\/____/  _  /_______|   |______  :       \\__\\____\\___   /|    |_\n   - ------- -- _x!__ . ---- |    _/\\__/. ____  - ---- . -/_______|_____/- -\n             : XXXXXX :      |____||    |/  _/____     : ,__\n             | XXXXXX |  - -- -----|____/   \\|   /_- - | XXXXXX :\n             . XXXXXX :                 \\_________/    | XXXXXX |\n             : XX7*\"\"                                  . \"\"*4XX |\n             | !7                                            /! |\n             % !    AMIGA AGA DEMO (party version)            ! |\n             : :                                              . |\n               .    RELEASED AT REVISION MMXXV                : :_\n             |                                                  |/\n             |      Credits:                                    |\n             |                                                  |\n            _|_     Code .............. Tedy                    // /\n           \\\\_/     Graphics by ....... Biter, Sir James,      /|\n             |                          Szudi, Vasyl, Witja   /_|\n             |      Music ............. AceMan                  |\n             |      Support (MYSTiC) .. Easy Rider              |\n             |      Support (TRSi) .... Norby                   .\n             |                                                  :\n       .  _ _| .    Requirements ...... 68060                 d |\n       :  | | _k                        2MB CHIP/16MB FAST  :dX %\n            |_\"Xk                                        _:,dXX :\n             | XXIk__                                  : XXXXXX\n             | XXXXXX :     We send greetings to   . : | XXXXXX |\n             | XX7*\"\"                                  . \"\"*4XX |\n             | !7                                            4! |_\n             | !                                              ! |__\n             | :    ABYSS-CONNECTION, ACCESSION, ALCATRAZ     : | /\n            _|      ALPHA FIGHT,   AMNESTY,   ANDROMEDA,        |//\n            (_)   APPENDIX, BATMAN GROUP, BOOM!, BRAINSTORM   . /\n             | .    BRAINWAVE,  CASYOPEA,  CENSOR DESIGN,     : |\n             |      COMPLEX, COSMIC OBRS, DAMAGE, DARKAGE,    | |\n             |     DEKADENCE,  DESIRE,  DEZIGN,  DLG CREW,    % |\n             | .    DREAMWEB, ELUDE, EPHIDRENA, FAIRLIGHT,    : :\n             | :    FLOPPY, FLYING COWS INC, FOCUS DESIGN,      .\n             | !   FUTURIS, GHOSTOWN, HAUJOBB, HEMOROIDS,       :\n             : .    HOODLUM, IMPACT, INSANE, IRIS, JOKER,       |\n             .     LAMERS, LEMON, MADWIZARDS, MELON DEZIGN,   . |\n             :    MANIACS OF NOISE, MOODS PLATEAU, NAH-KOLOR, ! |\n             | . NEW GENERATION CREW, NOICE, NORFERIN, NUANCE,  |\n             | :   NUKLEUS, ODBYT DESIGN, OFFENCE, ONSLAUGHT, . |\n             | |     OXYGENE, OXYRON, POO-BRAIN, RABENAUGE,   | |\n             | %   RADWAR ENTREPRISES, RAM JAM, RAZOR 1911,   . |\n            _: :     REBELS, RESISTANCE, SCOOPEX, SKULLS,       |\n            \\|     SOFTWARE FAILURE, SPACEBALLS, SPECCY.PL,     |\n          \\ \\\\      SPREADPOINT, TALENT, THE BLACK LOTUS,      _|_\n             |\\   THE ELECTRONIC KNIGHTS, THE SOLARIS AGENCY,  \\_//\n             |_\\     THREE TIMES NO, TITAN, TPOLM, UNIQUE,    : |\n             | .       VANITY, VISION FACTORY, VOID           | |\n             | !                                              X |\n             | Xk          ...and all we forgot.            :dX |\n             | XXIk__                                    _:,dXX |\n             | XXXXXX :                                : XXXXXX |\n         ________  |,           .            .           ,|  ________\n             .  /  XIk_        .              .        _kIX  \\  .\n               // ,XXXXix,, . /                \\ . ,,xiXXXX, \\\\ !\n               /_____________//   __________   \\\\_____________\\ .\n             :         - ----/   \\\\        //   \\---- -         .\n                            / /_______ _  /____\\ \\\n             LUPUS REDITUS               /            ASCii by H7\n             MYSTIC + TRSI 2o25      \\  /          REViSION 2o25"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1FACcSLodpBr6G9ez4Owq0"
+            }
+          }
+        },
+        "credits": {
+          "en-US": [
+            {
+              "name": "Tedy",
+              "contribution": "Code"
+            },
+            {
+              "name": "Biter",
+              "contribution": "GFX"
+            },
+            {
+              "name": "Sir James",
+              "contribution": "GFX"
+            },
+            {
+              "name": "Szudi",
+              "contribution": "GFX"
+            },
+            {
+              "name": "Vasyl",
+              "contribution": "GFX"
+            },
+            {
+              "name": "Witja",
+              "contribution": "GFX"
+            },
+            {
+              "name": "AceMan",
+              "contribution": "Music"
+            },
+            {
+              "name": "Easy Rider",
+              "contribution": "Support"
+            },
+            {
+              "name": "Support",
+              "contribution": "Support"
+            }
+          ]
+        },
+        "youTubeUrl": {
+          "en-US": "https://www.youtube.com/watch?v=vtaqb3fT72k"
+        },
+        "pouetUrl": {
+          "en-US": "https://www.pouet.net/prod.php?which=103978"
+        }
+      }
     }
   ],
   "assets": [
@@ -7661,7 +7635,7 @@
         "id": "3mzWUGYuorZiK1BMLGNaye",
         "type": "Asset",
         "createdAt": "2024-02-09T20:19:32.172Z",
-        "updatedAt": "2024-02-09T20:19:32.172Z",
+        "updatedAt": "2025-04-21T00:33:43.269Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -7669,8 +7643,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 4,
-        "revision": 1
+        "publishedVersion": 11,
+        "revision": 3
       },
       "fields": {
         "title": {
@@ -7681,16 +7655,16 @@
         },
         "file": {
           "en-US": {
-            "url": "//images.ctfassets.net/l8kv2ckiiqjb/3mzWUGYuorZiK1BMLGNaye/5b2b52b376a28877c25e42d08bb6df67/coolcat2.png",
+            "url": "//images.ctfassets.net/l8kv2ckiiqjb/3mzWUGYuorZiK1BMLGNaye/f8001fc351f8b7479dd867a7a287d03b/Marcel.jpg",
             "details": {
-              "size": 172777,
+              "size": 63560,
               "image": {
-                "width": 256,
-                "height": 256
+                "width": 494,
+                "height": 494
               }
             },
-            "fileName": "coolcat2.png",
-            "contentType": "image/png"
+            "fileName": "Marcel.jpg",
+            "contentType": "image/jpeg"
           }
         }
       }
@@ -12783,6 +12757,58 @@
               }
             },
             "fileName": "Poster.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "l8kv2ckiiqjb"
+          }
+        },
+        "id": "1FACcSLodpBr6G9ez4Owq0",
+        "type": "Asset",
+        "createdAt": "2025-04-21T00:15:24.103Z",
+        "updatedAt": "2025-04-21T00:15:24.103Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": " Lupus Reditus"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/l8kv2ckiiqjb/1FACcSLodpBr6G9ez4Owq0/bf41bf4615cab58dbe9d2ce8042128c8/Lupus_Reditus.jpg",
+            "details": {
+              "size": 61494,
+              "image": {
+                "width": 400,
+                "height": 300
+              }
+            },
+            "fileName": "Lupus Reditus.jpg",
             "contentType": "image/jpeg"
           }
         }

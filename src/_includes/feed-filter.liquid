@@ -1,5 +1,8 @@
 {%- assign values = "" | split: "" %}
 
+{% comment %}
+  Extract value from type and platform
+{% endcomment %}
 {%- assign key = type | downcase %}
 {%- for item in feed %}
   {%- if key == "type" %}
@@ -9,6 +12,9 @@
   {%- endif %}
 {%- endfor %}
 
+{% comment %} 
+  Reduce to unique values
+{% endcomment %}
 {%- assign keys = "" | split: "" %}
 {%- for val in values %}
   {%- unless keys contains val %}

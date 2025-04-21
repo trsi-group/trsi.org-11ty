@@ -605,7 +605,7 @@
     {
       "title": "Beams of Light by Tristar & Red Sector Inc.",
       "type": "Wild",
-      "description": "Beams of Light by Tristar & Red Sector Inc.\n1st place in the Wild Demo competition @ Party 2014\n\n    RELEASE NAME            : ........................................... Beams of Light\n    PLATFORM                    : ........................................... Oscilloscope\n    ORGA                              : ........................................... iRATA\n    MUSIC BY                       : ........................................... tEiS\n    ORIGINAL COMPOSER : ........................................ Walkman \n    CODE BY                         : ........................................... Luis \n    MUSIC BY                       : ........................................... hArDy \n    RELEASE DATE              : ........................................... june 2014\n    RELEASE PARTY            : ........................................... Party 2014\n    COMPETITION               : .......................................... Wild Demo ",
+      "description": "",
       "release_date": "2014-06-14",
       "image": "/img/Beams.webp",
       "platform": "Other Systems",
@@ -635,7 +635,7 @@
     {
       "title": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.",
       "type": "Wild",
-      "description": "OHP MEGA DEMO 9000 by Desire & Tristar & Red Sector Inc.\n1st place in OHP Demo competition @ Party 2012\n\n    RELEASE NAME : ........................................... OHP MEGA DEMO 9000\n    PLATFORM         : ........................................... Overhead Projector\n    MUSIC BY            : ........................................... CONS\n    OTHER BY            : ........................................... Luis \n    RELEASE DATE   : ........................................... june 2012\n    RELEASE PARTY : ........................................... Party 2012\n    COMPETITION    : ........................................... OHP Demo ",
+      "description": "",
       "release_date": "2012-06-16",
       "image": "/img/Ohp2bQ.webp",
       "platform": "Other Systems",
@@ -729,7 +729,7 @@
     {
       "title": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest",
       "type": "Demo",
-      "description": "aTaRSI (2013) by TRSI & Digital Sounds System & Crest\n1st place in the oldskool demo competition @ Nordlicht 2013\n\n    RELEASE NAME : ..................... aTaRSI (2013)\n    PLATFORM         : ..................... Atari VCS\n    CODE BY              : ..................... entusi\n    GRAPHICS BY     : ..................... DeeKay/Cst\n    MUSIC BY            : ..................... Tjopen\n    RELEASE DATE   : ..................... july 2013\n    RELEASE PARTY : .................... Nordlicht 2013 ",
+      "description": "",
       "release_date": "2013-07-05",
       "image": "/img/aTaRSiDemo.webp",
       "platform": "Other Systems",
@@ -755,7 +755,7 @@
     {
       "title": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge",
       "type": "Wild",
-      "description": "Funky Fresh by Tristar & Red Sector Inc. & Desire & Rabenauge\n2nd place in the wild demo competition @ Revision 2012\n\n    RELEASE NAME  : .................... Funky Fresh\n    PLATFORM          : ..................... wild demo / Java\n    CODE BY              : ..................... spotter^TRSi \n    CODE BY              : ..................... Luids^TRSi \n    GRAPHICS BY     : ..................... alien^PDX\n    GRAPHICS BY     : ..................... Forcer\n    GRAPHICS BY      : ..................... WoDK\n    OTHER (IDEA)      : ..................... bodo^rab\n    SUPPORT BY        : ..................... Ramon B5 \n    RELEASE DATE    : ..................... april 2012\n    RELEASE PARTY : .....................  Revision 2012\n    COMPETITION    : ..............,....... wild demo ",
+      "description": "",
       "release_date": "2012-04-01",
       "image": "/img/Poster.webp",
       "platform": "Other Systems",
@@ -797,7 +797,7 @@
     {
       "title": "Jupiter & Beyond by St. Vincent And The Grenadines & Tristar and Red Sector Inc.",
       "type": "Wild",
-      "description": "Jupiter & Beyond by St. Vincent And The Grenadines & Tristar and Red Sector Inc.\n3rd place in the wild demo competition @ Revision 2013\n\n    RELEASE NAME       : .................... Jupiter & Beyond\n    PLATFORM               : .......,.............. wild demo\n    CODE BY                    : ..................... WAHa_06x36 \n    CODE BY                    : ..................... halcy \n    CODE & MUSIC BY   : ..................... coda\n    GRAPHICS BY           : ..................... Forcer\n    RELEASE DATE         : ..................... march 2013\n    RELEASE PARTY       : ....................  Revision 2013\n    COMPETITION          : .............,....... wild demo ",
+      "description": "",
       "release_date": "2013-03-01",
       "image": "/img/Poster.webp",
       "platform": "Other Systems",
@@ -835,7 +835,7 @@
     {
       "title": "ShaderShowdownRemix-Evoke2018 by Tristar and Red Sector Inc.",
       "type": "Demo",
-      "description": "ShaderShowdownRemix-Evoke2018 by Tristar and Red Sector Inc. \n2nd place in the pc 4k competition @ Evoke 2018\n\n    RELEASE NAME : ..................... ShaderShowdownRemix\n    PLATFORM          : ..................... PC Windows\n    CODE BY              : ..................... hArDy\n    MUSIC BY            : ..................... hArDy\n    RELEASE DATE   : ..................... august 2018\n    RELEASE PARTY : ..................... Evoke 2018\n    COMPETITION    : ..................... PC 4k ",
+      "description": "",
       "release_date": "2008-08-01",
       "image": "/img/ShaderShowdownRemix.webp",
       "platform": "PC",
@@ -857,7 +857,7 @@
     {
       "title": "l4Kuna by Tristar & Red Sector Inc.",
       "type": "Demo",
-      "description": "l4Kuna by Tristar & Red Sector Inc.\n1st place in the pc 4k competition @ the Ultimate Meeting 2009\n\n    RELEASE NAME : ..................... l4Kuna\n    PLATFORM          : ..................... PC Windows\n    CODE BY              : ..................... hArDy\n    MUSIC BY            : ..................... tEiS\n    RELEASE DATE   : ..................... december 2009\n    RELEASE PARTY : ..................... the Ultimate Meeting 2009\n    COMPETITION    : ..................... PC 4k ",
+      "description": "",
       "release_date": "2009-12-01",
       "image": "/img/Poster.webp",
       "platform": "PC",
@@ -872,6 +872,56 @@
         {
           "name": "hArDy",
           "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Amiga demo (party version). Released at Revision 2025",
+      "type": "Demo",
+      "description": "Amiga demo (party version). Released at Revision 2025\n\nCredits: \nCode ..................... Tedy\nGraphics by .......... Biter, Sir James, Szudi, Vasyl, Witja\nMusic .................... AceMan\nSupport (Mystic) .. Easy Rider\nSupport (TRSI) ..... Norby\n\nRequirements ....... 60060, 2MB Chip/16MB Fast",
+      "release_date": "2025-04-21",
+      "image": "/img/Lupus Reditus.webp",
+      "platform": "Amiga AGA",
+      "youtube_url": "https://www.youtube.com/watch?v=vtaqb3fT72k",
+      "pouet_url": "https://www.pouet.net/prod.php?which=103978",
+      "demozoo_url": null,
+      "credits": [
+        {
+          "name": "Tedy",
+          "contribution": "Code"
+        },
+        {
+          "name": "Biter",
+          "contribution": "GFX"
+        },
+        {
+          "name": "Sir James",
+          "contribution": "GFX"
+        },
+        {
+          "name": "Szudi",
+          "contribution": "GFX"
+        },
+        {
+          "name": "Vasyl",
+          "contribution": "GFX"
+        },
+        {
+          "name": "Witja",
+          "contribution": "GFX"
+        },
+        {
+          "name": "AceMan",
+          "contribution": "Music"
+        },
+        {
+          "name": "Easy Rider",
+          "contribution": "Support"
+        },
+        {
+          "name": "Support",
+          "contribution": "Support"
         }
       ],
       "tags": []
