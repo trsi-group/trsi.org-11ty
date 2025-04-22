@@ -1,17 +1,6 @@
 body {
   /* font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Ubuntu,Fira Sans,Roboto,Avenir Next,Helvetica Neue,Helvetica,Arial,sans-serif; */
   /* font-size: xx-large; */
-  background-color:  var(--background-color);
-  color: white;
-
-  /* bulma overloads */
-  --bulma-scheme-main: var(--background-color);
-  --bulma-navbar-background-color: black;
-  --bulma-navbar-item-color: white;
-  --bulma-card-color: var(--text-color);
-  --bulma-subtitle-color: var(--text-color);
-  --bulma-link-text: var(--light-color);
-  --bulma-card-radius: 0px;
 
   /* colors */
   --background-color: rgb(51, 51, 51);
@@ -21,6 +10,23 @@ body {
   --link-color: #eeee88;
   --link-hover-color: #a7155a;
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
+
+  /* bulma overloads */
+  --bulma-scheme-main: var(--background-color);
+  --bulma-navbar-background-color: var(--background-color);
+  --bulma-navbar-item-color: var(--text-color);;
+  --bulma-card-color: var(--text-color);
+  --bulma-subtitle-color: var(--light-color);
+  --bulma-link-text: var(--light-color);
+  --bulma-card-radius: 0px;
+  --bulma-title-color: var(--text-color);
+  --bulma-content-heading-color: var(--text-color);
+  --bulma-body-font-size: 1.4rem;
+}
+
+body {
+  background-color:  var(--background-color);
+  color: white;
 }
 
 /* Card */
@@ -93,7 +99,7 @@ a.navbar-item, .navbar-link  {
   padding-top: 0px;
 }
 
-.content h1, .title, .subtitle, .card  {
+.content h1, .content h2, .title, .subtitle, .card  {
   color: var(--text-color);
 }
 

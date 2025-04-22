@@ -1,4 +1,4 @@
-import path from 'path';
+import { resolve } from 'path';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -21,11 +21,12 @@ export function transformPosts(contentfulData) {
     .filter((entry) => entry.sys.contentType.sys.id === 'posts')
     .map((entry) => {
       const fields = entry.fields;
-      const imageId = fields.avatar?.['en-US']?.sys.id;
+      const imageId = fields.image?.['en-US']?.sys.id;
 
       return {
         title: fields.title['en-US'],
         body: fields.body?.['en-US'],
+        image: imageId ? resolve('/img/', findAssetPathById(imageId)) : null,
         publishDate: fields.publishDate?.['en-US'],
       };
     });
