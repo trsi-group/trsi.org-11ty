@@ -12,8 +12,8 @@ body {
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
 
   /* card overlay */
-  --overlay-height: 320px;
-  --bounce-height: 200px;
+  --overlay-height: 300px;
+  --lift-height: 120px;
   
   /* bulma overloads */
   --bulma-scheme-main: var(--background-color);
@@ -40,11 +40,6 @@ body {
   background-color: black;;
 }
 
-.card:hover .bounce-hover {
-  animation: bounce-up 0.6s ease forwards;
-  animation-delay: 0.4s;
-}
-
 .card-image:first-child img {
   object-fit: contain;
   border-radius: 0px;
@@ -52,14 +47,17 @@ body {
 
 .card-content, .card-content:last-child  {
   position: absolute;
-  top: 65%;
+  top: 240px;
   background: var(--overlay-color);
   width: 100%;
   height: var(--overlay-height);
   border-radius: 0px;
+  --in-speed: 0.3s;
+  --out-speed: 0.7s;
+  transition: transform var(--out-speed) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-content.members, .card-content:last-child .members {
+.card-content.members, .card-content:last-child.members {
   position: absolute;
   top: 75%;
   background: var(--overlay-color);
@@ -68,8 +66,9 @@ body {
   border-radius: 0px;
 }
 
-.card-content .title {
-  height: 2lh; /* exactly 2 lines high */
+.card:hover .bounce-hover {
+  transform: translateY(calc(var(--lift-height) * -1));
+  transition: transform var(--in-speed) cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /* Header */
@@ -125,19 +124,11 @@ a.navbar-item, .navbar-link  {
 }
 
 /* Effects */
-@keyframes bounce-up {
+@keyframes lift-up {
   0%   { transform: translateY(0); }
-  20%  { transform: translateY(calc(var(--bounce-height) * -1)); }
-  35%  { transform: translateY(calc(var(--bounce-height) * -0.57)); }
-  50%  { transform: translateY(calc(var(--bounce-height) * -0.85)); }
-  65%  { transform: translateY(calc(var(--bounce-height) * -0.64)); }
-  80%  { transform: translateY(calc(var(--bounce-height) * -0.78)); }
-  100% { transform: translateY(calc(var(--bounce-height) * -0.71)); }
+
+  100% { transform: translateY(calc(var(--lift-height) * -1)); }
 }
-/* 
-.bounce-hover:hover {
-  animation: bounce-up 0.6s ease forwards;
-} */
 
 @keyframes bounce-teaser {
   0%   { transform: translateY(0); }
