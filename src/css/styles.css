@@ -11,6 +11,10 @@ body {
   --link-hover-color: #a7155a;
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
 
+  /* card overlay */
+  --overlay-height: 320px;
+  --bounce-height: 200px;
+  
   /* bulma overloads */
   --bulma-scheme-main: var(--background-color);
   --bulma-navbar-background-color: var(--background-color);
@@ -51,7 +55,7 @@ body {
   top: 65%;
   background: var(--overlay-color);
   width: 100%;
-  height: 260px;
+  height: var(--overlay-height);
   border-radius: 0px;
 }
 
@@ -123,12 +127,12 @@ a.navbar-item, .navbar-link  {
 /* Effects */
 @keyframes bounce-up {
   0%   { transform: translateY(0); }
-  20%  { transform: translateY(-140px); } /* big, fast launch */
-  35%  { transform: translateY(-80px); }  /* hard rebound */
-  50%  { transform: translateY(-120px); } /* second bounce */
-  65%  { transform: translateY(-90px); }  /* smaller rebound */
-  80%  { transform: translateY(-110px); } /* final tiny kick */
-  100% { transform: translateY(-100px); } /* settle */
+  20%  { transform: translateY(calc(var(--bounce-height) * -1)); }
+  35%  { transform: translateY(calc(var(--bounce-height) * -0.57)); }
+  50%  { transform: translateY(calc(var(--bounce-height) * -0.85)); }
+  65%  { transform: translateY(calc(var(--bounce-height) * -0.64)); }
+  80%  { transform: translateY(calc(var(--bounce-height) * -0.78)); }
+  100% { transform: translateY(calc(var(--bounce-height) * -0.71)); }
 }
 /* 
 .bounce-hover:hover {

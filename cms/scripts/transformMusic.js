@@ -21,6 +21,7 @@ export function transformMusic(contentfulData) {
     .filter((entry) => entry.sys.contentType.sys.id === 'music')
     .map((entry) => {
       const fields = entry.fields;
+      const imageId = fields.image?.['en-US']?.sys.id;
       const metadata = entry.metadata;
       
       // Extract credits from the new structure
@@ -33,12 +34,15 @@ export function transformMusic(contentfulData) {
       return {
         title: fields.title['en-US'],
         type: fields.type['en-US'],
+        type: fields.type['en-US'],
+        platform: fields.platform ? fields.platform['en-US'] : null,
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
-        // release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
-        platform: fields.platform ? fields.platform['en-US'] : '',
-        download_url: fields.download ? fields.download['en-US'] : null,
-        demozoo_url: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
+        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
+        image: imageId ? resolve('/img/', findAssetPathById(imageId)) : null,
+        download: fields.download ? fields.download['en-US'] : null,
+        demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
+        tags: tags,
       };
     });
 

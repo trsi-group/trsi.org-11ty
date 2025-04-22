@@ -8,7 +8,19 @@
     <p class="subtitle is-6">{{ card.type }}</p>
     <p class="title is-4">{{ card.title }}</p>
     {%- if card.description %}<p class="">{{ card.description }}</p>{%- endif %}
-    {%- if card.download_url %}<a class="" href="{{ card.download_url }}">Download</a>{%- endif %}
-    {%- if card.demozoo_url %}<a class="" href="{{ card.demozoo_url }}">Demozoo</a>{%- endif %}
-  </div>
+    <nav class="level">
+      <div class="level-left">
+        {%- if card.download %}
+        <div class="level-item">
+          <a class="" href="{{ card.download }}">Download</a>
+        </div>
+        {%- endif %}
+        {%- if card.demozoo %}
+        <div class="level-item">
+          <a class="" href="{{ card.demozoo }}">Demozoo</a>
+        </div>
+        {%- endif %}
+      </div>
+    </nav>
+    </div>
 </div>
