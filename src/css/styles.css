@@ -12,13 +12,13 @@ body {
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
 
   /* card overlay */
-  --overlay-height: 300px;
-  --lift-height: 120px;
+  --overlay-height: 100%;
+  --lift-height: 35%;
   
   /* bulma overloads */
   --bulma-scheme-main: var(--background-color);
   --bulma-navbar-background-color: var(--background-color);
-  --bulma-navbar-item-color: var(--text-color);;
+  --bulma-navbar-item-color: var(--text-color);
   --bulma-card-color: var(--text-color);
   --bulma-subtitle-color: var(--light-color);
   --bulma-link-text: var(--light-color);
@@ -26,6 +26,15 @@ body {
   --bulma-title-color: var(--text-color);
   --bulma-content-heading-color: var(--text-color);
   --bulma-body-font-size: 1.4rem;
+  .navbar {
+    --bulma-navbar-burger-color: var(--text-color);
+  }
+  --bulma-pre-background: var(--bulma-modal-background-background-color);
+  --bulma-pre: var(--text-color);
+  .modal {
+    --bulma-modal-content-width:80%;
+  };
+  
 }
 
 body {
@@ -47,7 +56,7 @@ body {
 
 .card-content, .card-content:last-child  {
   position: absolute;
-  top: 240px;
+  top: 70%;
   background: var(--overlay-color);
   width: 100%;
   height: var(--overlay-height);
@@ -73,7 +82,8 @@ body {
 
 /* Header */
 header.section {
-  padding: 0 var(--bulma-section-padding-desktop);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .logo {
@@ -102,8 +112,18 @@ a.navbar-item, .navbar-link  {
   padding-top: 0px;
 }
 
-.content h1, .content h2, .title, .subtitle, .card  {
+.content h1, .content h2, .content h3, .title, .subtitle, .card  {
   color: var(--text-color);
+}
+
+/* Modal */
+.modal-content {
+  overflow: hidden;
+}
+
+.modal-content pre {
+  white-space: pre;
+  tab-size: 1;
 }
 
 /* Footer */

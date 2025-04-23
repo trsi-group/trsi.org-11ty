@@ -10,6 +10,9 @@
     {%- if card.description %}<p class="">{{ card.description }}</p>{%- endif %}
     <nav class="level">
       <div class="level-left">
+        <button class="js-modal-trigger" data-target="modal-overlay">
+          Open JS example modal
+        </button>
         {%- if card.download_url %}
         <div class="level-item">
           <a class="" href="{{ card.download_url }} target="blank"">Download</a>
