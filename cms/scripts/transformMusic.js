@@ -36,6 +36,7 @@ export function transformMusic(contentfulData) {
         type: fields.type['en-US'],
         type: fields.type['en-US'],
         platform: fields.platform ? fields.platform['en-US'] : null,
+        nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
         image: imageId ? resolve('/img/', findAssetPathById(imageId)) : null,

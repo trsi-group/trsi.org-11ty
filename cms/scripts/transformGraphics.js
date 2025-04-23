@@ -34,6 +34,7 @@ export function transformGraphics(contentfulData) {
         type: fields.type['en-US'],
         platform: fields.platform ? fields.platform['en-US'] : null,
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
+        nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
         image: imageId ? resolve('/img/', findAssetPathById(imageId)) : null,
         download: fields.download ? fields.download['en-US'] : null,
