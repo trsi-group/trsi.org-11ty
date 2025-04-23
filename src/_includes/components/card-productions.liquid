@@ -12,17 +12,17 @@
       <div class="level-left">
         {%- if card.download_url %}
         <div class="level-item">
-          <a class="" href="{{ card.download_url }}">Download</a>
+          <a class="" href="{{ card.download_url }} target="blank"">Download</a>
         </div>
         {%- endif %}
         {%- if card.demozoo %}
         <div class="level-item">
-          <a class="" href="{{ card.demozoo }}">Demozoo</a>
+          <a class="" href="{{ card.demozoo }}" target="blank">Demozoo</a>
         </div>
         {%- endif %}
         {%- if card.youtube_url %}
         <div class="level-item">
-          <a class="" href="{{ card.youtube_url }}">Youtube</a>
+          <a class="" href="{{ card.youtube_url }}" target="blank">Youtube</a>
         </div>
         {%- endif %}
       </div>
