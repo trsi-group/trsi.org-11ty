@@ -3,7 +3,7 @@ pagination:
   data: cms
   size: 100
 
-layout: base.liquid
+layout: layouts/base.liquid
 title: TRSI - Graphics
 ---
     <!-- Top section -->
@@ -15,10 +15,10 @@ title: TRSI - Graphics
 
     <section class="section">
       <div class="filter-wrapper">
-      {% render "feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
-      {% render "feed-filter.liquid", feed: cms.graphics, type: "Type" %}
+      {% render "components/feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
+      {% render "components/feed-filter.liquid", feed: cms.graphics, type: "Type" %}
       </div>
       <div id="feed-wrapper">
-        {% render "feed-cards.liquid", feed: cms.graphics, type: "graphics" %}
+        {% render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics" %}
       </div>
     </section>

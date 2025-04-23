@@ -4,7 +4,8 @@ pagination:
   size: 1           # One page per post
   alias: post       # Each item will be called 'post'
 permalink: "news/{{ post.slug }}/index.html"
-layout: base.liquid
+layout: layouts/base.liquid
+title: TRSI - News - {{ post.title }}
 ---
 
 <section class="section">

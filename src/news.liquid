@@ -3,7 +3,7 @@ pagination:
   data: cms
   size: 100
 
-layout: base.liquid
+layout: layouts/base.liquid
 title: TRSI - News
 ---
     <!-- Top section -->
@@ -15,6 +15,6 @@ title: TRSI - News
 
     <section class="section">
       <div id="list-wrapper">
-        {% render "feed-news.liquid", feed: cms.posts, type: "posts" %}
+        {% render "components/feed-news.liquid", feed: cms.posts, type: "posts" %}
       </div>
     </section>

@@ -3,7 +3,7 @@ pagination:
   data: cms
   size: 100
 
-layout: base.liquid
+layout: layouts/base.liquid
 title: TRSI - Members
 ---
     <!-- Top section -->
@@ -14,5 +14,5 @@ title: TRSI - Members
     </section>
 
     <section class="section">
-      {% render "feed-cards.liquid", feed: cms.members, type: "members", sort_key: "handle", sort_order: "asc" %}
+      {% render "components/feed-cards.liquid", feed: cms.members, type: "members", sort_key: "handle", sort_order: "asc" %}
     </section>

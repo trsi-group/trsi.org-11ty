@@ -1,3 +1,4 @@
+// filters for content feeds
 function handleFilterChange(event) {
   const cards = document.querySelectorAll("#feed-wrapper .column");
   const typeFilter = document.getElementById("TypeFilter");
@@ -14,6 +15,7 @@ function handleFilterChange(event) {
   })
 };
 
+// navbar menu
 document.addEventListener('DOMContentLoaded', () => {
   console.log("main.js: DOMContentLoaded");
 
