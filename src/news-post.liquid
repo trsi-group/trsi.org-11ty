@@ -1,0 +1,18 @@
+---
+pagination:
+  data: cms.posts   # Array of posts
+  size: 1           # One page per post
+  alias: post       # Each item will be called 'post'
+permalink: "news/{{ post.slug }}/index.html"
+layout: base.liquid
+---
+
+<section class="section">
+  <div class="content">
+    <h1 class="title">{{ post.title }}</h1>
+    <p class="is-size-7 has-text-grey">{{ post.date }}</p>
+    <div>
+      {{ post.body }}
+    </div>
+  </div>
+</section>

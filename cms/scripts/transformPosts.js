@@ -1,5 +1,13 @@
 import { resolve } from 'path';
 
+// Generate slug from title 
+function getSlug(title) {
+  return title
+    .toLowerCase() // Convert to lowercase
+    .replace(/\s+/g, "-") // Replace spaces with dashes
+    .replace(/[^a-z0-9-]/g, ""); // Remove special characters
+}
+
 /**
  * Transforms Contentful JSON export to the target simplified format.
  * @param {Object} contentfulData - The raw JSON data exported from Contentful.
@@ -22,12 +30,14 @@ export function transformPosts(contentfulData) {
     .map((entry) => {
       const fields = entry.fields;
       const imageId = fields.image?.['en-US']?.sys.id;
+      const slug = getSlug(fields.title['en-US']);
 
       return {
         title: fields.title['en-US'],
         body: fields.body?.['en-US'],
         image: imageId ? resolve('/img/', findAssetPathById(imageId)) : null,
         publishDate: fields.publishDate?.['en-US'],
+        slug: slug,
       };
     });
   // console.log("posts: " + JSON.stringify(posts, null, 2));

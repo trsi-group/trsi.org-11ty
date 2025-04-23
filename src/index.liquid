@@ -24,7 +24,7 @@ title: TRSI
         <h1>Latest News</h1>
       </div>
       <div>
-        {% render "list.liquid", feed: cms.posts, max: 3 %}
+        {% render "feed-news.liquid", feed: cms.posts, max: 3 %}
       </div>
     </section>
 
@@ -33,7 +33,7 @@ title: TRSI
         <h1>Latest Productions</h1>
       </div>
       <div>
-        {% render "feed.liquid", feed: cms.productions, type: "productions", max: 3 %}
+        {% render "feed-cards.liquid", feed: cms.productions, type: "productions", max: 3 %}
       </div>
     </section>
 
@@ -42,7 +42,7 @@ title: TRSI
         <h1>Latest Graphics</h1>
       </div>
       <div>
-        {% render "feed.liquid", feed: cms.graphics, type: "graphics", max: 3 %}
+        {% render "feed-cards.liquid", feed: cms.graphics, type: "graphics", max: 3 %}
       </div>
     </section>
 
@@ -51,6 +51,6 @@ title: TRSI
         <h1>Latest Music</h1>
       </div>
       <div>
-        {% render "feed.liquid", feed: cms.music, type: "music", max: 3 %}
+        {% render "feed-cards.liquid", feed: cms.music, type: "music", max: 3 %}
       </div>
     </section>

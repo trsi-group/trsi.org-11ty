@@ -8,11 +8,13 @@
       <img src="{{ item.image | replace: '/img/', '/img/card/' }}" alt="...">
     </figure>
     <div class="media-content column">
-      <div class="content">
-        <h2 class="title">{{ item.title }}</h2>
-        <p>{{ item.body }}</p>
-        <p class="date">{{ item.publishDate }}</p>
-      </div>
+      <a href="/news/{{ item.slug }}/">
+        <div class="content">
+          <h2 class="title">{{ item.title }}</h2>
+          <p>{{ item.body }}</p>
+          <p class="date">{{ item.publishDate }}</p>
+        </div>
+      </a>
     </div>
   </article>
   {%- endfor %}
