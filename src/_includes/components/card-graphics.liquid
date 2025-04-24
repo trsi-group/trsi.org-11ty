@@ -1,29 +1,30 @@
-<div class="card">
-  {%- if card.image %}
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="{{ card.image | replace: '/img/', '/img/card/' }}" alt="...">
-    </figure>
-  </div>
-  {%- endif %}
-  <div class="card-content bounce-hover">
-    <p class="subtitle is-6">{{ card.type }}</p>
-    <p class="title is-4">{{ card.title }}</p>
-    {%- if card.credits %}<p>Artist: {% for item in card.credits %}{{ item.name }}{%- endfor %}</p>{%- endif %}
-    {%- if card.platform %}<p>Platform: {{ card.platform }}</p>{%- endif %}
-    <nav class="level">
-      <div class="level-left">
-        {%- if card.download %}
-        <div class="level-item">
-          <a class="" href="{{ card.download }}" target="blank">Download</a>
-        </div>
-        {%- endif %}
-        {%- if card.demozoo %}
-        <div class="level-item">
-          <a class="" href="{{ card.demozoo }}" target="blank">Demozoo</a>
-        </div>
-        {%- endif %}
-      </div>
-    </nav>
-  </div>
-</div>
+
+          <div class="card">
+            {%- if card.image %}
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="{{ card.image | replace: '/img/', '/img/card/' }}" alt="...">
+              </figure>
+            </div>
+            {%- endif %}
+            <div class="card-content bounce-hover">
+              <p class="subtitle is-6">{{ card.type }}</p>
+              <p class="title is-4">{{ card.title }}</p>
+              {%- if card.credits %}<p>Artist: {% for item in card.credits %}{{ item.name }}{%- endfor %}</p>{%- endif %}
+              {%- if card.platform %}<p>Platform: {{ card.platform }}</p>{%- endif %}
+              <nav class="level">
+                <div class="level-left">
+                  {%- if card.download %}
+                  <div class="level-item">
+                    <a class="" href="{{ card.download }}" target="blank">Download</a>
+                  </div>
+                  {%- endif %}
+                  {%- if card.demozoo %}
+                  <div class="level-item">
+                    <a class="" href="{{ card.demozoo }}" target="blank">Demozoo</a>
+                  </div>
+                  {%- endif %}
+                </div>
+              </nav>
+            </div>
+          </div>

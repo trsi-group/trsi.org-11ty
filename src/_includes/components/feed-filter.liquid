@@ -22,11 +22,11 @@
   {%- endunless %}
 {%- endfor %}
 
-<div class="select is-small is-rounded is-primary"">
-  <select id="{{ type }}Filter">
-    <option value="">All {{ type }}s</option>
-    {%- for key in keys %}
-    <option value="{{ key | downcase }}">{{ key }}</option>
-    {%- endfor %}
-  </select>
-</div>
+    <div class="select is-small is-rounded is-primary"">
+      <select id="{{ type }}Filter">
+        <option value="">All {{ type }}s</option>
+        {%- for key in keys %}
+        <option value="{{ key | downcase }}">{{ key }}</option>
+        {%- endfor %}
+      </select>
+    </div>
