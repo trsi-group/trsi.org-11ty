@@ -130,6 +130,11 @@ body {
 }
 
 /* Navbar */
+.navbar-burger {
+  align-items: flex-end;
+  width: 0.5rem;
+}
+
 .navbar-item, .navbar-link  {
   background-color: var(--background-color);
   color: var(--text-color);
