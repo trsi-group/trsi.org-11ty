@@ -6,14 +6,10 @@ pagination:
 layout: layouts/base.liquid
 title: TRSI - News
 ---
-    <!-- Top section -->
-    <section class="section headline">
+    <section class="section">
       <div class="content">
         <h1 class="is-size-2">Latest News</h1>
       </div>
-    </section>
-
-    <section class="section">
       <div id="list-wrapper">
         {% render "components/feed-news.liquid", feed: cms.posts, type: "posts" %}
       </div>

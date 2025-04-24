@@ -1,10 +1,7 @@
-    <header class="section">
-      <nav class="navbar pb-5" role="navigation" aria-label="main navigation">
+    <header class="section py-0">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="{{ site.domain }}">
-            <p class="is-size-2 is-size-3-touch is-uppercase">Back to the...Roots</p>
-          </a>
-      
+          <a class="navbar-item is-size-3 is-size-4-touch" href="{{ site.domain }}">Back to the...Roots</a>
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -16,8 +13,8 @@
         <div class="navbar-menu" id="navMenu">
           <div class="navbar-start has-text-centered">
           {%- for item in navigation.nav_items %}
-            {% assign item_slug = item.title | downcase %}
-            <a href="{{ item.url }}" class="navbar-item is-size-2 is-size-3-touch{% if page.fileSlug == item_slug %} active{% endif %}">{{ item.title }}</a>
+            {%- assign item_slug = item.title | downcase %}
+            <a href="{{ item.url }}" class="navbar-item is-size-3 is-size-4-touch{% if page.fileSlug == item_slug %} active{% endif %}">{{ item.title }}</a>
           {%- endfor %}
           </div>
         </div>

@@ -1,56 +1,46 @@
 ---
-pagination:
-  data: cms
-  size: 100
-
 layout: layouts/base.liquid
 title: TRSI
 ---
     <!-- Top section -->
     <section class="section is-size-5">
       <div class="content">
-        <div class="row mb-5 align-items-center">
-          <img src="trsi-logo.svg" height="100" alt="">
+        <div class="has-text-centered mb-5">
+          <figure class="image is-inline-block">
+            <img src="trsi-logo.svg" alt="TRSI logo" class="logo" />
+          </figure>
         </div>
-        <div class="row mb-5">
-          <div class="col-md-6">Founded in 1990, TRSI is one of the most iconic and longest-standing groups in the global demoscene. Known for pushing the boundaries of creativity and technology, TRSI has been at the forefront of crafting mesmerizing demos, intros, and music for platforms ranging from the Amiga and Commodore 64 to modern PCs.</div>
-          <div class="col-md-6">As pioneers of digital art and innovation, TRSI thrives on the intersection of code, design, and sound, continuously inspiring the scene with groundbreaking productions. Join us in celebrating over three decades of passion, creativity, and camaraderie in the demoscene community!</div>
+        <div class="columns mb-5">
+          <div class="column">Founded in 1990, TRSI is one of the most iconic and longest-standing groups in the global demoscene. Known for pushing the boundaries of creativity and technology, TRSI has been at the forefront of crafting mesmerizing demos, intros, and music for platforms ranging from the Amiga and Commodore 64 to modern PCs.</div>
+          <div class="column">As pioneers of digital art and innovation, TRSI thrives on the intersection of code, design, and sound, continuously inspiring the scene with groundbreaking productions. Join us in celebrating over three decades of passion, creativity, and camaraderie in the demoscene community!</div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="content">
-        <h1>Latest News</h1>
+        <h1><a href="/news/">Latest News</a></h1>
       </div>
-      <div>
         {% render "components/feed-news.liquid", feed: cms.posts, max: 3 %}
-      </div>
     </section>
 
     <section class="section">
       <div class="content">
-        <h1>Latest Productions</h1>
+        <h1><a href="/productions/">Latest Productions</a></h1>
       </div>
-      <div>
         {% render "components/feed-cards.liquid", feed: cms.productions, type: "productions", max: 3 %}
-      </div>
     </section>
 
     <section class="section">
       <div class="content">
-        <h1>Latest Graphics</h1>
+        <h1><a href="/graphics/">Latest Graphics</a></h1>
       </div>
-      <div>
         {% render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics", max: 3 %}
-      </div>
     </section>
 
     <section class="section">
       <div class="content">
-        <h1>Latest Music</h1>
+        <h1><a href="/music/">Latest Music</a></h1>
       </div>
-      <div>
         {% render "components/feed-cards.liquid", feed: cms.music, type: "music", max: 3 %}
-      </div>
     </section>
