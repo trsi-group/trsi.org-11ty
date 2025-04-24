@@ -17,12 +17,27 @@ export function transformProductions(contentfulData) {
     return null;
   };
 
+  // credits: https://stackoverflow.com/a/8260383
+  const getYtId = (url) => {
+    const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      return "error";
+    }
+  }
+
   const productions = entries
     .filter((entry) => entry.sys.contentType.sys.id === 'productions')
     .map((entry) => {
       const fields = entry.fields;
       const metadata = entry.metadata;
       const imageId = fields.image?.['en-US']?.sys.id;
+      
+      // filter youtube video ID to be used with nocookie URL
+      const ytUrl = fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null;
+      const ytId = getYtId(ytUrl);
 
       // Extract credits from the new structure
       const credits = fields.credits?.['en-US']?.map((credit) => ({
@@ -40,7 +55,7 @@ export function transformProductions(contentfulData) {
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         image: imageId ? resolve('/img/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
-        youtube_url: fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null,
+        youtube_url: "https://www.youtube-nocookie.com/embed/" + ytId,
         pouet_url: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
         demozoo_url: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
