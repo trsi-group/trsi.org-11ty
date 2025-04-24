@@ -23,7 +23,7 @@
 {%- endfor %}
 
     <div class="select is-small is-rounded is-primary"">
-      <select id="{{ type }}Filter">
+      <select aria-label="{{ type }} Filter" id="{{ type }}Filter">
         <option value="">All {{ type }}s</option>
         {%- for key in keys %}
         <option value="{{ key | downcase }}">{{ key }}</option>
