@@ -32,14 +32,21 @@ body {
   }
 }
 
-body {
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color:  var(--background-color);
-  color: white;
+  color: var(--text-color);
 }
 
 .site-container {
   max-width: 1200px;
   margin: 0 auto;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 0 1rem;
 }
 
@@ -57,11 +64,53 @@ body {
 .navbar a:hover,
 .content h1 a:hover,
 .content h2 a:hover {
-  text-decoration: underline;  /* Optional: show underline on hover */
+  text-decoration: underline;
 }
 
 .title, .subtitle, .card  {
   color: var(--text-color);
+}
+
+/* Navbar */
+.navbar-burger {
+  align-items: flex-end;
+  width: 0.5rem;
+}
+
+.navbar-item, .navbar-link  {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-top: 0.75rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0rem;
+}
+
+a.navbar-item, .navbar-link  {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.section.headline {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+/* Footer */
+footer {
+  background-color:  var(--background-color);
+  color: var(--text-color);
+}
+
+.footer-content.ul {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.social-icon {
+  font-size: 1.5rem; 
+  color: white;
 }
 
 /* Card */
@@ -127,43 +176,6 @@ body {
 
 .select:not(.is-multiple):not(.is-loading)::after {
   border-color: var(--text-color);
-}
-
-/* Navbar */
-.navbar-burger {
-  align-items: flex-end;
-  width: 0.5rem;
-}
-
-.navbar-item, .navbar-link  {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding-top: 0.75rem;
-  padding-right: 1.5rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0rem;
-}
-
-a.navbar-item, .navbar-link  {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.section.headline {
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
-
-/* Footer */
-.footer-content.ul {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-}
-
-.social-icon {
-  font-size: 1.5rem; 
-  color: white;
 }
 
 /* Filter */
