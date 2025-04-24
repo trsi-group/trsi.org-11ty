@@ -5,15 +5,14 @@ body {
   /* colors */
   --background-color: rgb(51, 51, 51);
   --light-color: #efd202;
-  --dark-color: #502040;
+  --dark-color: #000000;
   --text-color: #eeeeee;
   --link-color: #eeee88;
   --link-hover-color: #a7155a;
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
 
   /* card overlay */
-  --overlay-height: 300px;
-  --lift-height: 120px;
+  --lift-height: 100%;
   
   /* bulma overloads */
   --bulma-scheme-main: var(--background-color);
@@ -117,7 +116,8 @@ footer {
 .card {
   border-radius: 0px;
   overflow: hidden;
-  background-color: black;;
+  background-color: var(--dark-color);
+  cursor: pointer;
 }
 
 .card-image:first-child img {
@@ -127,10 +127,9 @@ footer {
 
 .card-content, .card-content:last-child  {
   position: absolute;
-  top: 240px;
   background: var(--overlay-color);
   width: 100%;
-  height: var(--overlay-height);
+  height: 100%;
   border-radius: 0px;
   --in-speed: 0.3s;
   --out-speed: 0.7s;
@@ -181,20 +180,6 @@ footer {
 /* Filter */
 .filter-wrapper {
   margin-bottom: 15px;
-}
-
-/* Effects */
-@keyframes lift-up {
-  0%   { transform: translateY(0); }
-
-  100% { transform: translateY(calc(var(--lift-height) * -1)); }
-}
-
-@keyframes bounce-teaser {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-8px); }
-  60%  { transform: translateY(0); }
-  100% { transform: translateY(0); }
 }
 
 .scale:hover {
