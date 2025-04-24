@@ -22,15 +22,46 @@ body {
   --bulma-card-color: var(--text-color);
   --bulma-subtitle-color: var(--light-color);
   --bulma-link-text: var(--light-color);
-  --bulma-card-radius: 0px;
   --bulma-title-color: var(--text-color);
-  --bulma-content-heading-color: var(--text-color);
-  --bulma-body-font-size: 1.4rem;
+  --bulma-text-strong: var(--text-color);
+  --bulma-card-radius: 0px;
+  --bulma-body-font-size: 1.0rem;
+  .content {
+    --bulma-content-heading-weight: 400;
+    --bulma-content-heading-color: var(--text-color);
+  }
 }
 
 body {
   background-color:  var(--background-color);
   color: white;
+}
+
+.site-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar a,
+.content h1 a,
+.content h2 a,
+.content h3 a,
+.content h4 a,
+.content h5 a,
+.content h6 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar a:hover,
+.content h1 a:hover,
+.content h2 a:hover {
+  text-decoration: underline;  /* Optional: show underline on hover */
+}
+
+.title, .subtitle, .card  {
+  color: var(--text-color);
 }
 
 /* Card */
@@ -71,15 +102,9 @@ body {
   transition: transform var(--in-speed) cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* Header */
-header.section {
-  padding: 0 var(--bulma-section-padding-desktop);
-}
-
-.logo {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
+/* TRSI logo */
+.image img.logo {
+  width: 800px;
 }
 
 /* Navbar */
@@ -100,10 +125,6 @@ a.navbar-item, .navbar-link  {
 .section.headline {
   padding-bottom: 0px;
   padding-top: 0px;
-}
-
-.content h1, .content h2, .title, .subtitle, .card  {
-  color: var(--text-color);
 }
 
 /* Footer */
