@@ -1,9 +1,10 @@
 
           <div class="card" 
-          {{- if card.youtube_url }}data-youtube="{{ card.youtube_url }}"{{- endif }}
-          {{- if card.download_url }}data-download="{{ card.download_url }}"{{- endif }}
-          {{- if card.demozoo_url }}data-demozoo="{{ card.demozoo_url }}"{{- endif }}
-          {{- if card.pouet_url }}data-pouet="{{ card.pouet_url }}"{{- endif }}
+          {{- if card.youtube_url }}data-youtube='{{ card.youtube_url }}'{{- endif }}
+          {{- if card.download_url }}data-download='{{ card.download_url }}'{{- endif }}
+          {{- if card.demozoo_url }}data-demozoo='{{ card.demozoo_url }}'{{- endif }}
+          {{- if card.pouet_url }}data-pouet='{{ card.pouet_url }}'{{- endif }}
+          {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
           >
             <div class="card-image">
               <figure class="image is-4by3">
@@ -16,7 +17,7 @@
                 <p class="title">{{ card.title }}</p>
                 <nav class="level">
                   <div class="level-item">
-                    <button class="button js-modal-trigger is-outlined is-rounded" data-target="modal-overlay">Show Video + Infos</button>
+                    <button class="button js-modal-trigger is-outlined is-rounded" data-target="modal-overlay">Show Infos</button>
                   </div>
                 </nav>
               </div>

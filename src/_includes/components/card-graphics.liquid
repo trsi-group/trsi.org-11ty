@@ -1,5 +1,8 @@
 
-          <div class="card">
+          <div class="card"
+          {{- if card.demozoo_url }}data-demozoo='{{ card.demozoo_url }}'{{- endif }}
+          {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
+          >
             {%- if card.image %}
             <div class="card-image">
               <figure class="image is-4by3">
@@ -11,7 +14,11 @@
               <div class="content">
                 <p class="subtitle">{{ card.type }} / {{ card.platform }}</p>
                 <p class="title">{{ card.title }}</p>
-                {%- if card.credits %}<p>Artist: {% for item in card.credits %}{{ item.name }}{%- endfor %}</p>{%- endif %}
+                <nav class="level">
+                  <div class="level-item">
+                    <button class="button js-modal-trigger is-outlined is-rounded" data-target="modal-overlay">Show Infos</button>
+                  </div>
+                </nav>
               </div>
             </div>
           </div>

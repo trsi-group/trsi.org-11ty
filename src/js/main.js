@@ -17,10 +17,17 @@ function handleFilterChange(event) {
 
 function populateProductionsModal(data) {
   const modalVideo = document.getElementById('modal-video');
+  const figureVideo = modalVideo.closest('figure.image');
+  const modalImage = document.getElementById('modal-image');
+  const figureImage = modalImage.closest('figure.image');
   if (data.youtube) {
     modalVideo.src = data.youtube;
+    figureVideo.style.display = 'block';
+    figureImage.style.display = 'none';
   } else {
-    modalVideo.src = '';  // Clear if no video
+    modalImage.src = data.image;
+    figureImage.style.display = 'block';
+    figureVideo.style.display = 'none';
   }
 
   const buttons = document.querySelectorAll('#modal-overlay .button');
@@ -42,13 +49,38 @@ function populateProductionsModal(data) {
     }
   });
 
-  // 3️⃣ Update NFO Text (optional)
-  const nfoText = document.getElementById('nfo_text');
-  if (data.nfo) {
-    nfoText.innerText = data.nfo;
+  const description = document.getElementById('modal-description');
+  if (data.description) {
+    description.innerText = formatCredits(data.credits);
+  }
+
+  const nfoText = document.getElementById('modal-nfo_text');
+  if (data.credits) {
+    nfoText.innerText = formatCredits(data.credits);
   } else {
     nfoText.innerText = 'No additional info available.';
   }
+}
+
+function formatCredits(creditsArray) {
+  // Group contributors by contribution type
+  const grouped = {};
+
+  creditsArray.forEach(person => {
+    const role = person.contribution;
+    if (!grouped[role]) {
+      grouped[role] = [];
+    }
+    grouped[role].push(person.name);
+  });
+
+  // Build the formatted string
+  let formatted = '';
+  for (const role in grouped) {
+    formatted += `${role}: ${grouped[role].join(', ')}\n`;
+  }
+
+  return formatted.trim();  // Remove trailing newline
 }
 
 // navbar menu
@@ -107,12 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
         youtube: cardElement.dataset.youtube || null,
         demozoo: cardElement.dataset.demozoo || null,
         pouet: cardElement.dataset.pouet || null,
+        credits: cardElement.dataset.credits ? JSON.parse(cardElement.dataset.credits) : [],
         image: cardElement.querySelector('.card-image img').src,
         title: cardElement.querySelector('.card-content .title')?.innerText,
         subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText
       };
-
-      // 4️⃣ Inject data and open modal
       populateProductionsModal(cardData);
       openModal($target);
     });
