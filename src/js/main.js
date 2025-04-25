@@ -15,6 +15,42 @@ function handleFilterChange(event) {
   })
 };
 
+function populateProductionsModal(data) {
+  const modalVideo = document.getElementById('modal-video');
+  if (data.youtube) {
+    modalVideo.src = data.youtube;
+  } else {
+    modalVideo.src = '';  // Clear if no video
+  }
+
+  const buttons = document.querySelectorAll('#modal-overlay .button');
+
+  buttons.forEach(button => {
+    const text = button.innerText.toLowerCase();
+
+    if (text === 'youtube' && data.youtube) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.youtube, '_blank');
+    } else if (text === 'demozoo' && data.demozoo) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.demozoo, '_blank');
+    } else if (text === 'pouet' && data.pouet) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.pouet, '_blank');
+    } else {
+      button.style.display = 'none';
+    }
+  });
+
+  // 3️⃣ Update NFO Text (optional)
+  const nfoText = document.getElementById('nfo_text');
+  if (data.nfo) {
+    nfoText.innerText = data.nfo;
+  } else {
+    nfoText.innerText = 'No additional info available.';
+  }
+}
+
 // navbar menu
 document.addEventListener('DOMContentLoaded', () => {
   console.log("main.js: DOMContentLoaded");
@@ -62,7 +98,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = $trigger.dataset.target;
     const $target = document.getElementById(modal);
 
-    $trigger.addEventListener('click', () => {
+    $trigger.addEventListener('click', (event) => {
+      const clickedButton = event.currentTarget;
+      const cardElement = clickedButton.closest('.card');
+
+      const cardData = {
+        download: cardElement.dataset.download || null,
+        youtube: cardElement.dataset.youtube || null,
+        demozoo: cardElement.dataset.demozoo || null,
+        pouet: cardElement.dataset.pouet || null,
+        image: cardElement.querySelector('.card-image img').src,
+        title: cardElement.querySelector('.card-content .title')?.innerText,
+        subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText
+      };
+
+      // 4️⃣ Inject data and open modal
+      populateProductionsModal(cardData);
       openModal($target);
     });
   });

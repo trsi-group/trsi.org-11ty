@@ -1,5 +1,10 @@
 
-          <div class="card aligned-vertically">
+          <div class="card" 
+          {{- if card.youtube_url }}data-youtube="{{ card.youtube_url }}"{{- endif }}
+          {{- if card.download_url }}data-download="{{ card.download_url }}"{{- endif }}
+          {{- if card.demozoo_url }}data-demozoo="{{ card.demozoo_url }}"{{- endif }}
+          {{- if card.pouet_url }}data-pouet="{{ card.pouet_url }}"{{- endif }}
+          >
             <div class="card-image">
               <figure class="image is-4by3">
                 <img src="{{ card.image | replace: '/img/', '/img/card/' }}" alt="...">

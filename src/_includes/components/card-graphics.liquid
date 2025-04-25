@@ -7,24 +7,11 @@
               </figure>
             </div>
             {%- endif %}
-            <div class="card-content bounce-hover">
-              <p class="subtitle is-6">{{ card.type }}</p>
-              <p class="title is-4">{{ card.title }}</p>
-              {%- if card.credits %}<p>Artist: {% for item in card.credits %}{{ item.name }}{%- endfor %}</p>{%- endif %}
-              {%- if card.platform %}<p>Platform: {{ card.platform }}</p>{%- endif %}
-              <nav class="level">
-                <div class="level-left">
-                  {%- if card.download %}
-                  <div class="level-item">
-                    <a class="" href="{{ card.download }}" target="blank">Download</a>
-                  </div>
-                  {%- endif %}
-                  {%- if card.demozoo %}
-                  <div class="level-item">
-                    <a class="" href="{{ card.demozoo }}" target="blank">Demozoo</a>
-                  </div>
-                  {%- endif %}
-                </div>
-              </nav>
+            <div class="card-content aligned-vertically bounce-hover">
+              <div class="content">
+                <p class="subtitle">{{ card.type }} / {{ card.platform }}</p>
+                <p class="title">{{ card.title }}</p>
+                {%- if card.credits %}<p>Artist: {% for item in card.credits %}{{ item.name }}{%- endfor %}</p>{%- endif %}
+              </div>
             </div>
           </div>
