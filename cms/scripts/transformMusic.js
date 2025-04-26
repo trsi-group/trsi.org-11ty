@@ -1,4 +1,4 @@
-import path from 'path';
+import { resolve } from 'path';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -39,8 +39,8 @@ export function transformMusic(contentfulData) {
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
-        image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : resolve('/music-player.png'),
+        image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : resolve('/music-player.png'),
         download: fields.download ? fields.download['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,

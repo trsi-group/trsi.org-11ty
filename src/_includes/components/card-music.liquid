@@ -1,11 +1,14 @@
 
           <div class="card"
-          {{- if card.demozoo_url }}data-demozoo='{{ card.demozoo_url }}'{{- endif }}
+          {{- if card.download }}data-download='{{ card.download }}'{{- endif }}
+          {{- if card.demozoo }}data-demozoo='{{ card.demozoo }}'{{- endif }}
           {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
+          {{- if card.image }}data-image='{{ card.image }}'{{- endif }}
+          {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           >
             <div class="card-image">
               <figure class="image is-4by3">
-                <img src="/music-player.png" alt="...">
+                <img src="{{ card.card_image }}" alt="...">
               </figure>
             </div>
             <div class="card-content aligned-vertically bounce-hover">

@@ -44,21 +44,27 @@ function populateModal(data) {
     } else if (text === 'pouet' && data.pouet) {
       button.style.display = 'flex';
       button.onclick = () => window.open(data.pouet, '_blank');
+    } else if (text === 'download' && data.download) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.download, '_blank');
     } else {
+      button.parentElement.style.display = 'none';
       button.style.display = 'none';
     }
   });
 
   const description = document.getElementById('modal-description');
   if (data.description) {
-    description.innerText = formatCredits(data.credits);
+    description.innerText = data.description;
+  } else {
+    description.style.display = 'none';
   }
 
-  const nfoText = document.getElementById('modal-nfo_text');
+  const credits = document.getElementById('modal-credits');
   if (data.credits) {
-    nfoText.innerText = formatCredits(data.credits);
+    credits.innerText = formatCredits(data.credits);
   } else {
-    nfoText.innerText = 'No additional info available.';
+    credits.style.display = 'none';
   }
 }
 
@@ -135,15 +141,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardElement = clickedButton.closest('.card');
 
       const cardData = {
-        download: cardElement.dataset.download || null,
-        youtube: cardElement.dataset.youtube || null,
-        demozoo: cardElement.dataset.demozoo || null,
-        pouet: cardElement.dataset.pouet || null,
+        title: cardElement.querySelector('.card-content .title')?.innerText,
+        description: cardElement.dataset.description || null,
+        subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText,
         credits: cardElement.dataset.credits ? JSON.parse(cardElement.dataset.credits) : [],
         card_image: cardElement.querySelector('.card-image img').src,
         image: cardElement.dataset.image || null,
-        title: cardElement.querySelector('.card-content .title')?.innerText,
-        subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText
+        download: cardElement.dataset.download || null,
+        youtube: cardElement.dataset.youtube || null,
+        demozoo: cardElement.dataset.demozoo || null,
+        pouet: cardElement.dataset.pouet || null
       };
       populateModal(cardData);
       openModal($target);

@@ -1,8 +1,10 @@
 
           <div class="card"
-          {{- if card.demozoo_url }}data-demozoo='{{ card.demozoo_url }}'{{- endif }}
+          {{- if card.download }}data-download='{{ card.download }}'{{- endif }}
+          {{- if card.demozoo }}data-demozoo='{{ card.demozoo }}'{{- endif }}
           {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
           {{- if card.image }}data-image='{{ card.image }}'{{- endif }}
+          {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           >
             {%- if card.image %}
             <div class="card-image">
