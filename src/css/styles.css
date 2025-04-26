@@ -208,11 +208,9 @@ footer {
   overflow: hidden;
 }
 
-.modal-content pre {
+.modal-content p {
   background-color: var(--background-color);
   color: var(--text-color);
-  white-space: pre;
-  tab-size: 1;
 }
 
 /* Footer */

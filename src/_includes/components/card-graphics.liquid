@@ -4,6 +4,7 @@
           {{- if card.demozoo }}data-demozoo='{{ card.demozoo }}'{{- endif }}
           {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
           {{- if card.image }}data-image='{{ card.image }}'{{- endif }}
+          {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           >
             {%- if card.image %}
             <div class="card-image">
