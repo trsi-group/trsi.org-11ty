@@ -15,7 +15,7 @@ function handleFilterChange(event) {
   })
 };
 
-function populateProductionsModal(data) {
+function populateModal(data) {
   const modalVideo = document.getElementById('modal-video');
   const figureVideo = modalVideo.closest('figure.image');
   const modalImage = document.getElementById('modal-image');
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: cardElement.querySelector('.card-content .title')?.innerText,
         subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText
       };
-      populateProductionsModal(cardData);
+      populateModal(cardData);
       openModal($target);
     });
   });
