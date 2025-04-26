@@ -1,32 +1,25 @@
 
-          <div class="card">
+          <div class="card" 
+          {{- if card.youtube_url }}data-youtube='{{ card.youtube_url }}'{{- endif }}
+          {{- if card.download_url }}data-download='{{ card.download_url }}'{{- endif }}
+          {{- if card.demozoo_url }}data-demozoo='{{ card.demozoo_url }}'{{- endif }}
+          {{- if card.pouet_url }}data-pouet='{{ card.pouet_url }}'{{- endif }}
+          {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
+          >
             <div class="card-image">
               <figure class="image is-4by3">
                 <img src="{{ card.image | replace: '/img/', '/img/card/' }}" alt="...">
               </figure>
             </div>
-            <div class="card-content bounce-hover">
-              <p class="subtitle is-6">{{ card.type }}</p>
-              <p class="title is-4">{{ card.title }}</p>
-              {%- if card.description %}<p class="">{{ card.description }}</p>{%- endif %}
-              <nav class="level">
-                <div class="level-left">
-                  {%- if card.download_url %}
+            <div class="card-content aligned-vertically bounce-hover">
+              <div class="content">
+                <p class="subtitle">{{ card.type }} / {{ card.platform }}</p>
+                <p class="title">{{ card.title }}</p>
+                <nav class="level">
                   <div class="level-item">
-                    <a class="" href="{{ card.download_url }} target="blank"">Download</a>
+                    <button class="button js-modal-trigger is-outlined is-rounded" data-target="modal-overlay">Show Infos</button>
                   </div>
-                  {%- endif %}
-                  {%- if card.demozoo %}
-                  <div class="level-item">
-                    <a class="" href="{{ card.demozoo }}" target="blank">Demozoo</a>
-                  </div>
-                  {%- endif %}
-                  {%- if card.youtube_url %}
-                  <div class="level-item">
-                    <a class="" href="{{ card.youtube_url }}" target="blank">Youtube</a>
-                  </div>
-                  {%- endif %}
-                </div>
-              </nav>
+                </nav>
+              </div>
             </div>
           </div>
