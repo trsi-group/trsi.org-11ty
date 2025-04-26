@@ -1,4 +1,4 @@
-import path from 'path';
+import { resolve } from 'path';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -26,7 +26,8 @@ export function transformMembers(contentfulData) {
       return {
         handle: fields.handle['en-US'],
         real_name: fields.realName?.['en-US'],
-        image: imageId ? path.resolve('/img/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
       };

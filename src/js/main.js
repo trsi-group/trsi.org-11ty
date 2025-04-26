@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
         demozoo: cardElement.dataset.demozoo || null,
         pouet: cardElement.dataset.pouet || null,
         credits: cardElement.dataset.credits ? JSON.parse(cardElement.dataset.credits) : [],
-        image: cardElement.querySelector('.card-image img').src,
+        card_image: cardElement.querySelector('.card-image img').src,
+        image: cardElement.dataset.image || null,
         title: cardElement.querySelector('.card-content .title')?.innerText,
         subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText
       };
