@@ -56,9 +56,9 @@ export function transformProductions(contentfulData) {
         card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
         image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
-        youtube_url: "https://www.youtube-nocookie.com/embed/" + ytId,
-        pouet_url: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
-        demozoo_url: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
+        youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
+        pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
+        demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
         tags: tags,
       };

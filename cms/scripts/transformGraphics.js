@@ -38,7 +38,7 @@ export function transformGraphics(contentfulData) {
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
         card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
         image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
-        download: fields.download ? fields.download['en-US'] : null,
+        download: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
       };

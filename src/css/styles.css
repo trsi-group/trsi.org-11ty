@@ -200,6 +200,10 @@ footer {
 }
 
 /* Modal */
+.modal.is-active .modal-background {
+  backdrop-filter: blur(8px);
+}
+
 .modal-content {
   overflow: hidden;
 }

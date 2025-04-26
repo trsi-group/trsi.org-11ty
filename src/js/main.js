@@ -44,7 +44,11 @@ function populateModal(data) {
     } else if (text === 'pouet' && data.pouet) {
       button.style.display = 'flex';
       button.onclick = () => window.open(data.pouet, '_blank');
+    } else if (text === 'download' && data.download) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.download, '_blank');
     } else {
+      button.parentElement.style.display = 'none';
       button.style.display = 'none';
     }
   });
