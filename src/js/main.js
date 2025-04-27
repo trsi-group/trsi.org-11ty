@@ -1,99 +1,26 @@
-// filters for content feeds
-function handleFilterChange(event) {
-  const cards = document.querySelectorAll("#feed-wrapper .column");
-  const typeFilter = document.getElementById("TypeFilter");
-  const platformFilter = document.getElementById("PlatformFilter");
+import { openModal, closeModal, closeAllModals, populateModal, handleFilterChange } from './utils.js';
 
-  const selectedType = typeFilter.value;
-  const selectedPlatform = platformFilter.value;
-  cards.forEach(card => {
-    const typeMatch = !selectedType || card.dataset.type === selectedType;
-    const platformMatch = !selectedPlatform || card.dataset.platform === selectedPlatform;
-  
-    const matches = typeMatch && platformMatch;
-    card.style.display = matches ? "" : "none";
-  })
-};
-
-function populateModal(data) {
-  const modalVideo = document.getElementById('modal-video');
-  const figureVideo = modalVideo.closest('figure.image');
-  const modalImage = document.getElementById('modal-image');
-  const figureImage = modalImage.closest('figure.image');
-  if (data.youtube) {
-    modalVideo.src = data.youtube;
-    figureVideo.style.display = 'block';
-    figureImage.style.display = 'none';
-  } else {
-    modalImage.src = data.image;
-    figureImage.style.display = 'block';
-    figureVideo.style.display = 'none';
-  }
-
-  const buttons = document.querySelectorAll('#modal-overlay .button');
-
-  buttons.forEach(button => {
-    const text = button.innerText.toLowerCase();
-
-    if (text === 'youtube' && data.youtube) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.youtube, '_blank');
-    } else if (text === 'demozoo' && data.demozoo) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.demozoo, '_blank');
-    } else if (text === 'pouet' && data.pouet) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.pouet, '_blank');
-    } else if (text === 'download' && data.download) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.download, '_blank');
-    } else {
-      button.parentElement.style.display = 'none';
-      button.style.display = 'none';
-    }
-  });
-
-  const description = document.getElementById('modal-description');
-  if (data.description) {
-    description.innerText = data.description;
-  } else {
-    description.style.display = 'none';
-  }
-
-  const credits = document.getElementById('modal-credits');
-  if (data.credits) {
-    credits.innerText = formatCredits(data.credits);
-  } else {
-    credits.style.display = 'none';
-  }
-}
-
-function formatCredits(creditsArray) {
-  // Group contributors by contribution type
-  const grouped = {};
-
-  creditsArray.forEach(person => {
-    const role = person.contribution;
-    if (!grouped[role]) {
-      grouped[role] = [];
-    }
-    grouped[role].push(person.name);
-  });
-
-  // Build the formatted string
-  let formatted = '';
-  for (const role in grouped) {
-    formatted += `${role}: ${grouped[role].join(', ')}\n`;
-  }
-
-  return formatted.trim();  // Remove trailing newline
-}
-
-// navbar menu
+/**
+ * Initializes UI event handlers after DOM content is loaded.
+ *
+ * Features:
+ * 1. Navbar Toggle:
+ *    - Registers click events on '.navbar-burger' elements to toggle mobile menu visibility.
+ *
+ * 2. Filter Components:
+ *    - Registers 'change' events on #TypeFilter and #PlatformFilter dropdowns to dynamically filter card elements.
+ *
+ * 3. Modal Handling:
+ *    - Registers click events on '.js-modal-trigger' buttons to open modals with dynamically injected card data.
+ *    - Registers click events on modal close elements to close individual modals.
+ *    - Registers 'Escape' key event to close all active modals.
+ *
+ * Runs automatically when the DOM is fully loaded.
+ */
 document.addEventListener('DOMContentLoaded', () => {
   console.log("main.js: DOMContentLoaded");
-
-  // register nav menu
+  
+  /* Navbar Menu */
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
   $navbarBurgers.forEach( el => {
@@ -105,33 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // register filter components
+  /* Filter Components */
   ["TypeFilter", "PlatformFilter"].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
       el.addEventListener("change", handleFilterChange);
     }
   });
-});
 
-// modal dialogs
-document.addEventListener('DOMContentLoaded', () => {
-  // Functions to open and close a modal
-  function openModal($el) {
-    $el.classList.add('is-active');
-  }
-
-  function closeModal($el) {
-    $el.classList.remove('is-active');
-  }
-
-  function closeAllModals() {
-    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
-
-  // Add a click event on buttons to open a specific modal
+  /* Modal Dialog */
   (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
     const modal = $trigger.dataset.target;
     const $target = document.getElementById(modal);
