@@ -4,14 +4,13 @@
  *
  * - Loads and parses `content.json` from the export directory.
  * - Transforms content (productions, members, graphics, music) using dedicated functions.
- * - Writes resulting JSON data to the configured destination directory (`_data`).
- * - Copies referenced image assets from the CMS export to the public assets directory (`public/img`).
- *
+ * - Writes resulting JSON data to the configured destination directory (jsonDest).
+ * - Copies referenced image assets from the CMS export to the public assets directory (assetsDest).
  */
 
 import 'dotenv/config'; // Load environment variables from .env
-import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync } from 'fs';
-import { resolve, dirname, basename } from 'path';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import { transformProductions } from './transformProductions.js';

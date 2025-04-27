@@ -7,7 +7,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy({ "src/public": "." });
-  eleventyConfig.addPassthroughCopy({ "cms/data": "src/_data" });
+  eleventyConfig.addPassthroughCopy({ "cms/data": "/data" });
   eleventyConfig.addWatchTarget("**/*.(png|jpeg|webp|js)");
 
   // Add Markdown plugin
