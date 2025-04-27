@@ -11,17 +11,17 @@ title: TRSI
         <h1 class="is-size-2">Productions</h1>
       </div>
       <div class="filter-wrapper">
-      {% render "components/feed-filter.liquid", feed: cms.productions, type: "Platform" %}
-      {% render "components/feed-filter.liquid", feed: cms.productions, type: "Type" %}
+        {%- render "components/feed-filter.liquid", feed: cms.productions, type: "Platform" %}
+        {%- render "components/feed-filter.liquid", feed: cms.productions, type: "Type" %}
       </div>
       <div id="feed-wrapper">
-        {% render "components/feed-cards.liquid", feed: cms.productions, type: "productions" %}
+        {%- render "components/feed-cards.liquid", feed: cms.productions, type: "productions" %}
       </div>
     </section>
 
     <section class="section">
       <div class="modal-wrapper">
-        {% render "components/modal-template.liquid" %}
+        {%- render "components/modal-template.liquid" %}
       </div>
     </section>
     

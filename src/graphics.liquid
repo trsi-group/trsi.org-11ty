@@ -11,16 +11,16 @@ title: TRSI - Graphics
         <h1 class="is-size-2">Graphics</h1>
       </div>
       <div class="filter-wrapper">
-      {% render "components/feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
-      {% render "components/feed-filter.liquid", feed: cms.graphics, type: "Type" %}
+        {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
+        {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Type" %}
       </div>
       <div id="feed-wrapper">
-        {% render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics" %}
+        {%- render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics" %}
       </div>
     </section>
 
     <section class="section">
       <div class="modal-wrapper">
-        {% render "components/modal-template.liquid" %}
+        {%- render "components/modal-template.liquid" %}
       </div>
     </section>
