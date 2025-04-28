@@ -17,7 +17,8 @@ export default {
         "./src/**/*.md",
         "./src/**/*.js",
       ],
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [], // Extracts Tailwind/Bulma-style classes
+      // Extracts Bulma-style classes
+      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       safelist: {
         standard: [
           "is-active", "has-text-centered", "has-text-right", "is-hidden",
@@ -25,7 +26,8 @@ export default {
           "columns", "column", "icon"
         ]
       },
-      variables: true, // remove unused CSS variables
+      // remove unused CSS variables
+      variables: true,
     }),
     cssnano(),
   ],

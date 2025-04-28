@@ -107,9 +107,9 @@ footer {
   align-items: left;
 }
 
-.social-icon {
+.icon svg {
   font-size: 1.5rem; 
-  color: white;
+  fill: var(--text-color);
 }
 
 /* Card */
