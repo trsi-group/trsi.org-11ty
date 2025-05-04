@@ -24,12 +24,14 @@ export function transformMusic(contentfulData) {
       const imageId = fields.image?.['en-US']?.sys.id;
       const metadata = entry.metadata;
       
-      // Extract credits from the new structure
-      const credits = fields.credits?.['en-US']?.map((credit) => ({
-        name: credit.name,
-        contribution: credit.contribution,
-      })) || [];
-
+      // Extract credits from the new structure   
+      const credits = Array.isArray(fields.credits?.['en-US'])
+      ? fields.credits['en-US'].map((credit) => ({
+          name: credit.name,
+          contribution: credit.contribution,
+        }))
+      : [];
+      
       const tags = metadata.tags.map(tag => tag.sys.id);
       return {
         title: fields.title['en-US'],

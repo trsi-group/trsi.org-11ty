@@ -39,12 +39,14 @@ export function transformProductions(contentfulData) {
       const ytUrl = fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null;
       const ytId = getYtId(ytUrl);
 
-      // Extract credits from the new structure
-      const credits = fields.credits?.['en-US']?.map((credit) => ({
-        name: credit.name,
-        contribution: credit.contribution,
-      })) || [];
-
+      // Extract credits from the new structure   
+      const credits = Array.isArray(fields.credits?.['en-US'])
+      ? fields.credits['en-US'].map((credit) => ({
+          name: credit.name,
+          contribution: credit.contribution,
+        }))
+      : [];
+      
       const tags = metadata.tags.map(tag => tag.sys.id);
 
       return {
