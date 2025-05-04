@@ -42,6 +42,7 @@ export function closeAllModals() {
  * @param {string} [data.description] - Description text to display.
  * @param {Array}  [data.credits]     - List of credit entries, formatted via `formatCredits()`.
  * @param {string} [data.demozoo]     - Demozoo URL for button link.
+ * @param {string} [data.csdb]        - CSDB URL for button link.
  * @param {string} [data.pouet]       - Pouet URL for button link.
  * @param {string} [data.download]    - Download URL for button link.
  *
@@ -76,6 +77,9 @@ export function populateModal(data) {
     } else if (text === 'demozoo' && data.demozoo) {
       button.style.display = 'flex';
       button.onclick = () => window.open(data.demozoo, '_blank');
+    } else if (text === 'csdb' && data.csdb) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.csdb, '_blank');
     } else if (text === 'pouet' && data.pouet) {
       button.style.display = 'flex';
       button.onclick = () => window.open(data.pouet, '_blank');

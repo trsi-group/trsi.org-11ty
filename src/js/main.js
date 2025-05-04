@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         download: cardElement.dataset.download || null,
         youtube: cardElement.dataset.youtube || null,
         demozoo: cardElement.dataset.demozoo || null,
+        csdb: cardElement.dataset.csdb || null,
         pouet: cardElement.dataset.pouet || null
       };
       populateModal(cardData);

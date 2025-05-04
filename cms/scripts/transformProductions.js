@@ -59,6 +59,7 @@ export function transformProductions(contentfulData) {
         youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
         pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
+        csdb: fields.csdbUrl ? fields.csdbUrl['en-US'] : null,
         credits: credits,
         tags: tags,
       };
