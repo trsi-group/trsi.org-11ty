@@ -23,8 +23,7 @@ export function transformGraphics(contentfulData) {
       const fields = entry.fields;
       const imageId = fields.image?.['en-US']?.sys.id;
 
-      // Extract credits from the new structure
-      
+      // Extract credits from the new structure   
       const credits = Array.isArray(fields.credits?.['en-US'])
       ? fields.credits['en-US'].map((credit) => ({
           name: credit.name,
