@@ -24,11 +24,14 @@ export function transformGraphics(contentfulData) {
       const imageId = fields.image?.['en-US']?.sys.id;
 
       // Extract credits from the new structure
-      const credits = fields.credits?.['en-US']?.map((credit) => ({
-        name: credit.name,
-        contribution: credit.contribution,
-      })) || [];
-
+      
+      const credits = Array.isArray(fields.credits?.['en-US'])
+      ? fields.credits['en-US'].map((credit) => ({
+          name: credit.name,
+          contribution: credit.contribution,
+        }))
+      : [];
+      
       return {
         title: fields.title['en-US'],
         type: fields.type['en-US'],
