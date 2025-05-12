@@ -1,4 +1,22 @@
 @font-face {
+  font-family: 'Edit Undo Brk';
+  src: url('../fonts/edit-undo-brk-v2.woff2') format('woff2'),
+       url('../fonts/edit-undo-brk-v2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Edit Undo Line';
+  src: url('../fonts/edit-undo-line-v1.woff2') format('woff2'),
+       url('../fonts/edit-undo-line-v1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
   font-family: 'Passero One';
   src: url('../fonts/PasseroOne-Regular.ttf') format('truetype');
   font-weight: normal;
