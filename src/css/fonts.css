@@ -16,7 +16,18 @@
   font-display: fallback;
 }
 
-/* Override Bulma default font */
-html, body {
-  font-family: 'Edit Undo Brk', sans-serif !important;
+@font-face {
+  font-family: 'Passero One';
+  src: url('../fonts/PasseroOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Variable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
 }
