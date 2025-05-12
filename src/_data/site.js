@@ -14,6 +14,8 @@ const featureFlags = {
   music: true,
 };
 
+const theme = 'joe'; // or 'first'
+
 const domain = isDevelopment ? "http://localhost:8080" : "https://trsi.netlify.app";
 
 const environment = process.env.NODE_ENV || "development";
@@ -22,5 +24,6 @@ export default {
   metadata,
   featureFlags,
   domain,
+  theme,
   environment,
 };

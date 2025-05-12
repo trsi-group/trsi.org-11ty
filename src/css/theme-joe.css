@@ -1,0 +1,126 @@
+body {
+  /* colors */
+  --background-color: black;
+  --section-color1: rgb(51 85 85);
+  --section-color2: rgb(68 68 68);
+  --text-color: rgb(220 231 231);
+  --light-color: rgb(251 221 14);
+  --dark-color: rgb(251 93 0);
+  --link-color: var(--text-color);
+  --link-hover-color: var(--light-color);
+  --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
+
+  /* fonts */
+  --heading-font-family: 'Passero One';
+  --body-font-family: 'Edit Undo Brk';
+  --mono-font-family: 'Edit Undo Brk', monospace;
+}
+
+/* links */
+a:any-link {
+  color: var(--text-color);
+  transition: color 0.3s ease, text-shadow 0.1s ease;
+}
+
+a:hover {
+  text-shadow: 
+    0 0 5px var(--light-color),
+    0 0 10px var(--light-color);
+}
+
+.navbar a,
+.content h1 a,
+.content h2 a,
+.content h3 a,
+.content h4 a,
+.content h5 a,
+.content h6 a {
+  color: var(--text-color);
+  transition: color 0.3s ease, text-shadow 0.1s ease;
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
+}
+
+.navbar a:hover,
+.content h1 a:hover,
+.content h2 a:hover {
+  text-shadow:
+    0 0 5px var(--light-color),
+    0 0 10px var(--light-color),
+    0 0 15px var(--light-color),
+    0 0 20px var(--light-color);
+}
+
+div.logo {
+  width: 640px;
+  height: 320px;
+  background-image: url('/img/trsi-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.icons svg {
+  transition: filter 0.3s ease;
+}
+
+div.icons svg:hover {
+  filter: drop-shadow(0 0 5px var(--light-color))
+          drop-shadow(0 0 10px var(--light-color));
+}
+
+@keyframes glow-fade {
+  0% {
+    text-shadow: 
+      0 0 5px var(--light-color),
+      0 0 10px var(--light-color),
+      0 0 15px var(--light-color),
+      0 0 20px var(--light-color);
+  }
+  100% {
+    text-shadow: 
+      0 0 5px var(--light-color), 
+      0 0 7px var(--light-color);
+  }
+}
+
+a.navbar-item.active, a.navbar-link.active  {
+  animation: glow-fade 2s ease-out forwards;
+}
+
+@keyframes glow-fade-brand {
+  0% {
+    text-shadow: 
+      0 0 5px var(--light-color),
+      0 0 10px var(--light-color),
+      0 0 15px var(--light-color),
+      0 0 20px var(--light-color);
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+.navbar-brand a.navbar-item.active, .navbar-brand a.navbar-link.active  {
+  animation: glow-fade-brand 2s ease-out forwards;
+}
+
+/* Button */
+@keyframes glow-fade-button {
+  0% {
+    text-shadow: 
+      0 0 5px var(--light-color),
+      0 0 10px var(--light-color);
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+.button:hover {
+  animation: glow-fade-button 2s ease-out forwards;
+}
+
+.filter-wrapper .select select:hover {
+  animation: glow-fade-button 2s ease-out forwards;
+}
