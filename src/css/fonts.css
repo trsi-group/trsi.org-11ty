@@ -1,22 +1,15 @@
 @font-face {
-  font-family: 'Edit Undo Brk';
-  src: url('../fonts/edit-undo-brk-v2.woff2') format('woff2'),
-       url('../fonts/edit-undo-brk-v2.woff') format('woff');
+  font-family: 'Passero One';
+  src: url('../fonts/PasseroOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
 }
 
 @font-face {
-  font-family: 'Edit Undo Line';
-  src: url('../fonts/edit-undo-line-v1.woff2') format('woff2'),
-       url('../fonts/edit-undo-line-v1.woff') format('woff');
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Variable.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
-}
-
-/* Override Bulma default font */
-html, body {
-  font-family: 'Edit Undo Brk', sans-serif !important;
 }
