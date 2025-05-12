@@ -139,6 +139,25 @@ a.navbar-item, .navbar-link  {
   color: var(--text-color);
 }
 
+@keyframes glow-fade {
+  0% {
+    text-shadow: 
+      0 0 5px rgb(251, 221, 14),
+      0 0 10px rgb(251, 221, 14),
+      0 0 15px rgb(251, 221, 14),
+      0 0 20px rgb(251, 221, 14);
+  }
+  100% {
+    text-shadow: 
+      0 0 5px rgb(251, 221, 14), 
+      0 0 7px rgb(251, 221, 14);
+  }
+}
+
+a.navbar-item.active, .navbar-link.active  {
+  animation: glow-fade 2s ease-out forwards;
+}
+
 /* Header */
 header.section {
   margin: 0 auto;
