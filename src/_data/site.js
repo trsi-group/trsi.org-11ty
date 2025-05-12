@@ -1,12 +1,26 @@
-import "dotenv/config"; // Loads .env file
- 
-const isDevelopment = process.env.NODE_ENV === "development";
-console.log(`landscape env: ${process.env.NODE_ENV}`);
+import "dotenv/config";
 
-export default {
-  title: "TRSI",
+const isDevelopment = process.env.NODE_ENV === "development";
+
+const metadata = {
+  title: "TRSI - The Sleeping Gods",
   description: "Tristar & Red Sector - The Sleeping Gods",
   keywords: "demo scene, c64, amiga, intro, music, graphics",
-  domain: isDevelopment ? "http://localhost:8080" : "https://trsi.netlify.app",
-  environment: process.env.NODE_ENV || "development", // Detects production or development
+};
+
+const featureFlags = {
+  news: false,
+  graphics: true,
+  music: true,
+};
+
+const domain = isDevelopment ? "http://localhost:8080" : "https://trsi.netlify.app";
+
+const environment = process.env.NODE_ENV || "development";
+
+export default {
+  metadata,
+  featureFlags,
+  domain,
+  environment,
 };

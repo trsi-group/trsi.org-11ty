@@ -12,7 +12,7 @@
       
         <div class="navbar-menu" id="navMenu">
           <div class="navbar-start has-text-centered">
-          {%- for item in navigation.nav_items %}
+          {%- for item in nav.nav_items %}
             {%- assign item_slug = item.title | downcase %}
             <a href="{{ item.url }}" class="navbar-item is-size-3 is-size-4-touch{% if page.fileSlug == item_slug %} active{% endif %}">{{ item.title }}</a>
           {%- endfor %}
