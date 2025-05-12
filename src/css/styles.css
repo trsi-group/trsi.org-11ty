@@ -185,6 +185,9 @@ footer {
   border-radius: 0px;
   overflow: hidden;
   background-color: black;
+}
+
+.card.pointer {
   cursor: pointer;
 }
 
