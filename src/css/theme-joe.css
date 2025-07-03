@@ -19,13 +19,13 @@ body {
 /* links */
 a:any-link {
   color: var(--text-color);
-  transition: color 0.3s ease, text-shadow 0.1s ease;
+  /* transition: color 0.3s ease, text-shadow 0.1s ease; */
 }
 
 a:hover {
   text-shadow: 
-    0 0 5px var(--light-color),
-    0 0 10px var(--light-color);
+    0 0 2px var(--light-color),
+    0 0 5px var(--light-color);
 }
 
 .navbar a,
@@ -36,7 +36,7 @@ a:hover {
 .content h5 a,
 .content h6 a {
   color: var(--text-color);
-  transition: color 0.3s ease, text-shadow 0.1s ease;
+  /* transition: color 0.3s ease, text-shadow 0.1s ease; */
   font-family: var(--heading-font-family);
   text-transform: uppercase;
 }
@@ -47,13 +47,14 @@ a:hover {
   text-shadow:
     0 0 5px var(--light-color),
     0 0 10px var(--light-color),
-    0 0 15px var(--light-color),
-    0 0 20px var(--light-color);
+    0 0 15px var(--light-color);
 }
 
 div.logo {
-  width: 640px;
-  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+  height: 172px;
   background-image: url('/img/trsi-logo.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -65,8 +66,8 @@ div.icons svg {
 }
 
 div.icons svg:hover {
-  filter: drop-shadow(0 0 5px var(--light-color))
-          drop-shadow(0 0 10px var(--light-color));
+  filter: drop-shadow(0 0 2px var(--light-color))
+          drop-shadow(0 0 5px var(--light-color));
 }
 
 @keyframes glow-fade {
@@ -74,13 +75,12 @@ div.icons svg:hover {
     text-shadow: 
       0 0 5px var(--light-color),
       0 0 10px var(--light-color),
-      0 0 15px var(--light-color),
-      0 0 20px var(--light-color);
+      0 0 15px var(--light-color);
   }
   100% {
     text-shadow: 
-      0 0 5px var(--light-color), 
-      0 0 7px var(--light-color);
+      0 0 2px var(--light-color),
+      0 0 5px var(--light-color);
   }
 }
 
@@ -93,8 +93,7 @@ a.navbar-item.active, a.navbar-link.active  {
     text-shadow: 
       0 0 5px var(--light-color),
       0 0 10px var(--light-color),
-      0 0 15px var(--light-color),
-      0 0 20px var(--light-color);
+      0 0 15px var(--light-color);
   }
   100% {
     text-shadow: 0;

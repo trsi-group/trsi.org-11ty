@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   /* Navbar Menu */
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
   $navbarBurgers.forEach( el => {
     el.addEventListener('click', () => {
       const target = el.dataset.target;
@@ -44,11 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
   (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
     const modal = $trigger.dataset.target;
     const $target = document.getElementById(modal);
-
+    
     $trigger.addEventListener('click', (event) => {
       const clickedButton = event.currentTarget;
       const cardElement = clickedButton.closest('.card');
-
       const cardData = {
         title: cardElement.querySelector('.card-content .title')?.innerText,
         description: cardElement.dataset.description || null,
@@ -70,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add a click event on various child elements to close the parent modal
   (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
     const $target = $close.closest('.modal');
-
     $close.addEventListener('click', () => {
       closeModal($target);
     });

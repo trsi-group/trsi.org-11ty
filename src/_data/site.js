@@ -11,7 +11,7 @@ const metadata = {
 const featureFlags = {
   news: false,
   graphics: true,
-  music: true,
+  music: false,
 };
 
 const theme = 'joe'; // or 'first'

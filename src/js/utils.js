@@ -13,7 +13,6 @@ export function openModal($el) {
 
 export function closeModal($el) {
   $el.classList.remove('is-active');
-
   // Stop YouTube video if present
   const iframe = $el.querySelector('iframe');
   if (iframe) {
@@ -56,6 +55,7 @@ export function populateModal(data) {
   const figureVideo = modalVideo.closest('figure.image');
   const modalImage = document.getElementById('modal-image');
   const figureImage = modalImage.closest('figure.image');
+  
   if (data.youtube) {
     modalVideo.src = data.youtube;
     figureVideo.style.display = 'block';
@@ -143,7 +143,6 @@ function formatCredits(creditsArray) {
   for (const role in grouped) {
     formatted += `${role}: ${grouped[role].join(', ')}\n`;
   }
-
   return formatted.trim();  // Remove trailing newline
 }
 
@@ -168,10 +167,10 @@ export function handleFilterChange(event) {
 
   const selectedType = typeFilter.value;
   const selectedPlatform = platformFilter.value;
+  
   cards.forEach(card => {
     const typeMatch = !selectedType || card.dataset.type === selectedType;
     const platformMatch = !selectedPlatform || card.dataset.platform === selectedPlatform;
-  
     const matches = typeMatch && platformMatch;
     card.style.display = matches ? '' : 'none';
   })
