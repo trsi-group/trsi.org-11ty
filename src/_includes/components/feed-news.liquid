@@ -2,9 +2,9 @@
 {%- assign sliced_feed = feed | slice: 0, items %}
       <div class="posts">
         {%- for item in sliced_feed %}
-        <article class="media columns is-multiline is-mobile" data-type="{{ item.type | downcase }}" data-platform="{{ item.platform | downcase }}">
-          <figure class="media-left is-4by3 column is-one-fifth">
-            <img src="{{ item.card_image }}" alt="...">
+        <article class="media columns is-multiline is-mobile">
+          <figure class="media-left is-4by3 column">
+            <img src="{{ item.post_image }}" alt="...">
           </figure>
           <div class="media-content column">
             <a href="/news/{{ item.slug }}/">

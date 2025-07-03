@@ -9,8 +9,7 @@ const metadata = {
 };
 
 const featureFlags = {
-  news: false,
-  graphics: true,
+  news: true,
   music: false,
 };
 

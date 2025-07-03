@@ -35,7 +35,7 @@ export function transformPosts(contentfulData) {
       return {
         title: fields.title['en-US'],
         body: fields.body?.['en-US'],
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        post_image: imageId ? resolve('/img/post/', findAssetPathById(imageId)) : null,
         image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         publishDate: fields.publishDate?.['en-US'],
         slug: slug,

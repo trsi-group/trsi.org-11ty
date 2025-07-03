@@ -11,7 +11,6 @@ const navData = JSON.parse(readFileSync(filePath, 'utf-8'));
 export default {
   nav_items: navData.nav_items.filter(item => {
     if (item.title === 'News' && !site.featureFlags.news) return false;
-    if (item.title === 'Graphics' && !site.featureFlags.graphics) return false;
     if (item.title === 'Music' && !site.featureFlags.music) return false;
     return true;
   }),

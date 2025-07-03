@@ -1,6 +1,10 @@
 {
   "nav_items": [
     {
+      "title": "News",
+      "url": "/news"
+    },
+    {
       "title": "Productions",
       "url": "/productions"
     },
@@ -15,10 +19,6 @@
     {
       "title": "Members",
       "url": "/members"
-    },
-    {
-      "title": "News",
-      "url": "/news"
     }
   ]
 }

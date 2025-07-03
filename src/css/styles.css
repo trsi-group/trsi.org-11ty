@@ -31,6 +31,7 @@ body {
   --bulma-box-padding: 0px;
   --bulma-card-radius: 0px;
   --bulma-body-font-size: 1.0rem;
+  --bulma-media-border-color: var(--background-color);
   .content {
     --bulma-content-heading-weight: 400;
     --bulma-content-heading-color: var(--text-color);
@@ -126,8 +127,17 @@ header.section {
   margin: 0 auto;
 }
 
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: var(--text-color);
+}
+
+.posts h2 {
+  margin: 0;
+}
 /* Footer */
 footer {
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
   background-color:  var(--background-color);
   color: var(--text-color);
 }
@@ -247,16 +257,6 @@ footer {
 .modal-content p {
   background-color: var(--background-color);
   color: var(--text-color);
-}
-
-/* Footer */
-footer {
-  font-family: var(--heading-font-family);
-  text-transform: uppercase;
-}
-
-.select:not(.is-multiple):not(.is-loading)::after {
-  border-color: var(--text-color);
 }
 
 /* Filter */

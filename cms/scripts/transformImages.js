@@ -78,18 +78,18 @@ export function transformImages(contentfulData, exportDir, assetDir) {
           console.log(`Error transforming ${sourcePath}}:`, err.message);
         });
 
-      // Resize for Thumb display
-      const targetThumbDir = path.join(exportDir, 'thumb'); // Path in target folder
-      if (!fs.existsSync(targetThumbDir)) {
-        fs.mkdirSync(targetThumbDir, { recursive: true });
+      // Resize for Post display
+      const targetPostDir = path.join(exportDir, 'post'); // Path in target folder
+      if (!fs.existsSync(targetPostDir)) {
+        fs.mkdirSync(targetPostDir, { recursive: true });
       }
 
-      const thumbFilename = fileName.replace(/\.[^/.]+$/, ".webp");
-      const targetThumbPath = path.join(exportDir, 'thumb', thumbFilename); // Path in target folder
+      const postFilename = fileName.replace(/\.[^/.]+$/, ".webp");
+      const targetPostPath = path.join(exportDir, 'post', postFilename); // Path in target folder
       sharp(sourcePath)
-        .resize(50)
+        .resize(150)
         .webp()
-        .toFile(targetThumbPath)
+        .toFile(targetPostPath)
         .catch(err => { 
           console.log(`Error transforming ${sourcePath}}:`, err.message);
         });
