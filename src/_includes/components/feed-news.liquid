@@ -1,20 +1,23 @@
 {%- assign items = max | default: feed.size %}
 {%- assign sliced_feed = feed | slice: 0, items %}
+{%- assign sorted_feed = feed | sort: "publishDate" | reverse %}
       <div class="posts">
-        {%- for item in sliced_feed %}
-        <article class="media columns is-multiline is-mobile">
-          <figure class="media-left is-4by3 column">
-            <img src="{{ item.post_image }}" alt="...">
-          </figure>
-          <div class="media-content column">
-            <a href="/news/{{ item.slug }}/">
-              <div class="content">
-                <h2 class="title">{{ item.title }}</h2>
-                <p>{{ item.body }}</p>
-                <p class="date">{{ item.publishDate }}</p>
-              </div>
-            </a>
+        {%- for item in sorted_feed %}
+        <div class="columns">
+          <div class="column is-one-fifth">
+            <figure class="is-4by3">
+              <img src="{{ item.post_image }}" alt="...">
+            </figure>
           </div>
-        </article>
+          <div class="column">
+            <div>
+              <a href="/news/{{ item.slug }}/">
+                <h2 class="title">{{ item.title }}</h2>
+              </a>
+              <p class="is-size-5">{{ item.teaser }}</p>
+              <p class="date">{{ item.publishDate }}</p>
+              </div>
+          </div>
+        </div>
         {%- endfor %}
       </div>
