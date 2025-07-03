@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-const prodenv = process.env.NODE_ENV || "production";
+const prodenv = process.env.NODE_ENV === "production";
 
 const metadata = {
   title: "TRSI - The Sleeping Gods",
