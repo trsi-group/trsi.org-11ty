@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-const isDevelopment = process.env.NODE_ENV === "development";
+const prodenv = process.env.NODE_ENV || "production";
 
 const metadata = {
   title: "TRSI - The Sleeping Gods",
@@ -16,14 +16,12 @@ const featureFlags = {
 
 const theme = 'joe'; // or 'first'
 
-const domain = isDevelopment ? "http://localhost:8080" : "https://trsi.org";
-
-const environment = process.env.NODE_ENV || "development";
+const domain = prodenv ? "https://trsi.org" : "http://localhost:8080";
 
 export default {
   metadata,
   featureFlags,
   domain,
   theme,
-  environment,
+  prodenv,
 };

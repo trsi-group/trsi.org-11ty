@@ -8,7 +8,7 @@
     <meta name="keywords" content="{{ site.metadata.keywords }}">
     <title>{{ site.metadata.title }}</title>
     <link rel="canonical" href="{{ site.domain }}{{ page.url  }}">
-    {%- if site.environment == "production" %}
+    {%- if site.prodenv %}
     <link rel="stylesheet" href="/css/main.min.css">
     {%- else %}
     <link rel="stylesheet" href="/css/index.css">
