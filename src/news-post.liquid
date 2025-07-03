@@ -12,8 +12,8 @@ title: TRSI - News - {{ post.title }}
   <div class="content">
     <h1 class="title">{{ post.title }}</h1>
     <p class="is-size-7 has-text-grey">{{ post.date }}</p>
-    <div>
-      {{ post.body }}
+    <div class="is-size-4">
+      {{ post.body | markdown}}
     </div>
   </div>
 </section>
