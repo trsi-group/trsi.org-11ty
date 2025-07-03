@@ -13,7 +13,7 @@
 {%- endfor %}
 
 {%- comment %} 
-  Reduce to unique values
+  Reduce to unique values and sort
 {%- endcomment %}
 {%- assign keys = "" | split: "" %}
 {%- for val in values %}
@@ -21,11 +21,12 @@
     {%- assign keys = keys | push: val %}
   {%- endunless %}
 {%- endfor %}
+{%- assign sorted_keys = keys | sort %}
 
     <div class="select is-small is-rounded is-primary"">
       <select aria-label="{{ type }} Filter" id="{{ type }}Filter">
         <option value="">All {{ type }}s</option>
-        {%- for key in keys %}
+        {%- for key in sorted_keys %}
         <option value="{{ key | downcase }}">{{ key }}</option>
         {%- endfor %}
       </select>
