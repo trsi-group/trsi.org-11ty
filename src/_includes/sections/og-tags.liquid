@@ -1,0 +1,19 @@
+{% assign meta-title = post.title | default: page.title %}
+{% assign meta-description = post.description | default: page.description %}
+{% assign meta-image = post.image | default: page.image %}
+{% assign meta-url = post.url | default: page.url %}
+{% assign meta-url = site.domain | append: meta-url %}
+<meta name="title" content="{{ site.metadata.title }}">
+<meta name="description" content="{{ site.metadata.description }}">
+<meta name="keywords" content="{{ site.metadata.keywords }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ meta-url }}">
+<meta property="og:title" content="{{ meta-title }}">
+<meta property="og:description" content="{{ meta-description }}">
+<meta property="og:image" content="{{ meta-image | prepend: site.domain }}">
+<meta name="twitter:card" content="TRSI Logo">
+<meta name="twitter:url" content="{{ meta-url }}">
+<meta name="twitter:title" content="{{ meta-title }}">
+<meta name="twitter:description" content="{{ meta-description }}">
+<meta name="twitter:image" content="{{ meta-image | prepend: site.domain }}">
+<meta name="twitter:site" content="@trsi">
