@@ -15,7 +15,7 @@
     {%- endif %}
     <link rel="stylesheet" href="/css/theme-{{ site.theme}}.css">
     <script type="module" src="/js/main.js"></script>
-    {% if page.url contains "/news/" %}
+    {%- if page.url contains "/news/" %}
 {% include "sections/jsonld-post.liquid" %}
     {% endif %}
 {% include "sections/jsonld-organisation.liquid" %}
