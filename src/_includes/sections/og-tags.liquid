@@ -1,6 +1,6 @@
-{% assign meta-title = post.title | default: page.title %}
-{% assign meta-description = post.description | default: page.description %}
-{% assign meta-image = post.image | default: page.image %}
+{% assign meta-title = post.title | default: site.metadata.title %}
+{% assign meta-description = post.teaser | default: site.metadata.description %}
+{% assign meta-image = post.image | default: site.metadata.image %}
 {% assign meta-url = post.url | default: page.url %}
 {% assign meta-url = site.domain | append: meta-url %}
 <meta name="title" content="{{ site.metadata.title }}">
