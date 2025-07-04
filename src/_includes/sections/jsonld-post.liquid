@@ -1,0 +1,26 @@
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Tristar & Red Sector Inc. News | {{ post.title | escape }}",
+      "description": "{{ post.teaser | escape }}",
+      "datePublished": "{{ post.publishDate | date: '%Y-%m-%d' }}",
+      "dateModified": "{{ post.publishDate | date: '%Y-%m-%d' }}",
+      "author": {
+        "@type": "Person",
+        "name": "Tristar & Red Sector Inc."
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tristar & Red Sector Inc.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.domain }}/img/trsi-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.domain }}{{ page.url }}"
+      }
+    }
+    </script>
