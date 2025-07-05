@@ -48,6 +48,12 @@ html, body {
   font-family: var(--body-font-family), sans-serif !important;
 }
 
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .site-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -251,7 +257,7 @@ footer {
 }
 
 .modal-content {
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .modal-content p {

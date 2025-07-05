@@ -9,6 +9,7 @@
  */
 export function openModal($el) {
   $el.classList.add('is-active');
+  document.body.classList.add('modal-open');
 }
 
 export function closeModal($el) {
@@ -18,6 +19,7 @@ export function closeModal($el) {
   if (iframe) {
     iframe.src = '';
   }
+  document.body.classList.remove('modal-open');
 }
 
 export function closeAllModals() {
