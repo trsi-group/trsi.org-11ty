@@ -71,7 +71,7 @@ export function transformImages(contentfulData, exportDir, assetDir) {
       const cardFilename = fileName.replace(/\.[^/.]+$/, ".webp");
       const targetCardPath = path.join(exportDir, 'card', cardFilename); // Path in target folder
       sharp(sourcePath)
-        .resize(300)
+        .resize(400)
         .webp()
         .toFile(targetCardPath)
         .catch(err => { 
