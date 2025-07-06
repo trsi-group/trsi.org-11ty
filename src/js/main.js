@@ -1,4 +1,4 @@
-import { openModal, closeModal, closeAllModals, populateModal, handleFilterChange } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -41,42 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Modal Dialog */
   (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
-    
     $trigger.addEventListener('click', (event) => {
       const clickedButton = event.currentTarget;
       const cardElement = clickedButton.closest('.card');
-      const cardData = {
-        title: cardElement.querySelector('.card-content .title')?.innerText,
-        description: cardElement.dataset.description || null,
-        subtitle: cardElement.querySelector('.card-content .subtitle')?.innerText,
-        credits: cardElement.dataset.credits ? JSON.parse(cardElement.dataset.credits) : [],
-        card_image: cardElement.querySelector('.card-image img').src,
-        image: cardElement.dataset.image || null,
-        download: cardElement.dataset.download || null,
-        youtube: cardElement.dataset.youtube || null,
-        demozoo: cardElement.dataset.demozoo || null,
-        csdb: cardElement.dataset.csdb || null,
-        pouet: cardElement.dataset.pouet || null
-      };
+      const cardData = getDataFromCard(cardElement);
       populateModal(cardData);
-      openModal($target);
+      window.location.hash = cardData.slug;
+      openModal();
     });
   });
 
   // Add a click event on various child elements to close the parent modal
   (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-    const $target = $close.closest('.modal');
     $close.addEventListener('click', () => {
-      closeModal($target);
+      closeModal();
     });
   });
 
   // Add a keyboard event to close all modals
   document.addEventListener('keydown', (event) => {
     if(event.key === "Escape") {
-      closeAllModals();
+      closeModal();
     }
   });
+
+  // open modal if items specified in #
+  const hashTitle = window.location.hash?.substring(1); // remove #
+  const cardElement = document.querySelector(`[data-title="${hashTitle}"]`);
+  if (cardElement) {
+    const cardData = getDataFromCard(cardElement);
+    populateModal(cardData);
+    openModal();
+  }
 });

@@ -3,29 +3,44 @@
  *
  * - openModal($el): Activates a specific modal by adding the 'is-active' class.
  * - closeModal($el): Deactivates a specific modal by removing the 'is-active' class.
- * - closeAllModals(): Closes all modals on the page by removing 'is-active' from each.
  *
  * @param {Element} $el - The modal DOM element to open or close.
  */
-export function openModal($el) {
-  $el.classList.add('is-active');
+export function openModal() {
+  const modal = document.querySelector('.modal');
+  modal.classList.add('is-active');
   document.body.classList.add('modal-open');
 }
 
-export function closeModal($el) {
-  $el.classList.remove('is-active');
+export function closeModal() {
+  const modal = document.querySelector('.modal');
+  modal.classList.remove('is-active');
   // Stop YouTube video if present
-  const iframe = $el.querySelector('iframe');
+  const iframe = modal.querySelector('iframe');
   if (iframe) {
     iframe.src = '';
   }
   document.body.classList.remove('modal-open');
+  // Remove hash title from URL
+  window.location.hash = '';
 }
-
-export function closeAllModals() {
-  (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-    closeModal($modal);
-  });
+// write me a funtion doc similar to existings 
+export function getDataFromCard($card) {
+  const data = {
+    title: $card.querySelector('.card-content .title')?.innerText,
+    slug: $card.dataset.slug || null,
+    description: $card.dataset.description || null,
+    subtitle: $card.querySelector('.card-content .subtitle')?.innerText,
+    credits: $card.dataset.credits ? JSON.parse($card.dataset.credits) : [],
+    card_image: $card.querySelector('.card-image img').src,
+    image: $card.dataset.image || null,
+    download: $card.dataset.download || null,
+    youtube: $card.dataset.youtube || null,
+    demozoo: $card.dataset.demozoo || null,
+    csdb: $card.dataset.csdb || null,
+    pouet: $card.dataset.pouet || null
+  };
+  return data;
 }
 
 /**
