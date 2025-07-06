@@ -6,7 +6,13 @@
  *
  * @param {Element} $el - The modal DOM element to open or close.
  */
+let scrollPosition = 0;
+
 export function openModal() {
+  // Store scroll position
+  scrollPosition = window.scrollY;
+  document.body.style.top = `-${scrollPosition}px`;
+  
   const modal = document.querySelector('.modal');
   modal.classList.add('is-active');
   document.body.classList.add('modal-open');
@@ -23,6 +29,9 @@ export function closeModal() {
   document.body.classList.remove('modal-open');
   // Remove hash title from URL
   window.location.hash = '';
+  // Restore scroll position
+  document.body.style.top = '';
+  window.scrollTo(0, scrollPosition);
 }
 // write me a funtion doc similar to existings 
 export function getDataFromCard($card) {
