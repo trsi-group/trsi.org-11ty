@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // open modal if items specified in #
-  const hashTitle = window.location.hash?.substring(1); // remove #
-  const cardElement = document.querySelector(`[data-title="${hashTitle}"]`);
+  const hashSlug = window.location.hash?.substring(1); // remove #
+  const cardElement = document.querySelector(`[data-slug="${hashSlug}"]`);
   if (cardElement) {
     const cardData = getDataFromCard(cardElement);
     populateModal(cardData);
