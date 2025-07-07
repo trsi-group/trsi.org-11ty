@@ -4,7 +4,7 @@
        url('../fonts/edit-undo-brk-v2.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
        url('../fonts/edit-undo-line-v1.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   src: url('../fonts/PasseroOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
 
 @font-face {
@@ -29,5 +29,5 @@
   src: url('../fonts/Roboto-Variable.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
