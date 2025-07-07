@@ -62,14 +62,6 @@ export function getDataFromCard($card) {
  * - Hides elements gracefully when corresponding data is missing.
  *
  * @param {Object} data - The content data to populate the modal.
- * @param {string} [data.youtube]     - YouTube video URL (if present, video is shown).
- * @param {string} [data.image]       - Image URL fallback if no video is available.
- * @param {string} [data.description] - Description text to display.
- * @param {Array}  [data.credits]     - List of credit entries, formatted via `formatCredits()`.
- * @param {string} [data.demozoo]     - Demozoo URL for button link.
- * @param {string} [data.csdb]        - CSDB URL for button link.
- * @param {string} [data.pouet]       - Pouet URL for button link.
- * @param {string} [data.download]    - Download URL for button link.
  *
  * Note:
  * - Buttons are hidden if their corresponding data is not provided.
@@ -84,10 +76,12 @@ export function populateModal(data) {
   
   if (data.youtube) {
     modalVideo.src = data.youtube;
+    modalVideo.alt = data.title;
     figureVideo.style.display = 'block';
     figureImage.style.display = 'none';
   } else {
     modalImage.src = data.image;
+    modalImage.alt = data.title;
     figureImage.style.display = 'block';
     figureVideo.style.display = 'none';
   }
