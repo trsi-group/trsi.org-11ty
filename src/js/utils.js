@@ -39,6 +39,7 @@ export function getDataFromCard($card) {
     title: $card.querySelector('.card-content .title')?.innerText,
     slug: $card.dataset.slug || null,
     description: $card.dataset.description || null,
+    release_date: $card.dataset.release_date || null,
     subtitle: $card.querySelector('.card-content .subtitle')?.innerText,
     credits: $card.dataset.credits ? JSON.parse($card.dataset.credits) : [],
     card_image: $card.querySelector('.card-image img').src,
@@ -124,6 +125,13 @@ export function populateModal(data) {
     credits.innerText = formatCredits(data.credits);
   } else {
     credits.style.display = 'none';
+  }
+
+  const release_date = document.getElementById('modal-release_date');
+  if (data.release_date) {
+    release_date.innerText = `Release Date: ${data.release_date}`;
+  } else {
+    release_date.style.display = 'none';
   }
 }
 

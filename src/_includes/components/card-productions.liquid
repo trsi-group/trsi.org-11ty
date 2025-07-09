@@ -7,6 +7,7 @@
           {{- if card.csdb }}data-csdb='{{ card.csdb }}'{{- endif }}
           {{- if card.pouet }}data-pouet='{{ card.pouet }}'{{- endif }}
           {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
+          {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}
           >
             <div class="card-image">
               <figure class="image is-4by3">
