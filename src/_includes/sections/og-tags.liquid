@@ -1,8 +1,8 @@
-{% assign meta-title = post.title | default: site.metadata.title %}
-{% assign meta-description = post.teaser | default: site.metadata.description %}
-{% assign meta-image = post.image | default: site.metadata.seoimage %}
-{% assign meta-url = post.url | default: page.url %}
-{% assign meta-url = site.domain | append: meta-url %}
+{%- assign meta-title = post.title | default: site.metadata.title %}
+{%- assign meta-description = post.teaser | default: site.metadata.description %}
+{%- assign meta-image = post.image | default: site.metadata.seoimage %}
+{%- assign meta-url = post.url | default: page.url %}
+{%- assign meta-url = site.domain | append: meta-url %}
     <meta name="title" content="{{ site.metadata.title }}" />
     <meta name="description" content="{{ site.metadata.description }}" />
     <meta name="keywords" content="{{ site.metadata.keywords }}" />
