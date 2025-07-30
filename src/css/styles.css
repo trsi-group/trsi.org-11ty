@@ -284,3 +284,8 @@ footer {
 .filter-wrapper {
   margin-bottom: 15px;
 }
+
+.section.news-post a {
+  color: var(--text-color);
+  text-decoration: underline;
+}
