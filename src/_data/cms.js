@@ -6,14 +6,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pPath = resolve(__dirname, '../../cms/data/productions.json');
 const productions = JSON.parse(readFileSync(pPath, 'utf-8'));
+
 const gPath = resolve(__dirname, '../../cms/data/graphics.json');
 const graphics = JSON.parse(readFileSync(gPath, 'utf-8'));
+
 const mPath = resolve(__dirname, '../../cms/data/music.json');
 const music = JSON.parse(readFileSync(mPath, 'utf-8'));
+
 const mePath = resolve(__dirname, '../../cms/data/members.json');
 const members = JSON.parse(readFileSync(mePath, 'utf-8'));
+
 const poPath = resolve(__dirname, '../../cms/data/posts.json');
 const posts = JSON.parse(readFileSync(poPath, 'utf-8'));
+
 const cms = {
   productions: productions.productions,
   graphics: graphics.graphics,
@@ -22,5 +27,4 @@ const cms = {
   posts: posts.posts
 };
 
-// console.log("cms:prods: " + JSON.stringify(cms.productions, null, 2));
 export default cms;

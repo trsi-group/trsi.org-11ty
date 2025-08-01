@@ -5,12 +5,21 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {%- for page in collections.all %}
-  {%- if page.url != '/404.html' %}
+  {%- for page in collections.page %}
+    {%- if page.url != '/404.html' %}
   <url>
     <loc>{{ site.domain }}{{ page.url | url_decode }}</loc>
     <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>daily</changefreq>
   </url>
-  {%- endif %}
+    {%- endif %}
+  {%- endfor %}
+  {%- for post in cms.posts %}
+    {%- if post.url != '/404.html' %}
+  <url>
+    <loc>{{ site.domain }}/news/{{ post.slug | url_decode }}</loc>
+    <lastmod>{{ post.publishDate | date: "%Y-%m-%d" }}</lastmod>
+  </url>
+    {%- endif %}
   {%- endfor %}
 </urlset>
