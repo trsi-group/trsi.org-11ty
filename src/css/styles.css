@@ -143,6 +143,12 @@ a.navbar-item, .navbar-link  {
   color: var(--text-color);
 }
 
+@media (width >= 900px) {
+  .navbar-social {
+    display: none;
+  }
+}
+
 /* Header */
 header.section {
   margin: 0 auto;

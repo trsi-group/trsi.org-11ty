@@ -16,6 +16,26 @@
             {%- assign item_slug = item.title | downcase %}
             <a href="{{ item.url }}" class="navbar-item is-size-3 is-size-4-touch{% if page.fileSlug == item_slug %} active{% endif %}">{{ item.title }}</a>
           {%- endfor %}
+            <div class="navbar-social">
+              <div class="columns is-vcentered pt-5">
+                <div class="column">
+                  <div class="icons is-flex is-justify-content-center is-justify-content-right-desktop">
+                    <a href="https://www.instagram.com/_trsi_/" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on Instagram">
+                      {%- include "icons/instagram.svg" %}
+                    </a>
+                    <a href="https://www.facebook.com/tristarandredsector/" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on Facebook">
+                      {%- include "icons/facebook.svg" %}
+                    </a>
+                    <a href="https://x.com/trsi" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on X">
+                      {%- include "icons/x.svg" %}
+                    </a>
+                    <a href="https://www.youtube.com/@trsi" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on X">
+                      {%- include "icons/youtube.svg" %}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
