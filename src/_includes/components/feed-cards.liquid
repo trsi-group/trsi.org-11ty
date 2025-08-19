@@ -1,10 +1,7 @@
 {%- assign items = max | default: feed.size %}
 {%- assign sort_key = sort_key | default: "release_date" %}
 {%- assign sort_order = sort_order | default: "desc" %}
-{%- assign sorted_feed = feed | sort: sort_key %}
-{%- if sort_order == "desc" %}
-  {%- assign sorted_feed = sorted_feed | sort: sort_key | reverse %}
-{%- endif %}
+{%- assign sorted_feed = feed | sort: 'release_date' | reverse %}
 
 {%- assign sliced_feed = sorted_feed | slice: 0, items %}
 {%- assign card_template = "components/card-" | append: type | downcase | append: ".liquid" %}
@@ -12,6 +9,7 @@
         {%- for item in sliced_feed %}
         <div class="column is-one-third" 
           data-type="{{ item.type | downcase }}" 
+          data-date="{{ item.release_date }}" 
           data-platform="{{ item.platform | downcase }}">
         {%- render card_template, card: item %}
         </div>
