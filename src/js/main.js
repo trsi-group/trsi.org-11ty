@@ -73,4 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
     populateModal(cardData);
     openModal();
   }
+
+  // WOTW mode for testing Music integration
+  const urlParams = new URLSearchParams(window.location.search);
+  const mode = urlParams.get('mode');
+  if (mode && mode == 'wotw') {
+    const navItems = document.querySelectorAll('.navbar-start .navbar-item');
+    navItems.forEach(item => {
+      if (item.innerText.trim() === 'Music') {
+        item.style.display = 'flex';
+      }
+    });
+  }
 });

@@ -10,7 +10,8 @@
     },
     {
       "title": "Music",
-      "url": "/music"
+      "url": "/music",
+      "hidden": true
     },
     {
       "title": "Graphics",

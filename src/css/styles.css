@@ -143,6 +143,10 @@ a.navbar-item, .navbar-link  {
   color: var(--text-color);
 }
 
+a.navbar-item.hide  {
+  display: none;
+}
+
 @media (width >= 900px) {
   .navbar-social {
     display: none;

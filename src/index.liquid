@@ -17,14 +17,12 @@ tags: page
       </div>
     </section>
 
-    {%- if site.featureFlags.news %}
-      <section class="section">
+    <section class="section">
       <div class="content">
         <h1><a href="/news/">Latest News</a></h1>
       </div>
       {%- render "components/feed-news.liquid", feed: cms.posts, max: 3 %}
     </section>
-    {% endif %}
 
     <section class="section">
       <div class="content">
@@ -40,14 +38,12 @@ tags: page
       {%- render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics", max: 3 %}
     </section>
 
-    {%- if site.featureFlags.music %}
-      <section class="section">
+    <section class="section">
       <div class="content">
         <h1><a href="/music/">Latest Music</a></h1>
       </div>
       {%- render "components/feed-cards.liquid", feed: cms.music, type: "music", max: 3 %}
     </section>
-    {% endif %}
 
     <section class="section">
       <div class="modal-wrapper">
