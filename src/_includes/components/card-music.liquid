@@ -8,11 +8,13 @@
           {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}
           >
+            {%- if card.image %}
             <div class="card-image">
               <figure class="image is-4by3">
-                <img src="{{ card.card_image }}" alt="image of {{ card.title }}>
+                <img src="{{ card.card_image }}" alt="image of the {{ card.type }} music {{ card.title }}">
               </figure>
             </div>
+            {%- endif %}
             <div class="card-content aligned-vertically bounce-hover">
               <div>
                 <p class="subtitle">{{ card.type }} / {{ card.platform }}</p>

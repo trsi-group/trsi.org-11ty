@@ -10,6 +10,13 @@ build using 11ty & Bulma
 - ```npm run build:c-process``` to run post processing only
 - ```npm run serve``` to run vite preview server
 
+## Test Commands
+- ```npm test```                 # Run all unit tests
+- ```npm run test:watch```       # Watch mode for development
+- ```npm run test:coverage```    # Generate coverage reports
+- ```npm run test:e2e```         # Cross-browser e2e tests
+- ```npm run test:integration``` # Build process validation
+
 ## ENV vars
 - ```NODE_ENV: development/production``` prod runs minimisations
 - ```DELIVERY_TOKEN``` from Contentful space config

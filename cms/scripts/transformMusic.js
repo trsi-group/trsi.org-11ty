@@ -36,7 +36,6 @@ export function transformMusic(contentfulData) {
       return {
         title: fields.title['en-US'],
         type: fields.type['en-US'],
-        type: fields.type['en-US'],
         platform: fields.platform ? fields.platform['en-US'] : null,
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
@@ -54,4 +53,4 @@ export function transformMusic(contentfulData) {
 }
 
 // Export for module usage
-export const name = 'transformMembers'
+export const name = 'transformMusic'
