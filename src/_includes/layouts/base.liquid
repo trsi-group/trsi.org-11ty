@@ -21,6 +21,25 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
     <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="/img/favicon-167.png">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/img/favicon-180.png">
+    <!-- Configure libopenmpt Module before loading -->
+    <script>
+      // Set up Module configuration for libopenmpt
+      window.Module = {
+        locateFile: function(path) {
+          if (path === 'libopenmpt.js.mem') {
+            return '/js/libopenmpt.js.mem';
+          }
+          return '/js/' + path;
+        },
+        onRuntimeInitialized: function() {
+          console.log('libopenmpt runtime initialized');
+          window.libopenmpt = window.Module;
+        }
+      };
+    </script>
+    <!-- Pre-load music libraries for instant playback -->
+    <script src="/js/libopenmpt.js"></script>
+    <script src="/js/chiptune2.js"></script>
     <script type="module" src="/js/main.js"></script>
     {%- if page.url contains "/news/" %}
 {% include "sections/jsonld-post.liquid" %}

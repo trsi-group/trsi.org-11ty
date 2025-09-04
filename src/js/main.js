@@ -1,4 +1,4 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, stopMusicPlayer } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, stopMusicPlayer, preloadMusicLibraries } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -15,10 +15,16 @@ import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChan
  *    - Registers click events on modal close elements to close individual modals.
  *    - Registers 'Escape' key event to close all active modals.
  *
+ * 4. Music Library Pre-loading:
+ *    - Pre-loads libopenmpt and chiptune2.js libraries in the background for instant music playback.
+ *
  * Runs automatically when the DOM is fully loaded.
  */
 document.addEventListener('DOMContentLoaded', () => {
   console.log("main.js: DOMContentLoaded");
+  
+  // Pre-load music libraries in the background for instant playback
+  preloadMusicLibraries();
   
   /* Navbar Menu */
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);

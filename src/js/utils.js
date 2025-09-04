@@ -268,65 +268,40 @@ export function setupMusicPlayer(downloadUrl, title) {
 }
 
 /**
- * Loads the libopenmpt library and initializes the music player.
- * This function ensures the library is only loaded once.
+ * Waits for libopenmpt to be ready and initialized
  */
-async function loadLibopenmpt() {
-  if (libopenmptLoaded) return;
-  
-  return new Promise((resolve, reject) => {
-    // Set up Module configuration before loading
-    if (typeof window.Module === 'undefined') {
-      window.Module = {};
-    }
-    
-    // Configure locateFile to find the memory file
-    window.Module.locateFile = function(path) {
-      console.log('locateFile called with path:', path);
-      if (path === 'libopenmpt.js.mem') {
-        return '/js/libopenmpt.js.mem';
+async function waitForLibopenmptReady() {
+  return new Promise((resolve) => {
+    const checkReady = () => {
+      // Check if libopenmpt is available and has the required functions
+      if (typeof window.libopenmpt !== 'undefined' && 
+          window.libopenmpt._openmpt_module_create_from_memory) {
+        console.log('libopenmpt is ready');
+        libopenmptLoaded = true;
+        resolve();
+      } else if (typeof window.Module !== 'undefined' && 
+                 window.Module._openmpt_module_create_from_memory) {
+        window.libopenmpt = window.Module;
+        libopenmptLoaded = true;
+        resolve();
+      } else {
+        setTimeout(checkReady, 100);
       }
-      return '/js/' + path;
     };
-    
-    // Set up initialization callback
-    const originalOnRuntimeInitialized = window.Module.onRuntimeInitialized;
-    window.Module.onRuntimeInitialized = function() {
-      console.log('Module runtime initialized');
-      if (typeof originalOnRuntimeInitialized === 'function') {
-        originalOnRuntimeInitialized();
-      }
-      window.libopenmpt = window.Module;
-      libopenmptLoaded = true;
-      resolve();
-    };
-    
-    // Load libopenmpt.js
-    const script = document.createElement('script');
-    script.src = '/js/libopenmpt.js';
-    script.onload = () => {
-      console.log('libopenmpt.js script loaded, waiting for initialization...');
-      // Add a timeout in case onRuntimeInitialized doesn't fire
-      setTimeout(() => {
-        if (!libopenmptLoaded) {
-          console.log('Timeout waiting for onRuntimeInitialized, checking Module directly...');
-          if (typeof window.Module !== 'undefined' && window.Module._openmpt_module_create_from_memory) {
-            console.log('Module appears ready, proceeding...');
-            window.libopenmpt = window.Module;
-            libopenmptLoaded = true;
-            resolve();
-          } else {
-            reject(new Error('libopenmpt failed to initialize within timeout'));
-          }
-        }
-      }, 5000); // 5 second timeout
-    };
-    script.onerror = (error) => {
-      console.error('Failed to load libopenmpt.js:', error);
-      reject(error);
-    };
-    document.head.appendChild(script);
+    checkReady();
   });
+}
+
+/**
+ * Pre-loads libopenmpt library for faster music playback.
+ * Since chiptune2.js is now loaded with the page, we only need to ensure libopenmpt is ready.
+ */
+export async function preloadMusicLibraries() {
+  try {
+    await waitForLibopenmptReady();
+  } catch (error) {
+    console.error('Failed to prepare music libraries:', error);
+  }
 }
 
 /**
@@ -342,19 +317,18 @@ async function loadAndPlayMusic(url, title) {
     // Stop any currently playing music
     stopMusicPlayer();
     
-    // Load libopenmpt if not already loaded
-    await loadLibopenmpt();
-    console.log('libopenmpt loaded successfully');
-    
-    // Load chiptune2.js
-    if (typeof ChiptuneJsPlayer === 'undefined') {
-      await loadScript('/js/chiptune2.js');
-      console.log('chiptune2.js loaded successfully');
+    // Ensure libopenmpt is ready
+    if (!libopenmptLoaded) {
+      await waitForLibopenmptReady();
     }
     
-    // Verify libopenmpt is available
+    // Verify libraries are available
     if (typeof window.libopenmpt === 'undefined') {
       throw new Error('libopenmpt is not available');
+    }
+    
+    if (typeof ChiptuneJsPlayer === 'undefined') {
+      throw new Error('ChiptuneJsPlayer is not available');
     }
     
     // Create player instance
@@ -370,13 +344,11 @@ async function loadAndPlayMusic(url, title) {
     });
     
     currentMusicPlayer.onEnded(() => {
-      console.log('Music playback ended');
       resetMusicPlayerUI();
     });
     
     // Load and play the music file
     currentMusicPlayer.load(url, (buffer) => {
-      console.log('Music file loaded, starting playback');
       currentMusicPlayer.play(buffer);
       updateMusicPlayerUI(true);
     });
