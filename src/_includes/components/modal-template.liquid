@@ -28,9 +28,13 @@
                     allowfullscreen
                     ></img>
                     <div id="music-player-overlay" class="music-player-overlay is-hidden">
-                      <button id="play-pause-btn" class="button is-large is-rounded is-white" aria-label="Play/Pause Music">
-                        <span id="play-icon" class="icon is-large">▶</span>
-                        <span id="pause-icon" class="icon is-large is-hidden">⏸</span>
+                      <button id="play-pause-btn" class="music-player-button" aria-label="Play/Pause Music">
+                        <span id="play-icon" class="music-player-icon">
+                          {%- include "icons/play-button.svg" %}
+                        </span>
+                        <span id="pause-icon" class="music-player-icon is-hidden">
+                          {%- include "icons/pause-button.svg" %}
+                        </span>
                       </button>
                     </div>
                   </figure>

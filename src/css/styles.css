@@ -327,23 +327,43 @@ figure.image {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#play-pause-btn {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border: 2px solid rgba(0, 0, 0, 0.2) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
-  transition: all 0.3s ease;
+.music-player-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 25%;
+  height: 25%;
+  max-width: 120px;
+  max-height: 120px;
   min-width: 60px;
   min-height: 60px;
-  display: flex !important;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
-#play-pause-btn:hover {
-  background-color: rgba(255, 255, 255, 1) !important;
+.music-player-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
-#play-pause-btn .icon {
-  font-size: 1.5rem;
-  color: #333;
+.music-player-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.music-player-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: white;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.music-player-button:hover .music-player-icon svg {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.music-player-icon.is-hidden {
+  display: none !important;
 }
