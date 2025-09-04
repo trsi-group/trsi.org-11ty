@@ -17,6 +17,13 @@ This is an **11ty (Eleventy) static site** for the TRSI demogroup that uses **Co
 - `npm run build:content` - Fetch and process CMS content only
 - `npm run build:css` - Build optimized CSS with PostCSS/PurgeCSS
 
+### Development Workflow Notes
+- **JavaScript Changes**: Auto-copied to `dist/js/` by Eleventy's watch mode - no rebuild needed
+- **CSS Changes**: Auto-processed by watch mode - no manual build needed during development
+- **Template Changes**: Auto-recompiled by Eleventy watch mode
+- **Server Restart**: Only needed for config changes (`.eleventy.js`, `package.json`, etc.)
+- **Manual Builds**: Only required for production deployment or initial setup
+
 ### Testing Commands
 - `npm test` - Run all unit tests with Vitest
 - `npm run test:watch` - Run tests in watch mode during development

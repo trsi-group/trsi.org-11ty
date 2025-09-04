@@ -299,3 +299,51 @@ footer {
   color: var(--text-color);
   text-decoration: underline;
 }
+
+/* Music Player Overlay */
+figure.image {
+  position: relative;
+}
+
+.music-player-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.music-player-overlay.is-hidden {
+  display: none !important;
+}
+
+.music-player-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#play-pause-btn {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease;
+  min-width: 60px;
+  min-height: 60px;
+  display: flex !important;
+}
+
+#play-pause-btn:hover {
+  background-color: rgba(255, 255, 255, 1) !important;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+#play-pause-btn .icon {
+  font-size: 1.5rem;
+  color: #333;
+}

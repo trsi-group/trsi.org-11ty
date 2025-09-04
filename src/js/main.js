@@ -1,4 +1,4 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, stopMusicPlayer } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.

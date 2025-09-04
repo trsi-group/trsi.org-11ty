@@ -7,6 +7,7 @@
           {{- if card.image }}data-image='{{ card.image }}'{{- endif }}
           {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}
+          {{- if card.type }}data-format='{{ card.type }}'{{- endif }}
           >
             {%- if card.image %}
             <div class="card-image">
