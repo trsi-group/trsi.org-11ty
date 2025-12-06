@@ -49,6 +49,8 @@ export function closeModal() {
  *
  * @param {Element} $card - The card DOM element to extract data from.
  * @returns {Object} Object containing extracted data:
+ *   - ctype: Content type from CMS
+ *   - type: sub-type of content e.g. track music in music
  *   - title: Text content from .card-content .title element
  *   - subtitle: Text content from .card-content .subtitle element  
  *   - slug: data-slug attribute value
@@ -66,6 +68,8 @@ export function closeModal() {
  */
 export function getDataFromCard($card) {
   const data = {
+    ctype: $card.dataset.ctype || null,
+    type: $card.dataset.type || null,
     title: $card.querySelector('.card-content .title')?.innerText || $card.querySelector('.card-content .title')?.textContent,
     slug: $card.dataset.slug || null,
     description: $card.dataset.description || null,
@@ -107,25 +111,25 @@ export function populateModal(data) {
   const figureImage = modalImage.closest('figure.image');
   const musicPlayerOverlay = document.getElementById('music-player-overlay');
   
-  if (data.youtube) {
+  if (data.ctype == 'prod') {
     modalVideo.src = data.youtube;
     modalVideo.alt = data.title;
     figureVideo.style.display = 'block';
     figureImage.style.display = 'none';
     musicPlayerOverlay.classList.add('is-hidden');
-  } else {
+  } else  if (data.ctype == 'graphic' || data.ctype == 'member') {
     modalImage.src = data.image;
     modalImage.alt = data.title;
     figureImage.style.display = 'block';
     figureVideo.style.display = 'none';
-    
-    // Show music player overlay for tracked music
-    if (data.format === 'Tracked Music' && data.download) {
-      musicPlayerOverlay.classList.remove('is-hidden');
-      setupMusicPlayerUI(data.download, data.title);
-    } else {
-      musicPlayerOverlay.classList.add('is-hidden');
-    }
+    musicPlayerOverlay.classList.add('is-hidden');
+  } else  if (data.ctype == 'music') {
+    modalImage.src = data.image;
+    modalImage.alt = data.title;
+    figureImage.style.display = 'block';
+    figureVideo.style.display = 'none';
+    musicPlayerOverlay.classList.remove('is-hidden');
+    setupMusicPlayerUI(data.download, data.title);
   }
 
   const buttons = document.querySelectorAll('#modal-overlay .button:not(#play-pause-btn)');

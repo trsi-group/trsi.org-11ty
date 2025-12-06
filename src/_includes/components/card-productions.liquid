@@ -1,5 +1,6 @@
 
           <div class="card pointer" 
+            data-ctype="prod"
           {{- if card.title }}data-slug='{{ card.title | slugify }}'{{- endif }}
           {{- if card.youtube }}data-youtube='{{ card.youtube }}'{{- endif }}
           {{- if card.download }}data-download='{{ card.download }}'{{- endif }}
