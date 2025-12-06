@@ -18,13 +18,16 @@ import { transformMembers } from './transformMembers.js';
 import { transformGraphics } from './transformGraphics.js';
 import { transformMusic } from './transformMusic.js';
 import { transformPosts } from './transformPosts.js';
-import { transformImages } from './transformImages.js';
+import { copyImageAssets } from './copyImageAssets.js';
+import { copyTrackAssets } from './copyTrackAssets.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const jsonSource = resolve(__dirname, '../export/content.json');
-const assetsSource = resolve(__dirname, '../export/images.ctfassets.net');
 const jsonDest = resolve(__dirname, '../data');
-const assetsDest = resolve(__dirname, '../../dist/img');
+const imgAssetsSource = resolve(__dirname, '../export/images.ctfassets.net');
+const imgAssetsDest = resolve(__dirname, '../../dist/img');
+const trackAssetsSource = resolve(__dirname, '../export/assets.ctfassets.net');
+const trackAssetsDest = resolve(__dirname, '../../dist/tracks');
 
 const transforms = [
   { name: 'productions', fn: transformProductions },
@@ -39,9 +42,13 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
     const jsonData = JSON.parse(readFileSync(jsonSource, 'utf8'));
 
-    // Copy assets to local image directory
-    transformImages(jsonData, assetsDest, assetsSource);
-    console.log(`Image assets written to ${assetsDest}`);
+    // Copy image assets to local image directory
+    copyImageAssets(jsonData, imgAssetsDest, imgAssetsSource);
+    console.log(`Image assets written to ${imgAssetsDest}`);
+
+    // Copy track assets to local track directory
+    copyTrackAssets(jsonData, trackAssetsDest, trackAssetsSource);
+    console.log(`Track assets written to ${trackAssetsDest}`);
 
     // Ensure the target directory exists
     if (!existsSync(jsonDest)) {

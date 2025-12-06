@@ -1,4 +1,5 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, stopMusicPlayer, preloadMusicLibraries } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, preloadMusicLibraries } from './utils.js';
+import { musicPlayerManager } from './musicPlayer.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button:not(.music-player-button)') || []).forEach(($close) => {
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button:not(#play-pause-btn)') || []).forEach(($close) => {
     $close.addEventListener('click', () => {
       closeModal();
     });

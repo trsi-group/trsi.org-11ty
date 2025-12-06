@@ -5,13 +5,6 @@
   "main": "src/main.js",
   "description": "",
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "test:unit": "vitest run tests/unit",
-    "test:integration": "vitest run tests/integration",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
     "build:c-fetch": "node cms/scripts/fetchContent.js",
     "build:c-process": "node cms/scripts/processContent.js",
     "build:content": "npm run build:c-fetch && npm run build:c-process",

@@ -6,6 +6,8 @@
  *
  * @param {Element} $el - The modal DOM element to open or close.
  */
+import { musicPlayerManager } from './musicPlayer.js';
+
 let scrollPosition = 0;
 
 export function openModal() {
@@ -28,7 +30,7 @@ export function closeModal() {
   }
   
   // Stop music player if present
-  stopMusicPlayer();
+  musicPlayerManager.stop();
   
   document.body.classList.remove('modal-open');
   // Remove hash title from URL
@@ -37,14 +39,38 @@ export function closeModal() {
   document.body.style.top = '';
   window.scrollTo(0, scrollPosition);
 }
-// write me a funtion doc similar to existings 
+
+/**
+ * Extracts data attributes and content from a card DOM element.
+ *
+ * This function retrieves both data attributes and content from various child elements
+ * of a card component, returning a structured object with all relevant information
+ * needed for modal population or other operations.
+ *
+ * @param {Element} $card - The card DOM element to extract data from.
+ * @returns {Object} Object containing extracted data:
+ *   - title: Text content from .card-content .title element
+ *   - subtitle: Text content from .card-content .subtitle element  
+ *   - slug: data-slug attribute value
+ *   - description: data-description attribute value
+ *   - release_date: data-release_date attribute value
+ *   - credits: Parsed JSON from data-credits attribute, or empty array
+ *   - card_image: Image src from .card-image img element
+ *   - image: data-image attribute value
+ *   - download: data-download attribute value
+ *   - youtube: data-youtube attribute value
+ *   - demozoo: data-demozoo attribute value
+ *   - csdb: data-csdb attribute value
+ *   - pouet: data-pouet attribute value
+ *   - format: data-format attribute value
+ */
 export function getDataFromCard($card) {
   const data = {
-    title: $card.querySelector('.card-content .title')?.innerText,
+    title: $card.querySelector('.card-content .title')?.innerText || $card.querySelector('.card-content .title')?.textContent,
     slug: $card.dataset.slug || null,
     description: $card.dataset.description || null,
     release_date: $card.dataset.release_date || null,
-    subtitle: $card.querySelector('.card-content .subtitle')?.innerText,
+    subtitle: $card.querySelector('.card-content .subtitle')?.innerText || $card.querySelector('.card-content .subtitle')?.textContent,
     credits: $card.dataset.credits ? JSON.parse($card.dataset.credits) : [],
     card_image: $card.querySelector('.card-image img').src,
     image: $card.dataset.image || null,
@@ -96,7 +122,7 @@ export function populateModal(data) {
     // Show music player overlay for tracked music
     if (data.format === 'Tracked Music' && data.download) {
       musicPlayerOverlay.classList.remove('is-hidden');
-      setupMusicPlayer(data.download, data.title);
+      setupMusicPlayerUI(data.download, data.title);
     } else {
       musicPlayerOverlay.classList.add('is-hidden');
     }
@@ -105,7 +131,7 @@ export function populateModal(data) {
   const buttons = document.querySelectorAll('#modal-overlay .button:not(#play-pause-btn)');
 
   buttons.forEach(button => {
-    const text = button.innerText.toLowerCase();
+    const text = (button.innerText || button.textContent || '').toLowerCase();
 
     if (text === 'youtube' && data.youtube) {
       button.style.display = 'flex';
@@ -219,18 +245,13 @@ export function handleFilterChange(event) {
   })
 };
 
-// Global music player variables
-let currentMusicPlayer = null;
-let libopenmptLoaded = false;
-
 /**
- * Initializes the music player for tracked music files (MOD, XM, S3M, IT, etc.)
- * using chiptune2.js library.
+ * Sets up the music player UI controls and connects them to the music player manager.
  * 
  * @param {string} downloadUrl - URL to the music file
  * @param {string} title - Title of the music track
  */
-export function setupMusicPlayer(downloadUrl, title) {
+export function setupMusicPlayerUI(downloadUrl, title) {
   if (!downloadUrl) return;
   
   const playPauseBtn = document.getElementById('play-pause-btn');
@@ -250,137 +271,45 @@ export function setupMusicPlayer(downloadUrl, title) {
   const newPlayPauseBtn = playPauseBtn.cloneNode(true);
   playPauseBtn.parentNode.replaceChild(newPlayPauseBtn, playPauseBtn);
   
-  // Get references to the new cloned elements
-  const newPlayIcon = newPlayPauseBtn.querySelector('#play-icon');
-  const newPauseIcon = newPlayPauseBtn.querySelector('#pause-icon');
+  // Set up UI callbacks for the music player
+  musicPlayerManager.onStateChange((isPlaying) => {
+    updateMusicPlayerUI(isPlaying);
+  });
+  
+  musicPlayerManager.onError((error) => {
+    console.error('Music player error:', error);
+    resetMusicPlayerUI();
+    alert('Failed to load music player. Please check the console for details.');
+  });
+  
+  musicPlayerManager.onTrackEnd(() => {
+    resetMusicPlayerUI();
+  });
   
   // Add click event listener to the new button
-  newPlayPauseBtn.addEventListener('click', (e) => {
+  newPlayPauseBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     e.stopPropagation();
     
-    if (!currentMusicPlayer) {
-      loadAndPlayMusic(downloadUrl, title);
+    if (!musicPlayerManager.isPlaying() && !musicPlayerManager.getCurrentTrack()) {
+      // Load and play new track
+      await musicPlayerManager.loadAndPlay(downloadUrl, title);
     } else {
-      toggleMusicPlayback();
+      // Toggle playback
+      musicPlayerManager.togglePlayback();
     }
   });
 }
 
 /**
- * Waits for libopenmpt to be ready and initialized
- */
-async function waitForLibopenmptReady() {
-  return new Promise((resolve) => {
-    const checkReady = () => {
-      // Check if libopenmpt is available and has the required functions
-      if (typeof window.libopenmpt !== 'undefined' && 
-          window.libopenmpt._openmpt_module_create_from_memory) {
-        console.log('libopenmpt is ready');
-        libopenmptLoaded = true;
-        resolve();
-      } else if (typeof window.Module !== 'undefined' && 
-                 window.Module._openmpt_module_create_from_memory) {
-        window.libopenmpt = window.Module;
-        libopenmptLoaded = true;
-        resolve();
-      } else {
-        setTimeout(checkReady, 100);
-      }
-    };
-    checkReady();
-  });
-}
-
-/**
- * Pre-loads libopenmpt library for faster music playback.
- * Since chiptune2.js is now loaded with the page, we only need to ensure libopenmpt is ready.
+ * Pre-loads music player libraries for faster playback.
  */
 export async function preloadMusicLibraries() {
   try {
-    await waitForLibopenmptReady();
+    await musicPlayerManager.preload();
   } catch (error) {
     console.error('Failed to prepare music libraries:', error);
   }
-}
-
-/**
- * Loads and plays a music file using chiptune2.js
- * 
- * @param {string} url - URL to the music file
- * @param {string} title - Title of the music track
- */
-async function loadAndPlayMusic(url, title) {
-  try {
-    console.log('Loading music:', title, 'from:', url);
-    
-    // Stop any currently playing music
-    stopMusicPlayer();
-    
-    // Ensure libopenmpt is ready
-    if (!libopenmptLoaded) {
-      await waitForLibopenmptReady();
-    }
-    
-    // Verify libraries are available
-    if (typeof window.libopenmpt === 'undefined') {
-      throw new Error('libopenmpt is not available');
-    }
-    
-    if (typeof ChiptuneJsPlayer === 'undefined') {
-      throw new Error('ChiptuneJsPlayer is not available');
-    }
-    
-    // Create player instance
-    const context = new (window.AudioContext || window.webkitAudioContext)();
-    const config = new ChiptuneJsConfig(0, 100, 8, context); // 0 = no repeat
-    
-    currentMusicPlayer = new ChiptuneJsPlayer(config);
-    
-    // Set up event handlers
-    currentMusicPlayer.onError((error) => {
-      console.error('Music player error:', error);
-      resetMusicPlayerUI();
-    });
-    
-    currentMusicPlayer.onEnded(() => {
-      resetMusicPlayerUI();
-    });
-    
-    // Load and play the music file
-    currentMusicPlayer.load(url, (buffer) => {
-      currentMusicPlayer.play(buffer);
-      updateMusicPlayerUI(true);
-    });
-    
-  } catch (error) {
-    console.error('Failed to load or play music:', error);
-    resetMusicPlayerUI();
-    alert('Failed to load music player. Please check the console for details.');
-  }
-}
-
-/**
- * Toggles music playback (play/pause)
- */
-function toggleMusicPlayback() {
-  if (!currentMusicPlayer) return;
-  
-  currentMusicPlayer.togglePause();
-  // Update UI based on current state
-  const isPlaying = currentMusicPlayer.currentPlayingNode && !currentMusicPlayer.currentPlayingNode.paused;
-  updateMusicPlayerUI(isPlaying);
-}
-
-/**
- * Stops the current music player and cleans up resources
- */
-export function stopMusicPlayer() {
-  if (currentMusicPlayer) {
-    currentMusicPlayer.stop();
-    currentMusicPlayer = null;
-  }
-  resetMusicPlayerUI();
 }
 
 /**
@@ -417,20 +346,4 @@ function resetMusicPlayerUI() {
     playIcon.classList.remove('is-hidden');
     pauseIcon.classList.add('is-hidden');
   }
-}
-
-/**
- * Utility function to load a script dynamically
- * 
- * @param {string} src - Script source URL
- * @returns {Promise} Promise that resolves when script is loaded
- */
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
 }

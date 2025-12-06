@@ -6,8 +6,8 @@ import sharp from 'sharp';
  * Copies image assets from the Contentful export to the local image directory.
  * @param {Object} contentfulData - The raw JSON data exported from Contentful.
  */
-export function transformImages(contentfulData, exportDir, assetDir) {
-  const { assets } = contentfulData;
+export function copyImageAssets(contentfulData, exportDir, assetDir) {
+  const { entries, assets } = contentfulData;
 
   // Ensure the target directory exists
   if (!fs.existsSync(exportDir)) {
@@ -42,8 +42,12 @@ export function transformImages(contentfulData, exportDir, assetDir) {
       const fileName = asset.fields.file['en-US'].fileName;
       const sourcePath = findFileRecursively(assetDir, fileName.replace(/ /g, '_')); // Find file recursively
       if (!sourcePath) {
-        console.log('Source images not available!');
-        console.log(`asset dir: ${assetDir}, filename: ${fileName}`);
+        const contentType = asset.fields.file['en-US'].contentType;
+        // only an issue if this is an image and not a track file
+        if (contentType == ('image/png' || 'image/jpg' || 'image/jpeg' || 'image/webp' || 'image/gif')) {
+          console.log('Source images not available!');
+          console.log(`asset dir: ${assetDir}, filename: ${fileName}`);
+        }
         return null;
       }
 
@@ -99,4 +103,4 @@ export function transformImages(contentfulData, exportDir, assetDir) {
 }
 
 // Export for module usage
-export const name = 'transformImages';
+export const name = 'copyImageAssets';
