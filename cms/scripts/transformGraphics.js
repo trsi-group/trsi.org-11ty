@@ -22,6 +22,7 @@ export function transformGraphics(contentfulData) {
     .map((entry) => {
       const fields = entry.fields;
       const imageId = fields.image?.['en-US']?.sys.id;
+      const assetId = fields.image?.['en-US']?.sys.id;
 
       // Extract credits from the new structure   
       const credits = Array.isArray(fields.credits?.['en-US'])
@@ -37,9 +38,11 @@ export function transformGraphics(contentfulData) {
         platform: fields.platform ? fields.platform['en-US'] : null,
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
+        assetId: assetId ? assetId : null,
+        asset: assetId ? resolve('/img/orig/', findAssetPathById(assetId)) : null,
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
         card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
-        image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
+        // image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         download: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,

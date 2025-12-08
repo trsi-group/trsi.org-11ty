@@ -27,7 +27,6 @@ export function transformMembers(contentfulData) {
         handle: fields.handle['en-US'],
         real_name: fields.realName?.['en-US'],
         card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
-        image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
       };

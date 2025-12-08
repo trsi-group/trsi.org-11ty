@@ -5,15 +5,14 @@
           {{- if card.download }}data-download='{{ card.download }}'{{- endif }}
           {{- if card.demozoo }}data-demozoo='{{ card.demozoo }}'{{- endif }}
           {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
-          {{- if card.image }}data-image='{{ card.image }}'{{- endif }}
           {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}
           {{- if card.type }}data-format='{{ card.type }}'{{- endif }}
           >
-            {%- if card.image %}
+            {%- if card.asset %}
             <div class="card-image">
               <figure class="image is-4by3">
-                <img src="{{ card.card_image }}" alt="image of the {{ card.type }} music {{ card.title }}">
+                <img src="{{ card.card_image }}" alt="image of the track {{ card.title }} of type {{ card.type }}">
               </figure>
             </div>
             {%- endif %}

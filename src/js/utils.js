@@ -78,6 +78,8 @@ export function getDataFromCard($card) {
     credits: $card.dataset.credits ? JSON.parse($card.dataset.credits) : [],
     card_image: $card.querySelector('.card-image img').src,
     image: $card.dataset.image || null,
+    assetId: $card.dataset.assetId || null,
+    asset: $card.dataset.asset || null,
     download: $card.dataset.download || null,
     youtube: $card.dataset.youtube || null,
     demozoo: $card.dataset.demozoo || null,
@@ -124,7 +126,7 @@ export function populateModal(data) {
     figureVideo.style.display = 'none';
     musicPlayerOverlay.classList.add('is-hidden');
   } else  if (data.ctype == 'music') {
-    modalImage.src = data.image;
+    modalImage.src = data.card_image; // needs to be replaced in case we get an original image for a track
     modalImage.alt = data.title;
     figureImage.style.display = 'block';
     figureVideo.style.display = 'none';

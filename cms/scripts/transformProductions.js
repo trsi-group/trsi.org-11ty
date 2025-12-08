@@ -56,7 +56,6 @@ export function transformProductions(contentfulData) {
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
-        image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
         youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
         pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
