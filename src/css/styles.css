@@ -211,7 +211,7 @@ footer {
 }
 
 .card-image:first-child img {
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 0px;
 }
 

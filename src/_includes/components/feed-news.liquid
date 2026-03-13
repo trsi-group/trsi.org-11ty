@@ -5,8 +5,8 @@
         {%- for item in sliced_feed %}
         <div class="columns">
           <div class="column is-one-fifth">
-            <figure class="image is-1by1">
-              <img src="{{ item.post_image }}" alt="image of {{ card.title }}">
+            <figure class="image">
+              <img src="{{ item.post_image }}" alt="image of {{ item.title }}" width="480" loading="lazy">
             </figure>
           </div>
           <div class="column">
