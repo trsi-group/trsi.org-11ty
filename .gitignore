@@ -141,3 +141,4 @@ dist
 # project specific
 /cms/export
 /cms/data
+/.claude/worktrees
