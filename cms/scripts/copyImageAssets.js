@@ -75,7 +75,7 @@ export function copyImageAssets(contentfulData, exportDir, assetDir) {
       const cardFilename = fileName.replace(/\.[^/.]+$/, ".webp");
       const targetCardPath = path.join(exportDir, 'card', cardFilename); // Path in target folder
       sharp(sourcePath)
-        .resize(400)
+        .resize(800)
         .webp()
         .toFile(targetCardPath)
         .catch(err => { 
@@ -91,7 +91,7 @@ export function copyImageAssets(contentfulData, exportDir, assetDir) {
       const postFilename = fileName.replace(/\.[^/.]+$/, ".webp");
       const targetPostPath = path.join(exportDir, 'post', postFilename); // Path in target folder
       sharp(sourcePath)
-        .resize(150)
+        .resize(480)
         .webp()
         .toFile(targetPostPath)
         .catch(err => { 

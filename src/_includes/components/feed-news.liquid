@@ -1,12 +1,12 @@
 {%- assign items = max | default: feed.size %}
-{%- assign sliced_feed = feed | slice: 0, items %}
 {%- assign sorted_feed = feed | sort: "publishDate" | reverse %}
+{%- assign sliced_feed = sorted_feed | slice: 0, items %}
       <div class="posts">
-        {%- for item in sorted_feed %}
+        {%- for item in sliced_feed %}
         <div class="columns">
           <div class="column is-one-fifth">
-            <figure class="image is-1by1">
-              <img src="{{ item.post_image }}" alt="image of {{ card.title }}">
+            <figure class="image">
+              <img src="{{ item.post_image }}" alt="image of {{ item.title }}" width="480" loading="lazy">
             </figure>
           </div>
           <div class="column">
