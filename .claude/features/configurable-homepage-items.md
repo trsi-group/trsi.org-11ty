@@ -112,37 +112,37 @@ Replace the hardcoded `max: 3` values with the centralized config:
 
 ### Phase 1: Bug Fix — `feed-news.liquid`
 
-- [ ] **1.1** Fix sort order: move `sort: "publishDate" | reverse` to execute **before** the slice
-- [ ] **1.2** Fix slice target: apply `slice: 0, items` to the **sorted** feed, not the raw feed
-- [ ] **1.3** Fix loop variable: change `for item in sorted_feed` → `for item in sliced_feed`
-- [ ] **1.4** Remove the now-redundant intermediate `sliced_feed` assignment on the unsorted data
-- [ ] **1.5** Manually verify: run `npm run serve`, confirm homepage shows exactly 3 news items (the 3 most recent by `publishDate`)
+- [x] **1.1** Fix sort order: move `sort: "publishDate" | reverse` to execute **before** the slice
+- [x] **1.2** Fix slice target: apply `slice: 0, items` to the **sorted** feed, not the raw feed
+- [x] **1.3** Fix loop variable: change `for item in sorted_feed` → `for item in sliced_feed`
+- [x] **1.4** Remove the now-redundant intermediate `sliced_feed` assignment on the unsorted data
+- [x] **1.5** Manually verify: run `npm run serve`, confirm homepage shows exactly 3 news items (the 3 most recent by `publishDate`)
 
 ### Phase 2: Centralize Config — `site.js`
 
-- [ ] **2.1** Define `homepage` object with `newsItems: 3`, `productionItems: 3`, `graphicsItems: 3`
-- [ ] **2.2** Add `homepage` to the `export default` block
-- [ ] **2.3** Verify `site.homepage` is accessible in templates by inspecting rendered output or adding a temporary debug line
+- [x] **2.1** Define `homepage` object with `newsItems: 3`, `productionItems: 3`, `graphicsItems: 3`
+- [x] **2.2** Add `homepage` to the `export default` block
+- [x] **2.3** Verify `site.homepage` is accessible in templates by inspecting rendered output or adding a temporary debug line
 
 ### Phase 3: Wire Up Config — `index.liquid`
 
-- [ ] **3.1** Replace `max: 3` on the `feed-news.liquid` render with `max: site.homepage.newsItems`
-- [ ] **3.2** Replace `max: 3` on the `feed-cards.liquid` (productions) render with `max: site.homepage.productionItems`
-- [ ] **3.3** Replace `max: 3` on the `feed-cards.liquid` (graphics) render with `max: site.homepage.graphicsItems`
+- [x] **3.1** Replace `max: 3` on the `feed-news.liquid` render with `max: site.homepage.newsItems`
+- [x] **3.2** Replace `max: 3` on the `feed-cards.liquid` (productions) render with `max: site.homepage.productionItems`
+- [x] **3.3** Replace `max: 3` on the `feed-cards.liquid` (graphics) render with `max: site.homepage.graphicsItems`
 
 ### Phase 4: Validation & Testing
 
-- [ ] **4.1** Set `newsItems: 2` in `site.js` → confirm only 2 news posts appear on homepage
-- [ ] **4.2** Set `newsItems: 5` → confirm 5 appear (or all if fewer than 5 exist)
-- [ ] **4.3** Remove `newsItems` from config entirely → confirm all posts appear (default fallback via `feed.size`)
-- [ ] **4.4** Verify the displayed news items are the **most recent** by `publishDate`, not random/unsorted
-- [ ] **4.5** Change `productionItems` and `graphicsItems` to different values → confirm those sections respect limits independently
-- [ ] **4.6** Navigate to `/news/` (full feed page) → confirm it is unaffected and still shows all posts
-- [ ] **4.7** Navigate to `/productions/` and `/graphics/` → confirm full feed pages are unaffected
-- [ ] **4.8** Restore `site.js` to desired defaults (`newsItems: 3`, `productionItems: 3`, `graphicsItems: 3`)
+- [x] **4.1** Set `newsItems: 2` in `site.js` → confirm only 2 news posts appear on homepage
+- [x] **4.2** Set `newsItems: 5` → confirm 5 appear (or all if fewer than 5 exist)
+- [x] **4.3** Remove `newsItems` from config entirely → confirm all posts appear (default fallback via `feed.size`)
+- [x] **4.4** Verify the displayed news items are the **most recent** by `publishDate`, not random/unsorted
+- [x] **4.5** Change `productionItems` and `graphicsItems` to different values → confirm those sections respect limits independently
+- [x] **4.6** Navigate to `/news/` (full feed page) → confirm it is unaffected and still shows all posts
+- [x] **4.7** Navigate to `/productions/` and `/graphics/` → confirm full feed pages are unaffected
+- [x] **4.8** Restore `site.js` to desired defaults (`newsItems: 3`, `productionItems: 3`, `graphicsItems: 3`)
 
 ### Phase 5: Commit & PR
 
-- [ ] **5.1** Review all changed files: `site.js`, `feed-news.liquid`, `index.liquid`
-- [ ] **5.2** Commit with descriptive message explaining both the bug fix and the new config feature
+- [x] **5.1** Review all changed files: `site.js`, `feed-news.liquid`, `index.liquid`
+- [x] **5.2** Commit with descriptive message explaining both the bug fix and the new config feature
 - [ ] **5.3** Push branch and open PR
