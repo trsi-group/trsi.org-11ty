@@ -8,6 +8,9 @@
           {{- if card.description }}data-description='{{ card.description }}'{{- endif }}
           {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}
           {{- if card.type }}data-format='{{ card.type }}'{{- endif }}
+          {{- if card.asset }}data-asset='{{ card.asset }}'{{- endif }}
+          {{- if card.playerEmu }}data-playeremu='{{ card.playerEmu }}'{{- endif }}
+          {{- if card.kestra }}data-kestra='{{ card.kestra }}'{{- endif }}
           >
             {%- if card.asset %}
             <div class="card-image">

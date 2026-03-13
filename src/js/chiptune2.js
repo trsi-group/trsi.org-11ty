@@ -221,7 +221,7 @@ ChiptuneJsPlayer.prototype.createLibopenmptNode = function(buffer, config) {
     var outputL = e.outputBuffer.getChannelData(0);
     var outputR = e.outputBuffer.getChannelData(1);
     var framesToRender = outputL.length;
-    if (this.ModulePtr == 0) {
+    if (this.modulePtr == 0) { // fix: upstream bug uses capital M (this.ModulePtr)
       for (var i = 0; i < framesToRender; ++i) {
         outputL[i] = 0;
         outputR[i] = 0;

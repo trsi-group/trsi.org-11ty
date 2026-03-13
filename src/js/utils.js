@@ -85,7 +85,9 @@ export function getDataFromCard($card) {
     demozoo: $card.dataset.demozoo || null,
     csdb: $card.dataset.csdb || null,
     pouet: $card.dataset.pouet || null,
-    format: $card.dataset.format || null
+    format: $card.dataset.format || null,
+    playerEmu: $card.dataset.playeremu || null,
+    kestra: $card.dataset.kestra || null
   };
   return data;
 }
@@ -131,7 +133,7 @@ export function populateModal(data) {
     figureImage.style.display = 'block';
     figureVideo.style.display = 'none';
     musicPlayerOverlay.classList.remove('is-hidden');
-    setupMusicPlayerUI(data.download, data.title);
+    setupMusicPlayerUI(data.asset, data.title, data.playerEmu);
   }
 
   const buttons = document.querySelectorAll('#modal-overlay .button:not(#play-pause-btn)');
@@ -154,6 +156,9 @@ export function populateModal(data) {
     } else if (text === 'download' && data.download) {
       button.style.display = 'flex';
       button.onclick = () => window.open(data.download, '_blank');
+    } else if (text === 'kestra' && data.kestra) {
+      button.style.display = 'flex';
+      button.onclick = () => window.open(data.kestra, '_blank');
     } else {
       button.parentElement.style.display = 'none';
       button.style.display = 'none';
@@ -257,7 +262,7 @@ export function handleFilterChange(event) {
  * @param {string} downloadUrl - URL to the music file
  * @param {string} title - Title of the music track
  */
-export function setupMusicPlayerUI(downloadUrl, title) {
+export function setupMusicPlayerUI(downloadUrl, title, playerEmu) {
   if (!downloadUrl) return;
   
   const playPauseBtn = document.getElementById('play-pause-btn');
@@ -285,7 +290,6 @@ export function setupMusicPlayerUI(downloadUrl, title) {
   musicPlayerManager.onError((error) => {
     console.error('Music player error:', error);
     resetMusicPlayerUI();
-    alert('Failed to load music player. Please check the console for details.');
   });
   
   musicPlayerManager.onTrackEnd(() => {
@@ -299,7 +303,7 @@ export function setupMusicPlayerUI(downloadUrl, title) {
     
     if (!musicPlayerManager.isPlaying() && !musicPlayerManager.getCurrentTrack()) {
       // Load and play new track
-      await musicPlayerManager.loadAndPlay(downloadUrl, title);
+      await musicPlayerManager.loadAndPlay(downloadUrl, title, playerEmu);
     } else {
       // Toggle playback
       musicPlayerManager.togglePlayback();

@@ -117,6 +117,7 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
     this.player = null;
     this.context = null;
     this.libopenmptLoaded = false;
+    this.loadedBuffer = null;
   }
 
   /**
@@ -128,6 +129,7 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
 
     try {
       await this.waitForLibopenmptReady();
+      this.context = new (window.AudioContext || window.webkitAudioContext)();
       this.isInitialized = true;
       console.log('ChiptuneMusicPlayer initialized successfully');
     } catch (error) {
@@ -197,8 +199,11 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
     // Stop any currently playing music
     this.stop();
 
-    // Create player instance
-    this.context = new (window.AudioContext || window.webkitAudioContext)();
+    // Resume context if suspended (e.g. browser tab was backgrounded)
+    if (this.context.state === 'suspended') {
+      await this.context.resume();
+    }
+
     const config = new ChiptuneJsConfig(0, 100, 8, this.context); // 0 = no repeat
     
     this.player = new ChiptuneJsPlayer(config);
@@ -225,6 +230,7 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
 
     return new Promise((resolve, reject) => {
       this.player.load(url, (buffer) => {
+        this.loadedBuffer = buffer;
         console.log('Music loaded successfully:', title);
         resolve();
       }, (error) => {
@@ -239,23 +245,13 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
    * @returns {Promise<void>}
    */
   async play() {
-    if (!this.player || !this.currentTrack) {
+    if (!this.player || !this.currentTrack || !this.loadedBuffer) {
       throw new Error('No track loaded');
     }
 
-    return new Promise((resolve, reject) => {
-      try {
-        this.player.load(this.currentTrack.url, (buffer) => {
-          this.player.play(buffer);
-          this.isPlaying = true;
-          console.log('Music started playing:', this.currentTrack.title);
-          resolve();
-        });
-      } catch (error) {
-        console.error('Failed to play music:', error);
-        reject(error);
-      }
-    });
+    this.player.play(this.loadedBuffer);
+    this.isPlaying = true;
+    console.log('Music started playing:', this.currentTrack.title);
   }
 
   /**
@@ -288,13 +284,18 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
       this.player.stop();
       this.player = null;
     }
+    this.isPlaying = false;
+    this.currentTrack = null;
+    this.loadedBuffer = null;
+    console.log('Music stopped');
+  }
+
+  destroy() {
+    this.stop();
     if (this.context) {
       this.context.close();
       this.context = null;
     }
-    this.isPlaying = false;
-    this.currentTrack = null;
-    console.log('Music stopped');
   }
 
   /**
@@ -365,7 +366,7 @@ class MusicPlayerManager {
    * @param {string} title - Title of the track
    * @returns {Promise<void>}
    */
-  async loadAndPlay(url, title) {
+  async loadAndPlay(url, title, playerEmu) {
     if (!this.player) {
       await this.initialize();
     }

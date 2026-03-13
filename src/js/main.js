@@ -1,5 +1,4 @@
 import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, preloadMusicLibraries } from './utils.js';
-import { musicPlayerManager } from './musicPlayer.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -81,15 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
     openModal();
   }
 
-  // WOTW mode for testing Music integration
-  const urlParams = new URLSearchParams(window.location.search);
-  const mode = urlParams.get('mode');
-  if (mode && mode == 'wotw') {
-    const navItems = document.querySelectorAll('.navbar-start .navbar-item');
-    navItems.forEach(item => {
-      if (item.innerText.trim() === 'Music') {
-        item.style.display = 'flex';
-      }
-    });
-  }
 });
