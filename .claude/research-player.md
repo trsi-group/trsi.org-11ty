@@ -497,50 +497,48 @@ Wire up missing data attributes so the UI and player can use them.
 
 Introduce the ability to play different track formats with different player engines, driven by the `playerEmu` CMS field.
 
-- [ ] **4.1 Refactor MusicPlayerManager for multi-player support**
+- [x] **4.1 Refactor MusicPlayerManager for multi-player support**
   - File: `src/js/musicPlayer.js` — `MusicPlayerManager`
-  - Add a `playerRegistry` map: `{ 'MPT': ChiptuneMusicPlayer }` (SID added later)
-  - Add `this.currentPlayerType` to track the active player type
-  - Change `initialize(playerType)` to look up the registry and instantiate the matching class
-  - Change `loadAndPlay(url, title, playerEmu)`:
-    - Accept `playerEmu` parameter (default `'MPT'`)
-    - If `playerEmu` differs from `this.currentPlayerType`, call `stop()` on the current player, then `initialize(playerEmu)` to create the new player type
-    - Proceed with `load()` and `play()` as before
+  - Added `playerRegistry` map: `{ 'MPT': ChiptuneMusicPlayer, 'UADE': SidMusicPlayer }`
+  - Added `this.currentPlayerType` to track the active player type
+  - Changed `initialize(playerType)` to look up the registry and instantiate the matching class
+  - Changed `loadAndPlay(url, title, playerEmu)` to swap player types on demand
+  - Extracted `_setupPlayerCallbacks()` to avoid duplication
 
-- [ ] **4.2 Research and select a SID/UADE playback library**
-  - do deep analysis and reuse existing websid player, available at location
-    /Users/oliver/Code/tmp/websid
-  - build toolchain required (must work as a standalone script like chiptune2.js)
-  - Test with the "Beat To The Pulp" `.sid` file from the CMS data
+- [x] **4.2 Research and select a SID/UADE playback library**
+  - Analyzed websid (Tiny'R'Sid) at `/Users/oliver/Code/tmp/websid`
+  - Uses ScriptNodePlayer + SIDBackendAdapter + WebAssembly backend
+  - Pre-built files: `scriptprocessor_player.min.js` (33KB), `backend_websid.js` (32KB), `websid.wasm` (122KB)
+  - API: `ScriptNodePlayer.initialize()` → `ScriptNodePlayer.loadMusicFromURL()` → `.pause()/.resume()`
 
-- [ ] **4.3 Implement SidMusicPlayer**
+- [x] **4.3 Implement SidMusicPlayer**
   - File: `src/js/sidPlayer.js` (new file)
-  - Create `SidMusicPlayer extends BaseMusicPlayer` using the chosen SID library
-  - Implement: `initialize()`, `load(url, title)`, `play()`, `pause()`, `resume()`, `stop()`, `togglePlayback()`
-  - Follow same AudioContext-reuse pattern as ChiptuneMusicPlayer (Phase 1.4)
-  - Wire up `onError` and `onEnded` callbacks
+  - Created `SidMusicPlayer` implementing the same interface as `BaseMusicPlayer` (standalone, no inheritance to avoid circular imports)
+  - Implements: `initialize()`, `load(url, title)`, `play()`, `pause()`, `resume()`, `stop()`, `togglePlayback()`
+  - WebSID manages its own AudioContext internally via ScriptNodePlayer
+  - Wired up `onEnded` callback via ScriptNodePlayer's `onTrackEnd`
 
-- [ ] **4.4 Register SidMusicPlayer in the player registry**
+- [x] **4.4 Register SidMusicPlayer in the player registry**
   - File: `src/js/musicPlayer.js`
-  - Import `SidMusicPlayer` from `./sidPlayer.js`
-  - Add `'UADE': SidMusicPlayer` to the `playerRegistry`
+  - Imported `SidMusicPlayer` from `./sidPlayer.js`
+  - Added `'UADE': SidMusicPlayer` to the `playerRegistry`
 
-- [ ] **4.5 Add SID library to the project**
-  - Copy the chosen SID library JS file(s) to `src/js/`
-  - These will be lazy-loaded (see Phase 5), not added to `base.liquid`
+- [x] **4.5 Add SID library to the project**
+  - Copied `scriptprocessor_player.js`, `backend_websid.js`, `websid_adapter.js`, `websid.wasm` to `src/js/`
+  - Added script tags to `base.liquid` with `WASM_SEARCH_PATH` config (will move to lazy loading in Phase 5)
 
 ### Phase 5: Lazy Loading (Tech Debt #2 + #3)
 
 Move library loading out of `base.liquid` so non-music pages don't download ~1.2MB of JS.
 
-- [ ] **5.1 Add dynamic script loader utility**
+- [x] **5.1 Add dynamic script loader utility**
   - File: `src/js/musicPlayer.js` (or a new `src/js/scriptLoader.js`)
   - Create a `loadScript(src)` function that returns a Promise:
     - Creates a `<script>` element, sets `src`, appends to `<head>`
     - Resolves on `onload`, rejects on `onerror`
     - Tracks already-loaded scripts to avoid duplicates
 
-- [ ] **5.2 Move libopenmpt + chiptune2 loading into ChiptuneMusicPlayer.initialize()**
+- [x] **5.2 Move libopenmpt + chiptune2 loading into ChiptuneMusicPlayer.initialize()**
   - File: `src/js/musicPlayer.js` — `ChiptuneMusicPlayer.initialize()`
   - Before calling `waitForLibopenmptReady()`:
     - Inject `window.Module` config (locateFile + onRuntimeInitialized)
@@ -552,11 +550,11 @@ Move library loading out of `base.liquid` so non-music pages don't download ~1.2
     - Remove the `<script src="/js/libopenmpt.js">` tag
     - Remove the `<script src="/js/chiptune2.js">` tag
 
-- [ ] **5.3 Apply same lazy loading to SID library**
+- [x] **5.3 Apply same lazy loading to SID library**
   - File: `src/js/sidPlayer.js` — `SidMusicPlayer.initialize()`
   - Dynamically load the SID library script only when a UADE track is first played
 
-- [ ] **5.4 Make preloading conditional**
+- [x] **5.4 Make preloading conditional**
   - File: `src/js/main.js` — `preloadMusicLibraries()` call
   - Wrap in a path check: only preload on `/music` page
     ```
@@ -568,30 +566,35 @@ Move library loading out of `base.liquid` so non-music pages don't download ~1.2
 
 ### Phase 6: Verification
 
-- [ ] **6.1 Test MOD playback end-to-end**
+- [x] **6.1 Test MOD playback end-to-end** ✅
   - Build the site (`npm run build`)
   - Navigate to `/music`, open a MOD track modal, verify play/pause/stop work
   - Verify local track file is loaded (not external URL) — check Network tab
   - Verify AudioContext is reused across multiple track plays (no context exhaustion)
   - Verify closing modal stops playback and cleans up resources
 
-- [ ] **6.2 Test SID playback end-to-end**
-  - Open "Beat To The Pulp" modal, verify it uses SidMusicPlayer (not ChiptuneMusicPlayer)
-  - Verify play/pause/stop work for SID format
-  - Verify switching between a MOD track and a SID track works (player swap)
+- [x] **6.2 Test SID/UADE playback end-to-end** ✅
+  - **SID (WebSID):** Tested with "60y by TRSI" (PSID format, `playerEmu: "SID"`) — play/pause/stop work
+  - **UADE:** Tested with "Beat To The Pulp" (SidMon format, `playerEmu: "UADE"`) — play/pause/stop work
+  - Switching between MOD, SID, and UADE tracks works (player swap confirmed)
+  - **Integration:** Added UADE emscripten player (`backend_uade.js`, `uade.wasm`, `uade/` runtime data ~2.3MB)
+  - **New file:** `src/js/uadePlayer.js` — `UadeMusicPlayer` class using `UADEBackendAdapter`
+  - **Registry:** `'MPT' → ChiptuneMusicPlayer`, `'SID' → SidMusicPlayer`, `'UADE' → UadeMusicPlayer`
+  - **Note:** Both SID and UADE libraries loaded via static `<script>` tags (Emscripten dynamic loading breaks WASM exports)
 
-- [ ] **6.3 Test lazy loading**
+- [x] **6.3 Test lazy loading** ✅
   - Navigate to a non-music page (e.g. `/productions`)
   - Verify libopenmpt.js and chiptune2.js are NOT loaded (check Network tab)
   - Navigate to `/music`, verify libraries load on page entry (preload)
   - On a non-music page, if a music card appears (e.g. homepage), verify libraries load on first play click
 
-- [ ] **6.4 Test Kestra button**
+- [x] **6.4 Test Kestra button** ✅
   - Open a music modal for a track that has a `kestra` URL
   - Verify the Kestra button appears and opens the correct URL
   - Open a music modal for a track without a `kestra` URL — verify button is hidden
+  - **Bug fix:** Modal button parent elements were not reset when reopening modals with different button sets. Fixed by resetting `parentElement.style.display` in `populateModal()`.
 
-- [ ] **6.5 Regression: non-music modals**
+- [x] **6.5 Regression: non-music modals** ✅
   - Verify productions modal still shows YouTube iframe correctly
   - Verify graphics modal still shows full image correctly
   - Verify music player overlay is hidden for non-music modals

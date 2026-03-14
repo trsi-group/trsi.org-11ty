@@ -141,27 +141,23 @@ export function populateModal(data) {
   buttons.forEach(button => {
     const text = (button.innerText || button.textContent || '').toLowerCase();
 
-    if (text === 'youtube' && data.youtube) {
+    const buttonMap = {
+      youtube: data.youtube,
+      demozoo: data.demozoo,
+      csdb: data.csdb,
+      pouet: data.pouet,
+      download: data.download,
+      kestra: data.kestra
+    };
+
+    const url = buttonMap[text];
+    if (url) {
       button.style.display = 'flex';
-      button.onclick = () => window.open(data.youtube, '_blank');
-    } else if (text === 'demozoo' && data.demozoo) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.demozoo, '_blank');
-    } else if (text === 'csdb' && data.csdb) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.csdb, '_blank');
-    } else if (text === 'pouet' && data.pouet) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.pouet, '_blank');
-    } else if (text === 'download' && data.download) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.download, '_blank');
-    } else if (text === 'kestra' && data.kestra) {
-      button.style.display = 'flex';
-      button.onclick = () => window.open(data.kestra, '_blank');
+      button.parentElement.style.display = '';
+      button.onclick = () => window.open(url, '_blank');
     } else {
-      button.parentElement.style.display = 'none';
       button.style.display = 'none';
+      button.parentElement.style.display = 'none';
     }
   });
 

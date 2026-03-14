@@ -23,8 +23,9 @@ import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChan
 document.addEventListener('DOMContentLoaded', () => {
   console.log("main.js: DOMContentLoaded");
   
-  // Pre-load music libraries in the background for instant playback
-  preloadMusicLibraries();
+  if (window.location.pathname.startsWith('/music')) {
+    preloadMusicLibraries();
+  }
   
   /* Navbar Menu */
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);

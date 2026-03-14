@@ -1,13 +1,6 @@
-/**
- * Abstract Music Player Module
- * 
- * This module provides an abstraction layer for playing tracked music files.
- * The implementation can be easily swapped out by changing the concrete player class.
- */
-
-/**
- * Abstract base class for music player implementations
- */
+import { SidMusicPlayer } from './sidPlayer.js';
+import { UadeMusicPlayer } from './uadePlayer.js';
+import { loadScript } from './scriptLoader.js';
 class BaseMusicPlayer {
   constructor() {
     this.isInitialized = false;
@@ -128,7 +121,8 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
     if (this.isInitialized) return;
 
     try {
-      await this.waitForLibopenmptReady();
+      await this._loadLibraries();
+      await this._waitForLibopenmptReady();
       this.context = new (window.AudioContext || window.webkitAudioContext)();
       this.isInitialized = true;
       console.log('ChiptuneMusicPlayer initialized successfully');
@@ -138,41 +132,55 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
     }
   }
 
-  /**
-   * Wait for libopenmpt to be ready and initialized
-   * @returns {Promise<void>}
-   */
-  async waitForLibopenmptReady() {
+  async _loadLibraries() {
+    if (typeof window.libopenmpt !== 'undefined') return;
+
+    window.Module = {
+      locateFile(path) {
+        if (path === 'libopenmpt.js.mem') return '/js/libopenmpt.js.mem';
+        return '/js/' + path;
+      },
+      onRuntimeInitialized() {
+        console.log('libopenmpt runtime initialized');
+        window.libopenmpt = window.Module;
+      }
+    };
+
+    await loadScript('/js/libopenmpt.js');
+    await loadScript('/js/chiptune2.js');
+  }
+
+  async _waitForLibopenmptReady() {
+    if (typeof window.libopenmpt !== 'undefined' &&
+        window.libopenmpt._openmpt_module_create_from_memory) {
+      this.libopenmptLoaded = true;
+      return;
+    }
+
     return new Promise((resolve, reject) => {
       const checkReady = () => {
-        // Check if libopenmpt is available and has the required functions
-        if (typeof window.libopenmpt !== 'undefined' && 
+        if (typeof window.libopenmpt !== 'undefined' &&
             window.libopenmpt._openmpt_module_create_from_memory) {
-          console.log('libopenmpt is ready');
           this.libopenmptLoaded = true;
           resolve();
-        } else if (typeof window.Module !== 'undefined' && 
+        } else if (typeof window.Module !== 'undefined' &&
                    window.Module._openmpt_module_create_from_memory) {
           window.libopenmpt = window.Module;
           this.libopenmptLoaded = true;
           resolve();
         } else {
-          // Add timeout to prevent infinite waiting
           setTimeout(() => {
-            if (!this.libopenmptLoaded) {
-              checkReady();
-            }
+            if (!this.libopenmptLoaded) checkReady();
           }, 100);
         }
       };
       checkReady();
-      
-      // Add overall timeout
+
       setTimeout(() => {
         if (!this.libopenmptLoaded) {
           reject(new Error('Timeout waiting for libopenmpt to load'));
         }
-      }, 10000); // 10 second timeout
+      }, 10000);
     });
   }
 
@@ -320,6 +328,12 @@ class ChiptuneMusicPlayer extends BaseMusicPlayer {
 class MusicPlayerManager {
   constructor() {
     this.player = null;
+    this.currentPlayerType = null;
+    this.playerRegistry = {
+      'MPT': ChiptuneMusicPlayer,
+      'UADE': UadeMusicPlayer,
+      'SID': SidMusicPlayer
+    };
     this.uiCallbacks = {
       onStateChange: null,
       onError: null,
@@ -327,21 +341,7 @@ class MusicPlayerManager {
     };
   }
 
-  /**
-   * Initialize the music player with a specific implementation
-   * @param {string} playerType - Type of player ('chiptune', etc.)
-   * @returns {Promise<void>}
-   */
-  async initialize(playerType = 'chiptune') {
-    switch (playerType) {
-      case 'chiptune':
-        this.player = new ChiptuneMusicPlayer();
-        break;
-      default:
-        throw new Error(`Unknown player type: ${playerType}`);
-    }
-
-    // Set up callbacks
+  _setupPlayerCallbacks() {
     this.player.onError((error) => {
       if (this.uiCallbacks.onError) {
         this.uiCallbacks.onError(error);
@@ -356,25 +356,32 @@ class MusicPlayerManager {
         this.uiCallbacks.onStateChange(false);
       }
     });
+  }
 
+  async initialize(playerType = 'MPT') {
+    const PlayerClass = this.playerRegistry[playerType];
+    if (!PlayerClass) {
+      throw new Error(`Unknown player type: ${playerType}`);
+    }
+
+    this.player = new PlayerClass();
+    this.currentPlayerType = playerType;
+    this._setupPlayerCallbacks();
     await this.player.initialize();
   }
 
-  /**
-   * Load and play a music file
-   * @param {string} url - URL to the music file
-   * @param {string} title - Title of the track
-   * @returns {Promise<void>}
-   */
   async loadAndPlay(url, title, playerEmu) {
-    if (!this.player) {
-      await this.initialize();
+    const requestedType = playerEmu || 'MPT';
+
+    if (!this.player || this.currentPlayerType !== requestedType) {
+      this.stop();
+      await this.initialize(requestedType);
     }
 
     try {
       await this.player.load(url, title);
       await this.player.play();
-      
+
       if (this.uiCallbacks.onStateChange) {
         this.uiCallbacks.onStateChange(true);
       }
@@ -465,5 +472,4 @@ class MusicPlayerManager {
 // Create and export a singleton instance
 export const musicPlayerManager = new MusicPlayerManager();
 
-// Export classes for testing or custom implementations
 export { BaseMusicPlayer, ChiptuneMusicPlayer, MusicPlayerManager };
