@@ -16,7 +16,7 @@ import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChan
  *    - Registers 'Escape' key event to close all active modals.
  *
  * 4. Music Library Pre-loading:
- *    - Pre-loads libopenmpt and chiptune2.js libraries in the background for instant music playback.
+ *    - Pre-loads music player libraries in the background for instant music playback.
  *
  * Runs automatically when the DOM is fully loaded.
  */
