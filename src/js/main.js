@@ -46,11 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* Modal Dialog */
-  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-    $trigger.addEventListener('click', (event) => {
-      const clickedButton = event.currentTarget;
-      const cardElement = clickedButton.closest('.card');
+  /* Modal Dialog — whole card is clickable */
+  (document.querySelectorAll('.card.pointer') || []).forEach((cardElement) => {
+    cardElement.addEventListener('click', () => {
       const cardData = getDataFromCard(cardElement);
       populateModal(cardData);
       window.location.hash = cardData.slug;
