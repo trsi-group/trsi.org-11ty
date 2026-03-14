@@ -26,10 +26,9 @@ class SidMusicPlayer {
   }
 
   async _loadLibraries() {
-    if (typeof ScriptNodePlayer !== 'undefined') return;
-
+    if (typeof ScriptNodePlayer !== 'undefined' && typeof SIDBackendAdapter !== 'undefined') return;
+    if (!window.WASM_SEARCH_PATH) window.WASM_SEARCH_PATH = '/js/';
     await loadScript('/js/scriptprocessor_player.js');
-    window.WASM_SEARCH_PATH = '/js/';
     await loadScript('/js/backend_websid.js');
   }
 

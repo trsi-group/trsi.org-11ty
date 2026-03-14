@@ -1,3 +1,5 @@
+import { loadScript } from './scriptLoader.js';
+
 class UadeMusicPlayer {
   constructor() {
     this.isInitialized = false;
@@ -9,10 +11,18 @@ class UadeMusicPlayer {
     this.uadeReady = false;
   }
 
+  async _loadLibraries() {
+    if (typeof ScriptNodePlayer !== 'undefined' && typeof UADEBackendAdapter !== 'undefined') return;
+    if (!window.WASM_SEARCH_PATH) window.WASM_SEARCH_PATH = '/js/';
+    await loadScript('/js/scriptprocessor_player.js');
+    await loadScript('/js/backend_uade.js');
+  }
+
   async initialize() {
     if (this.isInitialized) return;
 
     try {
+      await this._loadLibraries();
       await this._waitForUadeReady();
       this.isInitialized = true;
       console.log('UadeMusicPlayer initialized successfully');
