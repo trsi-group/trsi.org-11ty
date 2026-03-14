@@ -5,9 +5,11 @@
         {%- for item in sliced_feed %}
         <div class="columns">
           <div class="column is-one-fifth">
-            <figure class="image">
-              <img src="{{ item.post_image }}" alt="image of {{ item.title }}" width="480" loading="lazy">
-            </figure>
+            <a href="/news/{{ item.slug }}/">
+              <figure class="image">
+                <img src="{{ item.post_image }}" alt="image of {{ item.title }}" width="480" height="360" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+              </figure>
+            </a>
           </div>
           <div class="column">
             <div>
