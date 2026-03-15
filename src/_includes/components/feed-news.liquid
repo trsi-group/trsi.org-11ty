@@ -7,7 +7,7 @@
           <div class="column is-one-fifth">
             <a href="/news/{{ item.slug }}/">
               <figure class="image">
-                <img src="{{ item.post_image }}" alt="image of {{ item.title }}" width="480" height="360" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+                <img src="{{ item.post_image }}" alt="image of {{ item.title }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
               </figure>
             </a>
           </div>

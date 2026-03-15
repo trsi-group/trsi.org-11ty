@@ -152,8 +152,7 @@ header.section {
 }
 
 .posts .image img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: auto;
 }
@@ -205,6 +204,12 @@ footer {
 .card-image:first-child img {
   object-fit: cover;
   border-radius: 0px;
+}
+
+.card[data-ctype="graphic"] .card-image:first-child img,
+.card[data-ctype="prod"] .card-image:first-child img {
+  object-fit: contain;
+  background: black;
 }
 
 .card-content, .card-content:last-child  {

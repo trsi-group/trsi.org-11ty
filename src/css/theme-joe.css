@@ -19,9 +19,7 @@ a:any-link {
 }
 
 a:hover {
-  text-shadow: 
-    0 0 2px var(--light-color),
-    0 0 5px var(--light-color);
+  text-shadow: none;
 }
 
 .navbar a,
