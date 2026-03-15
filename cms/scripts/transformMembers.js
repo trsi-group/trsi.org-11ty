@@ -29,6 +29,7 @@ export function transformMembers(contentfulData) {
         card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
+        sort_handle: fields.handle['en-US'].toLowerCase(),
       };
     });
 
