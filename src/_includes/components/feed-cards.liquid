@@ -1,7 +1,10 @@
 {%- assign items = max | default: feed.size %}
 {%- assign sort_key = sort_key | default: "release_date" %}
 {%- assign sort_order = sort_order | default: "desc" %}
-{%- assign sorted_feed = feed | sort: 'release_date' | reverse %}
+{%- assign sorted_feed = feed | sort: sort_key %}
+{%- if sort_order == "desc" %}
+  {%- assign sorted_feed = sorted_feed | reverse %}
+{%- endif %}
 
 {%- assign sliced_feed = sorted_feed | slice: 0, items %}
 {%- assign card_template = "components/card-" | append: type | downcase | append: ".liquid" %}
