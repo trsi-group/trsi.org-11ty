@@ -224,7 +224,7 @@ footer {
   position: absolute;
   bottom: 0;
   top: auto;
-  background: var(--overlay-color);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
   width: 100%;
   height: 25%;
   border-radius: 0px;
