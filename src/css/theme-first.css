@@ -1,18 +1,15 @@
 body {
   /* colors */
   --background-color: rgb(51 51 51);
-  --section-color1: rgb(51 85 85);
-  --section-color2: rgb(68 68 68);
   --text-color: #eeeeee;
   --light-color: #efd202;
-  --dark-color: #000000;
   --link-color: #eeee88;
   --link-hover-color: #a7155a;
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
 
   /* fonts */
-  --heading-font-family: 'Edit Undo Brk';  
-  --body-font-family: 'Edit Undo Brk';
+  --heading-font-family: 'Edit Undo Brk', 'Helvetica', 'Arial', sans-serif;
+  --body-font-family: 'Edit Undo Brk', 'Helvetica', 'Arial', sans-serif;
 
 /* card overlay */
   --lift-height: 100%;
