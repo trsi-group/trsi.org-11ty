@@ -157,6 +157,8 @@ Fields: `title`, `slug` (auto-generated), `teaser`, `body` (markdown), `post_ima
 1. `cms.js` reads JSON files from `cms/data/` directory
 2. Returns object: `{ productions, members, graphics, music, posts }`
 3. Available in templates as `cms.productions`, `cms.music`, etc.
+
+**Important:** All data shaping (e.g. adding derived fields like `sort_handle`) belongs in `cms/scripts/transform*.js`, not in `cms.js` or templates. `cms.js` only loads and exposes the pre-transformed JSON.
 4. Page templates pass data to `feed-cards` component with config (type, max, sort)
 5. `feed-cards` iterates and includes per-type card templates
 6. Cards embed all data in `data-*` attributes for client-side modal population
