@@ -23,7 +23,7 @@
 {%- endfor %}
 {%- assign sorted_keys = keys | sort %}
 
-    <div class="select is-small is-rounded is-primary"">
+    <div class="select is-small is-rounded is-primary">
       <select aria-label="{{ type }} Filter" id="{{ type }}Filter">
         <option value="">All {{ type }}s</option>
 {%- for key in sorted_keys %}
