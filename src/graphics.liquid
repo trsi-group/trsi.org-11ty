@@ -12,6 +12,7 @@ tags: page
         <h1 class="title">Graphics</h1>
       </div>
       <div class="filter-wrapper">
+        <span class="filter-group-icon">{%- include "icons/filter.svg" %}</span>
         {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
         {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Type" %}
       </div>
