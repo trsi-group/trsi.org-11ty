@@ -296,6 +296,25 @@ footer {
   margin-bottom: 1rem;
 }
 
+.filter-wrapper .filter-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  color: var(--text-color);
+}
+
+.filter-wrapper .filter-item-icon {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.filter-wrapper .filter-item-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
 .section.news-post a {
   color: var(--text-color);
   text-decoration: underline;
