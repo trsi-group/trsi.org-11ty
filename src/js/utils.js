@@ -243,7 +243,7 @@ export function handleFilterChange(event) {
 
   const selectedType = typeFilter.value;
   const selectedPlatform = platformFilter.value;
-  
+
   cards.forEach(card => {
     const typeMatch = !selectedType || card.dataset.type === selectedType;
     const platformMatch = !selectedPlatform || card.dataset.platform === selectedPlatform;
@@ -251,6 +251,34 @@ export function handleFilterChange(event) {
     card.style.display = matches ? '' : 'none';
   })
 };
+
+const STATUS_RANK = {
+  'active': 0,
+  'inactive': 1,
+  'in valhalla': 2,
+  'lost in mission': 3,
+};
+
+export function handleSortChange(event) {
+  const wrapper = document.querySelector('#feed-wrapper .columns');
+  if (!wrapper) return;
+
+  const cards = Array.from(wrapper.querySelectorAll(':scope > .column'));
+  const mode = event.target.value;
+
+  const byHandle = (a, b) =>
+    (a.dataset.sortHandle || '').localeCompare(b.dataset.sortHandle || '');
+
+  const byStatus = (a, b) => {
+    const ra = STATUS_RANK[a.dataset.status] ?? 99;
+    const rb = STATUS_RANK[b.dataset.status] ?? 99;
+    if (ra !== rb) return ra - rb;
+    return byHandle(a, b);
+  };
+
+  cards.sort(mode === 'status' ? byStatus : byHandle);
+  cards.forEach(c => wrapper.appendChild(c));
+}
 
 /**
  * Sets up the music player UI controls and connects them to the music player manager.

@@ -1,4 +1,4 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, preloadMusicLibraries } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -45,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener("change", handleFilterChange);
     }
   });
+
+  /* Sort Component */
+  const sortSelect = document.getElementById("SortSelect");
+  if (sortSelect) sortSelect.addEventListener("change", handleSortChange);
 
   /* Modal Dialog — whole card is clickable */
   (document.querySelectorAll('.card.pointer') || []).forEach((cardElement) => {
