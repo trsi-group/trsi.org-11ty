@@ -58,7 +58,7 @@ export function copyTrackAssets(contentfulData, exportDir, assetDir) {
             try {
               fs.copyFileSync(sourceFilePath, targetFilePath);
             } catch (error) {
-              console.error(`Failed to copy ${fileName}:`, error.message);
+              console.error(`Failed to copy ${fileName}:`, error);
             }
           } else {
             console.warn(`Track file not found: ${fileName}`);

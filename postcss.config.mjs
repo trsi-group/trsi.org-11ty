@@ -17,16 +17,28 @@ export default {
         "./src/**/*.md",
         "./src/**/*.js",
       ],
-      // Extracts Bulma-style classes
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       safelist: {
         standard: [
-          "is-active", "has-text-centered", "has-text-right", "is-hidden",
-          "navbar", "menu", "hero", "button", "card", "container",
-          "columns", "column", "icon"
-        ]
+          // Bulma classes the modal still relies on
+          "is-active", "is-hidden", "modal", "modal-background", "modal-content",
+          "modal-close", "box", "button", "container", "image", "has-ratio",
+          // Applied by JS, so PurgeCSS cannot see them in the templates
+          "hero--enhanced", "is-current", "modal-open",
+        ],
+        greedy: [
+          /^hero__/, /^music-card/, /^card__/, /^card-grid/, /^site-nav/,
+          /^site-header/, /^site-footer/, /^social-links/, /^section-head/,
+          /^section__/, /^article__/, /^navbar-burger/,
+        ],
+        // `variables: true` below strips custom properties PurgeCSS thinks are
+        // unused. The design tokens must survive.
+        variables: [
+          /^--color-/, /^--font-/, /^--fs-/, /^--fw-/, /^--ls-/, /^--lh-/,
+          /^--space-/, /^--container/, /^--gutter/, /^--grid-gap/, /^--section-pad/,
+          /^--ratio-/, /^--dur/, /^--ease/,
+        ],
       },
-      // remove unused CSS variables
       variables: true,
     }),
     cssnano(),

@@ -1,0 +1,10 @@
+<ul class="social-links{% if modifier %} {{ modifier }}{% endif %}">
+  {%- for item in social.nav_items %}
+  {%- assign icon = "icons/" | append: item.name | downcase | append: ".svg" %}
+  <li>
+    <a href="{{ item.url }}" target="_blank" rel="noopener" class="social-links__link" aria-label="TRSI on {{ item.name }}">
+      {%- include icon %}
+    </a>
+  </li>
+  {%- endfor %}
+</ul>

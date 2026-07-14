@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { imgPath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -19,12 +19,13 @@ export function transformProductions(contentfulData) {
 
   // credits: https://stackoverflow.com/a/8260383
   const getYtId = (url) => {
+    if (!url) return null;
     const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
     if (match && match[2].length == 11) {
       return match[2];
     } else {
-      return "error";
+      return null;
     }
   }
 
@@ -55,9 +56,9 @@ export function transformProductions(contentfulData) {
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? imgPath('card', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
-        youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
+        youtube: ytId ? `https://www.youtube-nocookie.com/embed/${ytId}` : null,
         pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         csdb: fields.csdbUrl ? fields.csdbUrl['en-US'] : null,

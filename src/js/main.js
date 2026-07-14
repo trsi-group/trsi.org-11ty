@@ -1,86 +1,81 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries } from './utils.js';
+import {
+  openModal,
+  closeModal,
+  populateModal,
+  getDataFromCard,
+  handleFilterChange,
+  handleSortChange,
+  preloadMusicLibraries,
+} from './utils.js';
+import { initHeroSliders } from './heroSlider.js';
+import { initMusicCards } from './cardMusicPlayer.js';
 
-/**
- * Initializes UI event handlers after DOM content is loaded.
- *
- * Features:
- * 1. Navbar Toggle:
- *    - Registers click events on '.navbar-burger' elements to toggle mobile menu visibility.
- *
- * 2. Filter Components:
- *    - Registers 'change' events on #TypeFilter and #PlatformFilter dropdowns to dynamically filter card elements.
- *
- * 3. Modal Handling:
- *    - Registers click events on '.js-modal-trigger' buttons to open modals with dynamically injected card data.
- *    - Registers click events on modal close elements to close individual modals.
- *    - Registers 'Escape' key event to close all active modals.
- *
- * 4. Music Library Pre-loading:
- *    - Pre-loads music player libraries in the background for instant music playback.
- *
- * Runs automatically when the DOM is fully loaded.
- */
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("main.js: DOMContentLoaded");
-  
-  if (window.location.pathname.startsWith('/music')) {
+  const path = window.location.pathname;
+
+  // The homepage now carries a Latest Music section, so the wasm players must be
+  // warm there too or the first play stalls.
+  if (path === '/' || path.startsWith('/music')) {
     preloadMusicLibraries();
   }
-  
-  /* Navbar Menu */
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  $navbarBurgers.forEach( el => {
+
+  /* Navbar burger */
+  document.querySelectorAll('.navbar-burger').forEach((el) => {
     el.addEventListener('click', () => {
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
-      el.classList.toggle('is-active');
-      $target.classList.toggle('is-active');
+      const target = /** @type {HTMLElement} */ (el).dataset.target;
+      const $target = target ? document.getElementById(target) : null;
+      if (!$target) return;
+
+      const open = el.classList.toggle('is-active');
+      $target.classList.toggle('is-active', open);
+      el.setAttribute('aria-expanded', String(open));
     });
   });
 
-  /* Filter Components */
-  ["TypeFilter", "PlatformFilter"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("change", handleFilterChange);
-    }
+  /* Filters */
+  ['TypeFilter', 'PlatformFilter'].forEach((id) => {
+    document.getElementById(id)?.addEventListener('change', handleFilterChange);
   });
 
-  /* Sort Component */
-  const sortSelect = document.getElementById("SortSelect");
-  if (sortSelect) sortSelect.addEventListener("change", handleSortChange);
+  /* Sort */
+  document.getElementById('SortSelect')?.addEventListener('change', handleSortChange);
 
-  /* Modal Dialog — whole card is clickable */
-  (document.querySelectorAll('.card.pointer') || []).forEach((cardElement) => {
-    cardElement.addEventListener('click', () => {
-      const cardData = getDataFromCard(cardElement);
+  /*
+   * Clicking anywhere on a card opens its modal. The keyboard path is the
+   * .card__open title button inside it, whose click bubbles up to here.
+   */
+  document.querySelectorAll('.card.pointer').forEach((cardElement) => {
+    const card = /** @type {HTMLElement} */ (cardElement);
+
+    card.addEventListener('click', () => {
+      const cardData = getDataFromCard(card);
       populateModal(cardData);
-      window.location.hash = cardData.slug;
+      if (cardData.slug) window.location.hash = cardData.slug;
       openModal();
     });
   });
 
-  // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button:not(#play-pause-btn)') || []).forEach(($close) => {
-    $close.addEventListener('click', () => {
-      closeModal();
-    });
-  });
+  document
+    .querySelectorAll('.modal-background, .modal-close')
+    .forEach(($close) => $close.addEventListener('click', () => closeModal()));
 
-  // Add a keyboard event to close all modals
   document.addEventListener('keydown', (event) => {
-    if(event.key === "Escape") {
-      closeModal();
-    }
+    if (event.key === 'Escape') closeModal();
   });
 
-  // open modal if items specified in #
-  const hashSlug = window.location.hash?.substring(1); // remove #
-  const cardElement = document.querySelector(`[data-slug="${hashSlug}"]`);
-  if (cardElement) {
-    const cardData = getDataFromCard(cardElement);
-    populateModal(cardData);
-    openModal();
+  /* Deep link: /#some-slug opens that card */
+  const hashSlug = window.location.hash.substring(1);
+  if (hashSlug) {
+    const cardElement = /** @type {HTMLElement | null} */ (
+      document.querySelector(`.card.pointer[data-slug="${CSS.escape(hashSlug)}"]`)
+    );
+    if (cardElement) {
+      const cardData = getDataFromCard(cardElement);
+      populateModal(cardData);
+      openModal();
+    }
   }
 
+  initHeroSliders();
+  initMusicCards();
 });

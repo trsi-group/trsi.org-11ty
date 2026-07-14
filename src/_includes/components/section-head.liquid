@@ -1,0 +1,6 @@
+<header class="section-head{% if align == 'center' %} section-head--center{% endif %}">
+  <h2 class="section-head__title"{% if id %} id="{{ id }}"{% endif %}>{{ title }}</h2>
+  {%- if more_url %}
+  <a class="section-head__more" href="{{ more_url }}">{{ more_label }}</a>
+  {%- endif %}
+</header>

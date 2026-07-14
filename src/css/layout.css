@@ -1,0 +1,48 @@
+/*
+ * Sections span the full viewport so their background can bleed edge to edge;
+ * the inner wrapper holds the content on the 1200px grid.
+ */
+.section {
+  padding-block: var(--section-pad);
+  background-color: var(--color-bg);
+}
+
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+.section__inner {
+  width: min(100% - (var(--gutter) * 2), var(--container));
+  margin-inline: auto;
+}
+
+.section__inner--wide {
+  width: min(100% - (var(--gutter) * 2), var(--container-wide));
+}
+
+.page-title {
+  margin: 0 0 var(--space-2xl);
+  font-size: var(--fs-page-title);
+  font-weight: var(--fw-display);
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+@media (width < 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width < 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

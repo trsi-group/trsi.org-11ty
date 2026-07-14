@@ -1,60 +1,40 @@
-        <div id="modal-overlay" class="modal">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            <div class="container">
-              <div class="box">
-                <div>
-                  <figure class="image is-16by9">
-                    <iframe
-                    id="modal-video"
-                    class="has-ratio"
-                    width="100%"
-                    height="auto"
-                    src=""
-                    alt=""
-                    frameborder="0"
-                    allowfullscreen
-                    ></iframe>
-                  </figure>
-                  <figure class="image">
-                    <img
-                    id="modal-image"
-                    class="has-ratio"
-                    width="100%"
-                    height="auto"
-                    src=""
-                    alt=""
-                    frameborder="0"
-                    allowfullscreen
-                    ></img>
-                    <div id="music-player-overlay" class="music-player-overlay is-hidden">
-                      <button id="play-pause-btn" class="music-player-button" aria-label="Play/Pause Music">
-                        <span id="play-icon" class="music-player-icon">
-                          {%- include "icons/play-button.svg" %}
-                        </span>
-                        <span id="pause-icon" class="music-player-icon is-hidden">
-                          {%- include "icons/pause-button.svg" %}
-                        </span>
-                      </button>
-                    </div>
-                  </figure>
-                </div>
-                <div class="content is-full px-5 pt-3">
-                  <p id="modal-description"></p>
-                  <p id="modal-credits"></p>
-                  <p id="modal-release_date"></p>
-                </div>
-                <div class="columns is-gapless is-mobile pb-5">
-                  <div class="column is-flex is-justify-content-center is-align-items-center">
-                    <button class="button is-outlined is-rounded mr-4">Demozoo</button>
-                    <button class="button is-outlined is-rounded mr-4">CSDB</button>
-                    <button class="button is-outlined is-rounded mr-4">Pouet</button>
-                    <button class="button is-outlined is-rounded mr-4">Download</button>
-                    <button class="button is-outlined is-rounded mr-4">Kestra</button>
-                  </div>
-                </div>
-              </div>
+<div id="modal-overlay" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="container">
+      <div class="box">
+        <div>
+          <figure class="image is-16by9">
+            <iframe id="modal-video" class="has-ratio" width="100%" height="auto" src="" title="Video" frameborder="0" allowfullscreen></iframe>
+          </figure>
+          <figure class="image">
+            <img id="modal-image" class="has-ratio" width="100%" height="auto" src="" alt="">
+            <div id="music-player-overlay" class="music-player-overlay is-hidden">
+              <button type="button" id="play-pause-btn" class="music-player-button" aria-label="Play/Pause Music">
+                <span id="play-icon" class="music-player-icon">
+                  {%- include "icons/play-button.svg" %}
+                </span>
+                <span id="pause-icon" class="music-player-icon is-hidden">
+                  {%- include "icons/pause-button.svg" %}
+                </span>
+              </button>
             </div>
-          </div>
-          <button class="modal-close is-large" aria-label="close"></button>
+          </figure>
         </div>
+        <div class="content">
+          <p id="modal-description"></p>
+          <p id="modal-credits"></p>
+          <p id="modal-release_date"></p>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="button">Demozoo</button>
+          <button type="button" class="button">CSDB</button>
+          <button type="button" class="button">Pouet</button>
+          <button type="button" class="button">Download</button>
+          <button type="button" class="button">Kestra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>

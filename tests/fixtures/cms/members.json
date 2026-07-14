@@ -1,0 +1,67 @@
+{
+  "members": [
+    {
+      "handle": "Madison",
+      "real_name": "Oliver",
+      "card_image": "/img/card/Lasereyes.webp",
+      "member_since": "1991-11-11",
+      "member_status": "active",
+      "sort_handle": "madison"
+    },
+    {
+      "handle": "Coolcat",
+      "real_name": "Marcel",
+      "card_image": "/img/card/Marcel.webp",
+      "member_since": null,
+      "member_status": "active",
+      "sort_handle": "coolcat"
+    },
+    {
+      "handle": "Hamster",
+      "real_name": "Heinz",
+      "card_image": "/img/card/Hamster.webp",
+      "member_since": "1988-03-01",
+      "member_status": "active",
+      "sort_handle": "hamster"
+    },
+    {
+      "handle": "Elko",
+      "real_name": "Elko",
+      "card_image": "/img/card/344071714_5622678667832536_2517713494367693114_n.webp",
+      "member_since": "1992-12-29",
+      "member_status": "Lost in Mission",
+      "sort_handle": "elko"
+    },
+    {
+      "handle": "Spotter",
+      "real_name": "Christian",
+      "card_image": "/img/card/media-cache.webp",
+      "member_since": "2000-01-01",
+      "member_status": "in Valhalla",
+      "sort_handle": "spotter"
+    },
+    {
+      "handle": "Romeo Knight",
+      "real_name": "Eike Steffen",
+      "card_image": "/img/card/Romeo.webp",
+      "member_since": "1989-01-01",
+      "member_status": "active",
+      "sort_handle": "romeo knight"
+    },
+    {
+      "handle": "Peiselulli",
+      "real_name": "Ullrich",
+      "card_image": "/img/card/Peisel.webp",
+      "member_since": null,
+      "member_status": "active",
+      "sort_handle": "peiselulli"
+    },
+    {
+      "handle": "Benson",
+      "card_image": "/img/card/Benson.webp",
+      "member_since": null,
+      "member_status": "active",
+      "sort_handle": "benson"
+    }
+  ]
+}

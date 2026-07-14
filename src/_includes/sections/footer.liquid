@@ -1,25 +1,18 @@
-    <footer id="footer" class="container-fluid py-5">
-      <div class="columns is-vcentered">
-        <div class="column has">
-        </div>
-        <div class="column has-text-centered has-text-centered-mobile">
-          <p class="is-size-4">The Sleeping Gods in {{ "now" | date: "%Y" }}</p>
-        </div>
-        <div class="column">
-          <div class="icons is-flex is-justify-content-center is-justify-content-right-desktop">
-            <a href="https://www.instagram.com/_trsi_/" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on Instagram">
-              {%- include "icons/instagram.svg" %}
-            </a>
-            <a href="https://www.facebook.com/tristarandredsector/" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on Facebook">
-              {%- include "icons/facebook.svg" %}
-            </a>
-            <a href="https://x.com/trsi" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on X">
-              {%- include "icons/x.svg" %}
-            </a>
-            <a href="https://www.youtube.com/@trsi" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on X">
-              {%- include "icons/youtube.svg" %}
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+<footer id="footer" class="site-footer">
+  <div class="site-footer__inner section__inner">
+    <p class="site-footer__years">1990 &ndash; {{ "now" | date: "%Y" }}</p>
+
+    <div class="site-footer__brand">
+      <a href="/" aria-label="TRSI — home">
+        <img src="/img/trsi-logo-footer.webp" alt="TRSI" width="245" height="46">
+      </a>
+      <p class="site-footer__tagline">The Sleeping Gods</p>
+    </div>
+
+    {%- render "components/social-links.liquid", social: social, modifier: "site-footer__social" %}
+  </div>
+
+  <nav class="site-footer__links" aria-label="Secondary">
+    <a href="/about/">About</a>
+  </nav>
+</footer>

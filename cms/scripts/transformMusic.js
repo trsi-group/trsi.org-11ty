@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { imgPath, trackPath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -49,11 +49,11 @@ export function transformMusic(contentfulData) {
         platform: fields.platform ? fields.platform['en-US'] : null,
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         assetId: assetId ? assetId : null,
-        asset: assetId ? resolve('/tracks/', findTrackAssetPathById(assetId)) : null,
+        asset: assetId ? trackPath(findTrackAssetPathById(assetId)) : null,
         playerEmu: fields.playerEmu ? fields.playerEmu?.['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : resolve('/img/music-player.webp'),
+        card_image: imageId ? imgPath('card', findAssetPathById(imageId)) : '/img/music-player.webp',
         download: fields.download ? fields.download['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         kestra: fields.kestraUrl ? fields.kestraUrl['en-US'] : null,

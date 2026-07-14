@@ -1,0 +1,130 @@
+.site-header {
+  background-color: var(--color-bg);
+  padding-block: var(--space-lg);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.site-header__brand img {
+  width: auto;
+  height: 44px;
+}
+
+/* Desktop: the nav wrapper dissolves so its children join the header flex row. */
+.site-nav {
+  display: contents;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.site-nav__link {
+  font-size: var(--fs-nav);
+  color: var(--color-text-dim);
+}
+
+.site-nav__link:hover {
+  color: var(--color-text);
+}
+
+.site-nav__link.is-current {
+  color: var(--color-text);
+  font-weight: var(--fw-title);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links__link {
+  display: flex;
+  padding: var(--space-2xs);
+}
+
+.social-links__link svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: var(--color-text);
+  transition: fill var(--dur-fast) var(--ease);
+}
+
+.social-links__link:hover svg {
+  fill: var(--color-accent);
+}
+
+/* Burger. The class name is a JS contract (main.js binds to .navbar-burger). */
+.navbar-burger {
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.navbar-burger span {
+  display: block;
+  position: absolute;
+  left: 6px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
+}
+
+.navbar-burger span:nth-child(1) { top: 10px; }
+.navbar-burger span:nth-child(2),
+.navbar-burger span:nth-child(3) { top: 15px; }
+.navbar-burger span:nth-child(4) { top: 20px; }
+
+.navbar-burger.is-active span:nth-child(1),
+.navbar-burger.is-active span:nth-child(4) { opacity: 0; }
+.navbar-burger.is-active span:nth-child(2) { transform: rotate(45deg); }
+.navbar-burger.is-active span:nth-child(3) { transform: rotate(-45deg); }
+
+@media (width < 900px) {
+  .site-header__inner {
+    flex-wrap: wrap;
+  }
+
+  .navbar-burger {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    width: 100%;
+    padding-block: var(--space-lg);
+  }
+
+  /* main.js toggles is-active on #navMenu */
+  .site-nav.is-active {
+    display: flex;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .site-nav__link {
+    font-size: 1.125rem;
+  }
+}

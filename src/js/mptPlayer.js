@@ -53,7 +53,7 @@ class MptMusicPlayer {
       return;
     }
 
-    return new Promise((resolve, reject) => {
+    return /** @type {Promise<void>} */ (new Promise((resolve, reject) => {
       const checkReady = () => {
         if (this._isMptReady()) {
           this._markMptReady();
@@ -71,7 +71,7 @@ class MptMusicPlayer {
           reject(new Error('Timeout waiting for MPT libraries to load'));
         }
       }, 15000);
-    });
+    }));
   }
 
   async _ensurePlayer() {
@@ -107,7 +107,7 @@ class MptMusicPlayer {
     };
 
     try {
-      await new Promise((resolve, reject) => {
+      await /** @type {Promise<void>} */ (new Promise((resolve, reject) => {
         const failTimeout = setTimeout(() => {
           reject(new Error('MPT load timed out'));
         }, 15000);
@@ -125,7 +125,7 @@ class MptMusicPlayer {
           clearTimeout(failTimeout);
           resolve();
         });
-      });
+      }));
       console.log('MPT loaded successfully:', title);
     } catch (error) {
       this.currentTrack = null;

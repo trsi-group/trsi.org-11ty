@@ -1,25 +1,28 @@
 {
   "nav_items": [
     {
+      "title": "Home",
+      "url": "/"
+    },
+    {
       "title": "News",
       "url": "/news"
+    },
+    {
+      "title": "Members",
+      "url": "/members"
     },
     {
       "title": "Productions",
       "url": "/productions"
     },
     {
-      "title": "Music",
-      "url": "/music",
-      "hidden": true
-    },
-    {
       "title": "Graphics",
       "url": "/graphics"
     },
     {
-      "title": "Members",
-      "url": "/members"
+      "title": "Music",
+      "url": "/music"
     }
   ]
 }

@@ -43,7 +43,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const jsonData = JSON.parse(readFileSync(jsonSource, 'utf8'));
 
     // Copy image assets to local image directory
-    copyImageAssets(jsonData, imgAssetsDest, imgAssetsSource);
+    await copyImageAssets(jsonData, imgAssetsDest, imgAssetsSource);
     console.log(`Image assets written to ${imgAssetsDest}`);
 
     // Copy track assets to local track directory

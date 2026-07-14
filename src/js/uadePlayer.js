@@ -53,7 +53,7 @@ class UadeMusicPlayer {
       return;
     }
 
-    return new Promise((resolve, reject) => {
+    return /** @type {Promise<void>} */ (new Promise((resolve, reject) => {
       const checkReady = () => {
         if (this._isUadeReady()) {
           this._markUadeReady();
@@ -71,7 +71,7 @@ class UadeMusicPlayer {
           reject(new Error('Timeout waiting for UADE libraries to load'));
         }
       }, 15000);
-    });
+    }));
   }
 
   async _ensurePlayer() {
@@ -113,7 +113,7 @@ class UadeMusicPlayer {
     };
 
     try {
-      await new Promise((resolve, reject) => {
+      await /** @type {Promise<void>} */ (new Promise((resolve, reject) => {
         const failTimeout = setTimeout(() => {
           reject(new Error('UADE load timed out'));
         }, 15000);
@@ -131,7 +131,7 @@ class UadeMusicPlayer {
           clearTimeout(failTimeout);
           resolve();
         });
-      });
+      }));
       console.log('UADE loaded successfully:', title);
     } catch (error) {
       this.currentTrack = null;

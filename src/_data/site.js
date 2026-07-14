@@ -10,20 +10,18 @@ const metadata = {
   seoimage: "/img/trsi-logo-1200.png",
 };
 
-const theme = 'joe'; // or 'first'
-
 const domain = prodenv ? "https://trsi.org" : "http://localhost:8080";
 
 const homepage = {
   newsItems: 3,
   productionItems: 3,
   graphicsItems: 3,
+  musicItems: 3,
 };
 
 export default {
   metadata,
   domain,
-  theme,
   prodenv,
   homepage,
 };

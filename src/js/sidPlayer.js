@@ -53,7 +53,7 @@ class SidMusicPlayer {
       return;
     }
 
-    return new Promise((resolve, reject) => {
+    return /** @type {Promise<void>} */ (new Promise((resolve, reject) => {
       const checkReady = () => {
         if (this._isSidReady()) {
           this._markSidReady();
@@ -71,7 +71,7 @@ class SidMusicPlayer {
           reject(new Error('Timeout waiting for WebSID libraries to load'));
         }
       }, 10000);
-    });
+    }));
   }
 
   async _ensurePlayer() {
@@ -108,7 +108,7 @@ class SidMusicPlayer {
     };
 
     try {
-      await new Promise((resolve, reject) => {
+      await /** @type {Promise<void>} */ (new Promise((resolve, reject) => {
         const failTimeout = setTimeout(() => {
           reject(new Error('SID load timed out'));
         }, 15000);
@@ -126,7 +126,7 @@ class SidMusicPlayer {
           clearTimeout(failTimeout);
           resolve();
         });
-      });
+      }));
       console.log('SID loaded successfully:', title);
     } catch (error) {
       this.currentTrack = null;

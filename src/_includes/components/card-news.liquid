@@ -1,0 +1,17 @@
+<article class="card card--news">
+  <a class="card__link" href="/news/{{ item.slug }}/">
+    <div class="card-image card-image--news">
+      <img src="{{ item.post_image }}"
+        {%- if item.post_image_sm %} srcset="{{ item.post_image_sm }} 480w, {{ item.post_image }} 800w" sizes="(width < 600px) 90vw, (width < 900px) 45vw, 380px"{% endif %}
+        alt="" width="800" height="500" loading="{{ loading | default: 'lazy' }}" decoding="async">
+    </div>
+    <div class="card-content">
+      {%- if item.publishDate %}
+      <p class="card__date"><time datetime="{{ item.publishDate | isoDate }}">{{ item.publishDate | displayDate }}</time></p>
+      {%- endif %}
+      <h3 class="title">{{ item.title }}</h3>
+      <p class="card__teaser">{{ item.teaser }}</p>
+      <span class="card__more">continue reading</span>
+    </div>
+  </a>
+</article>

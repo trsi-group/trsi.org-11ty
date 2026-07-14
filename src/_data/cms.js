@@ -1,30 +1,24 @@
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const pPath = resolve(__dirname, '../../cms/data/productions.json');
-const productions = JSON.parse(readFileSync(pPath, 'utf-8'));
+const generatedDir = resolve(__dirname, '../../cms/data');
+const fixtureDir = resolve(__dirname, '../../tests/fixtures/cms');
 
-const gPath = resolve(__dirname, '../../cms/data/graphics.json');
-const graphics = JSON.parse(readFileSync(gPath, 'utf-8'));
+// cms/data is gitignored and produced by `npm run build:content`, which needs
+// Contentful credentials. Fall back to fixtures so the site still builds in CI.
+const dataDir = existsSync(resolve(generatedDir, 'posts.json')) ? generatedDir : fixtureDir;
 
-const mPath = resolve(__dirname, '../../cms/data/music.json');
-const music = JSON.parse(readFileSync(mPath, 'utf-8'));
-
-const mePath = resolve(__dirname, '../../cms/data/members.json');
-const members = JSON.parse(readFileSync(mePath, 'utf-8'));
-
-const poPath = resolve(__dirname, '../../cms/data/posts.json');
-const posts = JSON.parse(readFileSync(poPath, 'utf-8'));
+const load = (name) => JSON.parse(readFileSync(resolve(dataDir, `${name}.json`), 'utf-8'));
 
 const cms = {
-  productions: productions.productions,
-  graphics: graphics.graphics,
-  music: music.music,
-  members: members.members,
-  posts: posts.posts
+  productions: load('productions').productions,
+  graphics: load('graphics').graphics,
+  music: load('music').music,
+  members: load('members').members,
+  posts: load('posts').posts,
 };
 
 export default cms;

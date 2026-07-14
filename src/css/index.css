@@ -1,3 +1,14 @@
 @import "bulma.css";
+@import "tokens.css";
 @import "fonts.css";
-@import "styles.css";
+@import "base.css";
+@import "layout.css";
+@import "components/header.css";
+@import "components/footer.css";
+@import "components/section-head.css";
+@import "components/hero.css";
+@import "components/card.css";
+@import "components/music-card.css";
+@import "components/filters.css";
+@import "components/modal.css";
+@import "components/article.css";

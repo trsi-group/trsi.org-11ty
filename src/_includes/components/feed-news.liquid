@@ -1,27 +1,14 @@
 {%- assign items = max | default: feed.size %}
 {%- assign sorted_feed = feed | sort: "publishDate" | reverse %}
 {%- assign sliced_feed = sorted_feed | slice: 0, items %}
-      <div class="posts">
-        {%- for item in sliced_feed %}
-        <div class="columns">
-          <div class="column is-one-fifth">
-            <a href="/news/{{ item.slug }}/">
-              <figure class="image">
-                <img src="{{ item.post_image }}" alt="image of {{ item.title }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
-              </figure>
-            </a>
-          </div>
-          <div class="column">
-            <div>
-              <a href="/news/{{ item.slug }}/">
-                <h2 class="title is-4">{{ item.title }}</h2>
-              </a>
-              <p class="is-size-5">{{ item.teaser }}</p>
-              {%- comment %} 
-              <p class="date">{{ item.publishDate }}</p> 
-              {%- endcomment %}
-              </div>
-          </div>
-        </div>
-        {%- endfor %}
-      </div>
+<div class="card-grid">
+  {%- for item in sliced_feed %}
+  <div class="card-grid__item">
+    {%- if forloop.first %}
+    {%- render "components/card-news.liquid", item: item, loading: "eager" %}
+    {%- else %}
+    {%- render "components/card-news.liquid", item: item %}
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</div>

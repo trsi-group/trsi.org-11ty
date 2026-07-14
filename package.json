@@ -12,7 +12,14 @@
     "build": "npm run build:content && npm run build:css && eleventy",
     "start": "npm run build:content && npm run build:css && eleventy --serve",
     "serve": "eleventy --serve",
-    "debug": "DEBUG=Eleventy* npm run build:content && npm run build:css && eleventy"
+    "debug": "DEBUG=Eleventy* npm run build:content && npm run build:css && eleventy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "test:integration": "node tests/integration/build-check.js"
   },
   "repository": {
     "type": "git",
@@ -43,10 +50,14 @@
   },
   "devDependencies": {
     "@11ty/eleventy-dev-server": "^2.0.8",
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
+    "@types/node": "^26.1.1",
     "jsdom": "^26.1.0",
     "playwright": "^1.55.0",
+    "typescript": "^7.0.2",
     "vitest": "^3.2.4"
   }
 }

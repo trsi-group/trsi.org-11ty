@@ -3,43 +3,36 @@ layout: layouts/base.liquid
 title: TRSI
 tags: page
 ---
-    <!-- Top section -->
-    <section class="section">
-      <div class="content">
-        <div class="has-text-centered mb-5">
-          <div class="logo" role="img" aria-label="TRSI logo"></div>
-        </div>
-      </div>
-      <div class="content">
-        <div class="has-text-centered is-size-4">
-          <p class="">We are a demo group, founded in 1990. <a href="/about">(read more...) </a></p>
-        </div>
-      </div>
-    </section>
+{%- render "sections/hero.liquid", slides: hero %}
 
-    <section class="section">
-      <div class="content">
-        <h1><a href="/news/">Latest News</a></h1>
-      </div>
-      {%- render "components/feed-news.liquid", feed: cms.posts, max: site.homepage.newsItems %}
-    </section>
+<section class="section" aria-labelledby="h-news">
+  <div class="section__inner">
+    {%- render "components/section-head.liquid", title: "Latest News", id: "h-news", align: "center" %}
+    {%- render "components/feed-news.liquid", feed: cms.posts, max: site.homepage.newsItems %}
+  </div>
+</section>
 
-    <section class="section">
-      <div class="content">
-        <h1><a href="/productions/">Latest Productions</a></h1>
-      </div>
-      {%- render "components/feed-cards.liquid", feed: cms.productions, type: "productions", max: site.homepage.productionItems %}
-    </section>
+<section class="section section--alt" aria-labelledby="h-productions">
+  <div class="section__inner">
+    {%- render "components/section-head.liquid", title: "Latest Productions", id: "h-productions", more_url: "/productions/", more_label: "Show all productions" %}
+    {%- render "components/feed-cards.liquid", feed: cms.productions, type: "productions", max: site.homepage.productionItems %}
+  </div>
+</section>
 
-    <section class="section">
-      <div class="content">
-        <h1><a href="/graphics/">Latest Graphics</a></h1>
-      </div>
-      {%- render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics", max: site.homepage.graphicsItems %}
-    </section>
+<section class="section" aria-labelledby="h-graphics">
+  <div class="section__inner">
+    {%- render "components/section-head.liquid", title: "Latest Graphics", id: "h-graphics", more_url: "/graphics/", more_label: "Show all graphics" %}
+    {%- render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics", max: site.homepage.graphicsItems %}
+  </div>
+</section>
 
-    <section class="section">
-      <div class="modal-wrapper">
-        {%- render "components/modal-template.liquid" %}
-      </div>
-    </section>
+<section class="section section--alt" aria-labelledby="h-music">
+  <div class="section__inner">
+    {%- render "components/section-head.liquid", title: "Latest Music", id: "h-music", more_url: "/music/", more_label: "Show all music" %}
+    {%- render "components/feed-cards.liquid", feed: cms.music, type: "music", max: site.homepage.musicItems %}
+  </div>
+</section>
+
+<div class="modal-wrapper">
+  {%- render "components/modal-template.liquid" %}
+</div>

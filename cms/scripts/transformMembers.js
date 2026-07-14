@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { imgPath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -26,7 +26,7 @@ export function transformMembers(contentfulData) {
       return {
         handle: fields.handle['en-US'],
         real_name: fields.realName?.['en-US'],
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? imgPath('card', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
         sort_handle: fields.handle['en-US'].toLowerCase(),

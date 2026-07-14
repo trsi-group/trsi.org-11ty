@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <title>{{ site.metadata.title }}</title>
     <meta charset="utf-8">
@@ -8,14 +8,13 @@
     <meta name="keywords" content="{{ site.metadata.keywords }}">
 {% include "sections/og-tags.liquid" %}
     <link rel="canonical" href="{{ site.domain }}{{ page.url  }}">
+    <link rel="preload" href="/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
     {%- if site.prodenv %}
     <link rel="preload" as="style" href="/css/main.min.css">
     <link rel="stylesheet" href="/css/main.min.css">
     {%- else %}
     <link rel="stylesheet" href="/css/index.css">
     {%- endif %}
-    <link rel="preload" as="style" href="/css/theme-{{ site.theme}}.css">
-    <link rel="stylesheet" href="/css/theme-{{ site.theme}}.css">
     <link rel="icon" type="image/png" href="/img/favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
@@ -28,10 +27,11 @@
 {% include "sections/jsonld-organisation.liquid" %}
   </head>
   <body>
-    <div class="site-container">
+    <a class="skip-link" href="#main">Skip to content</a>
 {% include "sections/header.liquid" %}
-{{content}}
+    <main id="main">
+{{ content }}
+    </main>
 {% include "sections/footer.liquid" %}
-    </div>
   </body>
 </html>

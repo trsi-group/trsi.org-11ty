@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { imgPath } from './assetPaths.js';
 
 // Generate slug from title 
 function getSlug(title) {
@@ -36,7 +36,8 @@ export function transformPosts(contentfulData) {
         title: fields.title['en-US'],
         teaser: fields.teaser?.['en-US'],
         body: fields.body?.['en-US'],
-        post_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        post_image: imageId ? imgPath('card', findAssetPathById(imageId)) : null,
+        post_image_sm: imageId ? imgPath('post', findAssetPathById(imageId)) : null,
         publishDate: fields.publishDate?.['en-US'],
         slug: slug,
       };

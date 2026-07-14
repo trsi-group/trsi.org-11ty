@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "title": "TRSI @ Revision 2025",
+      "teaser": "Tedi and team made the 1st place in the Amiga Demo Competition @ Revision 2025 with their Amiga AGA production called Lupus Reditus.",
+      "body": "Tedi and team made the 1st place in the Amiga Demo Competition @ Revision 2025 with their Amiga AGA production called Lupus Reditus.",
+      "post_image": "/img/card/3e8bd2b5c2a44e913afd23abebce8e28.webp",
+      "post_image_sm": "/img/post/3e8bd2b5c2a44e913afd23abebce8e28.webp",
+      "publishDate": "2025-04-21",
+      "slug": "trsi--revision-2025"
+    },
+    {
+      "title": "Hello World",
+      "teaser": "Finally we went live with our new website, where we are able to present our work done over the decades and where we can post any latest updates and party reports :)",
+      "body": "Welcome to our new site \\o/\n\nAfter a good amount of late-night coding, testing, arguing about colors, debating fonts, digging through old backups, and rediscovering forgotten gems — we finally launched the new TRSI website!\n\nTRSI has been active since 1990. C64, Amiga, PC, web, wild… we’ve done it all. And now we’ve got a place where you can browse our productions, stream our tunes, and marvel at the pixels from over three decades of scene history. We’ll be gradually uploading stuff from our archives, so keep checking back — or better yet, ping us if you’re holding onto lost releases!\n\nSee you at the next party!\n– The Sleeping Gods, 2025",
+      "post_image": "/img/card/TRSI_by_Elko.webp",
+      "post_image_sm": "/img/post/TRSI_by_Elko.webp",
+      "publishDate": "2025-07-03",
+      "slug": "hello-world"
+    },
+    {
+      "title": "When History Meets Now",
+      "teaser": "Last week in Berlin, we from TRSi had the pleasure of meeting Bill Best, one of the original founders of Red Sector Inc.",
+      "body": "Last week in Berlin, we from TRSi had the pleasure of meeting Bill Best, one of the original founders of Red Sector Inc. – a true legend from 1985.\n\nSince Bill lives in Canada, real-life meetings like this are rare. So it was something special for us to catch up in person.\n\nTalking with him after all these years felt like no time had passed at all – just stories, laughter, and that same old scene spirit.\n\n![Bill Best Group Photo](//images.ctfassets.net/l8kv2ckiiqjb/67lfm9Qdl1n4mRxbvxHUDG/f7cef21a937404350c5e23bcb1208800/billbest-berlin.webp)\nFrom left to right: Bill Best, Thexder, Matt/Haujobb, Madsion/TRSi, W.o.t.w/TRSi, Astaroth/TRSi, Titus/Rabenauge\n\nOnce part of the scene – always part of the scene.",
+      "post_image": "/img/card/billbests.webp",
+      "post_image_sm": "/img/post/billbests.webp",
+      "publishDate": "2025-06-25",
+      "slug": "when-history-meets-now"
+    },
+    {
+      "title": "Boom! Party Report",
+      "teaser": "The C64 & Amiga OCS only party in Poland took place from the 24th till 27th of July in Tuchola, and Madison took the chance to make the long trip from Berlin.",
+      "body": "Madison on the keys. Just a quick report from the Boom! Party in Poland, which I had the pleasure to visit. Boom! Party is located in the northern center of Poland, about 100km south of Gdansk in the village of Tuchola. We left Berlin with our rented camper van Friday morning, the 24th of July. I was only able to convince my family to join because the party location is surrounded by forest with a river going by closely. The trip from Berlin took us about 6 hours but it was well worth it. Boom! Party is not your regular German Demo Scene party. The orga team around Steffan and Sachy made sure this is a proper Polish party with bonfire, sausages and a big enough dance floor to keep everyone one their feet till late at night, and have a 'deftiges' breakfast at 9 in the morning.\n\n![Sachy and Madison](//images.ctfassets.net/l8kv2ckiiqjb/7oe7lFciUeyLzRfQKrf1qZ/910b578cb7af10d682c160cfbea92b2a/sachy.jpeg)\nMadison & Sachy\n\nOther then many parties I've visited, the focus was less on the sceners setting up their beloved machines in a dark room. [Stary Tartak](https://starytartaktuchola.pl/) ('old sawmill') has a large, fairly bright room which had mostly seating for the compos ([overview video](https://www.youtube.com/watch?v=LdA9eBvHjxg)). Compos would start on Friday and Saturday around 6:30 pm, and would end latest by 10 pm. There were live acts and constant dance music playing outside, and fortunately the weather made it super nice to hang out outside the whole time.\n\n![dj wacek](//images.ctfassets.net/l8kv2ckiiqjb/5q5XOkHAUtlLytcLlC6EG7/41d25a340a79199b25582f15a73a4f1c/dj_wacek.jpeg)\nDJ Wacek live gig\n\nBoom! Party is strict on the compo focus: C64 and Amiga OCS - that's it! It happened more then once that I got asked, which do I prefer. This was not about which is the better machine, but only about which one you love more :) And you could see this with the quality of the compo entries (check the results on [Demozoo for Boom! Party)](https://demozoo.org/parties/5015/).\n\nMystic and TRSI made first place in Amiga demo ([Dataverse](https://trsi.org/productions/#dataverse)) and graphics [(Sentinel of Time)](https://trsi.org/graphics/#sentinel-of-time-by-vasyl) compos, with this beautiful pixel monument by Vasyl, which gave me Chaos Engine vibes. Tedi has been working on a new engine for the crazy effects in Dataverse (looking forward to continue that chat at Deadline in October!) and the results are remarkable for an unpimped Amiga 500!\n\n![trsi-demo-compo](//images.ctfassets.net/l8kv2ckiiqjb/4bqHjJyg9poYPLZlUfT50A/85c7792f39b084e6cb24e8b2740297fb/trsi-demo-compo.jpeg)\nTedi acceptance speech at price giving ceremony\n\nWe drove back on Sunday noon after the price giving ceremony, a bit heady hearted. Was it worth it the long drive? Hell yeah! :) I hope to be back in 2 years to join this great party and meet the amazing sceners in Tuchola again.",
+      "post_image": "/img/card/BoomPartyLogo.webp",
+      "post_image_sm": "/img/post/BoomPartyLogo.webp",
+      "publishDate": "2025-07-30",
+      "slug": "boom-party-report"
+    }
+  ]
+}

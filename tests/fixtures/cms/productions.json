@@ -1,0 +1,206 @@
+{
+  "productions": [
+    {
+      "title": "Easter Conference 92",
+      "type": "Intro",
+      "release_date": "1992-03-12",
+      "description": "Invitation for Easter Conference 92\n",
+      "nfo_text": "Easter Conference 92 by Tristar & Red Sector Inc. \nInvitation for : \tEaster Conference 92\n\n    RELEASE NAME : ................... Easter Conference 92\n    PLATFORM : ....................... Amiga OCS/ECS\n    CODE BY : ........................ Madison\n    GRAPHICS BY : .................... elkmoose\n    MUSIC BY : ....................... Double Trouble\n    RELEASE DATE : ................... april 1992\n    TYPE : ........................... invitation",
+      "card_image": "/img/card/Easter_Conference_92.webp",
+      "platform": "Amiga OCS",
+      "youtube": "https://www.youtube-nocookie.com/embed/1GbLAOc9pZ4",
+      "pouet": "https://www.pouet.net/prod.php?which=14488",
+      "demozoo": "https://demozoo.org/productions/263568/",
+      "csdb": null,
+      "credits": [
+        {
+          "name": "Madison",
+          "contribution": "Code"
+        },
+        {
+          "name": "Double Trouble",
+          "contribution": "Music"
+        },
+        {
+          "name": "TMB",
+          "contribution": "Graphics"
+        },
+        {
+          "name": "Adec/Reebok",
+          "contribution": "Graphics"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Megademo",
+      "type": "Demo",
+      "release_date": "1989-09-01",
+      "description": "1st place in the amiga demo competition @ Tristar Party 1989\n",
+      "nfo_text": "Megademo by Red Sector Inc & The Clumsy Creepers\n1st place in the amiga demo competition @ Tristar Party 1989\n\n    RELEASE NAME : ................. Megademo\n    PLATFORM : ..................... Amiga OCS/ECS\n    CODE BY : ...................... Delta\n    CODE BY : ...................... Dr. Beat\n    CODE BY : ...................... Delta\n    GRAPHICS BY : .................. Dark\n    GRAPHICS BY : .................. Dr. C\n    GRAPHICS BY : .................. Eddie\n    GRAPHICS BY : .................. Scum\n    MUSIC BY : ..................... Romeo Knight\n    MUSIC BY : ..................... Dr. C\n    MUSIC BY : ..................... BitArts\n    MUSIC BY : ..................... Mark II\n    MUSIC BY : ..................... SCS\n    RELEASE DATE : ................. 9 september 1989",
+      "card_image": "/img/card/Megademo.webp",
+      "platform": "Amiga OCS",
+      "youtube": "https://www.youtube-nocookie.com/embed/Ya0ooOBJABQ",
+      "pouet": "https://www.pouet.net/prod.php?which=3119",
+      "demozoo": "https://demozoo.org/productions/10297/",
+      "csdb": null,
+      "credits": [
+        {
+          "name": "Bit Arts",
+          "contribution": "Music"
+        },
+        {
+          "name": "Dark",
+          "contribution": "Graphics"
+        },
+        {
+          "name": "Delta",
+          "contribution": "Code, Graphics"
+        },
+        {
+          "name": "Dr. Beat",
+          "contribution": "Code"
+        },
+        {
+          "name": "Dr. C",
+          "contribution": "Graphics, Music (sampling)"
+        },
+        {
+          "name": "Eddie",
+          "contribution": "Graphics"
+        },
+        {
+          "name": "Mark II",
+          "contribution": "Music"
+        },
+        {
+          "name": "Romeo Knight",
+          "contribution": "Music"
+        },
+        {
+          "name": "SCS",
+          "contribution": "Music"
+        },
+        {
+          "name": "Scum",
+          "contribution": "Graphics"
+        }
+      ],
+      "tags": [
+        "featured"
+      ]
+    },
+    {
+      "title": "Spooky Scroller",
+      "type": "Intro",
+      "release_date": "2024-10-31",
+      "description": "A just for fun release",
+      "nfo_text": "Spooky Scroller by Tristar & Red Sector Inc.\nA just for fun release\n\n    RELEASE NAME : ..................... Spooky Scroller\n    PLATFORM : ......................... C64\n    CODE BY : .......................... Astaroth\n    GRAPHICS BY : ...................... Astaroth\n    MUSIC BY : ......................... Spider Jerusalem\n    RELEASE DATE : ..................... 31 october 2024\n    RELEASE PARTY : .................... Halloween\n",
+      "card_image": "/img/card/spooky_scroller.webp",
+      "platform": "C64",
+      "youtube": "https://www.youtube-nocookie.com/embed/UJvm5GRxY0g",
+      "pouet": "https://www.pouet.net/prod.php?which=100002",
+      "demozoo": "https://demozoo.org/productions/360453/",
+      "csdb": "https://csdb.dk/release/?id=247120",
+      "credits": [
+        {
+          "name": "Astaroth",
+          "contribution": "Code, Graphics"
+        },
+        {
+          "name": "Spider Jerusalem",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Fallen Heroes",
+      "type": "Demo",
+      "release_date": "2024-10-05",
+      "description": "3st place in the oldskool demo competition @ Deadline Berlin 2024",
+      "nfo_text": "Fallen Heroes by Tristar & Red Sector Inc.\n3st place in the oldskool demo competition @ Deadline Berlin 2024\n\n    RELEASE NAME : ................... Fallen Heroes\n    PLATFORM : ....................... C64\n    CODE BY : ........................ Astaroth\n    GRAPHICS BY : .................... Astaroth\n    MUSIC BY : ....................... Spider Jerusalem\n    SUPPORT : ........................ coolcat                \n    RELEASE DATE : ................... 05 october 2024\n    RELEASE PARTY : .................. Deadline Berlin 2024\n    COMPETITION : .................... oldskool demo",
+      "card_image": "/img/card/eec5.350929.webp",
+      "platform": "C64",
+      "youtube": "https://www.youtube-nocookie.com/embed/jPL2XDcS2VY",
+      "pouet": "https://www.pouet.net/prod.php?which=98135",
+      "demozoo": "https://demozoo.org/productions/358695/",
+      "csdb": "https://csdb.dk/release/?id=246433",
+      "credits": [
+        {
+          "name": "Astaroth",
+          "contribution": "Code, Graphics"
+        },
+        {
+          "name": "Spider Jerusalem",
+          "contribution": "Music"
+        }
+      ],
+      "tags": [
+        "featured"
+      ]
+    },
+    {
+      "title": "Automated Raster Machine",
+      "type": "Intro",
+      "release_date": "2024-03-30",
+      "description": "7th place in the amiga intro competition @ Revision 2024",
+      "nfo_text": "Automated Raster Machine by Tristar & Red Sector Inc.\n7th place in the amiga intro competition @ Revision 2024\n\n    RELEASE NAME : ................ Automated Raster Machine\n    PLATFORM : .................... Amiga OCS\n    CODE BY : ..................... Raft\n    LOGO BY : ..................... Premium\n    MUSIC BY : .................... Skyrunner\n    RELEASE DATE : ................ march 2024\n    RELEASE PARTY : ............... Revision 2024\n    COMPETITION : ................. amiga intro",
+      "card_image": "/img/card/Automated%20Raster%20Machine.webp",
+      "platform": "Amiga OCS",
+      "youtube": "https://www.youtube-nocookie.com/embed/2wpvqKV8100",
+      "pouet": "https://www.pouet.net/prod.php?which=96545",
+      "demozoo": "https://demozoo.org/productions/342179/",
+      "csdb": null,
+      "credits": [
+        {
+          "name": "Raft",
+          "contribution": "Code"
+        },
+        {
+          "name": "Skyrunner",
+          "contribution": "Music"
+        },
+        {
+          "name": "Premium",
+          "contribution": "Graphics"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Wicked Sensation",
+      "type": "Demo",
+      "release_date": "1992-11-01",
+      "description": "1st place at release party: World of Commodore 1992",
+      "nfo_text": "Wicked Sensation by Tristar & Red Sector Inc.\n1st place in the amiga intro competition @ The Party 1992\n\n    RELEASE NAME : .................... Wicked Sensation\n    PLATFORM : ........................ Amiga OCS/ECS\n    CODE BY : ... ..................... Wayne Mendoza\n    GRAPHICS BY : ..................... Peachy\n    LOGO BY : ......................... Tee Jay\n    MUSIC BY : ........................ Romeo Knight\n    RELEASE DATE : .................... november 1992\n    RELEASE PARTY : ................... World of Commodore 1992\n    COMPETITION : ..................... amiga demo",
+      "card_image": "/img/card/Wicked_Sensation_.webp",
+      "platform": "Amiga OCS",
+      "youtube": "https://www.youtube-nocookie.com/embed/3F9GcEd0n0A",
+      "pouet": "https://www.pouet.net/prod.php?which=3118",
+      "demozoo": "https://demozoo.org/productions/63791/",
+      "csdb": null,
+      "credits": [
+        {
+          "name": "Wayne Mendoza",
+          "contribution": "Code"
+        },
+        {
+          "name": "Peachy",
+          "contribution": "GFX"
+        },
+        {
+          "name": "Tee Jay",
+          "contribution": "LOGO"
+        },
+        {
+          "name": "Romeo Knight",
+          "contribution": "Music"
+        }
+      ],
+      "tags": [
+        "featured"
+      ]
+    }
+  ]
+}

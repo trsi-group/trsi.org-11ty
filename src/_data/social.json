@@ -1,20 +1,20 @@
 {
   "nav_items": [
     {
-      "name": "Facebook",
-      "url": "https://www.facebook.com/tristarandredsector/"
+      "name": "Instagram",
+      "url": "https://www.instagram.com/_trsi_/"
     },
     {
-      "name": "Youtube",
-      "url": "https://www.youtube.com/@trsi"
+      "name": "Facebook",
+      "url": "https://www.facebook.com/tristarandredsector/"
     },
     {
       "name": "X",
       "url": "https://x.com/trsi"
     },
     {
-      "name": "Instagram",
-      "url": "https://www.instagram.com/_trsi_/"
+      "name": "Youtube",
+      "url": "https://www.youtube.com/@trsi"
     }
   ]
 }

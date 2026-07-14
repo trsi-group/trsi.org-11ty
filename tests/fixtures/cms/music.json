@@ -1,0 +1,140 @@
+{
+  "music": [
+    {
+      "title": "Boesendorfer P.S.S.",
+      "type": "Tracked Music",
+      "platform": "Amiga",
+      "nfo_text": "",
+      "assetId": "6ob1lIf4cykQPgF1aWLqy3",
+      "asset": "/tracks/MOD.boesendorfer_p.s.s",
+      "playerEmu": "MPT",
+      "description": "Boesendorfer P.S.S.MOD End Track from Wicked Sensation Demo",
+      "release_date": "1992-11-28",
+      "card_image": "/img/music-player.webp",
+      "download": "https://files.exotica.org.uk/modland/?file=pub/modules/Protracker/Romeo%20Knight/boesendorfer%20p.s.s.mod",
+      "demozoo": "https://demozoo.org/music/152193/",
+      "kestra": null,
+      "credits": [
+        {
+          "name": "Romeo Knight",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Rusted Blues",
+      "type": "Tracked Music",
+      "platform": "Amiga",
+      "nfo_text": "",
+      "assetId": "YFokAWkuNSwkHrXBOlfED",
+      "asset": "/tracks/w.o.t.w.-_-josss--rusted-blues.mod",
+      "playerEmu": "MPT",
+      "description": "Rusted Blues by W.O.T.W. & JOSSS 4h at Tracked Music at DEADLINE 2024",
+      "release_date": "2024-10-05",
+      "card_image": "/img/music-player.webp",
+      "download": "https://files.scene.org/get:fi-https/parties/2024/deadline24/tracked_music/w.o.t.w.-_-josss--rusted-blues.mod",
+      "demozoo": "https://demozoo.org/music/358565/",
+      "kestra": null,
+      "credits": [
+        {
+          "name": "W.O.T.W.",
+          "contribution": "Music"
+        },
+        {
+          "name": "JOSSS",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Escaping Tartarus",
+      "type": "Tracked Music",
+      "platform": "Amiga",
+      "nfo_text": "",
+      "assetId": "gzvrl7V7vAu1zWTiFRIUX",
+      "asset": "/tracks/w.o.t.w.-escaping-tartarus.mod",
+      "playerEmu": "MPT",
+      "description": "Escaping Tartarus by W.O.T.W. 3rd at Tracked Music at DEADLINE 2024",
+      "release_date": "2024-10-05",
+      "card_image": "/img/music-player.webp",
+      "download": "https://files.scene.org/view/parties/2024/deadline24/tracked_music/w.o.t.w.--escaping-tartarus-.mod",
+      "demozoo": "https://demozoo.org/music/358556/",
+      "kestra": null,
+      "credits": [
+        {
+          "name": "W.O.T.W.",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Samsara",
+      "type": "Tracked Music",
+      "platform": "Amiga",
+      "nfo_text": "",
+      "assetId": "6JYK1a5rLUJB8xGivaGnM2",
+      "asset": "/tracks/w.o.t.w.--samsara.mod",
+      "playerEmu": "MPT",
+      "description": "Contribution to Tracked Music compo at Revision 2025",
+      "release_date": "2025-04-19",
+      "card_image": "/img/music-player.webp",
+      "download": "https://ftp.modland.com/pub/modules/Protracker/WOTW/samsara.mod",
+      "demozoo": "https://demozoo.org/music/370935/",
+      "kestra": null,
+      "credits": [
+        {
+          "name": "W.O.T.W.",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": "Beat To The Pulp",
+      "type": "Tracked Music",
+      "platform": "Amiga",
+      "nfo_text": "",
+      "assetId": "4YoNkRZSJofu7BDAIRaPz4",
+      "asset": "/tracks/beat_to_the_pulp.sid",
+      "playerEmu": "UADE",
+      "description": "",
+      "release_date": "1990-09-25",
+      "card_image": "/img/music-player.webp",
+      "download": "http://modland.com/pub/modules/SidMon%201/Romeo%20Knight/beat%20to%20the%20pulp.sid",
+      "demozoo": "https://demozoo.org/music/256368/",
+      "kestra": "http://janeway.exotica.org.uk/release.php?id=38257",
+      "credits": [
+        {
+          "name": "Romeo Knight",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "title": " 60y by TRSI",
+      "type": "Tracked Music",
+      "platform": "C64",
+      "nfo_text": "",
+      "assetId": "3A1OXAoZaK4mI79dv16vrj",
+      "asset": "/tracks/60y_by_TRSI.sid",
+      "playerEmu": "SID",
+      "description": "60y by TRSI",
+      "release_date": "2025-03-03",
+      "card_image": "/img/music-player.webp",
+      "download": "https://www.hvsc.c64.org/search",
+      "demozoo": null,
+      "kestra": null,
+      "credits": [
+        {
+          "name": "Spider Jerusalem",
+          "contribution": "Music"
+        }
+      ],
+      "tags": []
+    }
+  ]
+}

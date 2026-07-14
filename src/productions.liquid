@@ -7,23 +7,20 @@ layout: layouts/base.liquid
 title: TRSI Productions
 tags: page
 ---
-    <section class="section">
-      <div class="content">
-        <h1 class="title">Productions</h1>
-      </div>
-      <div class="filter-wrapper">
-        <span class="filter-group-icon">{%- include "icons/filter.svg" %}</span>
-        {%- render "components/feed-filter.liquid", feed: cms.productions, type: "Platform" %}
-        {%- render "components/feed-filter.liquid", feed: cms.productions, type: "Type" %}
-      </div>
-      <div id="feed-wrapper">
-        {%- render "components/feed-cards.liquid", feed: cms.productions, type: "productions" %}
-      </div>
-    </section>
+<section class="section">
+  <div class="section__inner">
+    <h1 class="page-title">Productions</h1>
+    <div class="filter-wrapper">
+      <span class="filter-group-icon">{%- include "icons/filter.svg" %}</span>
+      {%- render "components/feed-filter.liquid", feed: cms.productions, type: "Platform" %}
+      {%- render "components/feed-filter.liquid", feed: cms.productions, type: "Type" %}
+    </div>
+    <div id="feed-wrapper">
+      {%- render "components/feed-cards.liquid", feed: cms.productions, type: "productions" %}
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-      <div class="modal-wrapper">
-        {%- render "components/modal-template.liquid" %}
-      </div>
-    </section>
-    
+<div class="modal-wrapper">
+  {%- render "components/modal-template.liquid" %}
+</div>

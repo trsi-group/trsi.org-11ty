@@ -1,0 +1,135 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 0;
+}
+
+.card.pointer {
+  cursor: pointer;
+}
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.card-image {
+  aspect-ratio: var(--ratio-card);
+  overflow: hidden;
+  background-color: #000;
+}
+
+.card-image--news {
+  aspect-ratio: var(--ratio-news);
+}
+
+.card-image--member {
+  aspect-ratio: var(--ratio-member);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--dur) var(--ease);
+}
+
+/*
+ * Demoscene artwork must not be cropped, so it is letterboxed onto black.
+ * Photos and portraits crop cleanly.
+ */
+.card[data-ctype='prod'] .card-image img,
+.card[data-ctype='graphic'] .card-image img {
+  object-fit: contain;
+}
+
+.card--news .card-image img,
+.card[data-ctype='member'] .card-image img {
+  object-fit: cover;
+}
+
+/*
+ * The meta block is a static block under the image, on the section background.
+ * The .card-content / .title / .subtitle class names are a JS contract:
+ * utils.js reads them to populate the modal.
+ */
+.card-content {
+  position: static;
+  background: none;
+  width: auto;
+  height: auto;
+  padding: var(--space-lg) 0 0;
+  border-radius: 0;
+}
+
+.card__date {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.card .title {
+  margin: 0 0 var(--space-2xs);
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-title);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+/*
+ * The title is the accessible control that opens the modal. The card itself is
+ * only a mouse convenience: making the whole card a role="button" would nest the
+ * music card's transport buttons inside a button, which is invalid.
+ */
+.card__open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.card .subtitle {
+  margin: 0;
+  font-size: var(--fs-meta);
+  color: var(--color-text-muted);
+}
+
+.card__teaser {
+  margin: var(--space-sm) 0 var(--space-md);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-body);
+  color: var(--color-text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card__more {
+  margin-top: auto;
+  font-size: var(--fs-meta);
+  color: var(--color-text);
+}
+
+.card__more::before {
+  content: '> ';
+}
+
+.card:hover .card-image img {
+  transform: scale(1.03);
+}
+
+.card:hover .title {
+  color: var(--color-accent);
+}

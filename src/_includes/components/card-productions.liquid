@@ -1,24 +1,21 @@
-
-          <div class="card pointer" 
-            data-ctype="prod"
-          {{- if card.title }}data-slug='{{ card.title | slugify }}'{{- endif }}
-          {{- if card.youtube }}data-youtube='{{ card.youtube }}'{{- endif }}
-          {{- if card.download }}data-download='{{ card.download }}'{{- endif }}
-          {{- if card.demozoo }}data-demozoo='{{ card.demozoo }}'{{- endif }}
-          {{- if card.csdb }}data-csdb='{{ card.csdb }}'{{- endif }}
-          {{- if card.pouet }}data-pouet='{{ card.pouet }}'{{- endif }}
-          {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
-          {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}
-          >
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="{{ card.card_image }}" alt="image of the {{ card.type }} {{ card.title }}" width="800" height="600" loading="lazy">
-              </figure>
-            </div>
-            <div class="card-content aligned-vertically bounce-hover">
-              <div>
-                <p class="subtitle">{{ card.type }} / {{ card.platform }}</p>
-                <p class="title">{{ card.title }}</p>
-              </div>
-            </div>
-          </div>
+<article class="card pointer"
+  data-ctype="prod"
+  {{- if card.title }}data-slug='{{ card.title | slugify }}'{{- endif }}
+  {{- if card.youtube }}data-youtube='{{ card.youtube }}'{{- endif }}
+  {{- if card.download }}data-download='{{ card.download }}'{{- endif }}
+  {{- if card.demozoo }}data-demozoo='{{ card.demozoo }}'{{- endif }}
+  {{- if card.csdb }}data-csdb='{{ card.csdb }}'{{- endif }}
+  {{- if card.pouet }}data-pouet='{{ card.pouet }}'{{- endif }}
+  {{- if card.credits }}data-credits='{{ card.credits | jsonify }}'{{- endif }}
+  {{- if card.release_date }}data-release_date='{{ card.release_date }}'{{- endif }}>
+  <div class="card-image">
+    <img src="{{ card.card_image }}" alt="{{ card.type }} {{ card.title }} on {{ card.platform }}" width="800" height="640" loading="lazy" decoding="async">
+  </div>
+  <div class="card-content">
+    {%- if card.release_date %}
+    <p class="card__date"><time datetime="{{ card.release_date | isoDate }}">{{ card.release_date | displayDate }}</time></p>
+    {%- endif %}
+    <button type="button" class="title card__open">{{ card.title }}</button>
+    <p class="subtitle">{{ card.platform }} &ndash; {{ card.type }}</p>
+  </div>
+</article>
