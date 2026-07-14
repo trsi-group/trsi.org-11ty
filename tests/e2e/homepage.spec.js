@@ -72,6 +72,15 @@ test.describe('homepage layout', () => {
     await expect(date).toHaveCSS('color', 'rgb(232, 160, 60)');
   });
 
+  test('cards are flat: no shadow and no rounded corners', async ({ page }) => {
+    // Bulma's .card ships a drop shadow and a 0.75rem radius by default.
+    const card = page.locator('[aria-labelledby="h-productions"] .card').first();
+
+    await expect(card).toHaveCSS('box-shadow', 'none');
+    await expect(card).toHaveCSS('border-radius', '0px');
+    await expect(card.locator('.card-image img')).toHaveCSS('border-radius', '0px');
+  });
+
   test('card meta sits below the image rather than overlaying it', async ({ page }) => {
     const card = page.locator('[aria-labelledby="h-productions"] .card').first();
 
