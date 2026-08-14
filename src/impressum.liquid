@@ -1,0 +1,65 @@
+---
+layout: layouts/base.liquid
+page_title: Impressum
+lang: de
+alternate_url: /legal-notice/
+alternate_lang: en
+tags: page
+---
+    <section class="section is-size-5">
+      <div class="content">
+
+        <h1 class="title">Impressum</h1>
+        <p class="is-size-6"><a href="{{ alternate_url }}" hreflang="en" lang="en">English version</a></p>
+
+        <p>Angaben gemäß § 5 DDG und § 18 MStV</p>
+
+        <h2 class="title is-5">Diensteanbieter</h2>
+        <p>
+          {{ legal.provider.name }}<br>
+          {{ legal.provider.street }}<br>
+          {{ legal.provider.city }}<br>
+          {{ legal.provider.country }}
+        </p>
+
+        <h2 class="title is-5">Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:{{ legal.contact.email }}">{{ legal.contact.email }}</a>
+          {%- if legal.contact.phone != blank %}<br>Telefon: {{ legal.contact.phone }}{% endif %}
+        </p>
+
+        <h2 class="title is-5">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+        <p>
+          {{ legal.responsible.name }}<br>
+          {{ legal.responsible.street }}<br>
+          {{ legal.responsible.city }}
+        </p>
+
+        <h2 class="title is-5">Über dieses Angebot</h2>
+        <p>Tristar &amp; Red Sector Inc. (TRSI) ist ein 1990 gegründeter, internationaler Zusammenschluss von Künstlerinnen und Künstlern der Demoszene. TRSI verfolgt keine wirtschaftlichen Zwecke, bietet keine Waren oder Dienstleistungen an und finanziert sich nicht über Werbung. Diese Website dient ausschließlich der Darstellung, Dokumentation und Archivierung des künstlerischen Schaffens der Gruppe und ihrer Mitglieder.</p>
+
+        <h2 class="title is-5">Haftung für Inhalte</h2>
+        <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+        <h2 class="title is-5">Haftung für Links</h2>
+        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+        <h2 class="title is-5">Eingebundene Inhalte Dritter</h2>
+        <p>Auf einzelnen Seiten binden wir Videos über den Dienst YouTube (Google Ireland Limited) im erweiterten Datenschutzmodus (youtube-nocookie.com) ein. Diese Inhalte werden erst nach einer aktiven Interaktion geladen. Für die Inhalte und die Datenverarbeitung dieser Dienste ist der jeweilige Anbieter verantwortlich.</p>
+
+        <h2 class="title is-5">Urheberrecht und Nutzungsrechte</h2>
+        <p>Die auf dieser Website dargestellten Produktionen, Grafiken, Musikstücke, Texte und sonstigen Werke unterliegen dem Urheberrecht der jeweiligen Urheberinnen und Urheber. Die Rechte an den einzelnen Werken verbleiben bei den in den jeweiligen Credits genannten Personen. Eine Vervielfältigung, Bearbeitung, Verbreitung oder Verwertung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen schriftlichen Zustimmung der jeweiligen Rechteinhaberinnen und Rechteinhaber. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+
+        <h2 class="title is-5">Historische Inhalte und Archiv</h2>
+        <p>Diese Website dokumentiert die über drei Jahrzehnte zurückreichende Geschichte einer Demoszene-Gruppe. Sie enthält daher auch historische Materialien wie NFO-Dateien, Intros, Grafiken und Texte aus früheren Jahrzehnten. Diese Materialien werden ausschließlich zu dokumentarischen und zeitgeschichtlichen Zwecken wiedergegeben und geben nicht notwendigerweise die heutige Auffassung der Gruppe oder ihrer Mitglieder wieder. Über diese Website werden keine urheberrechtlich geschützten Werke Dritter zum Download angeboten.</p>
+
+        <h2 class="title is-5">Hinweis auf Rechtsverletzungen und Entfernung von Inhalten</h2>
+        <p>Wir bemühen uns, die Rechte Dritter zu wahren. Sollten Sie der Auffassung sein, dass Inhalte dieser Website Ihre Rechte verletzen, oder sollten Sie als ehemaliges oder aktives Mitglied die Entfernung Ihres Handles, Ihres Namens oder Ihres Bildes wünschen, wenden Sie sich bitte formlos an <a href="mailto:{{ legal.contact.email }}">{{ legal.contact.email }}</a>. Wir prüfen jede Meldung und entfernen betroffene Inhalte bei berechtigten Beanstandungen umgehend. Eine kostenpflichtige Abmahnung ist hierfür nicht erforderlich.</p>
+
+        <h2 class="title is-5">Sprachfassungen</h2>
+        <p>Dieses Impressum liegt auch in <a href="{{ alternate_url }}" hreflang="en" lang="en">englischer Sprache</a> vor. Maßgeblich ist ausschließlich die deutsche Fassung.</p>
+
+        <p class="is-size-6">Stand: {{ legal.updated }}</p>
+
+      </div>
+    </section>

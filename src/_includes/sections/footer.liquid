@@ -1,25 +1,30 @@
     <footer id="footer" class="container-fluid py-5">
       <div class="columns is-vcentered">
-        <div class="column has">
-        </div>
-        <div class="column has-text-centered has-text-centered-mobile">
-          <p class="is-size-4">The Sleeping Gods in {{ "now" | date: "%Y" }}</p>
-        </div>
         <div class="column">
-          <div class="icons is-flex is-justify-content-center is-justify-content-right-desktop">
-            <a href="https://www.instagram.com/_trsi_/" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on Instagram">
+          <div class="icons footer-social is-flex">
+            <a href="https://www.instagram.com/_trsi_/" target="_blank" class="icon" aria-label="Connect with TRSI on Instagram">
               {%- include "icons/instagram.svg" %}
             </a>
-            <a href="https://www.facebook.com/tristarandredsector/" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on Facebook">
+            <a href="https://www.facebook.com/tristarandredsector/" target="_blank" class="icon" aria-label="Connect with TRSI on Facebook">
               {%- include "icons/facebook.svg" %}
             </a>
-            <a href="https://x.com/trsi" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on X">
+            <a href="https://x.com/trsi" target="_blank" class="icon" aria-label="Connect with TRSI on X">
               {%- include "icons/x.svg" %}
             </a>
-            <a href="https://www.youtube.com/@trsi" target="_blank" class="icon mr-4" aria-label="Connect with TRSI on X">
+            <a href="https://www.youtube.com/@trsi" target="_blank" class="icon" aria-label="Connect with TRSI on YouTube">
               {%- include "icons/youtube.svg" %}
             </a>
           </div>
+        </div>
+        <div class="column has-text-centered">
+          <p class="is-size-4">The Sleeping Gods in {{ "now" | date: "%Y" }}</p>
+        </div>
+        <div class="column">
+          <ul class="footer-legal">
+          {%- for item in legal.links %}
+            <li><a href="{{ item.url }}"><span>{{ item.title }}</span></a></li>
+          {%- endfor %}
+          </ul>
         </div>
       </div>
     </footer>

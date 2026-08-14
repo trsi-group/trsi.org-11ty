@@ -1,0 +1,25 @@
+{
+  "provider": {
+    "name": "Patrick Schmidt",
+    "street": "Frauenlobstr. 33",
+    "city": "12437 Berlin",
+    "country": "Deutschland",
+    "country_en": "Germany"
+  },
+  "contact": {
+    "email": "admins@trsi.org",
+    "phone": ""
+  },
+  "responsible": {
+    "name": "Patrick Schmidt",
+    "street": "Frauenlobstr. 33",
+    "city": "12437 Berlin"
+  },
+  "updated": "August 2026",
+  "links": [
+    {
+      "title": "Impressum",
+      "url": "/impressum/"
+    }
+  ]
+}

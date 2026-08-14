@@ -1,4 +1,4 @@
-{%- assign meta-title = post.title | default: site.metadata.title %}
+{%- assign meta-title = post.title | default: page_title | default: site.metadata.title %}
 {%- assign meta-description = post.teaser | default: site.metadata.description %}
 {%- assign meta-image = post.image | default: site.metadata.seoimage %}
 {%- assign meta-url = post.url | default: page.url %}

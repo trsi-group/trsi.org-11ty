@@ -170,6 +170,36 @@ footer {
   align-items: left;
 }
 
+.footer-social {
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+}
+
+/* Text stays in the footer colour while the link colour paints the underline,
+   matching the news feed titles. */
+.footer-legal a span {
+  color: var(--text-color);
+}
+
+@media screen and (min-width: 769px) {
+  .footer-social {
+    justify-content: flex-start;
+  }
+
+  .footer-legal {
+    justify-content: flex-end;
+  }
+}
+
 .icon svg {
   font-size: 1.5rem; 
   fill: var(--text-color);
