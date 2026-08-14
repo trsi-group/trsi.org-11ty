@@ -14,7 +14,7 @@ tags: page
 
         <p>Angaben gemäß § 5 DDG und § 18 MStV</p>
 
-        <h2 class="title is-5">Diensteanbieter</h2>
+        <h2 class="title is-5">Betreiber dieser Website und verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
         <p>
           {{ legal.provider.name }}<br>
           {{ legal.provider.street }}<br>
@@ -26,13 +26,6 @@ tags: page
         <p>
           E-Mail: <a href="mailto:{{ legal.contact.email }}">{{ legal.contact.email }}</a>
           {%- if legal.contact.phone != blank %}<br>Telefon: {{ legal.contact.phone }}{% endif %}
-        </p>
-
-        <h2 class="title is-5">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-        <p>
-          {{ legal.responsible.name }}<br>
-          {{ legal.responsible.street }}<br>
-          {{ legal.responsible.city }}
         </p>
 
         <h2 class="title is-5">Über dieses Angebot</h2>
