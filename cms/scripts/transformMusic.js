@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { buildImageIndex, imagePath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -17,14 +18,7 @@ export function transformMusic(contentfulData) {
     return null;
   };
 
-  // Helper to find asset by ID and resolve the local path
-  const findAssetPathById = (assetId) => {
-    const asset = assets.find((a) => a.sys.id === assetId);
-    if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
-    }
-    return null;
-  };
+  const index = buildImageIndex(assets);
 
   const music = entries
     .filter((entry) => entry.sys.contentType.sys.id === 'music')
@@ -53,7 +47,7 @@ export function transformMusic(contentfulData) {
         playerEmu: fields.playerEmu ? fields.playerEmu?.['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : resolve('/img/music-player.webp'),
+        card_image: imageId ? imagePath(index, imageId, 'card') : resolve('/img/music-player.webp'),
         download: fields.download ? fields.download['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         kestra: fields.kestraUrl ? fields.kestraUrl['en-US'] : null,

@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { buildImageIndex, imagePath, localiseAssetUrls } from './assetPaths.js';
 
 // Generate slug from title 
 function getSlug(title) {
@@ -16,14 +16,7 @@ function getSlug(title) {
 export function transformPosts(contentfulData) {
   const { entries, assets } = contentfulData;
 
-  // Helper to find asset by ID and resolve the local path
-  const findAssetPathById = (assetId) => {
-    const asset = assets.find((a) => a.sys.id === assetId);
-    if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
-    }
-    return null;
-  };
+  const index = buildImageIndex(assets);
 
   const posts = entries
     .filter((entry) => entry.sys.contentType.sys.id === 'posts')
@@ -31,12 +24,13 @@ export function transformPosts(contentfulData) {
       const fields = entry.fields;
       const imageId = fields.image?.['en-US']?.sys.id;
       const slug = getSlug(fields.title['en-US']);
+      const body = fields.body?.['en-US'];
 
       return {
         title: fields.title['en-US'],
         teaser: fields.teaser?.['en-US'],
-        body: fields.body?.['en-US'],
-        post_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        body: body ? localiseAssetUrls(index, body, 'card') : body,
+        post_image: imageId ? imagePath(index, imageId, 'card') : null,
         publishDate: fields.publishDate?.['en-US'],
         slug: slug,
       };

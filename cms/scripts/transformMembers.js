@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { buildImageIndex, imagePath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -8,14 +8,7 @@ import { resolve } from 'path';
 export function transformMembers(contentfulData) {
   const { entries, assets } = contentfulData;
 
-  // Helper to find asset by ID and resolve the local path
-  const findAssetPathById = (assetId) => {
-    const asset = assets.find((a) => a.sys.id === assetId);
-    if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
-    }
-    return null;
-  };
+  const index = buildImageIndex(assets);
 
   const members = entries
     .filter((entry) => entry.sys.contentType.sys.id === 'member')
@@ -26,7 +19,7 @@ export function transformMembers(contentfulData) {
       return {
         handle: fields.handle['en-US'],
         real_name: fields.realName?.['en-US'],
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? imagePath(index, imageId, 'card') : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
         sort_handle: fields.handle['en-US'].toLowerCase(),

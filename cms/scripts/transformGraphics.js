@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { buildImageIndex, imagePath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -8,14 +8,7 @@ import { resolve } from 'path';
 export function transformGraphics(contentfulData) {
   const { entries, assets } = contentfulData;
 
-  // Helper to find asset by ID and resolve the local path
-  const findAssetPathById = (assetId) => {
-    const asset = assets.find((a) => a.sys.id === assetId);
-    if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
-    }
-    return null;
-  };
+  const index = buildImageIndex(assets);
  
   const graphics = entries
     .filter((entry) => entry.sys.contentType.sys.id === 'graphics')
@@ -39,11 +32,11 @@ export function transformGraphics(contentfulData) {
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         assetId: assetId ? assetId : null,
-        asset: assetId ? resolve('/img/orig/', findAssetPathById(assetId)) : null,
+        asset: assetId ? imagePath(index, assetId, 'orig') : null,
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
-        // image: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
-        download: imageId ? resolve('/img/orig/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? imagePath(index, imageId, 'card') : null,
+        // image: imageId ? imagePath(index, imageId, 'orig') : null,
+        download: imageId ? imagePath(index, imageId, 'orig') : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
       };

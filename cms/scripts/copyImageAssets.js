@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
+import { buildImageIndex } from './assetPaths.js';
 
 /**
  * Copies image assets from the Contentful export to the local image directory.
@@ -8,6 +9,7 @@ import sharp from 'sharp';
  */
 export function copyImageAssets(contentfulData, exportDir, assetDir) {
   const { entries, assets } = contentfulData;
+  const index = buildImageIndex(assets);
 
   // Ensure the target directory exists
   if (!fs.existsSync(exportDir)) {
@@ -39,15 +41,17 @@ export function copyImageAssets(contentfulData, exportDir, assetDir) {
   // Resize for Card display
   assets.forEach((asset) => {
     if (asset.fields.file && asset.fields.file['en-US']) {
+      // Non-image assets (music tracks) are handled by copyTrackAssets
+      const targetName = index.byId.get(asset.sys.id);
+      if (!targetName) {
+        return null;
+      }
+
       const fileName = asset.fields.file['en-US'].fileName;
       const sourcePath = findFileRecursively(assetDir, fileName.replace(/ /g, '_')); // Find file recursively
       if (!sourcePath) {
-        const contentType = asset.fields.file['en-US'].contentType;
-        // only an issue if this is an image and not a track file
-        if (contentType == ('image/png' || 'image/jpg' || 'image/jpeg' || 'image/webp' || 'image/gif')) {
-          console.log('Source images not available!');
-          console.log(`asset dir: ${assetDir}, filename: ${fileName}`);
-        }
+        console.log('Source images not available!');
+        console.log(`asset dir: ${assetDir}, filename: ${fileName}`);
         return null;
       }
 
@@ -57,8 +61,7 @@ export function copyImageAssets(contentfulData, exportDir, assetDir) {
         fs.mkdirSync(targetOrigDir, { recursive: true });
       }
 
-      const origFilename = fileName.replace(/\.[^/.]+$/, ".webp");
-      const targetOrigPath = path.join(exportDir, 'orig', origFilename); // Path in target folder
+      const targetOrigPath = path.join(exportDir, 'orig', targetName); // Path in target folder
       sharp(sourcePath)
       .webp()
       .toFile(targetOrigPath)
@@ -72,8 +75,7 @@ export function copyImageAssets(contentfulData, exportDir, assetDir) {
         fs.mkdirSync(targetCardDir, { recursive: true });
       }
 
-      const cardFilename = fileName.replace(/\.[^/.]+$/, ".webp");
-      const targetCardPath = path.join(exportDir, 'card', cardFilename); // Path in target folder
+      const targetCardPath = path.join(exportDir, 'card', targetName); // Path in target folder
       sharp(sourcePath)
         .resize(800)
         .webp()
@@ -88,8 +90,7 @@ export function copyImageAssets(contentfulData, exportDir, assetDir) {
         fs.mkdirSync(targetPostDir, { recursive: true });
       }
 
-      const postFilename = fileName.replace(/\.[^/.]+$/, ".webp");
-      const targetPostPath = path.join(exportDir, 'post', postFilename); // Path in target folder
+      const targetPostPath = path.join(exportDir, 'post', targetName); // Path in target folder
       sharp(sourcePath)
         .resize(480)
         .webp()

@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { buildImageIndex, imagePath } from './assetPaths.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -8,14 +8,7 @@ import { resolve } from 'path';
 export function transformProductions(contentfulData) {
   const { entries, assets } = contentfulData;
 
-  // Helper to find asset by ID and resolve the local path
-  const findAssetPathById = (assetId) => {
-    const asset = assets.find((a) => a.sys.id === assetId);
-    if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
-    }
-    return null;
-  };
+  const index = buildImageIndex(assets);
 
   // credits: https://stackoverflow.com/a/8260383
   const getYtId = (url) => {
@@ -55,7 +48,7 @@ export function transformProductions(contentfulData) {
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
-        card_image: imageId ? resolve('/img/card/', findAssetPathById(imageId)) : null,
+        card_image: imageId ? imagePath(index, imageId, 'card') : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
         youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
         pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
