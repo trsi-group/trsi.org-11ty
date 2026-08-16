@@ -1,7 +1,6 @@
 .post-list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--edge);
 }
 
 .post-list .post-row {
@@ -12,6 +11,10 @@
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--edge);
   text-decoration: none;
+}
+
+.post-list .post-row:last-child {
+  border-bottom: 0;
 }
 
 .post-list .post-row:hover {
