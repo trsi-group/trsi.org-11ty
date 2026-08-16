@@ -20,11 +20,7 @@ export default {
       // Extracts Bulma-style classes
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       safelist: {
-        standard: [
-          "is-active", "has-text-centered", "has-text-right", "is-hidden",
-          "navbar", "menu", "hero", "button", "card", "container",
-          "columns", "column", "icon"
-        ]
+        standard: ["is-active", "is-hidden", "is-open"]
       },
       // remove unused CSS variables
       variables: true,

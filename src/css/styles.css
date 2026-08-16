@@ -1,17 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, dl, dd,
+figure, blockquote, pre,
+fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: 0;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 body {
-  /* colors */
-  --background-color: white;
-  --text-color: black;
-  --light-color: var(--accent);
-  --link-color: var(--text-color);
-  --link-hover-color: var(--light-color);
-  --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-
-  /* fonts */
-  --heading-font-family: 'Helvetica', 'Arial', sans-serif;
-  --body-font-family: 'Helvetica', 'Arial', sans-serif;
-  --mono-font-family: 'Console', monospace;
-
   /* design tokens */
   --surface: #0a0a0a;
   --surface-raised: #161616;
@@ -35,29 +66,13 @@ body {
   --header-height: 65px;
   --transition: 180ms ease;
 
-  /* card overlay */
-  --lift-height: 100%;
-
-  /* bulma overloads */
-  --bulma-scheme-main: var(--background-color);
-  --bulma-navbar-background-color: var(--background-color);
-  --bulma-navbar-item-color: var(--text-color);
-  --bulma-card-color: var(--text-color);
-  --bulma-subtitle-color: var(--light-color);
-  --bulma-link-text: var(--light-color);
-  --bulma-title-color: var(--text-color);
-  --bulma-text-strong: var(--text-color);
-  --bulma-box-radius: 0px;
-  --bulma-box-padding: 0px;
-  --bulma-card-radius: 0px;
-  --bulma-body-font-size: 1.0rem;
-  --bulma-media-border-color: var(--background-color);
-  .content {
-    --bulma-content-heading-weight: 400;
-    --bulma-content-heading-color: var(--text-color);
-  }
+  --background-color: var(--surface);
+  --text-color: var(--ink);
+  --link-color: var(--accent);
+  --link-hover-color: var(--accent);
+  --heading-font-family: var(--font-display);
+  --body-font-family: var(--font-mono);
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -65,6 +80,8 @@ body {
   background-color:  var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 body.modal-open {
@@ -124,44 +141,15 @@ a h6 {
   text-decoration: none;
   color: inherit;
 }
-.title, .subtitle {
-  color: var(--text-color);
-  --bulma-title-weight: 400;
-}
-
 /* Header/nav live in header.css */
 
 /* Footer lives in footer.css */
-
-.icon svg {
-  font-size: 1.5rem;
-  fill: var(--text-color);
-}
 
 /* Sections */
 .section {
   margin: 1rem auto;
   width: 100%;
   padding: 0;
-}
-
-.section .content {
-  max-width: 1200px;
-  margin: 1rem auto;
-}
-
-.content h1, .content h2, .content h3, .title, .subtitle {
-  color: var(--text-color);
-}
-
-.section.news-post a {
-  color: var(--text-color);
-  text-decoration: underline;
-}
-
-/* Music Player Overlay */
-figure.image {
-  position: relative;
 }
 
 .music-player-overlay {
