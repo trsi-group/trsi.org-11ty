@@ -90,6 +90,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* Filter reset — only shown once a filter is actually set */
+  const filterReset = document.getElementById('filter-reset');
+  const filterSelects = ["TypeFilter", "PlatformFilter"]
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  if (filterReset && filterSelects.length) {
+    const syncReset = () => {
+      filterReset.hidden = !filterSelects.some(el => el.value);
+    };
+
+    filterSelects.forEach(el => el.addEventListener("change", syncReset));
+
+    filterReset.addEventListener("click", () => {
+      filterSelects.forEach(el => {
+        if (!el.value) return;
+        el.value = "";
+        el.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+      syncReset();
+    });
+
+    syncReset();
+  }
+
   /* Sort Component */
   const sortSelect = document.getElementById("SortSelect");
   if (sortSelect) sortSelect.addEventListener("change", handleSortChange);
