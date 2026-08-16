@@ -79,7 +79,8 @@
 
   .filter-select,
   .filter-select select,
-  .dropdown__trigger {
+  .dropdown__trigger,
+  .filter-reset {
     width: 100%;
   }
 
@@ -196,4 +197,47 @@
 
 .dropdown__option[aria-selected="true"] {
   color: var(--accent);
+}
+
+.filter-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  align-self: center;
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--ink-muted);
+  background: none;
+  border: 1px solid var(--edge);
+  border-radius: 0;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.filter-reset[hidden] {
+  display: none;
+}
+
+.filter-reset:hover,
+.filter-reset:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.filter-reset svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
 }
