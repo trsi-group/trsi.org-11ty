@@ -115,7 +115,7 @@ a.media-card:hover {
 
 .media-card__kicker {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -125,7 +125,7 @@ a.media-card:hover {
 
 .media-card__title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: var(--fs-title-sm);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -140,7 +140,7 @@ a.media-card:hover {
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   color: var(--ink-muted);
 }
 
@@ -157,7 +157,7 @@ a.media-card:hover {
 
 .media-card__action {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -166,7 +166,7 @@ a.media-card:hover {
 
 .media-card__platform {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: var(--fs-fine);
   color: var(--ink-faint);
   white-space: nowrap;
 }

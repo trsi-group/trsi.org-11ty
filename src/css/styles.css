@@ -53,6 +53,27 @@ body {
   --ink-faint: #4a4a4a;
   --accent: #ff8a43;
 
+
+  /* type scale */
+  --fs-micro: 0.66rem;
+  --fs-fine: 0.78rem;
+  --fs-label: 0.84rem;
+  --fs-ui: 0.9rem;
+  --fs-body-sm: 0.96rem;
+  --fs-body: 1.08rem;
+  --fs-body-lg: 1.2rem;
+  --fs-title-xs: 1.32rem;
+  --fs-title-sm: 1.44rem;
+  --fs-title-md: 1.56rem;
+  --fs-title-lg: 1.8rem;
+  --fs-title-xl: 2.52rem;
+
+  --fs-display: clamp(2.4rem, 6vw, 3.84rem);
+  --fs-section-title: clamp(1.56rem, 3.6vw, 2.16rem);
+  --fs-modal-title: clamp(1.44rem, 3.6vw, 2.16rem);
+  --fs-hero-lede: clamp(1.08rem, 2.16vw, 1.26rem);
+  --fs-nav-mobile: clamp(1.68rem, 9.6vw, 2.16rem);
+
   --font-display: 'Russo One', 'Helvetica', 'Arial', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
@@ -63,7 +84,7 @@ body {
   --space-xl: 6rem;
 
   --max-width: 1200px;
-  --header-height: 65px;
+  --header-height: 67px;
   --transition: 180ms ease;
 
   --background-color: var(--surface);
@@ -80,7 +101,7 @@ body {
   background-color:  var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: 1rem;
+  font-size: var(--fs-body-lg);
   line-height: 1.5;
 }
 

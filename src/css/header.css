@@ -32,7 +32,7 @@
 }
 
 .header__logo img {
-  height: 28px;
+  height: 33.6px;
   width: auto;
   display: block;
 }
@@ -60,7 +60,7 @@
 .header .nav__link {
   position: relative;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--fs-ui);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -171,7 +171,7 @@
 
   .header .nav__link {
     font-family: var(--font-display);
-    font-size: clamp(1.4rem, 8vw, 1.8rem);
+    font-size: var(--fs-nav-mobile);
     font-weight: 800;
     letter-spacing: 0.05em;
   }

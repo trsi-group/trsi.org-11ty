@@ -32,7 +32,7 @@
           </div>
 
           <div class="hero__ticker">
-            <div class="hero__ticker-track" style="--ticker-duration: {{ cms.members.size | times: 2.8 | round }}s">
+            <div class="hero__ticker-track" style="--ticker-duration: {{ cms.members.size | times: 3.36 | round }}s">
             {%- for pass in (1..2) %}
               <div class="hero__ticker-set"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
               {%- for member in cms.members %}

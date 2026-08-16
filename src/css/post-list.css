@@ -43,7 +43,7 @@
 
 .post-row__title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: var(--fs-title-md);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -62,7 +62,7 @@
   flex-wrap: wrap;
   gap: var(--space-xs);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   color: var(--ink-muted);
 }
 
@@ -73,7 +73,7 @@
 .post-row__teaser {
   margin: 0.5rem 0 0;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: var(--fs-body);
   font-weight: 300;
   line-height: 1.6;
   color: var(--ink-dim);
@@ -87,7 +87,7 @@
   display: inline-block;
   margin-top: 0.6rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
