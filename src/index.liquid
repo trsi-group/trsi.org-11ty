@@ -6,10 +6,8 @@ hero: true
 ---
 {%- assign latest_post = cms.posts | sort: "publishDate" | reverse | first %}
     <section class="section section--rule">
-      <div class="section__narrow">
-        <div class="section__label">Latest Post</div>
-        {%- render "components/latest-post.liquid", post: latest_post %}
-      </div>
+      <div class="section__label">Latest Post</div>
+      {%- render "components/latest-post.liquid", post: latest_post %}
     </section>
 
     <section class="section section--rule">
