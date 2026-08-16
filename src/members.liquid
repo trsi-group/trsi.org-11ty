@@ -18,7 +18,6 @@ tags: page
           {%- render "components/feed-sort.liquid" %}
         </div>
       </div>
-      <div class="section__label">All Members</div>
       <div id="feed-wrapper">
         {%- render "components/card-grid.liquid", feed: cms.members, kind: "members", sort_key: "sort_handle", sort_order: "asc" %}
       </div>

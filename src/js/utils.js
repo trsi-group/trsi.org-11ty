@@ -391,3 +391,117 @@ function resetMusicPlayerUI() {
     pauseIcon.classList.add('is-hidden');
   }
 }
+
+function closeAllDropdowns(except) {
+  document.querySelectorAll('.dropdown.is-open').forEach(dropdown => {
+    if (dropdown === except) return;
+    dropdown.classList.remove('is-open');
+    dropdown.querySelector('.dropdown__trigger')?.setAttribute('aria-expanded', 'false');
+  });
+}
+
+export function enhanceSelects() {
+  document.querySelectorAll('.filter-select select').forEach(select => {
+    const wrapper = select.closest('.filter-select');
+    if (!wrapper || wrapper.classList.contains('dropdown')) return;
+    wrapper.classList.add('dropdown');
+
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'dropdown__trigger';
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    const label = select.getAttribute('aria-label');
+    if (label) trigger.setAttribute('aria-label', label);
+
+    const value = document.createElement('span');
+    value.className = 'dropdown__value';
+    const caret = document.createElement('span');
+    caret.className = 'dropdown__caret';
+    caret.setAttribute('aria-hidden', 'true');
+    trigger.append(value, caret);
+
+    const menu = document.createElement('div');
+    menu.className = 'dropdown__menu';
+    menu.setAttribute('role', 'listbox');
+
+    const options = Array.from(select.options).map(option => {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'dropdown__option';
+      item.setAttribute('role', 'option');
+      item.dataset.value = option.value;
+      item.textContent = option.textContent;
+      menu.appendChild(item);
+      return item;
+    });
+
+    const sync = () => {
+      value.textContent = select.options[select.selectedIndex]?.textContent ?? '';
+      options.forEach(item => item.setAttribute('aria-selected', String(item.dataset.value === select.value)));
+    };
+
+    const close = () => {
+      wrapper.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+
+    const open = () => {
+      closeAllDropdowns(wrapper);
+      wrapper.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+
+    trigger.addEventListener('click', () => {
+      wrapper.classList.contains('is-open') ? close() : open();
+    });
+
+    trigger.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      event.preventDefault();
+      open();
+      const current = options.findIndex(item => item.dataset.value === select.value);
+      const next = event.key === 'ArrowDown'
+        ? Math.min(current + 1, options.length - 1)
+        : Math.max(current - 1, 0);
+      options[next]?.focus();
+    });
+
+    options.forEach(item => {
+      item.addEventListener('click', () => {
+        select.value = item.dataset.value;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+        sync();
+        close();
+        trigger.focus();
+      });
+    });
+
+    menu.addEventListener('keydown', event => {
+      const index = options.indexOf(document.activeElement);
+      if (event.key === 'Escape') {
+        event.stopPropagation();
+        close();
+        trigger.focus();
+      } else if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        options[Math.min(index + 1, options.length - 1)]?.focus();
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (index <= 0) trigger.focus();
+        else options[index - 1].focus();
+      }
+    });
+
+    select.addEventListener('change', sync);
+    wrapper.append(trigger, menu);
+    sync();
+  });
+
+  if (document.body.dataset.dropdownsBound) return;
+  document.body.dataset.dropdownsBound = 'true';
+  document.addEventListener('click', event => {
+    if (event.target.closest('.dropdown')) return;
+    closeAllDropdowns();
+  });
+}

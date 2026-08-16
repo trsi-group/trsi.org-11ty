@@ -1,4 +1,4 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries, enhanceSelects } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     start();
   }
+
+  enhanceSelects();
 
   /* Filter Components */
   ["TypeFilter", "PlatformFilter"].forEach(id => {
