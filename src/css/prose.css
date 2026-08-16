@@ -125,16 +125,6 @@
   color: var(--ink-faint);
 }
 
-.prose__lead-image {
-  margin: 0 0 var(--space-lg);
-}
-
-.prose__lead-image img {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-}
-
 .prose__socials {
   display: flex;
   flex-wrap: wrap;

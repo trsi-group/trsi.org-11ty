@@ -10,12 +10,11 @@
             <div class="footer__heading">Site</div>
             <div class="footer__links">
               <a href="/">Home</a>
-            {%- for item in nav.nav_items %}
+            {%- for item in navdata.nav_items %}
               {%- unless item.hidden %}
               <a href="{{ item.url }}">{{ item.title }}</a>
               {%- endunless %}
             {%- endfor %}
-              <a href="/about/">About</a>
             {%- for item in legal.links %}
               <a href="{{ item.url }}">{{ item.title }}</a>
             {%- endfor %}

@@ -6,7 +6,7 @@
 
         <nav class="header__nav" aria-label="Main navigation">
           <ul class="nav__list" id="nav-list">
-          {%- for item in nav.nav_items %}
+          {%- for item in navdata.nav_items %}
             {%- assign item_slug = item.title | downcase %}
             <li{% if item.hidden == true %} class="nav__item--hidden"{% elsif item.mobile_only == true %} class="nav__item--mobile"{% endif %}>
               <a href="{{ item.url }}" class="nav__link{% if page.fileSlug == item_slug %} nav__link--active{% endif %}">{{ item.title }}</a>
