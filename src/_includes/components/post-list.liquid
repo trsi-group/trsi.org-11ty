@@ -1,0 +1,31 @@
+{%- assign items = max | default: feed.size %}
+{%- assign sorted = feed | sort: "publishDate" | reverse %}
+{%- if exclude %}
+  {%- assign sorted = sorted | where_exp: "item", "item.slug != exclude" %}
+{%- endif %}
+{%- assign sliced = sorted | slice: 0, items %}
+      <div class="post-list">
+      {%- for post in sliced %}
+        <a class="post-row" href="/news/{{ post.slug }}/">
+          <div class="post-row__media">
+          {%- if post.post_image %}
+            <img class="post-row__image" src="{{ post.post_image }}" alt="" loading="lazy">
+          {%- endif %}
+          </div>
+          <div class="post-row__body">
+            <h2 class="post-row__title">{{ post.title }}</h2>
+            <div class="post-row__meta">
+              <span>{{ post.publishDate | date: "%B %-d, %Y" }}</span>
+            {%- if post.author %}
+              <span class="post-row__meta-divider">&middot;</span>
+              <span>{{ post.author }}</span>
+            {%- endif %}
+            </div>
+          {%- if post.teaser %}
+            <p class="post-row__teaser">{{ post.teaser }}</p>
+          {%- endif %}
+            <span class="post-row__action">Read &rarr;</span>
+          </div>
+        </a>
+      {%- endfor %}
+      </div>
