@@ -48,7 +48,11 @@
     {%- when "graphics" %}{%- assign ctype = "graphic" %}{%- assign action = "View" %}
     {%- when "music" %}{%- assign ctype = "music" %}{%- assign action = "Play" %}
   {%- endcase %}
-  {%- assign subtitle = item.type | append: " / " | append: item.platform %}
+  {%- if item.platform %}
+    {%- assign subtitle = item.type | append: " / " | append: item.platform %}
+  {%- else %}
+    {%- assign subtitle = item.type %}
+  {%- endif %}
   {%- if kind == "productions" and item.youtube %}{%- assign badge = "play" %}
   {%- elsif kind == "music" and item.asset %}{%- assign badge = "play" %}
   {%- elsif kind == "graphics" and item.asset %}{%- assign badge = "show" %}
@@ -94,14 +98,13 @@
           {%- endif %}
           </div>
           <div class="media-card__body">
-            <div class="media-card__kicker">{{ item.type }}</div>
+            <div class="media-card__kicker">{{ subtitle }}</div>
             <h3 class="media-card__title">{{ item.title }}</h3>
             <div class="media-card__meta">
               <span>{{ item.release_date | date: "%B %-d, %Y" }}</span>
             </div>
             <div class="media-card__footer">
               <span class="media-card__action">{{ action }} &rarr;</span>
-              <span class="media-card__platform">{{ item.platform }}</span>
             </div>
           </div>
         </div>
