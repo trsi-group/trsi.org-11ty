@@ -1,14 +1,11 @@
-{%- assign banners = "team-deadline,team-deadline2" | split: "," -%}
     <section class="hero">
       <div class="hero__media" aria-hidden="true">
       {%- for banner in banners %}
         <img class="hero__bg{% if forloop.first %} is-active{% endif %}"
-             src="/img/banner/{{ banner }}-1280.webp"
-             srcset="/img/banner/{{ banner }}-768.webp 768w,
-                     /img/banner/{{ banner }}-1280.webp 1280w,
-                     /img/banner/{{ banner }}-1920.webp 1920w"
+             src="{{ banner.src }}"
+             srcset="{{ banner.srcset }}"
              sizes="100vw"
-             width="1920" height="1280" alt=""
+             alt=""
              {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
       {%- endfor %}
       </div>

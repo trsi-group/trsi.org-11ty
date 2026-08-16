@@ -4,6 +4,10 @@ import sharp from 'sharp';
 
 /**
  * Generates web-sized WebP hero banners from the masters in src/assets/banner/.
+ *
+ * Only widths the master can actually supply are written, plus the master's own
+ * width when it falls between steps. A file named `-1280` is therefore always
+ * really 1280px wide, which is what makes the srcset in the hero honest.
  */
 
 const SRC_DIR = 'src/assets/banner';
@@ -15,6 +19,14 @@ const SOURCE_RE = /\.(jpe?g|png|tiff?|webp)$/i;
 function isStale(sourcePath, targetPath) {
   if (!fs.existsSync(targetPath)) return true;
   return fs.statSync(sourcePath).mtimeMs > fs.statSync(targetPath).mtimeMs;
+}
+
+function targetWidths(sourceWidth) {
+  const widths = WIDTHS.filter((w) => w <= sourceWidth);
+  if (sourceWidth < Math.max(...WIDTHS) && !widths.includes(sourceWidth)) {
+    widths.push(sourceWidth);
+  }
+  return widths.sort((a, b) => a - b);
 }
 
 export async function processBanners() {
@@ -31,11 +43,34 @@ export async function processBanners() {
     return;
   }
 
+  let written = 0;
+  let removed = 0;
+
   for (const file of sources) {
     const sourcePath = path.join(SRC_DIR, file);
     const base = file.replace(SOURCE_RE, '');
 
-    for (const width of WIDTHS) {
+    let meta;
+    try {
+      meta = await sharp(sourcePath).metadata();
+    } catch (err) {
+      console.log(`processBanners: cannot read ${sourcePath}:`, err.message);
+      continue;
+    }
+
+    const widths = targetWidths(meta.width);
+
+    // Drop derivatives that no longer correspond to a target width.
+    const keep = new Set(widths.map((w) => `${base}-${w}.webp`));
+    for (const existing of fs.readdirSync(OUT_DIR)) {
+      const match = existing.match(/^(.+)-(\d+)\.webp$/);
+      if (match && match[1] === base && !keep.has(existing)) {
+        fs.unlinkSync(path.join(OUT_DIR, existing));
+        removed++;
+      }
+    }
+
+    for (const width of widths) {
       const targetPath = path.join(OUT_DIR, `${base}-${width}.webp`);
       if (!isStale(sourcePath, targetPath)) continue;
 
@@ -44,13 +79,14 @@ export async function processBanners() {
           .resize(width, null, { withoutEnlargement: true })
           .webp({ quality: QUALITY })
           .toFile(targetPath);
-        const kb = Math.round(fs.statSync(targetPath).size / 1024);
-        console.log(`processBanners: ${path.basename(targetPath)} (${kb} KB)`);
+        written++;
       } catch (err) {
         console.log(`processBanners: failed on ${sourcePath}:`, err.message);
       }
     }
   }
+
+  console.log(`processBanners: ${sources.length} banners, ${written} written, ${removed} stale removed`);
 }
 
 processBanners();
