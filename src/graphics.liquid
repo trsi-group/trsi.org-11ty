@@ -7,22 +7,24 @@ layout: layouts/base.liquid
 title: TRSI - Graphics
 tags: page
 ---
-    <section class="section">
-      <div class="content">
-        <h1 class="title">Graphics</h1>
+    <section class="section section--page">
+      <div class="page-header">
+        <h1 class="page-header__title">Our <span class="text-accent">Graphics</span></h1>
+        <p class="page-header__lede">Pixel art, ANSI, ASCII, logos and paintings by the TRSI graphicians.</p>
       </div>
-      <div class="filter-wrapper">
-        <span class="filter-group-icon">{%- include "icons/filter.svg" %}</span>
-        {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
-        {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Type" %}
+      <div class="filter-bar">
+        <span class="filter-bar__label">{%- include "icons/filter.svg" %} Filter</span>
+        <div class="filter-bar__group">
+          {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Platform" %}
+          {%- render "components/feed-filter.liquid", feed: cms.graphics, type: "Type" %}
+        </div>
       </div>
+      <div class="section__label">All Graphics</div>
       <div id="feed-wrapper">
-        {%- render "components/feed-cards.liquid", feed: cms.graphics, type: "graphics" %}
+        {%- render "components/card-grid.liquid", feed: cms.graphics, kind: "graphics" %}
       </div>
     </section>
 
-    <section class="section">
-      <div class="modal-wrapper">
-        {%- render "components/modal-template.liquid" %}
-      </div>
-    </section>
+    <div class="modal-wrapper">
+      {%- render "components/modal-template.liquid" %}
+    </div>

@@ -4,8 +4,8 @@ import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChan
  * Initializes UI event handlers after DOM content is loaded.
  *
  * Features:
- * 1. Navbar Toggle:
- *    - Registers click events on '.navbar-burger' elements to toggle mobile menu visibility.
+ * 1. Nav Toggle:
+ *    - Toggles the mobile nav panel via '#nav-toggle', closing on link click or Escape.
  *
  * 2. Filter Components:
  *    - Registers 'change' events on #TypeFilter and #PlatformFilter dropdowns to dynamically filter card elements.
@@ -27,16 +27,58 @@ document.addEventListener('DOMContentLoaded', () => {
     preloadMusicLibraries();
   }
   
-  /* Navbar Menu */
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  $navbarBurgers.forEach( el => {
-    el.addEventListener('click', () => {
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
-      el.classList.toggle('is-active');
-      $target.classList.toggle('is-active');
+  /* Nav */
+  const navToggle = document.getElementById('nav-toggle');
+  const navList = document.getElementById('nav-list');
+  if (navToggle && navList) {
+    const closeNav = () => {
+      navList.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.documentElement.style.overflow = '';
+    };
+
+    navToggle.addEventListener('click', () => {
+      if (document.body.classList.contains('modal-open')) {
+        closeModal();
+        return;
+      }
+      const isOpen = navList.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.documentElement.style.overflow = isOpen ? 'hidden' : '';
     });
-  });
+
+    navList.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navList.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
+  }
+
+  /* Hero banner rotation */
+  const heroFrames = document.querySelectorAll('.hero__bg');
+  if (heroFrames.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const HOLD_MS = 7000;
+    let current = 0;
+    let timer = null;
+
+    const advance = () => {
+      heroFrames[current].classList.remove('is-active');
+      current = (current + 1) % heroFrames.length;
+      heroFrames[current].classList.add('is-active');
+    };
+
+    const start = () => { if (!timer) timer = setInterval(advance, HOLD_MS); };
+    const stop = () => { clearInterval(timer); timer = null; };
+
+    document.addEventListener('visibilitychange', () => {
+      document.hidden ? stop() : start();
+    });
+    start();
+  }
 
   /* Filter Components */
   ["TypeFilter", "PlatformFilter"].forEach(id => {
@@ -51,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sortSelect) sortSelect.addEventListener("change", handleSortChange);
 
   /* Modal Dialog — whole card is clickable */
-  (document.querySelectorAll('.card.pointer') || []).forEach((cardElement) => {
+  (document.querySelectorAll('.pointer[data-ctype]') || []).forEach((cardElement) => {
     cardElement.addEventListener('click', () => {
       const cardData = getDataFromCard(cardElement);
       populateModal(cardData);
@@ -61,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button:not(#play-pause-btn)') || []).forEach(($close) => {
+  (document.querySelectorAll('.modal-background, .modal-close') || []).forEach(($close) => {
     $close.addEventListener('click', () => {
       closeModal();
     });

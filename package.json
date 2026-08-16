@@ -9,8 +9,9 @@
     "build:c-process": "node cms/scripts/processContent.js",
     "build:content": "npm run build:c-fetch && npm run build:c-process",
     "build:css": "postcss src/css/index.css -o dist/css/main.min.css",
-    "build": "npm run build:content && npm run build:css && eleventy",
-    "start": "npm run build:content && npm run build:css && eleventy --serve",
+    "build:banners": "node cms/scripts/processBanners.js",
+    "build": "npm run build:content && npm run build:banners && npm run build:css && eleventy",
+    "start": "npm run build:content && npm run build:banners && npm run build:css && eleventy --serve",
     "serve": "eleventy --serve",
     "debug": "DEBUG=Eleventy* npm run build:content && npm run build:css && eleventy"
   },

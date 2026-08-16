@@ -70,13 +70,13 @@ export function getDataFromCard($card) {
   const data = {
     ctype: $card.dataset.ctype || null,
     type: $card.dataset.type || null,
-    title: $card.querySelector('.card-content .title')?.innerText || $card.querySelector('.card-content .title')?.textContent,
+    title: $card.dataset.title || $card.querySelector('.card-content .title')?.innerText || $card.querySelector('.card-content .title')?.textContent,
     slug: $card.dataset.slug || null,
     description: $card.dataset.description || null,
     release_date: $card.dataset.release_date || null,
-    subtitle: $card.querySelector('.card-content .subtitle')?.innerText || $card.querySelector('.card-content .subtitle')?.textContent,
+    subtitle: $card.dataset.subtitle || $card.querySelector('.card-content .subtitle')?.innerText || $card.querySelector('.card-content .subtitle')?.textContent,
     credits: $card.dataset.credits ? JSON.parse($card.dataset.credits) : [],
-    card_image: $card.querySelector('.card-image img').src,
+    card_image: $card.dataset.cardImage || $card.querySelector('.card-image img')?.src || null,
     image: $card.dataset.image || null,
     assetId: $card.dataset.assetId || null,
     asset: $card.dataset.asset || null,
@@ -108,6 +108,12 @@ export function getDataFromCard($card) {
  * - Assumes presence of modal elements with IDs:
  *   - #modal-video, #modal-image, #modal-description, #modal-credits, and buttons inside #modal-overlay.
  */
+function formatDate(value) {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+  return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 export function populateModal(data) {
   const modalVideo = document.getElementById('modal-video');
   const figureVideo = modalVideo.closest('figure.image');
@@ -136,51 +142,55 @@ export function populateModal(data) {
     setupMusicPlayerUI(data.asset, data.title, data.playerEmu);
   }
 
-  const buttons = document.querySelectorAll('#modal-overlay .button:not(#play-pause-btn)');
+  const title = document.getElementById('modal-title');
+  if (title) title.innerText = data.title || '';
+
+  const subtitle = document.getElementById('modal-subtitle');
+  if (subtitle) subtitle.innerText = data.subtitle || '';
+
+  const buttonMap = {
+    youtube: data.youtube,
+    demozoo: data.demozoo,
+    csdb: data.csdb,
+    pouet: data.pouet,
+    download: data.download,
+    kestra: data.kestra
+  };
+
+  const buttons = document.querySelectorAll('#modal-overlay .modal__action');
+  let visibleButtons = 0;
 
   buttons.forEach(button => {
-    const text = (button.innerText || button.textContent || '').toLowerCase();
-
-    const buttonMap = {
-      youtube: data.youtube,
-      demozoo: data.demozoo,
-      csdb: data.csdb,
-      pouet: data.pouet,
-      download: data.download,
-      kestra: data.kestra
-    };
-
+    const text = (button.innerText || button.textContent || '').trim().toLowerCase();
     const url = buttonMap[text];
+
+    // Visibility is set per button, never on the shared parent — doing that let
+    // the last entry in the loop hide every other button in the row.
     if (url) {
-      button.style.display = 'flex';
-      button.parentElement.style.display = '';
+      button.style.display = '';
       button.onclick = () => window.open(url, '_blank');
+      visibleButtons++;
     } else {
       button.style.display = 'none';
-      button.parentElement.style.display = 'none';
+      button.onclick = null;
     }
   });
 
+  const footer = document.querySelector('#modal-overlay .modal__footer');
+  if (footer) footer.style.display = visibleButtons ? '' : 'none';
+
   const description = document.getElementById('modal-description');
-  if (data.description) {
-    description.innerText = data.description;
-  } else {
-    description.style.display = 'none';
-  }
+  description.innerText = data.description || '';
+  description.style.display = data.description ? '' : 'none';
 
   const credits = document.getElementById('modal-credits');
-  if (data.credits) {
-    credits.innerText = formatCredits(data.credits);
-  } else {
-    credits.style.display = 'none';
-  }
+  const creditsText = data.credits && data.credits.length ? formatCredits(data.credits) : '';
+  credits.innerText = creditsText;
+  credits.style.display = creditsText ? '' : 'none';
 
   const release_date = document.getElementById('modal-release_date');
-  if (data.release_date) {
-    release_date.innerText = `Release Date: ${data.release_date}`;
-  } else {
-    release_date.style.display = 'none';
-  }
+  release_date.innerText = data.release_date ? `Released ${formatDate(data.release_date)}` : '';
+  release_date.style.display = data.release_date ? '' : 'none';
 }
 
 /**
@@ -237,7 +247,7 @@ function formatCredits(creditsArray) {
  * - Cards that don't match the filter criteria are hidden via `display: none`.
  */
 export function handleFilterChange(event) {
-  const cards = document.querySelectorAll("#feed-wrapper .column");
+  const cards = document.querySelectorAll("#feed-wrapper .media-card");
   const typeFilter = document.getElementById("TypeFilter");
   const platformFilter = document.getElementById("PlatformFilter");
 
@@ -260,10 +270,10 @@ const STATUS_RANK = {
 };
 
 export function handleSortChange(event) {
-  const wrapper = document.querySelector('#feed-wrapper .columns');
+  const wrapper = document.querySelector('#feed-wrapper .card-grid');
   if (!wrapper) return;
 
-  const cards = Array.from(wrapper.querySelectorAll(':scope > .column'));
+  const cards = Array.from(wrapper.querySelectorAll(':scope > .media-card'));
   const mode = event.target.value;
 
   const byHandle = (a, b) =>

@@ -7,15 +7,19 @@ layout: layouts/base.liquid
 title: TRSI Members
 tags: page
 ---
-    <section class="section">
-      <div class="content">
-        <h1 class="title">Members</h1>
+    <section class="section section--page">
+      <div class="page-header">
+        <h1 class="page-header__title">Our <span class="text-accent">Members</span></h1>
+        <p class="page-header__lede">The people behind Tristar &amp; Red Sector &mdash; awake, sleeping, and in Valhalla.</p>
       </div>
-      <div class="filter-wrapper">
-        <span class="filter-group-icon">{%- include "icons/sort.svg" %}</span>
-        {%- render "components/feed-sort.liquid" %}
+      <div class="filter-bar">
+        <span class="filter-bar__label">{%- include "icons/sort.svg" %} Sort</span>
+        <div class="filter-bar__group">
+          {%- render "components/feed-sort.liquid" %}
+        </div>
       </div>
+      <div class="section__label">All Members</div>
       <div id="feed-wrapper">
-        {%- render "components/feed-cards.liquid", feed: cms.members, type: "members", sort_key: "sort_handle", sort_order: "asc" %}
+        {%- render "components/card-grid.liquid", feed: cms.members, kind: "members", sort_key: "sort_handle", sort_order: "asc" %}
       </div>
     </section>

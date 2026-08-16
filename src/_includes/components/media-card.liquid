@@ -1,0 +1,108 @@
+{%- if kind == "posts" %}
+        <a class="media-card" href="/news/{{ item.slug }}/">
+          <div class="media-card__media media-card__media--cover">
+          {%- if item.post_image %}
+            <img class="media-card__image" src="{{ item.post_image }}" alt="" loading="lazy">
+          {%- endif %}
+          </div>
+          <div class="media-card__body">
+            <div class="media-card__kicker">News</div>
+            <h3 class="media-card__title">{{ item.title }}</h3>
+            <div class="media-card__meta">
+              <span>{{ item.publishDate | date: "%B %-d, %Y" }}</span>
+            </div>
+            <div class="media-card__footer">
+              <span class="media-card__action">Read &rarr;</span>
+            </div>
+          </div>
+        </a>
+{%- elsif kind == "members" %}
+        <div class="media-card media-card--person"
+          data-ctype="member"
+          data-status="{{ item.member_status | downcase }}"
+          data-sort-handle="{{ item.sort_handle }}">
+          <div class="media-card__media media-card__media--cover">
+          {%- if item.card_image %}
+            <img class="media-card__image" src="{{ item.card_image }}" alt="{{ item.handle | escape }}" loading="lazy">
+          {%- endif %}
+          </div>
+          <div class="media-card__body">
+            <div class="media-card__kicker">Member</div>
+            <h3 class="media-card__title">{{ item.handle }}</h3>
+          {%- if item.real_name %}
+            <div class="media-card__meta">
+              <span>{{ item.real_name }}</span>
+            </div>
+          {%- endif %}
+            <div class="media-card__footer">
+              <span class="media-card__action">{{ item.member_status }}</span>
+            {%- if item.member_since %}
+              <span class="media-card__platform">Since {{ item.member_since | date: "%Y" }}</span>
+            {%- endif %}
+            </div>
+          </div>
+        </div>
+{%- else %}
+  {%- case kind %}
+    {%- when "productions" %}{%- assign ctype = "prod" %}{%- assign action = "View" %}
+    {%- when "graphics" %}{%- assign ctype = "graphic" %}{%- assign action = "View" %}
+    {%- when "music" %}{%- assign ctype = "music" %}{%- assign action = "Play" %}
+  {%- endcase %}
+  {%- assign subtitle = item.type | append: " / " | append: item.platform %}
+  {%- if kind == "productions" and item.youtube %}{%- assign badge = "play" %}
+  {%- elsif kind == "music" and item.asset %}{%- assign badge = "play" %}
+  {%- elsif kind == "graphics" and item.asset %}{%- assign badge = "show" %}
+  {%- else %}{%- assign badge = "" %}
+  {%- endif %}
+        <div class="media-card pointer"
+          data-ctype="{{ ctype }}"
+          data-title="{{ item.title | escape }}"
+          data-subtitle="{{ subtitle | escape }}"
+          data-card-image="{{ item.card_image }}"
+          data-type="{{ item.type | downcase }}"
+          data-platform="{{ item.platform | downcase }}"
+          data-date="{{ item.release_date }}"
+        {%- if item.title %} data-slug="{{ item.title | slugify }}"{% endif %}
+        {%- if item.youtube %} data-youtube="{{ item.youtube }}"{% endif %}
+        {%- if item.download %} data-download="{{ item.download }}"{% endif %}
+        {%- if item.demozoo %} data-demozoo="{{ item.demozoo }}"{% endif %}
+        {%- if item.csdb %} data-csdb="{{ item.csdb }}"{% endif %}
+        {%- if item.pouet %} data-pouet="{{ item.pouet }}"{% endif %}
+        {%- if item.credits %} data-credits='{{ item.credits | jsonify }}'{% endif %}
+        {%- if item.description %} data-description="{{ item.description | escape }}"{% endif %}
+        {%- if item.release_date %} data-release_date="{{ item.release_date }}"{% endif %}
+        {%- if kind == "graphics" and item.card_image %} data-image="{{ item.card_image }}"{% endif %}
+        {%- if kind == "music" %}
+          {%- if item.type %} data-format="{{ item.type }}"{% endif %}
+          {%- if item.asset %} data-asset="{{ item.asset }}"{% endif %}
+          {%- if item.playerEmu %} data-playeremu="{{ item.playerEmu }}"{% endif %}
+          {%- if item.kestra %} data-kestra="{{ item.kestra }}"{% endif %}
+        {%- endif %}
+          >
+          <div class="media-card__media">
+          {%- if item.card_image %}
+            <img class="media-card__image" src="{{ item.card_image }}" alt="{{ item.title | escape }}" loading="lazy">
+          {%- endif %}
+          {%- if badge == "play" %}
+            <div class="media-card__badge media-card__badge--play" aria-hidden="true">
+              <span><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></span>
+            </div>
+          {%- elsif badge == "show" %}
+            <div class="media-card__badge media-card__badge--show" aria-hidden="true">
+              <span><svg viewBox="0 0 24 24"><path d="M3 9V3h6M21 15v6h-6M21 9V3h-6M3 15v6h6"/></svg></span>
+            </div>
+          {%- endif %}
+          </div>
+          <div class="media-card__body">
+            <div class="media-card__kicker">{{ item.type }}</div>
+            <h3 class="media-card__title">{{ item.title }}</h3>
+            <div class="media-card__meta">
+              <span>{{ item.release_date | date: "%B %-d, %Y" }}</span>
+            </div>
+            <div class="media-card__footer">
+              <span class="media-card__action">{{ action }} &rarr;</span>
+              <span class="media-card__platform">{{ item.platform }}</span>
+            </div>
+          </div>
+        </div>
+{%- endif %}

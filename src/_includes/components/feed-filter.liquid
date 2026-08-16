@@ -1,8 +1,4 @@
 {%- assign values = "" | split: "" %}
-
-{%- comment %}
-  Extract value from type and platform
-{%- endcomment %}
 {%- assign key = type | downcase %}
 {%- for item in feed %}
   {%- if key == "type" %}
@@ -12,9 +8,6 @@
   {%- endif %}
 {%- endfor %}
 
-{%- comment %} 
-  Reduce to unique values and sort
-{%- endcomment %}
 {%- assign keys = "" | split: "" %}
 {%- for val in values %}
   {%- unless keys contains val %}
@@ -23,13 +16,13 @@
 {%- endfor %}
 {%- assign sorted_keys = keys | sort %}
 
-    <div class="select is-small is-rounded is-primary">
-      <select aria-label="{{ type }} Filter" id="{{ type }}Filter">
-        <option value="">All {{ type }}s</option>
+        <div class="filter-select">
+          <select aria-label="{{ type }} Filter" id="{{ type }}Filter">
+            <option value="">All {{ type }}s</option>
 {%- for key in sorted_keys %}
   {%- if key %}
-        <option value="{{ key | downcase }}">{{ key }}</option>
+            <option value="{{ key | downcase }}">{{ key }}</option>
   {%- endif %}
 {%- endfor %}
-      </select>
-    </div>
+          </select>
+        </div>

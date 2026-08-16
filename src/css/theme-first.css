@@ -31,11 +31,3 @@ body {
   }
 }
 
-div.logo {
-  width: 640px;
-  height: 320px;
-  background-image: url('/img/trsi-logo.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}

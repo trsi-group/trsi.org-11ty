@@ -33,10 +33,13 @@
 {% include "sections/jsonld-organisation.liquid" %}
   </head>
   <body>
-    <div class="site-container">
 {% include "sections/header.liquid" %}
+{%- if hero %}
+{% include "sections/hero.liquid" %}
+{%- endif %}
+    <div class="site-container">
 {{content}}
-{% include "sections/footer.liquid" %}
     </div>
+{% include "sections/footer.liquid" %}
   </body>
 </html>

@@ -1,0 +1,47 @@
+{%- assign banners = "team-deadline,team-deadline2" | split: "," -%}
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+      {%- for banner in banners %}
+        <img class="hero__bg{% if forloop.first %} is-active{% endif %}"
+             src="/img/banner/{{ banner }}-1280.webp"
+             srcset="/img/banner/{{ banner }}-768.webp 768w,
+                     /img/banner/{{ banner }}-1280.webp 1280w,
+                     /img/banner/{{ banner }}-1920.webp 1920w"
+             sizes="100vw"
+             width="1920" height="1280" alt=""
+             {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+      {%- endfor %}
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <div class="hero__inner">
+          <div class="hero__eyebrow">
+            <span>&mdash; Tristar &amp; Red Sector &mdash;</span>
+            <span>&mdash; Demoscene since 1990 &mdash;</span>
+          </div>
+
+          <h1 class="hero__headline">The sleeping gods<br>are <span class="text-accent">awake.</span></h1>
+
+          <p class="hero__subtitle">A demo group founded in 1990, born from the union of Tristar and the C64 warez group Red Sector.</p>
+          <p class="hero__subtitle">Code, pixels and trackers on Amiga, C64, PC and console &mdash; <span class="text-accent">still shipping.</span></p>
+
+          <div class="hero__actions">
+            <a href="/productions/" class="btn btn--primary">Browse Productions</a>
+            <a href="/about/" class="btn btn--ghost">Read our story &rarr;</a>
+          </div>
+
+          <div class="hero__ticker">
+            <div class="hero__ticker-track" style="--ticker-duration: {{ cms.members.size | times: 2.8 | round }}s">
+            {%- for pass in (1..2) %}
+              <div class="hero__ticker-set"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
+              {%- for member in cms.members %}
+                <span>{{ member.handle }}</span><span>&middot;</span>
+              {%- endfor %}
+              </div>
+            {%- endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

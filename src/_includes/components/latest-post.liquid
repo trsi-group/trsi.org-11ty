@@ -1,0 +1,27 @@
+{%- if post %}
+      <div class="latest-post">
+      {%- if post.post_image %}
+        <a class="latest-post__media" href="/news/{{ post.slug }}/" tabindex="-1" aria-hidden="true">
+          <img src="{{ post.post_image }}" alt="" loading="eager">
+        </a>
+      {%- endif %}
+        <div class="latest-post__info">
+          <div class="latest-post__tag">News</div>
+          <h2 class="latest-post__title"><a href="/news/{{ post.slug }}/">{{ post.title }}</a></h2>
+          <div class="latest-post__meta">
+            <span>{{ post.publishDate | date: "%B %-d, %Y" }}</span>
+          {%- if post.author %}
+            <span class="latest-post__meta-divider">&middot;</span>
+            <span>{{ post.author }}</span>
+          {%- endif %}
+          </div>
+        {%- if post.teaser %}
+          <p class="latest-post__teaser">{{ post.teaser }}</p>
+        {%- endif %}
+          <div class="latest-post__actions">
+            <a href="/news/{{ post.slug }}/" class="btn btn--outline">Read now</a>
+            <a href="/news/" class="btn btn--ghost">All posts &rarr;</a>
+          </div>
+        </div>
+      </div>
+{%- endif %}

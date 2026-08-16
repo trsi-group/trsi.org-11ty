@@ -1,60 +1,48 @@
         <div id="modal-overlay" class="modal">
           <div class="modal-background"></div>
-          <div class="modal-content">
-            <div class="container">
-              <div class="box">
-                <div>
-                  <figure class="image is-16by9">
-                    <iframe
-                    id="modal-video"
-                    class="has-ratio"
-                    width="100%"
-                    height="auto"
-                    src=""
-                    alt=""
-                    frameborder="0"
-                    allowfullscreen
-                    ></iframe>
-                  </figure>
-                  <figure class="image">
-                    <img
-                    id="modal-image"
-                    class="has-ratio"
-                    width="100%"
-                    height="auto"
-                    src=""
-                    alt=""
-                    frameborder="0"
-                    allowfullscreen
-                    ></img>
-                    <div id="music-player-overlay" class="music-player-overlay is-hidden">
-                      <button id="play-pause-btn" class="music-player-button" aria-label="Play/Pause Music">
-                        <span id="play-icon" class="music-player-icon">
-                          {%- include "icons/play-button.svg" %}
-                        </span>
-                        <span id="pause-icon" class="music-player-icon is-hidden">
-                          {%- include "icons/pause-button.svg" %}
-                        </span>
-                      </button>
-                    </div>
-                  </figure>
+          <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal__header">
+              <div>
+                <div id="modal-subtitle" class="modal__kicker"></div>
+                <h2 id="modal-title" class="modal__title"></h2>
+              </div>
+              <button class="modal-close overlay-close" aria-label="Close">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="modal__body">
+              <figure class="image modal__media modal__media--video">
+                <iframe id="modal-video" src="" title="" frameborder="0" allowfullscreen></iframe>
+              </figure>
+              <figure class="image modal__media">
+                <img id="modal-image" src="" alt="">
+                <div id="music-player-overlay" class="music-player-overlay is-hidden">
+                  <button id="play-pause-btn" class="music-player-button" aria-label="Play/Pause Music">
+                    <span id="play-icon" class="music-player-icon">
+                      {%- include "icons/play-button.svg" %}
+                    </span>
+                    <span id="pause-icon" class="music-player-icon is-hidden">
+                      {%- include "icons/pause-button.svg" %}
+                    </span>
+                  </button>
                 </div>
-                <div class="content is-full px-5 pt-3">
-                  <p id="modal-description"></p>
-                  <p id="modal-credits"></p>
-                  <p id="modal-release_date"></p>
-                </div>
-                <div class="columns is-gapless is-mobile pb-5">
-                  <div class="column is-flex is-justify-content-center is-align-items-center">
-                    <button class="button is-outlined is-rounded mr-4">Demozoo</button>
-                    <button class="button is-outlined is-rounded mr-4">CSDB</button>
-                    <button class="button is-outlined is-rounded mr-4">Pouet</button>
-                    <button class="button is-outlined is-rounded mr-4">Download</button>
-                    <button class="button is-outlined is-rounded mr-4">Kestra</button>
-                  </div>
-                </div>
+              </figure>
+              <div class="modal__details">
+                <p id="modal-description" class="modal__description"></p>
+                <p id="modal-credits" class="modal__credits"></p>
+                <p id="modal-release_date" class="modal__date"></p>
               </div>
             </div>
+
+            <div class="modal__footer">
+              <button class="btn btn--outline modal__action">Demozoo</button>
+              <button class="btn btn--outline modal__action">CSDB</button>
+              <button class="btn btn--outline modal__action">Pouet</button>
+              <button class="btn btn--outline modal__action">Download</button>
+              <button class="btn btn--outline modal__action">Kestra</button>
+            </div>
           </div>
-          <button class="modal-close is-large" aria-label="close"></button>
         </div>

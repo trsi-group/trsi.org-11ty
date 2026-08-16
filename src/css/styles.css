@@ -2,7 +2,7 @@ body {
   /* colors */
   --background-color: white;
   --text-color: black;
-  --light-color: rgb(251 221 14);
+  --light-color: var(--accent);
   --link-color: var(--text-color);
   --link-hover-color: var(--light-color);
   --overlay-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
@@ -12,9 +12,32 @@ body {
   --body-font-family: 'Helvetica', 'Arial', sans-serif;
   --mono-font-family: 'Console', monospace;
 
+  /* design tokens */
+  --surface: #0a0a0a;
+  --surface-raised: #161616;
+  --edge: #2a2a2a;
+  --ink: #f0f0f0;
+  --ink-dim: #cccccc;
+  --ink-muted: #8a8a8a;
+  --ink-faint: #4a4a4a;
+  --accent: #FFAA77;
+
+  --font-display: 'Syne', 'Helvetica', 'Arial', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  --max-width: 1200px;
+  --header-height: 65px;
+  --transition: 180ms ease;
+
   /* card overlay */
   --lift-height: 100%;
-  
+
   /* bulma overloads */
   --bulma-scheme-main: var(--background-color);
   --bulma-navbar-background-color: var(--background-color);
@@ -35,8 +58,7 @@ body {
   }
 }
 
-html, body {
-  height: 100%;
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -89,11 +111,10 @@ h6 {
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  scroll-margin: 40px;
+  scroll-margin: 5rem;
   text-transform: uppercase;
 }
 
-.navbar a,
 a h1,
 a h2,
 a h3,
@@ -103,173 +124,18 @@ a h6 {
   text-decoration: none;
   color: inherit;
 }
-.title, .subtitle, .card  {
+.title, .subtitle {
   color: var(--text-color);
   --bulma-title-weight: 400;
 }
 
-/* Navbar */
-.navbar-burger {
-  align-items: flex-end;
-  width: 0.5rem;
-}
+/* Header/nav live in header.css */
 
-.navbar-item, .navbar-link  {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding-top: 0.75rem;
-  padding-right: 1.5rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0rem;
-}
-
-a.navbar-item, .navbar-link  {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-a.navbar-item.hide  {
-  display: none;
-}
-
-@media (width >= 1024px) {
-  .navbar-social {
-    display: none;
-  }
-}
-
-/* Header */
-header.section {
-  margin: 0 auto;
-}
-
-.select:not(.is-multiple):not(.is-loading)::after {
-  border-color: var(--text-color);
-}
-
-.posts h2 {
-  margin: 0;
-}
-
-.posts .image img {
-  object-fit: contain;
-  width: 100%;
-  height: auto;
-}
-/* Footer */
-footer {
-  font-family: var(--heading-font-family);
-  text-transform: uppercase;
-  background-color:  var(--background-color);
-  color: var(--text-color);
-}
-
-.footer-content.ul {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-}
-
-.footer-social {
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.footer-legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-}
-
-/* Text stays in the footer colour while the link colour paints the underline,
-   matching the news feed titles. */
-.footer-legal a span {
-  color: var(--text-color);
-}
-
-@media screen and (min-width: 769px) {
-  .footer-social {
-    justify-content: flex-start;
-  }
-
-  .footer-legal {
-    justify-content: flex-end;
-  }
-}
+/* Footer lives in footer.css */
 
 .icon svg {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   fill: var(--text-color);
-}
-
-/* Card */
-.card {
-  border-radius: 0px;
-  overflow: hidden;
-  background-color: var(--background-color);
-}
-
-.card.pointer {
-  cursor: pointer;
-}
-
-.card:hover .bounce-hover {
-  transform: translateY(calc(var(--lift-height) * -1));
-  transition: transform var(--in-speed) cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.card-content.aligned-vertically {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-content.aligned-vertically .content {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.card-image:first-child img {
-  object-fit: cover;
-  border-radius: 0px;
-}
-
-.card[data-ctype="graphic"] .card-image:first-child img,
-.card[data-ctype="prod"] .card-image:first-child img {
-  object-fit: contain;
-  background: black;
-}
-
-.card-content, .card-content:last-child  {
-  position: absolute;
-  background: var(--overlay-color);
-  width: 100%;
-  height: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-radius: 0px;
-  --in-speed: 0.3s;
-  --out-speed: 0.7s;
-  transition: transform var(--out-speed) cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-content.members, .card-content:last-child.members {
-  position: absolute;
-  bottom: 0;
-  top: auto;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
-  width: 100%;
-  height: 25%;
-  border-radius: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card-description {
-  margin-bottom: var(--bulma-block-spacing);
 }
 
 /* Sections */
@@ -295,51 +161,8 @@ footer {
   width: 640px;
 }
 
-/* Filters */
-.filter-wrapper .select select {
-  background-color: var(--background-color);
+.content h1, .content h2, .content h3, .title, .subtitle {
   color: var(--text-color);
-  border: 2px solid var(--link-color);
-  font-family: var(--mono-font-family);
-}
-
-.content h1, .content h2, .content h3, .title, .subtitle, .card  {
-  color: var(--text-color);
-}
-
-/* Modal */
-.modal.is-active .modal-background {
-  backdrop-filter: blur(8px);
-}
-
-.modal-content {
-  overflow-y: auto;
-}
-
-.modal-content p {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-/* Filter */
-.filter-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.filter-wrapper .filter-group-icon {
-  display: inline-flex;
-  line-height: 0;
-}
-
-.filter-wrapper .filter-group-icon svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
 }
 
 .section.news-post a {

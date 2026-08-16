@@ -20,6 +20,11 @@
     {
       "title": "Members",
       "url": "/members"
+    },
+    {
+      "title": "About",
+      "url": "/about/",
+      "mobile_only": true
     }
   ]
 }
