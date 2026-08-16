@@ -8,6 +8,8 @@ const metadata = {
   keywords: "TRSI, Tristar and Red Sector, Demoscene, Amiga demo group, C64, Amiga, Intro, Music, Tracker, Pixel Graphics",
   image: "/img/trsi-logo.png",
   seoimage: "/img/trsi-logo-1200.png",
+  seoimageWidth: 1200,
+  seoimageHeight: 630,
 };
 
 const theme = 'joe'; // or 'first'

@@ -1,4 +1,4 @@
-import { buildImageIndex, imagePath, localiseAssetUrls } from './assetPaths.js';
+import { buildImageIndex, imagePath, imageSize, localiseAssetUrls } from './assetPaths.js';
 
 // Generate slug from title 
 function getSlug(title) {
@@ -25,12 +25,17 @@ export function transformPosts(contentfulData) {
       const imageId = fields.image?.['en-US']?.sys.id;
       const slug = getSlug(fields.title['en-US']);
       const body = fields.body?.['en-US'];
+      const socialSize = imageId ? imageSize(index, imageId) : null;
 
       return {
         title: fields.title['en-US'],
         teaser: fields.teaser?.['en-US'],
         body: body ? localiseAssetUrls(index, body, 'card') : body,
         post_image: imageId ? imagePath(index, imageId, 'card') : null,
+        // Social previews need the uploaded resolution, which 'card' caps at 800px wide
+        social_image: imageId ? imagePath(index, imageId, 'orig') : null,
+        social_image_width: socialSize ? socialSize.width : null,
+        social_image_height: socialSize ? socialSize.height : null,
         publishDate: fields.publishDate?.['en-US'],
         slug: slug,
       };

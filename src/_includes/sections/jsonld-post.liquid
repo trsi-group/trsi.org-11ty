@@ -4,10 +4,11 @@
       "@type": "BlogPosting",
       "headline": "Tristar & Red Sector Inc. News | {{ post.title | escape }}",
       "description": "{{ post.teaser | escape }}",
+      "image": "{{ site.domain }}{{ post.social_image | default: site.metadata.seoimage }}",
       "datePublished": "{{ post.publishDate | date: '%Y-%m-%d' }}",
       "dateModified": "{{ post.publishDate | date: '%Y-%m-%d' }}",
       "author": {
-        "@type": "Person",
+        "@type": "Organization",
         "name": "Tristar & Red Sector Inc."
       },
       "publisher": {

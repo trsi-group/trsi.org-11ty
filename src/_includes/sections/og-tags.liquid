@@ -1,16 +1,24 @@
 {%- assign meta-title = post.title | default: page_title | default: site.metadata.title %}
 {%- assign meta-description = post.teaser | default: site.metadata.description %}
-{%- assign meta-image = post.image | default: site.metadata.seoimage %}
+{%- assign meta-image = post.social_image | default: site.metadata.seoimage %}
+{%- assign meta-image-width = post.social_image_width | default: site.metadata.seoimageWidth %}
+{%- assign meta-image-height = post.social_image_height | default: site.metadata.seoimageHeight %}
+{%- assign meta-type = "website" %}
+{%- if post %}{% assign meta-type = "article" %}{% endif %}
 {%- assign meta-url = post.url | default: page.url %}
 {%- assign meta-url = site.domain | append: meta-url %}
-    <meta name="title" content="{{ site.metadata.title }}" />
-    <meta name="description" content="{{ site.metadata.description }}" />
-    <meta name="keywords" content="{{ site.metadata.keywords }}" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="{{ meta-type }}" />
     <meta property="og:url" content="{{ meta-url }}" />
     <meta property="og:title" content="{{ meta-title }}" />
     <meta property="og:description" content="{{ meta-description }}" />
     <meta property="og:image" content="{{ meta-image | prepend: site.domain }}" />
+    {%- if meta-image-width %}
+    <meta property="og:image:width" content="{{ meta-image-width }}" />
+    <meta property="og:image:height" content="{{ meta-image-height }}" />
+    {%- endif %}
+    {%- if post %}
+    <meta property="article:published_time" content="{{ post.publishDate | date: '%Y-%m-%d' }}" />
+    {%- endif %}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="{{ meta-url }}" />
     <meta name="twitter:title" content="{{ meta-title }}" />

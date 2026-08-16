@@ -28,6 +28,7 @@ const normalise = (fileName) => {
 export function buildImageIndex(assets) {
   const byId = new Map();
   const byUrl = new Map();
+  const sizeById = new Map();
   const claimedBy = new Map();
 
   assets.forEach((asset) => {
@@ -50,9 +51,23 @@ export function buildImageIndex(assets) {
 
     byId.set(id, fileName);
     byUrl.set(stripScheme(file.url), fileName);
+
+    const size = file.details?.image;
+    if (size) sizeById.set(id, { width: size.width, height: size.height });
   });
 
-  return { byId, byUrl };
+  return { byId, byUrl, sizeById };
+}
+
+/**
+ * Returns the pixel dimensions Contentful recorded for an asset. These describe
+ * the 'orig' variant, which is converted to WebP without being resized.
+ * @param {Object} index - The index returned by buildImageIndex.
+ * @param {String} assetId - The Contentful asset id.
+ * @returns {Object|null} An object with width and height, or null if unknown.
+ */
+export function imageSize(index, assetId) {
+  return index.sizeById.get(assetId) || null;
 }
 
 /**
