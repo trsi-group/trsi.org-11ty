@@ -1,0 +1,83 @@
+:root {
+  --crt-line: 1px;
+  --crt-gap: 2px;
+  --crt-dark: 0.13;
+}
+
+.hero__headline,
+.hero__headline .text-accent,
+.hero__eyebrow span,
+.hero__ticker-set span,
+.page-header__title,
+.page-header__title .text-accent,
+.section__label,
+.header .nav__link,
+.latest-post__title a,
+.latest-post__tag,
+.latest-post__meta,
+.latest-post__meta-divider,
+.media-card__kicker,
+.media-card__title,
+.media-card__meta,
+.media-card__action,
+.media-card__platform,
+.post-row__title,
+.post-row__meta,
+.post-row__meta-divider,
+.post-row__action,
+.modal__kicker,
+.modal__title,
+.modal__date,
+.filter-bar__label,
+.dropdown__trigger,
+.dropdown__option,
+.prose h2,
+.prose h3,
+.footer__brand-name,
+.footer__heading,
+.footer .footer__links a,
+.footer__bottom,
+.footer__tagline,
+.crt-lines,
+.crt-lines .text-accent {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, var(--crt-dark)) 0,
+      rgba(0, 0, 0, var(--crt-dark)) var(--crt-line),
+      transparent var(--crt-line),
+      transparent calc(var(--crt-line) + var(--crt-gap))
+    ),
+    linear-gradient(currentColor, currentColor);
+  background-size: 100% calc(var(--crt-line) + var(--crt-gap)), 100% 100%;
+  background-repeat: repeat, no-repeat;
+  background-origin: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__logo {
+  position: relative;
+}
+
+.header__logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, var(--crt-dark)) 0,
+    rgba(0, 0, 0, var(--crt-dark)) var(--crt-line),
+    transparent var(--crt-line),
+    transparent calc(var(--crt-line) + var(--crt-gap))
+  );
+  background-size: 100% calc(var(--crt-line) + var(--crt-gap));
+  -webkit-mask-image: url('/img/trsi-logo.svg');
+  mask-image: url('/img/trsi-logo.svg');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}

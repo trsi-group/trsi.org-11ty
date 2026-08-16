@@ -263,10 +263,10 @@ export function handleFilterChange(event) {
 };
 
 const STATUS_RANK = {
-  'active': 0,
-  'inactive': 1,
-  'in valhalla': 2,
-  'lost in mission': 3,
+  'awake': 0,
+  'sleeping': 1,
+  'lost in mission': 2,
+  'in valhalla': 3,
 };
 
 export function handleSortChange(event) {
