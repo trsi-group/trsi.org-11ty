@@ -1,0 +1,126 @@
+.latest-post {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.latest-post__media {
+  display: block;
+  width: 50%;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.latest-post__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(20%) contrast(1.05);
+  transition: filter var(--transition), transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.latest-post__media:hover img {
+  filter: grayscale(0%) contrast(1.1);
+  transform: scale(1.03);
+}
+
+.latest-post__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.latest-post__tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.latest-post__title {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  margin: 0 0 var(--space-sm);
+}
+
+.latest-post .latest-post__title a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.latest-post .latest-post__title a:hover {
+  color: var(--accent);
+}
+
+.latest-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.latest-post__meta-divider {
+  color: var(--ink-faint);
+}
+
+.latest-post__teaser {
+  margin: var(--space-sm) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+.latest-post__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .latest-post {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .latest-post__media {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .latest-post__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .latest-post__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .latest-post__actions .btn {
+    justify-content: center;
+  }
+
+  .latest-post__actions .btn--ghost {
+    border: 1px solid var(--edge);
+    padding: 0.6rem 1.2rem;
+  }
+}

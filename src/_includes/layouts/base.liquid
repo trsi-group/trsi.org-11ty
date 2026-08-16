@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default: 'en' }}" data-theme="light">
+<html lang="{{ lang | default: 'en' }}">
   <head>
 {%- comment %} Pages opt into their own title via `page_title`; without it the site title is used. {% endcomment %}
     <title>{% if page_title %}{{ page_title }} | {{ site.metadata.title }}{% else %}{{ site.metadata.title }}{% endif %}</title>
@@ -19,8 +19,6 @@
     {%- else %}
     <link rel="stylesheet" href="/css/index.css">
     {%- endif %}
-    <link rel="preload" as="style" href="/css/theme-{{ site.theme}}.css">
-    <link rel="stylesheet" href="/css/theme-{{ site.theme}}.css">
     <link rel="icon" type="image/png" href="/img/favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
@@ -33,10 +31,13 @@
 {% include "sections/jsonld-organisation.liquid" %}
   </head>
   <body>
-    <div class="site-container">
 {% include "sections/header.liquid" %}
+{%- if hero %}
+{% include "sections/hero.liquid" %}
+{%- endif %}
+    <div class="site-container">
 {{content}}
-{% include "sections/footer.liquid" %}
     </div>
+{% include "sections/footer.liquid" %}
   </body>
 </html>

@@ -1,0 +1,68 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+a.btn,
+a.btn:hover {
+  text-decoration: none;
+}
+
+.btn.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+}
+
+.btn.btn--primary:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn.btn--outline {
+  border-color: var(--ink-muted);
+  color: var(--ink);
+}
+
+.btn.btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn.btn--ghost {
+  padding: 0.5rem 0;
+  border: none;
+  color: var(--ink-muted);
+  overflow: hidden;
+}
+
+.btn.btn--ghost:hover {
+  color: var(--accent);
+}
+
+.btn--ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.btn--ghost:hover::after {
+  width: 100%;
+}

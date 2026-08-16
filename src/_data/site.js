@@ -12,8 +12,6 @@ const metadata = {
   seoimageHeight: 630,
 };
 
-const theme = 'joe'; // or 'first'
-
 const domain = prodenv ? "https://trsi.org" : "http://localhost:8080";
 
 const homepage = {
@@ -25,7 +23,6 @@ const homepage = {
 export default {
   metadata,
   domain,
-  theme,
   prodenv,
   homepage,
 };

@@ -6,15 +6,19 @@ alternate_url: /impressum/
 alternate_lang: de
 tags: page
 ---
-    <section class="section is-size-5">
-      <div class="content">
+    <section class="section section--page">
+      <div class="section__narrow">
+        <div class="page-header">
+          <h1 class="page-header__title">Legal Notice</h1>
+          <p class="page-header__lede">Information pursuant to § 5 DDG (German Digital Services Act) and § 18 MStV (German Interstate Media Treaty)</p>
+        </div>
+        <div class="page-nav">
+          <a href="{{ alternate_url }}" hreflang="de" lang="de" class="btn btn--outline">Deutsche Fassung &rarr;</a>
+        </div>
 
-        <h1 class="title">Legal Notice</h1>
-        <p class="is-size-6"><a href="{{ alternate_url }}" hreflang="de" lang="de">Deutsche Fassung</a></p>
+        <div class="prose">
 
-        <p>Information pursuant to § 5 DDG (German Digital Services Act) and § 18 MStV (German Interstate Media Treaty)</p>
-
-        <h2 class="title is-5">Website operator and responsible for content under § 18 (2) MStV</h2>
+        <h2>Website operator and responsible for content under § 18 (2) MStV</h2>
         <p>
           {{ legal.provider.name }}<br>
           {{ legal.provider.street }}<br>
@@ -22,37 +26,38 @@ tags: page
           {{ legal.provider.country_en }}
         </p>
 
-        <h2 class="title is-5">Contact</h2>
+        <h2>Contact</h2>
         <p>
           Email: <a href="mailto:{{ legal.contact.email }}">{{ legal.contact.email }}</a>
           {%- if legal.contact.phone != blank %}<br>Phone: {{ legal.contact.phone }}{% endif %}
         </p>
 
-        <h2 class="title is-5">About this site</h2>
+        <h2>About this site</h2>
         <p>Tristar &amp; Red Sector Inc. (TRSI) is an international collective of demoscene artists founded in 1990. TRSI pursues no commercial purpose, offers no goods or services, and carries no advertising. This website exists solely to present, document and archive the artistic work of the group and its members.</p>
 
-        <h2 class="title is-5">Liability for content</h2>
+        <h2>Liability for content</h2>
         <p>As a service provider we are responsible for our own content on these pages under general law, pursuant to § 7 (1) DDG. Under §§ 8 to 10 DDG, however, we are not obliged to monitor transmitted or stored third-party information, or to investigate circumstances that indicate unlawful activity. Obligations to remove or block the use of information under general law remain unaffected. Liability in this respect is only possible from the point in time at which we become aware of a specific infringement. Upon becoming aware of such infringements, we will remove the content in question without delay.</p>
 
-        <h2 class="title is-5">Liability for links</h2>
+        <h2>Liability for links</h2>
         <p>Our site contains links to external third-party websites over whose content we have no control. We therefore cannot accept any liability for such third-party content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking; no unlawful content was identifiable at that time. Permanent monitoring of the content of linked pages is not reasonable without concrete evidence of an infringement. Upon becoming aware of any legal violations, we will remove such links without delay.</p>
 
-        <h2 class="title is-5">Embedded third-party content</h2>
+        <h2>Embedded third-party content</h2>
         <p>Some pages embed videos via YouTube (Google Ireland Limited) in privacy-enhanced mode (youtube-nocookie.com). Such content is loaded only after active user interaction. The respective provider is responsible for the content and the data processing of these services.</p>
 
-        <h2 class="title is-5">Copyright and usage rights</h2>
+        <h2>Copyright and usage rights</h2>
         <p>The productions, graphics, music, texts and other works presented on this website are subject to the copyright of their respective authors. Rights to individual works remain with the persons named in the respective credits. Any reproduction, adaptation, distribution or exploitation beyond the limits of copyright law requires the prior written consent of the respective rights holders. Downloads and copies of this site are permitted for private, non-commercial use only.</p>
 
-        <h2 class="title is-5">Historical content and archive</h2>
+        <h2>Historical content and archive</h2>
         <p>This website documents more than three decades of a demoscene group's history and therefore includes historical material such as NFO files, intros, graphics and texts from earlier decades. This material is reproduced exclusively for documentary and historical purposes and does not necessarily reflect the present-day views of the group or its members. No copyrighted third-party works are offered for download through this website.</p>
 
-        <h2 class="title is-5">Reporting infringements and removal of content</h2>
+        <h2>Reporting infringements and removal of content</h2>
         <p>We make every effort to respect the rights of third parties. If you believe that content on this website infringes your rights, or if you are a current or former member and would like your handle, name or image removed, please contact us informally at <a href="mailto:{{ legal.contact.email }}">{{ legal.contact.email }}</a>. We review every report and will promptly remove affected content where a complaint is justified. A formal cease-and-desist notice is not necessary for this purpose.</p>
 
-        <h2 class="title is-5">Language versions</h2>
+        <h2>Language versions</h2>
         <p>This legal notice is also available in <a href="{{ alternate_url }}" hreflang="de" lang="de">German</a>. Only the German version is legally binding.</p>
 
-        <p class="is-size-6">Last updated: {{ legal.updated }}</p>
+        <p class="prose__note">Last updated: {{ legal.updated }}</p>
 
+        </div>
       </div>
     </section>

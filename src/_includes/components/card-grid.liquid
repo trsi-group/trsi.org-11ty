@@ -1,0 +1,20 @@
+{%- assign items = max | default: feed.size %}
+{%- if kind == "posts" %}
+  {%- assign sort_key = sort_key | default: "publishDate" %}
+{%- else %}
+  {%- assign sort_key = sort_key | default: "release_date" %}
+{%- endif %}
+{%- assign sort_order = sort_order | default: "desc" %}
+{%- assign sorted = feed | sort: sort_key %}
+{%- if sort_order == "desc" %}
+  {%- assign sorted = sorted | reverse %}
+{%- endif %}
+{%- if exclude %}
+  {%- assign sorted = sorted | where_exp: "item", "item.slug != exclude" %}
+{%- endif %}
+{%- assign sliced = sorted | slice: 0, items %}
+      <div class="card-grid">
+      {%- for item in sliced %}
+        {%- render "components/media-card.liquid", item: item, kind: kind %}
+      {%- endfor %}
+      </div>

@@ -37,6 +37,7 @@ export function transformPosts(contentfulData) {
         social_image_width: socialSize ? socialSize.width : null,
         social_image_height: socialSize ? socialSize.height : null,
         publishDate: fields.publishDate?.['en-US'],
+        author: fields.author?.['en-US'] ?? null,
         slug: slug,
       };
     });
