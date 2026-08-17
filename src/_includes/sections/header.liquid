@@ -13,18 +13,13 @@
             </li>
           {%- endfor %}
             <li class="nav__social">
-              <a href="https://www.instagram.com/_trsi_/" target="_blank" rel="noopener" class="nav__social-link" aria-label="Connect with TRSI on Instagram">
-                {%- include "icons/instagram.svg" %}
+            {%- assign social_header = social.nav_items | where_exp: "item", "item.locations contains 'header'" %}
+            {%- for item in social_header %}
+              {%- assign icon_path = "icons/" | append: item.icon | append: ".svg" %}
+              <a href="{{ item.url }}" target="_blank" rel="noopener" class="nav__social-link" aria-label="Connect with TRSI on {{ item.name }}">
+                {%- include icon_path %}
               </a>
-              <a href="https://www.facebook.com/tristarandredsector/" target="_blank" rel="noopener" class="nav__social-link" aria-label="Connect with TRSI on Facebook">
-                {%- include "icons/facebook.svg" %}
-              </a>
-              <a href="https://x.com/trsi" target="_blank" rel="noopener" class="nav__social-link" aria-label="Connect with TRSI on X">
-                {%- include "icons/x.svg" %}
-              </a>
-              <a href="https://www.youtube.com/@trsi" target="_blank" rel="noopener" class="nav__social-link" aria-label="Connect with TRSI on YouTube">
-                {%- include "icons/youtube.svg" %}
-              </a>
+            {%- endfor %}
             </li>
           </ul>
 

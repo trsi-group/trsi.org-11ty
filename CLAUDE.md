@@ -31,3 +31,4 @@ Five content types from Contentful: **productions**, **graphics**, **music**, **
 - Two themes available (`theme-joe.css` dark, `theme-first.css` light), controlled by `site.theme` in `src/_data/site.js`
 - Music nav item is hidden by default, revealed via `?mode=wotw` URL parameter
 - Images processed to 3 WebP sizes (orig, card/400px, post/150px) via Sharp
+- Social links live only in `src/_data/social.json`; each entry's `locations` array (`header`, `footer`, `about`, `schema`) picks the surfaces it renders on, and `icon` names an SVG in `src/icons/` (required for `header`, optional elsewhere)

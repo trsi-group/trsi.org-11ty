@@ -10,10 +10,10 @@
       "foundingDate": "1990",
       "keywords": "demoscene, c64, amiga, intro, music, graphics, TRSI, computer art",
       "sameAs": [
-        "https://www.instagram.com/_trsi_/",
-        "https://www.facebook.com/tristarandredsector/",
-        "https://x.com/trsi",
-        "https://www.youtube.com/@trsi"
+      {%- assign social_schema = social.nav_items | where_exp: "item", "item.locations contains 'schema'" -%}
+      {%- for item in social_schema %}
+        "{{ item.url }}"{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
       ]
     }
     </script>

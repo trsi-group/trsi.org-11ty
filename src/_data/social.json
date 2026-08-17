@@ -1,20 +1,33 @@
 {
   "nav_items": [
     {
-      "name": "Facebook",
-      "url": "https://www.facebook.com/tristarandredsector/"
+      "name": "Westpoint BBS",
+      "url": "https://westpoint.fun/",
+      "locations": ["footer", "about"]
     },
     {
-      "name": "Youtube",
-      "url": "https://www.youtube.com/@trsi"
+      "name": "Facebook",
+      "url": "https://www.facebook.com/tristarandredsector/",
+      "icon": "facebook",
+      "locations": ["header", "footer", "about", "schema"]
     },
     {
       "name": "X",
-      "url": "https://x.com/trsi"
+      "url": "https://x.com/trsi",
+      "icon": "x",
+      "locations": ["header", "footer", "about", "schema"]
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/_trsi_/"
+      "url": "https://www.instagram.com/_trsi_/",
+      "icon": "instagram",
+      "locations": ["header", "footer", "about", "schema"]
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@trsi",
+      "icon": "youtube",
+      "locations": ["header", "footer", "about", "schema"]
     }
   ]
 }
