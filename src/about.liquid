@@ -24,18 +24,12 @@ tags: page
 
           <p>Join us on the journey and follow our social media channels!</p>
           <div class="prose__socials">
-            <a href="https://www.instagram.com/_trsi_/" target="_blank" rel="noopener" class="prose__social-link">
-              {%- include "icons/instagram.svg" %} Instagram
+          {%- assign social_about = social.nav_items | where_exp: "item", "item.locations contains 'about'" %}
+          {%- for item in social_about %}
+            <a href="{{ item.url }}" target="_blank" rel="noopener" class="prose__social-link">
+              {%- if item.icon %}{%- assign icon_path = "icons/" | append: item.icon | append: ".svg" %}{% include icon_path %}{% endif %} {{ item.name }}
             </a>
-            <a href="https://www.facebook.com/tristarandredsector/" target="_blank" rel="noopener" class="prose__social-link">
-              {%- include "icons/facebook.svg" %} Facebook
-            </a>
-            <a href="https://x.com/trsi" target="_blank" rel="noopener" class="prose__social-link">
-              {%- include "icons/x.svg" %} X
-            </a>
-            <a href="https://www.youtube.com/@trsi" target="_blank" rel="noopener" class="prose__social-link">
-              {%- include "icons/youtube.svg" %} YouTube
-            </a>
+          {%- endfor %}
           </div>
 
           <h2>What is the demoscene?</h2>

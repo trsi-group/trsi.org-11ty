@@ -24,7 +24,8 @@
           <div>
             <div class="footer__heading">Connect</div>
             <div class="footer__links">
-            {%- for item in social.nav_items %}
+            {%- assign social_footer = social.nav_items | where_exp: "item", "item.locations contains 'footer'" %}
+            {%- for item in social_footer %}
               <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
             {%- endfor %}
             </div>
