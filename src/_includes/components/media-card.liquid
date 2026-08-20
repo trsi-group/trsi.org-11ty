@@ -89,7 +89,7 @@
           {%- endif %}
           {%- if badge == "play" %}
             <div class="media-card__badge media-card__badge--play" aria-hidden="true">
-              <span><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></span>
+              <span>{%- include "icons/play.svg" %}</span>
             </div>
           {%- elsif badge == "show" %}
             <div class="media-card__badge media-card__badge--show" aria-hidden="true">
