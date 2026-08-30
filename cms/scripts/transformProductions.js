@@ -1,4 +1,4 @@
-import { buildImageIndex, imagePath } from './assetPaths.js';
+import { buildImageIndex, imagePath, imageSize } from './assetPaths.js';
 import { itemSlug } from './slug.js';
 
 /**
@@ -28,6 +28,7 @@ export function transformProductions(contentfulData) {
       const fields = entry.fields;
       const metadata = entry.metadata;
       const imageId = fields.image?.['en-US']?.sys.id;
+      const socialSize = imageId ? imageSize(index, imageId) : null;
       
       // filter youtube video ID to be used with nocookie URL
       const ytUrl = fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null;
@@ -51,6 +52,10 @@ export function transformProductions(contentfulData) {
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
+        // Social previews need the uploaded resolution, which 'card' caps at 800px wide
+        social_image: imageId ? imagePath(index, imageId, 'orig') : null,
+        social_image_width: socialSize ? socialSize.width : null,
+        social_image_height: socialSize ? socialSize.height : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
         youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
         pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
