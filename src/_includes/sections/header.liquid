@@ -7,7 +7,7 @@
         <nav class="header__nav" aria-label="Main navigation">
 {%- comment %} Detail pages set `nav_section` so they keep their section lit; index
 pages fall back to their own file name, which already matches the nav item. {% endcomment %}
-{%- assign active_section = nav_section | default: page.fileSlug %}
+{%- assign active_section = nav_section | default: item_kind | default: page.fileSlug %}
           <ul class="nav__list" id="nav-list">
           {%- for item in navdata.nav_items %}
             {%- assign item_slug = item.title | downcase %}

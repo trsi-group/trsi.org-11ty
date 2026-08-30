@@ -15,11 +15,23 @@ layout: null
     {%- endif %}
   {%- endfor %}
   {%- for post in cms.posts %}
-    {%- if post.url != '/404.html' %}
   <url>
-    <loc>{{ site.domain }}/news/{{ post.slug | url_decode }}</loc>
+    <loc>{{ site.domain }}/news/{{ post.slug | url_decode }}/</loc>
     <lastmod>{{ post.publishDate | date: "%Y-%m-%d" }}</lastmod>
   </url>
-    {%- endif %}
+  {%- endfor %}
+{%- comment %} Item pages describe a fixed release, so they carry the release date
+and no changefreq rather than inheriting the daily one above. {% endcomment %}
+  {%- assign item_feeds = "productions,graphics,music" | split: "," %}
+  {%- for feed_name in item_feeds %}
+    {%- assign feed = cms[feed_name] %}
+    {%- for item in feed %}
+  <url>
+    <loc>{{ site.domain }}/{{ feed_name }}/{{ item.slug | url_decode }}/</loc>
+      {%- if item.release_date %}
+    <lastmod>{{ item.release_date | date: "%Y-%m-%d" }}</lastmod>
+      {%- endif %}
+  </url>
+    {%- endfor %}
   {%- endfor %}
 </urlset>

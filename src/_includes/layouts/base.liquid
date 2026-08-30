@@ -8,7 +8,7 @@
 {% include "sections/hash-redirect.liquid" %}
 {%- endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ post.teaser | default: site.metadata.description }}">
+    <meta name="description" content="{{ item.description | default: post.teaser | default: site.metadata.description | newline_to_br | strip_newlines | replace: "<br />", " " | strip | truncate: 200 | escape }}">
     <meta name="keywords" content="{{ site.metadata.keywords }}">
 {% include "sections/og-tags.liquid" %}
     <link rel="canonical" href="{{ site.domain }}{{ page.url  }}">
@@ -30,6 +30,9 @@
     <script type="module" src="/js/main.js"></script>
     {%- if page.url contains "/news/" %}
 {% include "sections/jsonld-post.liquid" %}
+    {% endif %}
+    {%- if item_kind %}
+{% include "sections/jsonld-item.liquid" %}
     {% endif %}
 {% include "sections/jsonld-organisation.liquid" %}
   </head>

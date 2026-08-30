@@ -1,17 +1,27 @@
+{%- comment %} `item` is a production, graphic or track; `post` is a news entry.
+Descriptions keep their line breaks on the page, so flatten them here. {% endcomment %}
 {%- assign meta-title = title | default: site.metadata.title %}
-{%- assign meta-description = post.teaser | default: site.metadata.description %}
-{%- assign meta-image = post.social_image | default: site.metadata.seoimage %}
-{%- assign meta-image-width = post.social_image_width | default: site.metadata.seoimageWidth %}
-{%- assign meta-image-height = post.social_image_height | default: site.metadata.seoimageHeight %}
+{%- assign meta-description = item.description | default: post.teaser | default: site.metadata.description %}
+{%- assign meta-description = meta-description | newline_to_br | strip_newlines | replace: "<br />", " " | strip | truncate: 200 %}
+{%- assign meta-image = item.social_image | default: post.social_image | default: site.metadata.seoimage %}
+{%- assign meta-image-width = item.social_image_width | default: post.social_image_width | default: site.metadata.seoimageWidth %}
+{%- assign meta-image-height = item.social_image_height | default: post.social_image_height | default: site.metadata.seoimageHeight %}
 {%- assign meta-type = "website" %}
-{%- if post %}{% assign meta-type = "article" %}{% endif %}
+{%- if post %}{%- assign meta-type = "article" %}{%- endif %}
+{%- case item_kind %}
+  {%- when "productions" %}{%- assign meta-type = "video.other" %}
+  {%- when "music" %}{%- assign meta-type = "music.song" %}
+{%- endcase %}
 {%- assign meta-url = post.url | default: page.url %}
 {%- assign meta-url = site.domain | append: meta-url %}
+    <meta property="og:site_name" content="{{ site.metadata.title | escape }}" />
+    <meta property="og:locale" content="{{ lang | default: 'en' }}" />
     <meta property="og:type" content="{{ meta-type }}" />
     <meta property="og:url" content="{{ meta-url }}" />
-    <meta property="og:title" content="{{ meta-title }}" />
-    <meta property="og:description" content="{{ meta-description }}" />
+    <meta property="og:title" content="{{ meta-title | escape }}" />
+    <meta property="og:description" content="{{ meta-description | escape }}" />
     <meta property="og:image" content="{{ meta-image | prepend: site.domain }}" />
+    <meta property="og:image:alt" content="{{ meta-title | escape }}" />
     {%- if meta-image-width %}
     <meta property="og:image:width" content="{{ meta-image-width }}" />
     <meta property="og:image:height" content="{{ meta-image-height }}" />
@@ -19,9 +29,17 @@
     {%- if post %}
     <meta property="article:published_time" content="{{ post.publishDate | date: '%Y-%m-%d' }}" />
     {%- endif %}
+    {%- if item_kind == "productions" and item.youtube %}
+    <meta property="og:video:url" content="{{ item.youtube | escape }}" />
+    <meta property="og:video:secure_url" content="{{ item.youtube | escape }}" />
+    <meta property="og:video:type" content="text/html" />
+    <meta property="og:video:width" content="1280" />
+    <meta property="og:video:height" content="720" />
+    {%- endif %}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="{{ meta-url }}" />
-    <meta name="twitter:title" content="{{ meta-title }}" />
-    <meta name="twitter:description" content="{{ meta-description }}" />
+    <meta name="twitter:title" content="{{ meta-title | escape }}" />
+    <meta name="twitter:description" content="{{ meta-description | escape }}" />
     <meta name="twitter:image" content="{{ meta-image | prepend: site.domain }}" />
+    <meta name="twitter:image:alt" content="{{ meta-title | escape }}" />
     <meta name="twitter:site" content="@trsi" />
