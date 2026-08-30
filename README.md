@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="src/public/img/trsi-logo.svg">
-    <img src="src/public/img/trsi-logo.png" alt="TRSI" width="320">
+    <img src="src/public/img/trsi-logo-invers.svg" alt="TRSI" width="320">
   </picture>
 </p>
 
