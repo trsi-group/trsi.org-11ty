@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Read [.claude/architecture.md](.claude/architecture.md) first — it covers the build
+Read [architecture.md](./architecture.md) first — it covers the build
 pipeline, the layout, and the contracts that break silently if you ignore them.
 
 ## Quick Reference

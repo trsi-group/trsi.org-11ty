@@ -63,7 +63,7 @@ complains, the fix is usually a stale export — refetch and try again.
 
 ## Learn more
 
-- [`.claude/architecture.md`](./.claude/architecture.md) — how the pieces fit together
+- [`architecture.md`](./architecture.md) — how the pieces fit together
 - [`cms/README.md`](./cms/README.md) — content integration details
 
 ## License
