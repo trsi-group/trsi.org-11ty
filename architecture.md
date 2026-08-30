@@ -65,6 +65,25 @@ Detail templates set `item_kind`, which drives `og:type`, the JSON-LD type
   `social` (1200×630 JPEG, letterboxed on `#0a0a0a`, nearest-neighbour under
   800px so pixel art stays crisp). `social` is what `og:image` points at.
 
+### Renaming an entry
+
+Titles derive slugs, so renaming in Contentful retires a URL. Because items are
+real paths rather than fragments, the old one can be redirected:
+
+1. Rename in Contentful, `npm run build:content`
+2. `build:c-verify` fails and names the URL that broke
+3. Add `"<old-slug>": "<new-slug>"` under the type in
+   `src/_data/slugAliases.json`
+
+`src/_redirects.liquid` turns that into a Netlify 301, and chains are flattened
+so an older alias pointing at the slug you just retired keeps working. The guard
+also rejects an alias pointing at nothing, and one pointing away from a slug
+that is live again — which would redirect visitors off a real page.
+
+Contentful keeps a snapshot of every publish, so past titles are recoverable via
+the CMA: `GET /spaces/{space}/environments/master/entries/{id}/snapshots`. That
+is how the existing aliases were seeded.
+
 ## Client JS
 
 `main.js` wires everything on `DOMContentLoaded`: nav, hero rotation, grid

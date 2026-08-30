@@ -1,2 +1,0 @@
-# /posts/ was renamed to /news/ before the site launched
-/posts/*  /news/:splat  301

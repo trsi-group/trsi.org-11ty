@@ -1,0 +1,30 @@
+{
+  "note": "Old item URLs and where they now live. Titles derive the slug, so renaming an entry in Contentful retires its URL; recording the move here keeps the old link working. src/_redirects.liquid turns these into Netlify 301s and build:c-verify refuses to build if an alias points nowhere.",
+  "howToAddOne": "Rename in Contentful, then add \"<old-slug>\": \"<new-slug>\" under the right type. Chains are resolved automatically, so an older alias pointing at the slug you just retired keeps working.",
+  "seededFrom": "Contentful entry snapshots, read 2026-08-30",
+  "paths": [
+    {
+      "from": "/posts/*",
+      "to": "/news/:splat",
+      "status": 301,
+      "why": "renamed to /news/ before launch"
+    }
+  ],
+  "productions": {},
+  "graphics": {
+    "gut-zu-voegeln": "gut-zu-voegeln-by-elko",
+    "acid-times": "acid-times-by-elko",
+    "henrys-maske": "henrys-maske-by-elko",
+    "go-copy-that-floppy-by-docd-revision-2021": "go-copy-that-floppy-by-docd",
+    "wild-mushroom": "wild-mushroom-by-astaroth",
+    "rip-wodk1111": "rip-wodk1111-vy-h20",
+    "slave-to-xray": "slave-to-xray-by-spotter",
+    "bird-reynolds": "bird-reynolds-by-elko",
+    "out-of-the-box": "out-of-the-box-by-prince",
+    "unfinished-business": "unfinished-business-by-elko",
+    "old-man": "old-man-by-astaroth",
+    "arrival-on-valthoria": "arrival-on-valthoria-by-vasyl"
+  },
+  "music": {},
+  "posts": {}
+}

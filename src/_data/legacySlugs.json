@@ -1,12 +1,12 @@
 {
   "captured": "2026-08-30",
   "source": "https://trsi.org/ (live production HTML)",
-  "note": "Every item URL that was publicly reachable before per-item detail pages existed. Productions, graphics and music were only addressable as modal fragments on their index page, so these URLs have been shared outside the site and must keep working. Use this file as the redirect allowlist and as a build-time assertion: the slugs generated for detail pages must remain a superset of every slug listed here.",
+  "note": "Every item URL that was publicly reachable before per-item detail pages existed. Productions, graphics and music were only addressable as modal fragments on their index page, so these URLs have been shared outside the site and must keep working. build:c-verify checks each one is either still generated or redirected via src/_data/slugAliases.json.",
   "slugAlgorithm": {
     "productions": "@sindresorhus/slugify v2.2.1 with { decamelize: false } (11ty `slugify` filter)",
     "graphics": "@sindresorhus/slugify v2.2.1 with { decamelize: false } (11ty `slugify` filter)",
     "music": "@sindresorhus/slugify v2.2.1 with { decamelize: false } (11ty `slugify` filter)",
-    "posts": "cms/scripts/transformPosts.js getSlug() — NOT interchangeable with the filter above"
+    "posts": "cms/scripts/transformPosts.js getSlug() \u2014 NOT interchangeable with the filter above"
   },
   "legacyUrl": {
     "productions": "/productions/#<slug>",
@@ -413,7 +413,7 @@
     },
     {
       "slug": "banana-joes-trifle-reloaded-banana-6-ways",
-      "title": "Banana Joés Triflé - RELOADED - Banana 6 Ways"
+      "title": "Banana Jo\u00e9s Trifl\u00e9 - RELOADED - Banana 6 Ways"
     },
     {
       "slug": "bat-country-by-elko",
@@ -545,7 +545,7 @@
     },
     {
       "slug": "ich-mach-mir-die-welt-wie-sie-mir-gefaellt",
-      "title": "Ich mach mir die Welt, wie sie mir gefällt!"
+      "title": "Ich mach mir die Welt, wie sie mir gef\u00e4llt!"
     },
     {
       "slug": "invasive-species",
