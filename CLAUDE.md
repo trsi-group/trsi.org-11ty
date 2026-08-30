@@ -32,3 +32,12 @@ Five content types from Contentful: **productions**, **graphics**, **music**, **
 - Music nav item is hidden by default, revealed via `?mode=wotw` URL parameter
 - Images processed to 3 WebP sizes (orig, card/400px, post/150px) via Sharp
 - Social links live only in `src/_data/social.json`; each entry's `locations` array (`header`, `footer`, `about`, `schema`) picks the surfaces it renders on, and `icon` names an SVG in `src/icons/` (required for `header`, optional elsewhere)
+
+## Commit Messages
+
+Harmonized standard — keep every commit message brief.
+
+- **Square-bracketed type prefix**: the title opens with a short Conventional-Commits type in square brackets — `[feat]`, `[fix]`, or `[chore]` (refactors, cleanup, deps, docs, config — anything non-behavioral). Use another standard short type (`[docs]`, `[test]`, `[perf]`, `[ci]`, `[refactor]`) when it's clearer. Square brackets, not round — parentheses are reserved for scope in Conventional Commits.
+- **Short imperative title**: `[type] Do the thing`, ≤ ~60 chars. e.g. `[fix] Clamp peer avatar size`, `[chore] Unify app config into config.json`.
+- **Brief body**: include a short body — one blank line after the title, then a single wrapped (at 70 +- 5 letters) paragraph covering just the necessary context. Keep it short; don't over-detail or write a play-by-play narrative.
+- **No AI mentions** (see Core Principles).
