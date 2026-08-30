@@ -12,7 +12,7 @@
 that already exceeds the frame is being scaled down and wants smoothing. {% endcomment %}
 {%- assign pixelated = false %}
 {%- if item.asset_width and item.asset_width < 800 %}{%- assign pixelated = true %}{%- endif %}
-    <section class="section section--page">
+    <section class="section section--page section--item">
       <div class="item">
         <a class="item__back" href="{{ back_url }}">&larr; {{ back_label }}</a>
 
@@ -84,11 +84,13 @@ that already exceeds the frame is being scaled down and wants smoothing. {% endc
         </div>
       {%- endif %}
 
+      {%- comment %} NFO art is fixed-width and far wider than a phone, so it ships
+      collapsed; main.js opens it where there is room. {% endcomment %}
       {%- if item.nfo_text and item.nfo_text != blank %}
-        <div class="item__nfo">
-          <div class="section__label">NFO</div>
+        <details class="item__nfo">
+          <summary class="item__nfo-summary"><span class="item__nfo-label">NFO</span></summary>
           <pre class="item__nfo-text">{{ item.nfo_text | escape }}</pre>
-        </div>
+        </details>
       {%- endif %}
       </div>
     </section>

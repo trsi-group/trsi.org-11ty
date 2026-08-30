@@ -113,6 +113,47 @@
   border-top: 1px solid var(--edge);
 }
 
+.item__nfo-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  list-style: none;
+}
+
+.item__nfo-summary::-webkit-details-marker {
+  display: none;
+}
+
+.item__nfo-summary::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--edge);
+}
+
+.item__nfo-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+}
+
+.item__nfo-label::after {
+  content: ' [+]';
+  color: var(--accent);
+}
+
+.item__nfo[open] .item__nfo-label::after {
+  content: ' [-]';
+}
+
+.item__nfo-summary:hover .item__nfo-label {
+  color: var(--accent);
+}
+
 /* NFOs are fixed-width ASCII art: never reflow them, scroll instead. */
 .item__nfo-text {
   margin: var(--space-sm) 0 0;
@@ -129,6 +170,44 @@
 }
 
 @media (max-width: 860px) {
+  /* Break the media out of the page gutter so it genuinely fills the screen. */
+  .item__media {
+    margin-inline: calc(var(--space-sm) * -1);
+    border-inline-width: 0;
+  }
+
+  .item__image {
+    max-height: 60vh;
+  }
+
+  /* The desktop rhythm leaves a hole between the title and the media here. */
+  .section--item {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-lg);
+  }
+
+  .section--item .page-header {
+    margin-bottom: var(--space-md);
+  }
+
+  /* A role beside its names leaves the names about 230px; stack them instead. */
+  .item__credits {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .item__credits dt {
+    margin-top: var(--space-sm);
+  }
+
+  .item__credits dt:first-of-type {
+    margin-top: 0;
+  }
+
+  .item__nfo {
+    margin-top: var(--space-md);
+  }
+
   .item__links .btn {
     flex: 1 1 auto;
     justify-content: center;
