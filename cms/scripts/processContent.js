@@ -18,7 +18,7 @@ import { transformMembers } from './transformMembers.js';
 import { transformGraphics } from './transformGraphics.js';
 import { transformMusic } from './transformMusic.js';
 import { transformPosts } from './transformPosts.js';
-import { copyImageAssets } from './copyImageAssets.js';
+import { copyImageAssets, copyFallbackSocialImages } from './copyImageAssets.js';
 import { copyTrackAssets } from './copyTrackAssets.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -28,6 +28,7 @@ const imgAssetsSource = resolve(__dirname, '../export/images.ctfassets.net');
 const imgAssetsDest = resolve(__dirname, '../../dist/img');
 const trackAssetsSource = resolve(__dirname, '../export/assets.ctfassets.net');
 const trackAssetsDest = resolve(__dirname, '../../dist/tracks');
+const publicImgDir = resolve(__dirname, '../../src/public/img');
 
 const transforms = [
   { name: 'productions', fn: transformProductions },
@@ -43,7 +44,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const jsonData = JSON.parse(readFileSync(jsonSource, 'utf8'));
 
     // Copy image assets to local image directory
-    copyImageAssets(jsonData, imgAssetsDest, imgAssetsSource);
+    await copyImageAssets(jsonData, imgAssetsDest, imgAssetsSource);
+    await copyFallbackSocialImages(publicImgDir, imgAssetsDest);
     console.log(`Image assets written to ${imgAssetsDest}`);
 
     // Copy track assets to local track directory

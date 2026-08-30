@@ -141,5 +141,5 @@ dist
 # project specific
 /cms/export
 /cms/data
-/.claude/worktrees
-/.claude
+# Local Claude state
+/.claude/*

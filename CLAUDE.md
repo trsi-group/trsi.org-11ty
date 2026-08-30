@@ -1,12 +1,11 @@
 # CLAUDE.md
 
-## First Steps
-
-Before working on this codebase, read the detailed research document at `.claude/research.md` for a comprehensive understanding of the project architecture, build pipeline, content types, data flow, and key patterns.
+Read [architecture.md](./architecture.md) first — it covers the build
+pipeline, the layout, and the contracts that break silently if you ignore them.
 
 ## Quick Reference
 
-- **Stack**: Eleventy 3.0 + Contentful CMS + Bulma CSS + Liquid templates
+- **Stack**: Eleventy 3 + Liquid templates + Contentful CMS + PostCSS (no CSS framework)
 - **Input**: `src/` — **Output**: `dist/`
 - **CMS data**: `cms/data/*.json` (generated, gitignored) — loaded via `src/_data/cms.js`
 - **Config**: `.eleventy.js` (11ty), `postcss.config.mjs` (CSS pipeline), `cms/config.json` (Contentful)

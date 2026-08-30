@@ -47,9 +47,11 @@ export function transformGraphics(contentfulData) {
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
         // image: imageId ? imagePath(index, imageId, 'orig') : null,
         download: imageId ? imagePath(index, imageId, 'orig') : null,
-        social_image: assetId ? imagePath(index, assetId, 'orig') : null,
-        social_image_width: assetSize ? assetSize.width : null,
-        social_image_height: assetSize ? assetSize.height : null,
+        // Link previews are rendered to a fixed 1200x630 frame, so the size is
+        // known without measuring the source.
+        social_image: assetId ? imagePath(index, assetId, 'social') : null,
+        social_image_width: assetId ? 1200 : null,
+        social_image_height: assetId ? 630 : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
       };

@@ -25,10 +25,10 @@ export function transformPosts(contentfulData) {
         teaser: fields.teaser?.['en-US'],
         body: body ? localiseAssetUrls(index, body, 'card') : body,
         post_image: imageId ? imagePath(index, imageId, 'card') : null,
-        // Social previews need the uploaded resolution, which 'card' caps at 800px wide
-        social_image: imageId ? imagePath(index, imageId, 'orig') : null,
-        social_image_width: socialSize ? socialSize.width : null,
-        social_image_height: socialSize ? socialSize.height : null,
+        // Link previews are rendered to a fixed 1200x630 frame.
+        social_image: imageId ? imagePath(index, imageId, 'social') : null,
+        social_image_width: imageId ? 1200 : null,
+        social_image_height: imageId ? 630 : null,
         publishDate: fields.publishDate?.['en-US'],
         author: fields.author?.['en-US'] ?? null,
         slug: slug,
