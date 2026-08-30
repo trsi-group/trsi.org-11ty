@@ -1,4 +1,6 @@
 import { loadScript } from './scriptLoader.js';
+import { waitUntil } from './waitFor.js';
+import { waitUntilRunning, getAudioContext, AudioBlockedError } from './audioContext.js';
 
 class UadeMusicPlayer {
   constructor() {
@@ -18,12 +20,28 @@ class UadeMusicPlayer {
     await loadScript('/js/backend_uade.js');
   }
 
-  async initialize() {
+  /**
+   * The background preload and a tap both call this, so it hands out one shared
+   * promise instead of starting a second initialisation the first would strand.
+   * @returns {Promise<void>}
+   */
+  initialize() {
+    if (!this._initPromise) {
+      this._initPromise = this._initialize().catch((error) => {
+        this._initPromise = null; // let a later tap try again
+        throw error;
+      });
+    }
+    return this._initPromise;
+  }
+
+  async _initialize() {
     if (this.isInitialized) return;
 
     try {
       await this._loadLibraries();
-      await this._waitForUadeReady();
+      await waitUntil(() => this._isUadeReady(), { label: 'UADE libraries' });
+      this._markUadeReady();
       this.isInitialized = true;
       console.log('UadeMusicPlayer initialized successfully');
     } catch (error) {
@@ -45,33 +63,6 @@ class UadeMusicPlayer {
     if (backend_UADE.Module.notReady) {
       backend_UADE.Module.notReady = false;
     }
-  }
-
-  async _waitForUadeReady() {
-    if (this._isUadeReady()) {
-      this._markUadeReady();
-      return;
-    }
-
-    return new Promise((resolve, reject) => {
-      const checkReady = () => {
-        if (this._isUadeReady()) {
-          this._markUadeReady();
-          resolve();
-        } else {
-          setTimeout(() => {
-            if (!this.uadeReady) checkReady();
-          }, 100);
-        }
-      };
-      checkReady();
-
-      setTimeout(() => {
-        if (!this.uadeReady) {
-          reject(new Error('Timeout waiting for UADE libraries to load'));
-        }
-      }, 15000);
-    });
   }
 
   async _ensurePlayer() {
@@ -146,6 +137,14 @@ class UadeMusicPlayer {
     }
 
     this.scriptNodePlayer.resume();
+
+    // Asking is not the same as playing: iOS can keep the context suspended or
+    // interrupted, and the UI must not claim otherwise.
+    if (!(await waitUntilRunning())) {
+      this.isPlaying = false;
+      throw new AudioBlockedError(getAudioContext()?.state ?? 'unavailable');
+    }
+
     this.isPlaying = true;
     console.log('UADE started playing:', this.currentTrack.title);
   }

@@ -1,4 +1,6 @@
 import { loadScript } from './scriptLoader.js';
+import { waitUntil } from './waitFor.js';
+import { waitUntilRunning, getAudioContext, AudioBlockedError } from './audioContext.js';
 
 class MptMusicPlayer {
   constructor() {
@@ -18,12 +20,28 @@ class MptMusicPlayer {
     await loadScript('/js/backend_mpt.js');
   }
 
-  async initialize() {
+  /**
+   * The background preload and a tap both call this, so it hands out one shared
+   * promise instead of starting a second initialisation the first would strand.
+   * @returns {Promise<void>}
+   */
+  initialize() {
+    if (!this._initPromise) {
+      this._initPromise = this._initialize().catch((error) => {
+        this._initPromise = null; // let a later tap try again
+        throw error;
+      });
+    }
+    return this._initPromise;
+  }
+
+  async _initialize() {
     if (this.isInitialized) return;
 
     try {
       await this._loadLibraries();
-      await this._waitForMptReady();
+      await waitUntil(() => this._isMptReady(), { label: 'MPT libraries' });
+      this._markMptReady();
       this.isInitialized = true;
       console.log('MptMusicPlayer initialized successfully');
     } catch (error) {
@@ -45,33 +63,6 @@ class MptMusicPlayer {
     if (backend_mpt.Module.notReady) {
       backend_mpt.Module.notReady = false;
     }
-  }
-
-  async _waitForMptReady() {
-    if (this._isMptReady()) {
-      this._markMptReady();
-      return;
-    }
-
-    return new Promise((resolve, reject) => {
-      const checkReady = () => {
-        if (this._isMptReady()) {
-          this._markMptReady();
-          resolve();
-        } else {
-          setTimeout(() => {
-            if (!this.mptReady) checkReady();
-          }, 100);
-        }
-      };
-      checkReady();
-
-      setTimeout(() => {
-        if (!this.mptReady) {
-          reject(new Error('Timeout waiting for MPT libraries to load'));
-        }
-      }, 15000);
-    });
   }
 
   async _ensurePlayer() {
@@ -140,6 +131,14 @@ class MptMusicPlayer {
     }
 
     this.scriptNodePlayer.resume();
+
+    // Asking is not the same as playing: iOS can keep the context suspended or
+    // interrupted, and the UI must not claim otherwise.
+    if (!(await waitUntilRunning())) {
+      this.isPlaying = false;
+      throw new AudioBlockedError(getAudioContext()?.state ?? 'unavailable');
+    }
+
     this.isPlaying = true;
     console.log('MPT started playing:', this.currentTrack.title);
   }
