@@ -1,4 +1,6 @@
-import { handleFilterChange, handleSortChange, preloadMusicLibraries, restoreFiltersFromQuery, setupMusicPlayerUI, enhanceSelects } from './utils.js';
+import { handleFilterChange, handleSortChange, preloadMusicLibraries, restoreFiltersFromQuery, setupMusicPlayerUI, setLoadProgress, enhanceSelects } from './utils.js';
+import { installWasmProgress } from './wasmProgress.js';
+import { configureAudioSession } from './audioContext.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -23,6 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("main.js: DOMContentLoaded");
   
   if (window.location.pathname.startsWith('/music')) {
+    // Declared before anything creates a context, so iOS never files this page
+    // under the ambient session the ringer switch silences.
+    configureAudioSession();
+    // The backend module is a couple of megabytes; the play button's ring shows
+    // how much of it has arrived.
+    installWasmProgress(setLoadProgress);
     preloadMusicLibraries();
   }
   

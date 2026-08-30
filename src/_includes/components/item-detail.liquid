@@ -41,6 +41,9 @@ that already exceeds the frame is being scaled down and wants smoothing. {% endc
                data-title="{{ item.title | escape }}"
                data-playeremu="{{ item.playerEmu | escape }}">
             <button id="play-pause-btn" class="music-player-button" aria-label="Play or pause {{ item.title | escape }}">
+              <svg class="music-player-ring" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                <circle class="music-player-ring__value" cx="50" cy="50" r="48" />
+              </svg>
               <span id="play-icon" class="music-player-icon music-player-icon--play">
                 {%- include "icons/play.svg" %}
               </span>
@@ -51,6 +54,7 @@ that already exceeds the frame is being scaled down and wants smoothing. {% endc
           </div>
         {%- endif %}
         </figure>
+        <p id="music-player-status" class="music-player-status" role="status" hidden></p>
       {%- endif %}
 
         <div class="item__body">
