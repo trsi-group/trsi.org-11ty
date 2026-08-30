@@ -1,4 +1,4 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries, setupMusicPlayerUI, enhanceSelects } from './utils.js';
+import { handleFilterChange, handleSortChange, preloadMusicLibraries, setupMusicPlayerUI, enhanceSelects } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -10,10 +10,8 @@ import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChan
  * 2. Filter Components:
  *    - Registers 'change' events on #TypeFilter and #PlatformFilter dropdowns to dynamically filter card elements.
  *
- * 3. Modal Handling:
- *    - Registers click events on '.js-modal-trigger' buttons to open modals with dynamically injected card data.
- *    - Registers click events on modal close elements to close individual modals.
- *    - Registers 'Escape' key event to close all active modals.
+ * 3. Music Player:
+ *    - Binds the play/pause control on a track page to the MusicPlayerManager.
  *
  * 4. Music Library Pre-loading:
  *    - Pre-loads music player libraries in the background for instant music playback.
@@ -38,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     navToggle.addEventListener('click', () => {
-      if (document.body.classList.contains('modal-open')) {
-        closeModal();
-        return;
-      }
       const isOpen = navList.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.documentElement.style.overflow = isOpen ? 'hidden' : '';
@@ -124,38 +118,5 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Sort Component */
   const sortSelect = document.getElementById("SortSelect");
   if (sortSelect) sortSelect.addEventListener("change", handleSortChange);
-
-  /* Modal Dialog — whole card is clickable */
-  (document.querySelectorAll('.pointer[data-ctype]') || []).forEach((cardElement) => {
-    cardElement.addEventListener('click', () => {
-      const cardData = getDataFromCard(cardElement);
-      populateModal(cardData);
-      window.location.hash = cardData.slug;
-      openModal();
-    });
-  });
-
-  // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close') || []).forEach(($close) => {
-    $close.addEventListener('click', () => {
-      closeModal();
-    });
-  });
-
-  // Add a keyboard event to close all modals
-  document.addEventListener('keydown', (event) => {
-    if(event.key === "Escape") {
-      closeModal();
-    }
-  });
-
-  // open modal if items specified in #
-  const hashSlug = window.location.hash?.substring(1); // remove #
-  const cardElement = document.querySelector(`[data-slug="${hashSlug}"]`);
-  if (cardElement) {
-    const cardData = getDataFromCard(cardElement);
-    populateModal(cardData);
-    openModal();
-  }
 
 });

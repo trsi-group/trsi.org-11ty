@@ -4,6 +4,9 @@
 {%- comment %} Pages name themselves via `title`; without it the site title stands alone. {% endcomment %}
     <title>{% if title %}{{ title }} | {{ site.metadata.title }}{% else %}{{ site.metadata.title }}{% endif %}</title>
     <meta charset="utf-8">
+{%- if hash_redirect %}
+{% include "sections/hash-redirect.liquid" %}
+{%- endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ post.teaser | default: site.metadata.description }}">
     <meta name="keywords" content="{{ site.metadata.keywords }}">

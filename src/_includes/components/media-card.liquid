@@ -44,9 +44,9 @@
         </div>
 {%- else %}
   {%- case kind %}
-    {%- when "productions" %}{%- assign ctype = "prod" %}{%- assign action = "View" %}
-    {%- when "graphics" %}{%- assign ctype = "graphic" %}{%- assign action = "View" %}
-    {%- when "music" %}{%- assign ctype = "music" %}{%- assign action = "Play" %}
+    {%- when "productions" %}{%- assign action = "View" %}
+    {%- when "graphics" %}{%- assign action = "View" %}
+    {%- when "music" %}{%- assign action = "Play" %}
   {%- endcase %}
   {%- if item.platform %}
     {%- assign subtitle = item.type | append: " / " | append: item.platform %}
@@ -58,31 +58,11 @@
   {%- elsif kind == "graphics" and item.asset %}{%- assign badge = "show" %}
   {%- else %}{%- assign badge = "" %}
   {%- endif %}
-        <div class="media-card pointer"
-          data-ctype="{{ ctype }}"
-          data-title="{{ item.title | escape }}"
-          data-subtitle="{{ subtitle | escape }}"
-          data-card-image="{{ item.card_image }}"
+{%- comment %} Only the two attributes the filter reads stay on the card; everything
+else the modal used to need now lives on the item's own page. {% endcomment %}
+        <a class="media-card" href="/{{ kind }}/{{ item.slug }}/"
           data-type="{{ item.type | downcase }}"
-          data-platform="{{ item.platform | downcase }}"
-          data-date="{{ item.release_date }}"
-        {%- if item.slug %} data-slug="{{ item.slug }}"{% endif %}
-        {%- if item.youtube %} data-youtube="{{ item.youtube }}"{% endif %}
-        {%- if item.download %} data-download="{{ item.download }}"{% endif %}
-        {%- if item.demozoo %} data-demozoo="{{ item.demozoo }}"{% endif %}
-        {%- if item.csdb %} data-csdb="{{ item.csdb }}"{% endif %}
-        {%- if item.pouet %} data-pouet="{{ item.pouet }}"{% endif %}
-        {%- if item.credits %} data-credits='{{ item.credits | jsonify }}'{% endif %}
-        {%- if item.description %} data-description="{{ item.description | escape }}"{% endif %}
-        {%- if item.release_date %} data-release_date="{{ item.release_date }}"{% endif %}
-        {%- if kind == "graphics" and item.card_image %} data-image="{{ item.card_image }}"{% endif %}
-        {%- if kind == "music" %}
-          {%- if item.type %} data-format="{{ item.type }}"{% endif %}
-          {%- if item.asset %} data-asset="{{ item.asset }}"{% endif %}
-          {%- if item.playerEmu %} data-playeremu="{{ item.playerEmu }}"{% endif %}
-          {%- if item.kestra %} data-kestra="{{ item.kestra }}"{% endif %}
-        {%- endif %}
-          >
+          data-platform="{{ item.platform | downcase }}">
           <div class="media-card__media">
           {%- if item.card_image %}
             <img class="media-card__image" src="{{ item.card_image }}" alt="{{ item.title | escape }}" loading="lazy">
@@ -98,8 +78,8 @@
           {%- endif %}
           </div>
           <div class="media-card__body">
-            <div class="media-card__kicker">{{ subtitle }}</div>
-            <h3 class="media-card__title">{{ item.title }}</h3>
+            <div class="media-card__kicker">{{ subtitle | escape }}</div>
+            <h3 class="media-card__title">{{ item.title | escape }}</h3>
             <div class="media-card__meta">
               <span>{{ item.release_date | date: "%B %-d, %Y" }}</span>
             </div>
@@ -107,5 +87,5 @@
               <span class="media-card__action">{{ action }} &rarr;</span>
             </div>
           </div>
-        </div>
+        </a>
 {%- endif %}

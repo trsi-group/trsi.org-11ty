@@ -4,6 +4,7 @@ pagination:
   size: 100
 
 layout: layouts/base.liquid
+hash_redirect: true
 title: Music
 ---
     <section class="section section--page">
@@ -26,7 +27,3 @@ title: Music
         {%- render "components/card-grid.liquid", feed: cms.music, kind: "music" %}
       </div>
     </section>
-
-    <div class="modal-wrapper">
-      {%- render "components/modal-template.liquid" %}
-    </div>
