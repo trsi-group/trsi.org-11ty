@@ -7,7 +7,8 @@
   "scripts": {
     "build:c-fetch": "node cms/scripts/fetchContent.js",
     "build:c-process": "node cms/scripts/processContent.js",
-    "build:content": "npm run build:c-fetch && npm run build:c-process",
+    "build:c-verify": "node cms/scripts/checkLegacySlugs.js",
+    "build:content": "npm run build:c-fetch && npm run build:c-process && npm run build:c-verify",
     "build:css": "postcss src/css/index.css -o dist/css/main.min.css",
     "build:banners": "node cms/scripts/processBanners.js",
     "build": "npm run build:content && npm run build:banners && npm run build:css && eleventy",
@@ -30,6 +31,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@fullhuman/postcss-purgecss": "^7.0.2",
     "@jgarber/eleventy-plugin-markdown": "^2.0.1",
+    "@sindresorhus/slugify": "^2.2.1",
     "autoprefixer": "^10.4.20",
     "bulma": "^1.0.3",
     "contentful": "^11.4.4",

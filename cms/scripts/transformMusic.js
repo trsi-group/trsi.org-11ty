@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { buildImageIndex, imagePath } from './assetPaths.js';
+import { itemSlug } from './slug.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -61,6 +62,7 @@ export function transformMusic(contentfulData) {
       const tags = metadata.tags.map(tag => tag.sys.id);
       return {
         title: fields.title['en-US'],
+        slug: itemSlug(fields.title['en-US']),
         type: fields.type['en-US'],
         platform: platform,
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',

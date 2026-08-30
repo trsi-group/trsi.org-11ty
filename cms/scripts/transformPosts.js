@@ -1,12 +1,5 @@
 import { buildImageIndex, imagePath, imageSize, localiseAssetUrls } from './assetPaths.js';
-
-// Generate slug from title 
-function getSlug(title) {
-  return title
-    .toLowerCase() // Convert to lowercase
-    .replace(/\s+/g, "-") // Replace spaces with dashes
-    .replace(/[^a-z0-9-]/g, ""); // Remove special characters
-}
+import { postSlug } from './slug.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -23,7 +16,7 @@ export function transformPosts(contentfulData) {
     .map((entry) => {
       const fields = entry.fields;
       const imageId = fields.image?.['en-US']?.sys.id;
-      const slug = getSlug(fields.title['en-US']);
+      const slug = postSlug(fields.title['en-US']);
       const body = fields.body?.['en-US'];
       const socialSize = imageId ? imageSize(index, imageId) : null;
 
