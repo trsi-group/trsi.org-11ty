@@ -75,6 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     start();
   }
 
+  /* NFO art is fixed-width and overruns a phone screen, so the markup ships it
+     collapsed and it only opens itself where there is room. */
+  const nfo = document.querySelector('.item__nfo');
+  if (nfo && window.matchMedia('(min-width: 861px)').matches) {
+    nfo.open = true;
+  }
+
   /* Music player on a track page — the overlay carries the track it belongs to */
   const musicOverlay = document.getElementById('music-player-overlay');
   if (musicOverlay?.dataset.asset) {
