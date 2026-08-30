@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { buildImageIndex, imagePath, imageSize } from './assetPaths.js';
+import { buildImageIndex, imagePath } from './assetPaths.js';
 import { itemSlug } from './slug.js';
 
 /**
@@ -21,14 +21,6 @@ export function transformMusic(contentfulData) {
 
   const index = buildImageIndex(assets);
 
-  // Sizes of the checked-in fallback artwork, so a track without its own image
-  // can still declare og:image dimensions.
-  const platformImageSize = {
-    '/img/music-amiga.webp': { width: 560, height: 420 },
-    '/img/music-c64.webp': { width: 560, height: 420 },
-    '/img/music-player.webp': { width: 1024, height: 1024 },
-  };
-
   /**
    * Tracks rarely carry their own artwork, so the card falls back to an image
    * of the machine they were written for. The platform field decides;
@@ -36,17 +28,17 @@ export function transformMusic(contentfulData) {
    * UADE modules are named .sid as well and would pass for C64 tunes.
    * @param {String|null} platform - The entry's platform.
    * @param {String} playerEmu - The player backend the track needs.
-   * @returns {String} The site-absolute path of the fallback image.
+   * @returns {String} The base name of the fallback image, without extension.
    */
-  const platformImage = (platform, playerEmu) => {
+  const platformImageName = (platform, playerEmu) => {
     if (platform) {
-      if (platform.startsWith('Amiga')) return '/img/music-amiga.webp';
-      if (platform === 'C64') return '/img/music-c64.webp';
-      return '/img/music-player.webp';
+      if (platform.startsWith('Amiga')) return 'music-amiga';
+      if (platform === 'C64') return 'music-c64';
+      return 'music-player';
     }
-    if (playerEmu === 'SID') return '/img/music-c64.webp';
-    if (playerEmu === 'MPT' || playerEmu === 'UADE') return '/img/music-amiga.webp';
-    return '/img/music-player.webp';
+    if (playerEmu === 'SID') return 'music-c64';
+    if (playerEmu === 'MPT' || playerEmu === 'UADE') return 'music-amiga';
+    return 'music-player';
   };
 
   const music = entries
@@ -58,8 +50,7 @@ export function transformMusic(contentfulData) {
       const metadata = entry.metadata;
       const platform = fields.platform ? fields.platform['en-US'] : null;
       const playerEmu = fields.playerEmu ? fields.playerEmu?.['en-US'] : '';
-      const socialImage = imageId ? imagePath(index, imageId, 'orig') : platformImage(platform, playerEmu);
-      const socialSize = imageId ? imageSize(index, imageId) : platformImageSize[socialImage];
+      const fallbackImage = platformImageName(platform, playerEmu);
       
       // Extract credits from the new structure   
       const credits = Array.isArray(fields.credits?.['en-US'])
@@ -84,10 +75,11 @@ export function transformMusic(contentfulData) {
         // `sort` compares inconsistently against null and scrambles the whole feed,
         // while '' orders before every real date and so lands last once reversed.
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
-        card_image: imageId ? imagePath(index, imageId, 'card') : platformImage(platform, playerEmu),
-        social_image: socialImage,
-        social_image_width: socialSize ? socialSize.width : null,
-        social_image_height: socialSize ? socialSize.height : null,
+        card_image: imageId ? imagePath(index, imageId, 'card') : `/img/${fallbackImage}.webp`,
+        // Link previews are rendered to a fixed 1200x630 frame, fallback artwork included.
+        social_image: imageId ? imagePath(index, imageId, 'social') : `/img/social/${fallbackImage}.jpg`,
+        social_image_width: 1200,
+        social_image_height: 630,
         download: fields.download ? fields.download['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         kestra: fields.kestraUrl ? fields.kestraUrl['en-US'] : null,

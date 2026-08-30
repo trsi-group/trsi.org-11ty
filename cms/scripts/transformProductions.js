@@ -52,10 +52,11 @@ export function transformProductions(contentfulData) {
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
-        // Social previews need the uploaded resolution, which 'card' caps at 800px wide
-        social_image: imageId ? imagePath(index, imageId, 'orig') : null,
-        social_image_width: socialSize ? socialSize.width : null,
-        social_image_height: socialSize ? socialSize.height : null,
+        // Link previews are rendered to a fixed 1200x630 frame, so the size is
+        // known without measuring the source.
+        social_image: imageId ? imagePath(index, imageId, 'social') : null,
+        social_image_width: imageId ? 1200 : null,
+        social_image_height: imageId ? 630 : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
         youtube: "https://www.youtube-nocookie.com/embed/" + ytId,
         pouet: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,

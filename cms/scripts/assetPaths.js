@@ -74,12 +74,17 @@ export function imageSize(index, assetId) {
  * Resolves an asset id to its local path in one of the generated size variants.
  * @param {Object} index - The index returned by buildImageIndex.
  * @param {String} assetId - The Contentful asset id.
- * @param {String} variant - One of 'orig', 'card' or 'post'.
+ * @param {String} variant - One of 'orig', 'card', 'post' or 'social'.
  * @returns {String|null} The site-absolute path, or null if the asset is unknown.
  */
 export function imagePath(index, assetId, variant) {
   const fileName = index.byId.get(assetId);
-  return fileName ? `/img/${variant}/${fileName}` : null;
+  if (!fileName) return null;
+  // Social previews are JPEG: WebP is fine on Facebook, X and LinkedIn but
+  // still trips up older WhatsApp clients, and this is the one image whose
+  // job is to render somewhere we do not control.
+  const name = variant === 'social' ? fileName.replace(/\.webp$/, '.jpg') : fileName;
+  return `/img/${variant}/${name}`;
 }
 
 /**
