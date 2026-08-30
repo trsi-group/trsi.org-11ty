@@ -1,4 +1,4 @@
-import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries, enhanceSelects } from './utils.js';
+import { openModal, closeModal, populateModal, getDataFromCard, handleFilterChange, handleSortChange, preloadMusicLibraries, setupMusicPlayerUI, enhanceSelects } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -78,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.hidden ? stop() : start();
     });
     start();
+  }
+
+  /* Music player on a track page — the overlay carries the track it belongs to */
+  const musicOverlay = document.getElementById('music-player-overlay');
+  if (musicOverlay?.dataset.asset) {
+    setupMusicPlayerUI(musicOverlay.dataset.asset, musicOverlay.dataset.title, musicOverlay.dataset.playeremu);
   }
 
   enhanceSelects();

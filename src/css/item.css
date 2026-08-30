@@ -1,0 +1,140 @@
+.item {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.item__back {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.item__back:hover {
+  color: var(--accent);
+}
+
+.item__media {
+  display: block;
+  position: relative;
+  margin: 0 0 var(--space-md);
+  background: #000;
+  border: 3px solid var(--edge);
+}
+
+.item__media--video {
+  aspect-ratio: 16 / 9;
+}
+
+.item__media--video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.item__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Pixel art is scaled up to fill the frame; smoothing turns it to mush. */
+.item__image--pixelated {
+  image-rendering: pixelated;
+}
+
+.item__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.item__description {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-dim);
+  white-space: pre-line;
+}
+
+.item__credits {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-sm);
+  margin: 0;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--edge);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-sm);
+  line-height: 1.8;
+}
+
+.item__credits dt {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: var(--fs-label);
+  align-self: baseline;
+}
+
+.item__credits dd {
+  margin: 0;
+  color: var(--ink-dim);
+}
+
+.item__date {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-ui);
+  color: var(--ink-faint);
+}
+
+.item__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.item__nfo {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--edge);
+}
+
+/* NFOs are fixed-width ASCII art: never reflow them, scroll instead. */
+.item__nfo-text {
+  margin: var(--space-sm) 0 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+  background: var(--surface-raised);
+  border: 1px solid var(--edge);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-sm);
+  line-height: 1.4;
+  color: var(--ink-muted);
+  white-space: pre;
+  tab-size: 8;
+}
+
+@media (max-width: 860px) {
+  .item__links .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .item__nfo-text {
+    padding: var(--space-sm);
+  }
+}

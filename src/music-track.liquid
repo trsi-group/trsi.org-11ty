@@ -1,0 +1,13 @@
+---
+pagination:
+  data: cms.music
+  size: 1
+  alias: item
+permalink: "music/{{ item.slug }}/index.html"
+layout: layouts/base.liquid
+nav_section: music
+og_type: music.song
+eleventyComputed:
+  title: "{{ item.title }}"
+---
+{%- render "components/item-detail.liquid", item: item, kind: "music" %}

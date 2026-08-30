@@ -1,0 +1,94 @@
+{%- case kind %}
+  {%- when "productions" %}{%- assign back_url = "/productions/" %}{%- assign back_label = "All productions" %}
+  {%- when "graphics" %}{%- assign back_url = "/graphics/" %}{%- assign back_label = "All graphics" %}
+  {%- when "music" %}{%- assign back_url = "/music/" %}{%- assign back_label = "All music" %}
+{%- endcase %}
+{%- if item.platform %}
+  {%- assign subtitle = item.type | append: " / " | append: item.platform %}
+{%- else %}
+  {%- assign subtitle = item.type %}
+{%- endif %}
+{%- comment %} Pixel art is upscaled to fill the frame, so keep it crisp; anything
+that already exceeds the frame is being scaled down and wants smoothing. {% endcomment %}
+{%- assign pixelated = false %}
+{%- if item.asset_width and item.asset_width < 800 %}{%- assign pixelated = true %}{%- endif %}
+    <section class="section section--page">
+      <div class="item">
+        <a class="item__back" href="{{ back_url }}">&larr; {{ back_label }}</a>
+
+        <div class="page-header">
+          <div class="section__label">{{ subtitle | escape }}</div>
+          <h1 class="page-header__title">{{ item.title | escape }}</h1>
+        </div>
+
+      {%- if kind == "productions" %}
+        <figure class="item__media item__media--video">
+          <iframe src="{{ item.youtube | escape }}" title="{{ item.title | escape }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </figure>
+      {%- elsif kind == "graphics" %}
+        <figure class="item__media">
+          <img class="item__image{% if pixelated %} item__image--pixelated{% endif %}"
+               src="{{ item.asset | default: item.card_image | escape }}"
+               alt="{{ item.title | escape }}"
+            {%- if item.asset_width %} width="{{ item.asset_width }}" height="{{ item.asset_height }}"{% endif %}>
+        </figure>
+      {%- elsif kind == "music" %}
+        <figure class="item__media">
+          <img class="item__image" src="{{ item.card_image | escape }}" alt="{{ item.title | escape }}">
+        {%- if item.asset %}
+          <div id="music-player-overlay" class="music-player-overlay"
+               data-asset="{{ item.asset | escape }}"
+               data-title="{{ item.title | escape }}"
+               data-playeremu="{{ item.playerEmu | escape }}">
+            <button id="play-pause-btn" class="music-player-button" aria-label="Play or pause {{ item.title | escape }}">
+              <span id="play-icon" class="music-player-icon music-player-icon--play">
+                {%- include "icons/play.svg" %}
+              </span>
+              <span id="pause-icon" class="music-player-icon is-hidden">
+                {%- include "icons/pause.svg" %}
+              </span>
+            </button>
+          </div>
+        {%- endif %}
+        </figure>
+      {%- endif %}
+
+        <div class="item__body">
+        {%- if item.description %}
+          <p class="item__description">{{ item.description | escape }}</p>
+        {%- endif %}
+
+        {%- if item.credits and item.credits.size > 0 %}
+          {%- assign credit_groups = item.credits | group_by: "contribution" %}
+          <dl class="item__credits">
+          {%- for group in credit_groups %}
+            <dt>{{ group.name | escape }}</dt>
+            <dd>{{ group.items | map: "name" | join: ", " | escape }}</dd>
+          {%- endfor %}
+          </dl>
+        {%- endif %}
+
+        {%- if item.release_date %}
+          <p class="item__date">Released {{ item.release_date | date: "%B %-d, %Y" }}</p>
+        {%- endif %}
+        </div>
+
+      {%- assign has_links = item.demozoo or item.pouet or item.csdb or item.download or item.kestra %}
+      {%- if has_links %}
+        <div class="item__links">
+        {%- if item.demozoo %}<a class="btn btn--outline" href="{{ item.demozoo | escape }}" target="_blank" rel="noopener">Demozoo</a>{% endif %}
+        {%- if item.csdb %}<a class="btn btn--outline" href="{{ item.csdb | escape }}" target="_blank" rel="noopener">CSDB</a>{% endif %}
+        {%- if item.pouet %}<a class="btn btn--outline" href="{{ item.pouet | escape }}" target="_blank" rel="noopener">Pouet</a>{% endif %}
+        {%- if item.kestra %}<a class="btn btn--outline" href="{{ item.kestra | escape }}" target="_blank" rel="noopener">Kestra</a>{% endif %}
+        {%- if item.download %}<a class="btn btn--outline" href="{{ item.download | escape }}" target="_blank" rel="noopener">Download</a>{% endif %}
+        </div>
+      {%- endif %}
+
+      {%- if item.nfo_text and item.nfo_text != blank %}
+        <div class="item__nfo">
+          <div class="section__label">NFO</div>
+          <pre class="item__nfo-text">{{ item.nfo_text | escape }}</pre>
+        </div>
+      {%- endif %}
+      </div>
+    </section>

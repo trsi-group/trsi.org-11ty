@@ -5,11 +5,14 @@
         </a>
 
         <nav class="header__nav" aria-label="Main navigation">
+{%- comment %} Detail pages set `nav_section` so they keep their section lit; index
+pages fall back to their own file name, which already matches the nav item. {% endcomment %}
+{%- assign active_section = nav_section | default: page.fileSlug %}
           <ul class="nav__list" id="nav-list">
           {%- for item in navdata.nav_items %}
             {%- assign item_slug = item.title | downcase %}
             <li{% if item.hidden == true %} class="nav__item--hidden"{% elsif item.mobile_only == true %} class="nav__item--mobile"{% endif %}>
-              <a href="{{ item.url }}" class="nav__link{% if page.fileSlug == item_slug %} nav__link--active{% endif %}">{{ item.title }}</a>
+              <a href="{{ item.url }}" class="nav__link{% if active_section == item_slug %} nav__link--active{% endif %}">{{ item.title }}</a>
             </li>
           {%- endfor %}
             <li class="nav__social">

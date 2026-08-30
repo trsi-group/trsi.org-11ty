@@ -1,0 +1,13 @@
+---
+pagination:
+  data: cms.productions
+  size: 1
+  alias: item
+permalink: "productions/{{ item.slug }}/index.html"
+layout: layouts/base.liquid
+nav_section: productions
+og_type: video.other
+eleventyComputed:
+  title: "{{ item.title }}"
+---
+{%- render "components/item-detail.liquid", item: item, kind: "productions" %}
