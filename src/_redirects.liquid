@@ -1,0 +1,9 @@
+---
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+layout: null
+---
+# Generated from src/_data/slugAliases.json — edit that file, not this one.
+{%- for rule in redirects %}
+{{ rule.from }}  {{ rule.to }}  {{ rule.status }}
+{%- endfor %}
