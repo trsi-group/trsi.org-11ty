@@ -24,12 +24,8 @@ This is an **11ty (Eleventy) static site** for the TRSI demogroup that uses **Co
 - **Server Restart**: Only needed for config changes (`.eleventy.js`, `package.json`, etc.)
 - **Manual Builds**: Only required for production deployment or initial setup
 
-### Testing Commands
-- `npm test` - Run all unit tests with Vitest
-- `npm run test:watch` - Run tests in watch mode during development
-- `npm run test:coverage` - Generate test coverage reports
-- `npm run test:e2e` - Run end-to-end tests with Playwright
-- `npm run test:integration` - Run Eleventy build integration tests
+### Checks
+- `npm run build:c-verify` - Verifies every URL in `src/_data/legacySlugs.json` is still generated; part of `npm run build:content`
 
 ### Content Management
 - Content types: `productions`, `members`, `graphics`, `music`, `posts`
@@ -139,6 +135,4 @@ Cards with `js-modal-trigger` class auto-bind to modal system. Required data att
 
 ### Debugging and Development
 - Use `npm run debug` for Eleventy verbose logging
-- Test URL parameters locally: `localhost:8080?mode=wotw`
-- Check `tests/unit/development.test.js` for workflow validation patterns
-- Use `npm run test:watch` during development for instant feedback
+- There is no test suite; `npm run build:c-verify` is the one automated check

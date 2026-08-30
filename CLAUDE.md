@@ -1,9 +1,5 @@
 # CLAUDE.md
 
-## First Steps
-
-Before working on this codebase, read the detailed research document at `.claude/research.md` for a comprehensive understanding of the project architecture, build pipeline, content types, data flow, and key patterns.
-
 ## Quick Reference
 
 - **Stack**: Eleventy 3.0 + Contentful CMS + Bulma CSS + Liquid templates

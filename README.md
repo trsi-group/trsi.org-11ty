@@ -8,14 +8,10 @@ build using 11ty & Bulma
 - ```npm install``` to install dependencies
 - ```npm run build``` for CMS content download and post processing. 
 - ```npm run build:c-process``` to run post processing only
-- ```npm run serve``` to run vite preview server
+- ```npm run serve``` to run the Eleventy dev server without refetching content
 
-## Test Commands
-- ```npm test```                 # Run all unit tests
-- ```npm run test:watch```       # Watch mode for development
-- ```npm run test:coverage```    # Generate coverage reports
-- ```npm run test:e2e```         # Cross-browser e2e tests
-- ```npm run test:integration``` # Build process validation
+## Checks
+- ```npm run build:c-verify``` verifies that every URL in ```src/_data/legacySlugs.json``` is still generated. It runs as part of ```npm run build:content``` and fails the build if a title change would retire a link that has already been shared.
 
 ## ENV vars
 - ```NODE_ENV: development/production``` prod runs minimisations
