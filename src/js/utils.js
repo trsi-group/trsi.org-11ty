@@ -8,34 +8,77 @@
 import { musicPlayerManager } from './musicPlayer.js';
 
 /**
- * Handles filtering of cards based on selected type and platform filters.
- *
- * This function listens to changes in the filter dropdowns (#TypeFilter and #PlatformFilter)
- * and dynamically shows or hides cards within the #feed-wrapper based on matching 
- * data attributes (`data-type` and `data-platform`).
- *
- * @param {Event} event - The change event triggered by the filter dropdowns.
- *
- * Behavior:
- * - If no filter is selected, all cards are shown.
- * - If one or both filters are selected, only cards matching the selected criteria are displayed.
- * - Cards that don't match the filter criteria are hidden via `display: none`.
+ * The two dropdowns that narrow a card grid, and the query parameter each one
+ * is mirrored into.
  */
-export function handleFilterChange(event) {
-  const cards = document.querySelectorAll("#feed-wrapper .media-card");
-  const typeFilter = document.getElementById("TypeFilter");
-  const platformFilter = document.getElementById("PlatformFilter");
+const FILTERS = [
+  { id: 'TypeFilter', param: 'type', key: 'type' },
+  { id: 'PlatformFilter', param: 'platform', key: 'platform' },
+];
 
-  const selectedType = typeFilter.value;
-  const selectedPlatform = platformFilter.value;
+/**
+ * Shows only the cards in #feed-wrapper matching every active dropdown.
+ * An empty dropdown matches everything, so the two combine with AND.
+ */
+function applyFilters() {
+  const active = FILTERS
+    .map(filter => ({ key: filter.key, value: document.getElementById(filter.id)?.value || '' }))
+    .filter(filter => filter.value);
 
-  cards.forEach(card => {
-    const typeMatch = !selectedType || card.dataset.type === selectedType;
-    const platformMatch = !selectedPlatform || card.dataset.platform === selectedPlatform;
-    const matches = typeMatch && platformMatch;
+  document.querySelectorAll('#feed-wrapper .media-card').forEach(card => {
+    const matches = active.every(filter => card.dataset[filter.key] === filter.value);
     card.style.display = matches ? '' : 'none';
-  })
-};
+  });
+}
+
+/**
+ * Mirrors the selections into the query string. Cards are links now, so the
+ * grid is left behind on every click — this is what lets the back button
+ * return to the filtered view, and makes a filtered grid shareable.
+ */
+function syncFilterQuery() {
+  const url = new URL(window.location.href);
+
+  FILTERS.forEach(filter => {
+    const value = document.getElementById(filter.id)?.value || '';
+    if (value) {
+      url.searchParams.set(filter.param, value);
+    } else {
+      url.searchParams.delete(filter.param);
+    }
+  });
+
+  window.history.replaceState(null, '', url);
+}
+
+/**
+ * Handles a change on either dropdown.
+ */
+export function handleFilterChange() {
+  applyFilters();
+  syncFilterQuery();
+}
+
+/**
+ * Reapplies the filters named in the query string. Call before enhanceSelects
+ * so the styled dropdown picks up the restored value as its initial label.
+ */
+export function restoreFiltersFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  let restored = false;
+
+  FILTERS.forEach(filter => {
+    const select = document.getElementById(filter.id);
+    const value = params.get(filter.param);
+    if (!select || !value) return;
+    // Ignore anything the dropdown does not actually offer
+    if (!Array.from(select.options).some(option => option.value === value)) return;
+    select.value = value;
+    restored = true;
+  });
+
+  if (restored) applyFilters();
+}
 
 const STATUS_RANK = {
   'awake': 0,

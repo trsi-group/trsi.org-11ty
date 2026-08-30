@@ -1,4 +1,4 @@
-import { handleFilterChange, handleSortChange, preloadMusicLibraries, setupMusicPlayerUI, enhanceSelects } from './utils.js';
+import { handleFilterChange, handleSortChange, preloadMusicLibraries, restoreFiltersFromQuery, setupMusicPlayerUI, enhanceSelects } from './utils.js';
 
 /**
  * Initializes UI event handlers after DOM content is loaded.
@@ -8,7 +8,8 @@ import { handleFilterChange, handleSortChange, preloadMusicLibraries, setupMusic
  *    - Toggles the mobile nav panel via '#nav-toggle', closing on link click or Escape.
  *
  * 2. Filter Components:
- *    - Registers 'change' events on #TypeFilter and #PlatformFilter dropdowns to dynamically filter card elements.
+ *    - Restores filters from the query string, then registers 'change' events on
+ *      #TypeFilter and #PlatformFilter to filter cards and mirror the selection back.
  *
  * 3. Music Player:
  *    - Binds the play/pause control on a track page to the MusicPlayerManager.
@@ -79,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (musicOverlay?.dataset.asset) {
     setupMusicPlayerUI(musicOverlay.dataset.asset, musicOverlay.dataset.title, musicOverlay.dataset.playeremu);
   }
+
+  /* Restore any filter carried in the query string before the styled dropdown
+     is built, so it renders with the right label already selected. */
+  restoreFiltersFromQuery();
 
   enhanceSelects();
 
