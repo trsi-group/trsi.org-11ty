@@ -3,8 +3,8 @@ import autoprefixer from "autoprefixer";
 import purgecssModule from "@fullhuman/postcss-purgecss";
 import cssnano from "cssnano";
 
-// Fix: Use `.default` to get the actual function
-const purgecss = purgecssModule.default;
+// v7 wrapped the plugin one level deeper than v8 exports it.
+const purgecss = purgecssModule.default ?? purgecssModule;
 
 export default {
   plugins: [
