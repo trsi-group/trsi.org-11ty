@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { buildImageIndex, imagePath } from './assetPaths.js';
+import { buildImageIndex, imagePath, imageSize } from './assetPaths.js';
 import { itemSlug } from './slug.js';
 
 /**
@@ -20,6 +20,14 @@ export function transformMusic(contentfulData) {
   };
 
   const index = buildImageIndex(assets);
+
+  // Sizes of the checked-in fallback artwork, so a track without its own image
+  // can still declare og:image dimensions.
+  const platformImageSize = {
+    '/img/music-amiga.webp': { width: 560, height: 420 },
+    '/img/music-c64.webp': { width: 560, height: 420 },
+    '/img/music-player.webp': { width: 1024, height: 1024 },
+  };
 
   /**
    * Tracks rarely carry their own artwork, so the card falls back to an image
@@ -50,6 +58,8 @@ export function transformMusic(contentfulData) {
       const metadata = entry.metadata;
       const platform = fields.platform ? fields.platform['en-US'] : null;
       const playerEmu = fields.playerEmu ? fields.playerEmu?.['en-US'] : '';
+      const socialImage = imageId ? imagePath(index, imageId, 'orig') : platformImage(platform, playerEmu);
+      const socialSize = imageId ? imageSize(index, imageId) : platformImageSize[socialImage];
       
       // Extract credits from the new structure   
       const credits = Array.isArray(fields.credits?.['en-US'])
@@ -72,6 +82,9 @@ export function transformMusic(contentfulData) {
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
         card_image: imageId ? imagePath(index, imageId, 'card') : platformImage(platform, playerEmu),
+        social_image: socialImage,
+        social_image_width: socialSize ? socialSize.width : null,
+        social_image_height: socialSize ? socialSize.height : null,
         download: fields.download ? fields.download['en-US'] : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         kestra: fields.kestraUrl ? fields.kestraUrl['en-US'] : null,

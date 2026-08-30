@@ -1,4 +1,4 @@
-import { buildImageIndex, imagePath } from './assetPaths.js';
+import { buildImageIndex, imagePath, imageSize } from './assetPaths.js';
 import { itemSlug } from './slug.js';
 
 /**
@@ -17,6 +17,7 @@ export function transformGraphics(contentfulData) {
       const fields = entry.fields;
       const imageId = fields.image?.['en-US']?.sys.id;
       const assetId = fields.image?.['en-US']?.sys.id;
+      const assetSize = assetId ? imageSize(index, assetId) : null;
 
       // Extract credits from the new structure   
       const credits = Array.isArray(fields.credits?.['en-US'])
@@ -35,10 +36,17 @@ export function transformGraphics(contentfulData) {
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         assetId: assetId ? assetId : null,
         asset: assetId ? imagePath(index, assetId, 'orig') : null,
+        // The detail page shows the full-resolution asset; its dimensions decide
+        // whether the browser may smooth it when scaling up (see item-detail).
+        asset_width: assetSize ? assetSize.width : null,
+        asset_height: assetSize ? assetSize.height : null,
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
         // image: imageId ? imagePath(index, imageId, 'orig') : null,
         download: imageId ? imagePath(index, imageId, 'orig') : null,
+        social_image: assetId ? imagePath(index, assetId, 'orig') : null,
+        social_image_width: assetSize ? assetSize.width : null,
+        social_image_height: assetSize ? assetSize.height : null,
         demozoo: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
       };

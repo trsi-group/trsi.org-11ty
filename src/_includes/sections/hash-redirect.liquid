@@ -1,0 +1,12 @@
+{%- comment %} Items were reachable only as modal fragments on this page
+(/productions/#slug) before they had pages of their own, and those links are in
+the wild. A fragment never reaches the server, so no redirect rule can catch
+them — this runs before the grid paints and hands the visitor the item's page.
+{% endcomment %}
+    <script>
+      (function () {
+        var slug = location.hash.slice(1);
+        if (!/^[a-z0-9-]+$/.test(slug)) return;
+        location.replace(location.pathname.replace(/\/?$/, '/') + slug + '/' + location.search);
+      })();
+    </script>

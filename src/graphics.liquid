@@ -4,6 +4,7 @@ pagination:
   size: 100
 
 layout: layouts/base.liquid
+hash_redirect: true
 title: Graphics
 tags: page
 ---
@@ -27,7 +28,3 @@ tags: page
         {%- render "components/card-grid.liquid", feed: cms.graphics, kind: "graphics" %}
       </div>
     </section>
-
-    <div class="modal-wrapper">
-      {%- render "components/modal-template.liquid" %}
-    </div>
