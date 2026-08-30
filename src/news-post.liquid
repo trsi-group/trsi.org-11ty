@@ -5,7 +5,8 @@ pagination:
   alias: post       # Each item will be called 'post'
 permalink: "news/{{ post.slug }}/index.html"
 layout: layouts/base.liquid
-title: TRSI News - {{ post.title }}
+eleventyComputed:
+  title: "{{ post.title }}"
 ---
     <section class="section section--page">
       <div class="section__narrow">
