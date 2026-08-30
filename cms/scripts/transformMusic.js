@@ -80,7 +80,10 @@ export function transformMusic(contentfulData) {
         asset: assetId ? resolve('/tracks/', findTrackAssetPathById(assetId)) : null,
         playerEmu: playerEmu,
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
-        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
+        // An entry without a date must fall back to '' and never null: liquidjs's
+        // `sort` compares inconsistently against null and scrambles the whole feed,
+        // while '' orders before every real date and so lands last once reversed.
+        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
         card_image: imageId ? imagePath(index, imageId, 'card') : platformImage(platform, playerEmu),
         social_image: socialImage,
         social_image_width: socialSize ? socialSize.width : null,

@@ -40,7 +40,10 @@ export function transformGraphics(contentfulData) {
         // whether the browser may smooth it when scaling up (see item-detail).
         asset_width: assetSize ? assetSize.width : null,
         asset_height: assetSize ? assetSize.height : null,
-        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : null,
+        // An entry without a date must fall back to '' and never null: liquidjs's
+        // `sort` compares inconsistently against null and scrambles the whole feed,
+        // while '' orders before every real date and so lands last once reversed.
+        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
         // image: imageId ? imagePath(index, imageId, 'orig') : null,
         download: imageId ? imagePath(index, imageId, 'orig') : null,

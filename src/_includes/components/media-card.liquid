@@ -81,7 +81,9 @@ else the modal used to need now lives on the item's own page. {% endcomment %}
             <div class="media-card__kicker">{{ subtitle | escape }}</div>
             <h3 class="media-card__title">{{ item.title | escape }}</h3>
             <div class="media-card__meta">
+            {%- if item.release_date %}
               <span>{{ item.release_date | date: "%B %-d, %Y" }}</span>
+            {%- endif %}
             </div>
             <div class="media-card__footer">
               <span class="media-card__action">{{ action }} &rarr;</span>
