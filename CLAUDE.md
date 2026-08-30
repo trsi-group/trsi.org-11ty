@@ -1,8 +1,11 @@
 # CLAUDE.md
 
+Read [.claude/architecture.md](.claude/architecture.md) first — it covers the build
+pipeline, the layout, and the contracts that break silently if you ignore them.
+
 ## Quick Reference
 
-- **Stack**: Eleventy 3.0 + Contentful CMS + Bulma CSS + Liquid templates
+- **Stack**: Eleventy 3 + Liquid templates + Contentful CMS + PostCSS (no CSS framework)
 - **Input**: `src/` — **Output**: `dist/`
 - **CMS data**: `cms/data/*.json` (generated, gitignored) — loaded via `src/_data/cms.js`
 - **Config**: `.eleventy.js` (11ty), `postcss.config.mjs` (CSS pipeline), `cms/config.json` (Contentful)

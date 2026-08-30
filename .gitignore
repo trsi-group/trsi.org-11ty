@@ -141,5 +141,7 @@ dist
 # project specific
 /cms/export
 /cms/data
-/.claude/worktrees
-/.claude
+# Local Claude state stays out, but the architecture doc belongs to the repo.
+# Excluding the contents rather than the directory is what lets the ! apply.
+/.claude/*
+!/.claude/architecture.md
