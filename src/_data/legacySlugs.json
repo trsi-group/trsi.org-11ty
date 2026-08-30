@@ -1,0 +1,827 @@
+{
+  "captured": "2026-08-30",
+  "source": "https://trsi.org/ (live production HTML)",
+  "note": "Every item URL that was publicly reachable before per-item detail pages existed. Productions, graphics and music were only addressable as modal fragments on their index page, so these URLs have been shared outside the site and must keep working. Use this file as the redirect allowlist and as a build-time assertion: the slugs generated for detail pages must remain a superset of every slug listed here.",
+  "slugAlgorithm": {
+    "productions": "@sindresorhus/slugify v2.2.1 with { decamelize: false } (11ty `slugify` filter)",
+    "graphics": "@sindresorhus/slugify v2.2.1 with { decamelize: false } (11ty `slugify` filter)",
+    "music": "@sindresorhus/slugify v2.2.1 with { decamelize: false } (11ty `slugify` filter)",
+    "posts": "cms/scripts/transformPosts.js getSlug() — NOT interchangeable with the filter above"
+  },
+  "legacyUrl": {
+    "productions": "/productions/#<slug>",
+    "graphics": "/graphics/#<slug>",
+    "music": "/music/#<slug>",
+    "posts": "/news/<slug>/"
+  },
+  "counts": {
+    "productions": 92,
+    "graphics": 83,
+    "music": 7,
+    "posts": 17
+  },
+  "productions": [
+    {
+      "slug": "10-orbyte",
+      "title": "10 Orbyte"
+    },
+    {
+      "slug": "2008-a-dtv-odyssey",
+      "title": "2008 - a DTV Odyssey"
+    },
+    {
+      "slug": "25-years-krawall",
+      "title": "25 Years Krawall"
+    },
+    {
+      "slug": "2nd-element",
+      "title": "2nd Element"
+    },
+    {
+      "slug": "4krawall",
+      "title": "4krawall"
+    },
+    {
+      "slug": "60y-by-trsi",
+      "title": "60y by trsi"
+    },
+    {
+      "slug": "7k-candy",
+      "title": "7k Candy"
+    },
+    {
+      "slug": "all-roads-lead-to-roma-exe",
+      "title": "All roads lead to ROMA.exe"
+    },
+    {
+      "slug": "alone",
+      "title": "Alone"
+    },
+    {
+      "slug": "amstair-amstrad-antic-internal-ripper",
+      "title": "AMSTAIR (AMSTrad Antic Internal Ripper)"
+    },
+    {
+      "slug": "anhalonium-lewini",
+      "title": "Anhalonium Lewini"
+    },
+    {
+      "slug": "animatron",
+      "title": "Animatron"
+    },
+    {
+      "slug": "atarsi",
+      "title": "aTaRSI"
+    },
+    {
+      "slug": "automated-raster-machine",
+      "title": "Automated Raster Machine"
+    },
+    {
+      "slug": "beams-of-light",
+      "title": "Beams of Light"
+    },
+    {
+      "slug": "bendingbars",
+      "title": "Bendingbars"
+    },
+    {
+      "slug": "bette-davis",
+      "title": "Bette Davis"
+    },
+    {
+      "slug": "binford-9000",
+      "title": "Binford 9000"
+    },
+    {
+      "slug": "bloody-memories",
+      "title": "Bloody Memories"
+    },
+    {
+      "slug": "bloody-memories-2-01",
+      "title": "Bloody Memories 2.01"
+    },
+    {
+      "slug": "byte-me-blossom",
+      "title": "Byte Me, Blossom"
+    },
+    {
+      "slug": "california-games-2-cracktro",
+      "title": "California games 2 cRacktro"
+    },
+    {
+      "slug": "cracktro",
+      "title": "Cracktro"
+    },
+    {
+      "slug": "cyberlogik",
+      "title": "Cyberlogik"
+    },
+    {
+      "slug": "dataverse",
+      "title": "DataVerse"
+    },
+    {
+      "slug": "deepdream-cracktro",
+      "title": "DeepDream Cracktro"
+    },
+    {
+      "slug": "dystopic-nightmare-by-streettuff",
+      "title": "Dystopic Nightmare by Streettuff"
+    },
+    {
+      "slug": "easter-conference-92",
+      "title": "Easter Conference 92"
+    },
+    {
+      "slug": "egk",
+      "title": "EGK"
+    },
+    {
+      "slug": "episode-64",
+      "title": "Episode 64"
+    },
+    {
+      "slug": "evoke-our-function",
+      "title": "Evoke Our Function"
+    },
+    {
+      "slug": "exodus-trapped-in-time",
+      "title": "Exodus - Trapped in Time"
+    },
+    {
+      "slug": "extralife-nintendhack",
+      "title": "ExtraLife [ Nintendhack ]"
+    },
+    {
+      "slug": "fallen-heroes",
+      "title": "Fallen Heroes"
+    },
+    {
+      "slug": "follow-the-signal",
+      "title": "Follow the signal"
+    },
+    {
+      "slug": "funky-fresh",
+      "title": "Funky Fresh"
+    },
+    {
+      "slug": "gangnam",
+      "title": "Gangnam"
+    },
+    {
+      "slug": "gary-glitter",
+      "title": "Gary Glitter"
+    },
+    {
+      "slug": "ghost-in-the-machine",
+      "title": "Ghost in the Machine"
+    },
+    {
+      "slug": "going-lowres",
+      "title": "Going Lowres"
+    },
+    {
+      "slug": "gp2x-twistro",
+      "title": "GP2X Twistro"
+    },
+    {
+      "slug": "happy-ravenday",
+      "title": "Happy Ravenday"
+    },
+    {
+      "slug": "hardcore-vibes",
+      "title": "Hardcore Vibes"
+    },
+    {
+      "slug": "hoodlum-cracktro",
+      "title": "Hoodlum Cracktro"
+    },
+    {
+      "slug": "in-memoriam",
+      "title": "In Memoriam"
+    },
+    {
+      "slug": "inner-body-experience",
+      "title": "Inner Body Experience"
+    },
+    {
+      "slug": "invitation-intro-for-roma-exe-2026",
+      "title": "Invitation Intro for ROMA.EXE 2026"
+    },
+    {
+      "slug": "jupiter-and-beyond",
+      "title": "Jupiter & Beyond"
+    },
+    {
+      "slug": "kellerkind",
+      "title": "Kellerkind"
+    },
+    {
+      "slug": "krawall-brause",
+      "title": "Krawall(brause)"
+    },
+    {
+      "slug": "krawall-deluxe",
+      "title": "Krawall Deluxe"
+    },
+    {
+      "slug": "l4kuna",
+      "title": "l4Kuna"
+    },
+    {
+      "slug": "large-hedron-collider",
+      "title": "Large Hedron Collider "
+    },
+    {
+      "slug": "last-minute-solution",
+      "title": "Last Minute Solution"
+    },
+    {
+      "slug": "lick-it",
+      "title": "Lick it"
+    },
+    {
+      "slug": "lupus-animus",
+      "title": "Lupus Animus"
+    },
+    {
+      "slug": "lupus-reditus",
+      "title": "Lupus Reditus"
+    },
+    {
+      "slug": "megademo",
+      "title": "Megademo"
+    },
+    {
+      "slug": "metal-skin-slidetro",
+      "title": "Metal Skin Slidetro"
+    },
+    {
+      "slug": "mikado",
+      "title": "Mikado"
+    },
+    {
+      "slug": "misery-3",
+      "title": "Misery 3"
+    },
+    {
+      "slug": "misery-dentro",
+      "title": "Misery Dentro"
+    },
+    {
+      "slug": "misery-dentro-2",
+      "title": "Misery Dentro 2"
+    },
+    {
+      "slug": "my-private-spacetrip",
+      "title": "My private Spacetrip"
+    },
+    {
+      "slug": "my-private-spacetrip-live-footage",
+      "title": "My private Spacetrip (live footage)"
+    },
+    {
+      "slug": "no-pain-no-gain",
+      "title": "No Pain No Gain"
+    },
+    {
+      "slug": "nordlicht-2012-invitation",
+      "title": "Nordlicht 2012 Invitation"
+    },
+    {
+      "slug": "northern-palace-cracktro",
+      "title": "Northern Palace Cracktro"
+    },
+    {
+      "slug": "ohp-mega-demo-9000",
+      "title": "OHP MEGA DEMO 9000"
+    },
+    {
+      "slug": "oklahoma",
+      "title": "Oklahoma"
+    },
+    {
+      "slug": "one-trick-pony",
+      "title": "One Trick Pony"
+    },
+    {
+      "slug": "p4nk",
+      "title": "p4nk"
+    },
+    {
+      "slug": "para-n-droid",
+      "title": "Para 'N' droiD"
+    },
+    {
+      "slug": "prism-vectors",
+      "title": "Prism Vectors"
+    },
+    {
+      "slug": "q-n-2k15",
+      "title": "q(n)=2k15"
+    },
+    {
+      "slug": "rain-down",
+      "title": "Rain Down"
+    },
+    {
+      "slug": "rise",
+      "title": "Rise"
+    },
+    {
+      "slug": "shadershowdownremix",
+      "title": "ShaderShowdownRemix"
+    },
+    {
+      "slug": "space-madness",
+      "title": "Space Madness"
+    },
+    {
+      "slug": "spooky-scroller",
+      "title": "Spooky Scroller"
+    },
+    {
+      "slug": "swaptro",
+      "title": "swaptro"
+    },
+    {
+      "slug": "t-r-s-i-the-red-serpent-invasion",
+      "title": "T.R.S.I. The Red Serpent Invasion"
+    },
+    {
+      "slug": "test-case-of-light",
+      "title": "Test-Case Of Light"
+    },
+    {
+      "slug": "the-chalcogens",
+      "title": "The Chalcogens"
+    },
+    {
+      "slug": "trasidio",
+      "title": "Trasidio"
+    },
+    {
+      "slug": "tunnel-angst",
+      "title": "Tunnel! !Angst"
+    },
+    {
+      "slug": "twin-peaks",
+      "title": "Twin Peaks"
+    },
+    {
+      "slug": "vampires-empire",
+      "title": "Vampires Empire"
+    },
+    {
+      "slug": "vergiftetes-ohrenbonbon",
+      "title": "Vergiftetes Ohrenbonbon"
+    },
+    {
+      "slug": "we-do-demoscene",
+      "title": "We Do Demoscene"
+    },
+    {
+      "slug": "wicked-sensation",
+      "title": "Wicked Sensation"
+    },
+    {
+      "slug": "zeropage-gravity",
+      "title": "Zeropage Gravity"
+    }
+  ],
+  "graphics": [
+    {
+      "slug": "10-orbyte",
+      "title": "10  Orbyte"
+    },
+    {
+      "slug": "a-silent-gaze-by-vasyl",
+      "title": "A Silent Gaze by Vasyl"
+    },
+    {
+      "slug": "acid-times-by-elko",
+      "title": "Acid Times by Elko"
+    },
+    {
+      "slug": "antler-by-forcer",
+      "title": "Antler by Forcer"
+    },
+    {
+      "slug": "arrival-on-valthoria-by-vasyl",
+      "title": "Arrival On Valthoria by Vasyl"
+    },
+    {
+      "slug": "banana-joes-trifle-reloaded-banana-6-ways",
+      "title": "Banana Joés Triflé - RELOADED - Banana 6 Ways"
+    },
+    {
+      "slug": "bat-country-by-elko",
+      "title": "Bat Country by Elko"
+    },
+    {
+      "slug": "bird-reynolds-by-elko",
+      "title": "Bird Reynolds by Elko"
+    },
+    {
+      "slug": "bossrock-premiere-cast",
+      "title": "Bossrock Premiere Cast"
+    },
+    {
+      "slug": "california-games-2-trsi-logo",
+      "title": "California games 2 TRSi Logo "
+    },
+    {
+      "slug": "catnips-a-helluva-drug",
+      "title": "Catnip's A Helluva Drug"
+    },
+    {
+      "slug": "chase-by-forcer",
+      "title": "Chase by Forcer"
+    },
+    {
+      "slug": "chuck42-by-h2o",
+      "title": "Chuck42 by H2O"
+    },
+    {
+      "slug": "cold-city-by-vasyl",
+      "title": "Cold City by Vasyl"
+    },
+    {
+      "slug": "color-play-2023",
+      "title": "Color Play 2023"
+    },
+    {
+      "slug": "come-to-daddy-by-elko",
+      "title": "Come To Daddy by Elko"
+    },
+    {
+      "slug": "compo-fil-a",
+      "title": "Compo-Fil-A"
+    },
+    {
+      "slug": "consume-obey-be-woke",
+      "title": "Consume Obey - Be Woke!"
+    },
+    {
+      "slug": "cyberpunk-2026-by-vasyl",
+      "title": "Cyberpunk 2026 by Vasyl"
+    },
+    {
+      "slug": "decker-9-by-spotter-and-h9",
+      "title": "Decker 9 by Spotter & H9"
+    },
+    {
+      "slug": "deep-sea",
+      "title": "Deep Sea"
+    },
+    {
+      "slug": "dimensionstor-631",
+      "title": "Dimensionstor 631"
+    },
+    {
+      "slug": "dinky-dock-64-by-movax-trsi",
+      "title": "Dinky Dock 64 by movax / TRSi"
+    },
+    {
+      "slug": "dude-got-your-dosage-by-elko",
+      "title": "DuDe, GoT YoUr DoSaGE by Elko"
+    },
+    {
+      "slug": "elektroshock",
+      "title": "Elektroshock"
+    },
+    {
+      "slug": "exodus-infofile-for-trsi",
+      "title": "EXODUS infofile for TRSI"
+    },
+    {
+      "slug": "friday-overlay-mayday",
+      "title": "friday.overlay.mayday"
+    },
+    {
+      "slug": "gentleman-hackers",
+      "title": "Gentleman Hackers"
+    },
+    {
+      "slug": "ghetto-scener",
+      "title": "Ghetto Scener"
+    },
+    {
+      "slug": "gnome-by-fade-one",
+      "title": "Gnome by Fade One"
+    },
+    {
+      "slug": "go-copy-that-floppy-by-docd",
+      "title": "Go copy that floppy by DocD"
+    },
+    {
+      "slug": "goddess-of-dystopia-by-vasyl",
+      "title": "Goddess of Dystopia by Vasyl"
+    },
+    {
+      "slug": "got-nuts-by-elko",
+      "title": "Got Nuts by Elko "
+    },
+    {
+      "slug": "gut-zu-voegeln-by-elko",
+      "title": "Gut zu Voegeln by Elko"
+    },
+    {
+      "slug": "hardtstylers-sticker",
+      "title": "Hardtstylers Sticker"
+    },
+    {
+      "slug": "healthy-meals-for-summer-days-by-elko",
+      "title": "Healthy Meals for Summer Days by Elko"
+    },
+    {
+      "slug": "henrys-maske-by-elko",
+      "title": "Henrys Maske by Elko"
+    },
+    {
+      "slug": "hid-select",
+      "title": "HID.select"
+    },
+    {
+      "slug": "ich-mach-mir-die-welt-wie-sie-mir-gefaellt",
+      "title": "Ich mach mir die Welt, wie sie mir gefällt!"
+    },
+    {
+      "slug": "invasive-species",
+      "title": "Invasive Species"
+    },
+    {
+      "slug": "jupiter-and-beyond-by-forcer",
+      "title": "Jupiter & Beyond by Forcer"
+    },
+    {
+      "slug": "krawallbrause-trsi-slide",
+      "title": "Krawallbrause TRSi Slide"
+    },
+    {
+      "slug": "krawallbrause-trsi-slide-party-version",
+      "title": "Krawallbrause TRSi Slide (Party Version)"
+    },
+    {
+      "slug": "lake-sunset-by-razdee",
+      "title": "Lake Sunset by Razdee"
+    },
+    {
+      "slug": "lets-go-chopping-by-elko",
+      "title": "Lets Go Chopping by Elko"
+    },
+    {
+      "slug": "limelights-by-h7",
+      "title": "Limelights by H7"
+    },
+    {
+      "slug": "master-boot-record-by-h7",
+      "title": "MASTER BOOT RECORD by H7"
+    },
+    {
+      "slug": "metal-skin-slidetro-skull-by-forcer",
+      "title": "Metal Skin Slidetro Skull by Forcer"
+    },
+    {
+      "slug": "noir-deco-by-forcer",
+      "title": "Noir Deco by Forcer"
+    },
+    {
+      "slug": "old-man-by-astaroth",
+      "title": "Old Man by Astaroth"
+    },
+    {
+      "slug": "out-of-the-box-by-prince",
+      "title": "Out of the Box by Prince"
+    },
+    {
+      "slug": "rain-down-sticker-one",
+      "title": "Rain Down Sticker One"
+    },
+    {
+      "slug": "rain-down-sticker-three",
+      "title": "Rain Down Sticker Three"
+    },
+    {
+      "slug": "rain-down-sticker-two",
+      "title": "Rain Down Sticker Two"
+    },
+    {
+      "slug": "ready-for-the-byte-fight-by-vasyl",
+      "title": "Ready For The Byte Fight by Vasyl"
+    },
+    {
+      "slug": "rip-wodk1111-vy-h20",
+      "title": "rip_wodk1111 vy H20"
+    },
+    {
+      "slug": "saint-amiga-by-h7",
+      "title": "Saint Amiga by H7"
+    },
+    {
+      "slug": "saviour-by-veto",
+      "title": "Saviour by Veto"
+    },
+    {
+      "slug": "sentinel-of-time-by-vasyl",
+      "title": "Sentinel of Time by Vasyl"
+    },
+    {
+      "slug": "slave-to-xray-by-spotter",
+      "title": "Slave to Xray by Spotter"
+    },
+    {
+      "slug": "spooky-scroller",
+      "title": "Spooky Scroller"
+    },
+    {
+      "slug": "stone-dragon-trsi-by-fade-one",
+      "title": "Stone Dragon TRSI by Fade One"
+    },
+    {
+      "slug": "trasidio-infofile",
+      "title": "Trasidio Infofile"
+    },
+    {
+      "slug": "trasidio-sticker",
+      "title": "Trasidio Sticker"
+    },
+    {
+      "slug": "trsi-2024-sticker",
+      "title": "TRSI 2024 Sticker"
+    },
+    {
+      "slug": "trsi-back-to-the-roots",
+      "title": "trsi back to the roots!"
+    },
+    {
+      "slug": "trsi-by-j-o-e",
+      "title": "TRSI by J.O.E"
+    },
+    {
+      "slug": "trsi-evoke-2016-sticker",
+      "title": "TRSi Evoke 2016 Sticker"
+    },
+    {
+      "slug": "trsi-evoke-sticker-2019",
+      "title": "TRSi Evoke Sticker 2019"
+    },
+    {
+      "slug": "trsi-four-stone-cubes-logo",
+      "title": "TRSi four stone cubes logo"
+    },
+    {
+      "slug": "trsi-logo-blue-unison",
+      "title": "TRSi logo blue Unison"
+    },
+    {
+      "slug": "trsi-logo-by-hulk",
+      "title": "TRSi Logo by Hulk"
+    },
+    {
+      "slug": "trsi-logo-by-tees",
+      "title": "TRSI logo by Tees"
+    },
+    {
+      "slug": "trsi-logo-by-uno",
+      "title": "TRSI logo by UNO"
+    },
+    {
+      "slug": "trsi-logo-orange-glas",
+      "title": "TRSi Logo orange glas"
+    },
+    {
+      "slug": "trsi-logo-red-unison",
+      "title": "TRSi logo red Unison"
+    },
+    {
+      "slug": "trsi-needs-women",
+      "title": "TRSi needs women"
+    },
+    {
+      "slug": "trsi-revision-2013-sticker",
+      "title": "TRSI Revision 2013 Sticker"
+    },
+    {
+      "slug": "trsi-wicked-sensation-logo",
+      "title": "TRSI Wicked Sensation Logo"
+    },
+    {
+      "slug": "two-evil-eyes-by-epr",
+      "title": "Two Evil Eyes by EPR"
+    },
+    {
+      "slug": "unfinished-business-by-elko",
+      "title": "Unfinished Business by Elko"
+    },
+    {
+      "slug": "wild-mushroom-by-astaroth",
+      "title": "Wild Mushroom by Astaroth"
+    },
+    {
+      "slug": "wren-test-pilot-by-forcer",
+      "title": "WREN Test Pilot by Forcer"
+    }
+  ],
+  "music": [
+    {
+      "slug": "60y-by-trsi",
+      "title": " 60y by TRSI"
+    },
+    {
+      "slug": "8-bites-of-ceasar",
+      "title": "8 Bites of Ceasar"
+    },
+    {
+      "slug": "beat-to-the-pulp",
+      "title": "Beat To The Pulp"
+    },
+    {
+      "slug": "boesendorfer-p-s-s",
+      "title": "Boesendorfer P.S.S."
+    },
+    {
+      "slug": "escaping-tartarus",
+      "title": "Escaping Tartarus"
+    },
+    {
+      "slug": "rusted-blues",
+      "title": "Rusted Blues"
+    },
+    {
+      "slug": "samsara",
+      "title": "Samsara"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "a-big-thank-you-to-t0m3000-for-trsi-oxygen",
+      "title": "A Big Thank You to t0m3000 for TRSI-Oxygen"
+    },
+    {
+      "slug": "boom-party-report",
+      "title": "Boom! Party Report"
+    },
+    {
+      "slug": "demoscene-how-do-we-preserve-our-heritage",
+      "title": "Demoscene: How Do We Preserve Our Heritage?"
+    },
+    {
+      "slug": "hello-world",
+      "title": "Hello World"
+    },
+    {
+      "slug": "lman-becomes-lmania",
+      "title": "LMan Becomes LMania"
+    },
+    {
+      "slug": "new-design-better-readability",
+      "title": "New Design, Better Readability"
+    },
+    {
+      "slug": "new-release-type-in-master-tim-for-cpc",
+      "title": "New Release: Type-In Master [TIM] for CPC"
+    },
+    {
+      "slug": "old-men-new-ideas",
+      "title": "Old men, new ideas"
+    },
+    {
+      "slug": "respect-and-thanks-to-slaxx-for-sleeping-beauty",
+      "title": "Respect and Thanks to Slaxx for Sleeping Beauty"
+    },
+    {
+      "slug": "romaexe-party-in-june-2026",
+      "title": "Roma.EXE Party in June 2026"
+    },
+    {
+      "slug": "three-years-without-spotter",
+      "title": "Three Years Without Spotter"
+    },
+    {
+      "slug": "trsi--revision-2025",
+      "title": "TRSI @ Revision 2025"
+    },
+    {
+      "slug": "welcome-to-trsi-epr",
+      "title": "Welcome to TRSI, EPR"
+    },
+    {
+      "slug": "westpoint-bbs-is-back",
+      "title": "WESTPOINT BBS is back"
+    },
+    {
+      "slug": "when-history-meets-now",
+      "title": "When History Meets Now"
+    },
+    {
+      "slug": "when-history-sits-at-the-table",
+      "title": "When History Sits at the Table"
+    },
+    {
+      "slug": "when-old-friends-sit-down-together-again",
+      "title": "When Old Friends Sit Down Together Again"
+    }
+  ]
+}

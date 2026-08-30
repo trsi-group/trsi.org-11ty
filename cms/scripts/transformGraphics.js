@@ -1,4 +1,5 @@
 import { buildImageIndex, imagePath } from './assetPaths.js';
+import { itemSlug } from './slug.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -27,6 +28,7 @@ export function transformGraphics(contentfulData) {
       
       return {
         title: fields.title['en-US'],
+        slug: itemSlug(fields.title['en-US']),
         type: fields.type['en-US'],
         platform: fields.platform ? fields.platform['en-US'] : null,
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',

@@ -66,7 +66,7 @@
           data-type="{{ item.type | downcase }}"
           data-platform="{{ item.platform | downcase }}"
           data-date="{{ item.release_date }}"
-        {%- if item.title %} data-slug="{{ item.title | slugify }}"{% endif %}
+        {%- if item.slug %} data-slug="{{ item.slug }}"{% endif %}
         {%- if item.youtube %} data-youtube="{{ item.youtube }}"{% endif %}
         {%- if item.download %} data-download="{{ item.download }}"{% endif %}
         {%- if item.demozoo %} data-demozoo="{{ item.demozoo }}"{% endif %}
