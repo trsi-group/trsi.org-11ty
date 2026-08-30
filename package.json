@@ -33,7 +33,6 @@
     "@jgarber/eleventy-plugin-markdown": "^2.0.1",
     "@sindresorhus/slugify": "^2.2.1",
     "autoprefixer": "^10.4.20",
-    "bulma": "^1.0.3",
     "contentful": "^11.4.4",
     "contentful-cli": "^3.7.3",
     "contentful-export": "^7.21.44",
