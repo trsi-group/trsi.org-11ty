@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="src/public/img/trsi-logo.png" alt="TRSI" width="320">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="src/public/img/trsi-logo.svg">
+    <img src="src/public/img/trsi-logo.png" alt="TRSI" width="320">
+  </picture>
 </p>
 
 <h1 align="center">trsi.org</h1>
