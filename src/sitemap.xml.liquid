@@ -17,7 +17,9 @@ layout: null
   {%- for post in cms.posts %}
   <url>
     <loc>{{ site.domain }}/news/{{ post.slug | url_decode }}/</loc>
+    {%- if post.publishDate != blank %}
     <lastmod>{{ post.publishDate | date: "%Y-%m-%d" }}</lastmod>
+    {%- endif %}
   </url>
   {%- endfor %}
 {%- comment %} Item pages describe a fixed release, so they carry the release date
@@ -28,7 +30,7 @@ and no changefreq rather than inheriting the daily one above. {% endcomment %}
     {%- for item in feed %}
   <url>
     <loc>{{ site.domain }}/{{ feed_name }}/{{ item.slug | url_decode }}/</loc>
-      {%- if item.release_date %}
+      {%- if item.release_date != blank %}
     <lastmod>{{ item.release_date | date: "%Y-%m-%d" }}</lastmod>
       {%- endif %}
   </url>

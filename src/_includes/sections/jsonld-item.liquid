@@ -10,7 +10,7 @@ the document. {% endcomment %}
       "@type": "VideoObject",
       "embedUrl": {{ item.youtube | jsonify }},
       "thumbnailUrl": {{ item.social_image | prepend: site.domain | jsonify }},
-      {%- if item.release_date %}
+      {%- if item.release_date != blank %}
       "uploadDate": {{ item.release_date | date: "%Y-%m-%d" | jsonify }},
       {%- endif %}
       {%- when "graphics" %}
@@ -19,7 +19,7 @@ the document. {% endcomment %}
       {%- if item.type %}
       "artform": {{ item.type | jsonify }},
       {%- endif %}
-      {%- if item.release_date %}
+      {%- if item.release_date != blank %}
       "dateCreated": {{ item.release_date | date: "%Y-%m-%d" | jsonify }},
       {%- endif %}
       {%- when "music" %}
@@ -28,7 +28,7 @@ the document. {% endcomment %}
       {%- if item.type %}
       "genre": {{ item.type | jsonify }},
       {%- endif %}
-      {%- if item.release_date %}
+      {%- if item.release_date != blank %}
       "datePublished": {{ item.release_date | date: "%Y-%m-%d" | jsonify }},
       {%- endif %}
     {%- endcase %}

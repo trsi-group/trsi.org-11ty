@@ -72,7 +72,7 @@ that already exceeds the frame is being scaled down and wants smoothing. {% endc
           </dl>
         {%- endif %}
 
-        {%- if item.release_date %}
+        {%- if item.release_date != blank %}
           <p class="item__date">Released {{ item.release_date | date: "%B %-d, %Y" }}</p>
         {%- endif %}
         </div>

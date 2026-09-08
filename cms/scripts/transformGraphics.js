@@ -1,5 +1,6 @@
 import { buildImageIndex, imagePath, imageSize } from './assetPaths.js';
 import { itemSlug } from './slug.js';
+import { releaseDate } from './releaseDate.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -40,10 +41,7 @@ export function transformGraphics(contentfulData) {
         // whether the browser may smooth it when scaling up (see item-detail).
         asset_width: assetSize ? assetSize.width : null,
         asset_height: assetSize ? assetSize.height : null,
-        // An entry without a date must fall back to '' and never null: liquidjs's
-        // `sort` compares inconsistently against null and scrambles the whole feed,
-        // while '' orders before every real date and so lands last once reversed.
-        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
+        release_date: releaseDate(fields.releaseDate),
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
         // image: imageId ? imagePath(index, imageId, 'orig') : null,
         download: imageId ? imagePath(index, imageId, 'orig') : null,

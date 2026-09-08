@@ -1,5 +1,6 @@
 import { buildImageIndex, imagePath, imageSize } from './assetPaths.js';
 import { itemSlug } from './slug.js';
+import { releaseDate } from './releaseDate.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -48,7 +49,7 @@ export function transformProductions(contentfulData) {
         title: fields.title['en-US'],
         slug: itemSlug(fields.title['en-US']),
         type: fields.type['en-US'],
-        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
+        release_date: releaseDate(fields.releaseDate),
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         nfo_text: fields.infoText ? fields.infoText?.['en-US'] : '',
         card_image: imageId ? imagePath(index, imageId, 'card') : null,
