@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { buildImageIndex, imagePath } from './assetPaths.js';
 import { itemSlug } from './slug.js';
+import { releaseDate } from './releaseDate.js';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -71,10 +72,7 @@ export function transformMusic(contentfulData) {
         asset: assetId ? resolve('/tracks/', findTrackAssetPathById(assetId)) : null,
         playerEmu: playerEmu,
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
-        // An entry without a date must fall back to '' and never null: liquidjs's
-        // `sort` compares inconsistently against null and scrambles the whole feed,
-        // while '' orders before every real date and so lands last once reversed.
-        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
+        release_date: releaseDate(fields.releaseDate),
         card_image: imageId ? imagePath(index, imageId, 'card') : `/img/${fallbackImage}.webp`,
         // Link previews are rendered to a fixed 1200x630 frame, fallback artwork included.
         social_image: imageId ? imagePath(index, imageId, 'social') : `/img/social/${fallbackImage}.jpg`,
