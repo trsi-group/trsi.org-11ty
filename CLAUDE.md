@@ -30,7 +30,7 @@ Five content types from Contentful: **productions**, **graphics**, **music**, **
 - Cards are links; the only `data-*` left on them is what the grid filter reads, and the filter state is mirrored into the query string
 - Music playback uses libopenmpt/ChiptuneJS for tracker formats (MOD/XM/IT/S3M) via singleton `MusicPlayerManager`
 - Two themes available (`theme-joe.css` dark, `theme-first.css` light), controlled by `site.theme` in `src/_data/site.js`
-- Music nav item is hidden by CSS (`nav__item--hidden`); the pages themselves are public and in the sitemap
+- `hidden: true` on a `src/_data/navdata.json` item de-lists that section everywhere at once — hidden in the header (`nav__item--hidden`), dropped from the footer, and left out of the sitemap; the pages stay public and reachable by URL. Music is de-listed today
 - Images processed to 3 WebP sizes (orig, card/800px, post/480px) via Sharp
 - Social links live only in `src/_data/social.json`; each entry's `locations` array (`header`, `footer`, `about`, `schema`) picks the surfaces it renders on, and `icon` names an SVG in `src/icons/` (required for `header`, optional elsewhere)
 
