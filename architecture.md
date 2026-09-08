@@ -114,5 +114,9 @@ Audio is the subtle part:
 - `dist/` is never cleaned, so local builds accumulate stale files. Netlify
   builds from a clean checkout, so they are not deployed.
 - `cms/scripts/copyContent.js` is referenced by nothing — dead.
-- The music nav item is hidden by CSS (`nav__item--hidden`); the pages are
-  public and in the sitemap.
+- `hidden: true` on a nav item in `src/_data/navdata.json` de-lists a whole
+  section: the header keeps the link but hides it with CSS
+  (`nav__item--hidden`), the footer drops it, and `src/sitemap.xml.liquid`
+  leaves out its listing page, its item pages and — for news — its posts. The
+  pages themselves stay public and reachable by URL. Music is de-listed today;
+  flipping the flag back re-lists it everywhere in one step.
